@@ -1,0 +1,16 @@
+// https://code.visualstudio.com/docs/languages/jsconfig
+
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@Components/*": ["./src/components/*"],
+            "@Modules/*": ["./src/modules/*"],
+            "@Content/*": ["./src/content/*"],
+            "@Assets/*": ["./src/assets/*"],
+            "@Spanish/*": ["src/apps/Spanish"]
+        }
+    },
+    //Add any build/compiled folders here to stop vscode searching those
+    "exclude": ["node_modules", "build"]
+}
