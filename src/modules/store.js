@@ -1,5 +1,5 @@
 // store.js
-import React, { createContext, useReducer } from 'react'
+import { createContext, useReducer } from 'react'
 
 const initialState = { hitCount: 0 }
 const store = createContext(initialState)
