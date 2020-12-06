@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
-import React from 'react'
+
 import Typography from '@material-ui/core/Typography'
 
 import Title from '@Components/common/Title'

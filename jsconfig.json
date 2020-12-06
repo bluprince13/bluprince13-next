@@ -7,8 +7,8 @@
             "@Components/*": ["./src/components/*"],
             "@Modules/*": ["./src/modules/*"],
             "@Content/*": ["./src/content/*"],
-            "@Assets/*": ["./src/assets/*"],
-            "@Spanish/*": ["src/apps/Spanish"]
+            "@Public/*": ["./public/*"],
+            "@Apps/*": ["src/apps/*"]
         }
     },
     //Add any build/compiled folders here to stop vscode searching those
