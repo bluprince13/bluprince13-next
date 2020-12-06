@@ -1,5 +1,4 @@
 import React from 'react'
-import Head from 'next/head'
 import Link from 'next/link'
 
 import AppBar from '@material-ui/core/AppBar'
@@ -74,27 +73,6 @@ export default function SearchAppBar() {
     const classes = useStyles()
     return (
         <div className={classes.root}>
-            <Head>
-                <title>bluprince13</title>
-                <link
-                    rel="alternate"
-                    type="application/rss+xml"
-                    title="bluprince13 RSS feed"
-                    href="https://www.bluprince13.com/feed.xml"
-                />
-                <link
-                    rel="alternate"
-                    type="application/rss+xml"
-                    title="bluprince13 Atom feed"
-                    href="https://www.bluprince13.com/atom.xml"
-                />
-                <link
-                    rel="alternate"
-                    type="application/json"
-                    title="bluprince13 JSON feed"
-                    href="https://www.bluprince13.com/feed.json"
-                />
-            </Head>
             <AppBar position="static">
                 <Toolbar>
                     <SimpleMenu />
