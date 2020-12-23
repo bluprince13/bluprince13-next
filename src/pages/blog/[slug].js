@@ -10,8 +10,9 @@ import Comments from '@Components/common/Comments'
 import Title from '@Components/common/Title'
 import ShareBar from '@Components/ShareBar'
 import Figure from '@Components/blog/Figure'
+import Youtube from '@Components/blog/Youtube'
 
-const components = { Figure }
+const components = { Figure, Youtube }
 
 export default function Posts({ source, frontMatter }) {
     const content = hydrate(source, { components })
@@ -22,12 +23,12 @@ export default function Posts({ source, frontMatter }) {
     // const location = useLocation()
     // const { siteRoot } = useSiteData()
     return (
-        <>
+        <div style={{ maxWidth: '960px', margin: 'auto' }}>
             <Head>
                 {/* <meta property="og:url" content={location.href} /> */}
                 <meta property="og:type" content="article" />
                 <meta property="og:title" content={frontMatter.title} />
-                {/* <meta property="og:description" content={article.description} /> */}
+                <meta property="og:description" content={frontMatter.description} />
                 {/* <meta property="og:image" content={siteRoot + article.banner} /> */}
                 <meta property="og:site_name" content="bluprince13" />
             </Head>
@@ -48,7 +49,7 @@ export default function Posts({ source, frontMatter }) {
             {content}
             <ShareBar title={frontMatter.title} />
             <Comments.Embed id={frontMatter.path} />
-        </>
+        </div>
     )
 }
 export async function getStaticPaths() {
