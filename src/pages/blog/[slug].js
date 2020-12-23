@@ -35,7 +35,7 @@ export default function Posts({ source, data }) {
                 src={data.banner}
             />
             <Title title={data.title} />
-            <span>{data.date}</span>
+            <div>{data.date}</div>
             <Comments.CommentCount id={data.slug} />
             {content}
             <ShareBar title={data.title} />
