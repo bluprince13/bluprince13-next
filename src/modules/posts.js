@@ -5,32 +5,34 @@ import matter from 'gray-matter'
 const postDirectory = path.join(process.cwd(), 'src/content/blog')
 const SITE_ROOT = 'https://www.bluprince13.com'
 
+export const getFileContent = (slug) => {
+    const fullPath = path.join(postDirectory, `${slug}.mdx`)
+    const fileContent = fs.readFileSync(fullPath, 'utf8')
+    return fileContent
+}
+export const getPostDataAndContent = (slug) => {
+    const fileContent = getFileContent(slug)
+    const { data, content } = matter(fileContent)
+    const options = { month: 'long', day: 'numeric', year: 'numeric' }
+    const formattedDate = new Date(data.date).toLocaleDateString(
+        'en-IN',
+        options
+    )
+    const modifiedData = {
+        slug,
+        ...data,
+        date: formattedDate,
+        href: `${SITE_ROOT}/blog/${slug}`
+    }
+
+    return { data: modifiedData, content }
+}
 export const getSortedPosts = () => {
     const fileNames = fs.readdirSync(postDirectory)
-
     const allPostsData = fileNames.map((filename) => {
         const slug = filename.replace('.mdx', '')
-
-        const fullPath = path.join(postDirectory, filename)
-        const fileContents = fs.readFileSync(fullPath, 'utf8')
-        const { data } = matter(fileContents)
-
-        const options = { month: 'long', day: 'numeric', year: 'numeric' }
-        const formattedDate = new Date(data.date).toLocaleDateString(
-            'en-IN',
-            options
-        )
-
-        const frontmatter = {
-            ...data,
-            date: formattedDate,
-            href: `${SITE_ROOT}/blog/${slug}`,
-        }
-
-        return {
-            slug,
-            ...frontmatter
-        }
+        const { data } = getPostDataAndContent(slug)
+        return data
     })
 
     return allPostsData.sort((a, b) => {
@@ -51,11 +53,4 @@ export const getAllPostSlugs = () => {
             }
         }
     })
-}
-
-export const getPostdata = async (slug) => {
-    const fullPath = path.join(postDirectory, `${slug}.mdx`)
-    const postContent = fs.readFileSync(fullPath, 'utf8')
-
-    return postContent
 }

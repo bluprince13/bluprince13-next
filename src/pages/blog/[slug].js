@@ -1,8 +1,7 @@
 import Head from 'next/head'
-import { getAllPostSlugs, getPostdata } from '@Modules/posts'
+import { getAllPostSlugs, getPostDataAndContent } from '@Modules/posts'
 import renderToString from 'next-mdx-remote/render-to-string'
 import hydrate from 'next-mdx-remote/hydrate'
-import matter from 'gray-matter'
 
 import Comments from '@Components/common/Comments'
 import Title from '@Components/common/Title'
@@ -12,30 +11,35 @@ import Youtube from '@Components/blog/Youtube'
 
 const components = { Figure, Youtube }
 
-export default function Posts({ source, frontMatter }) {
+const SITE_ROOT = 'https://www.bluprince13.com'
+
+export default function Posts({ source, data }) {
     const content = hydrate(source, { components })
 
     return (
         <div style={{ maxWidth: '960px', margin: 'auto' }}>
             <Head>
                 <meta property="og:type" content="article" />
-                <meta property="og:title" content={frontMatter.title} />
-                <meta property="og:description" content={frontMatter.description} />
-                {/* <meta property="og:image" content={siteRoot + article.banner} /> */}
+                <meta property="og:title" content={data.title} />
+                <meta
+                    property="og:description"
+                    content={data.description}
+                />
+                <meta property="og:image" content={SITE_ROOT + data.banner} />
                 <meta property="og:site_name" content="bluprince13" />
             </Head>
             <img
                 style={{ width: '100%' }}
                 id="banner"
                 alt="banner"
-                src={frontMatter.banner}
+                src={data.banner}
             />
-            <Title title={frontMatter.title} />
-            <span>{frontMatter.date}</span>
-            <Comments.CommentCount id={frontMatter.path} />
+            <Title title={data.title} />
+            <span>{data.date}</span>
+            <Comments.CommentCount id={data.slug} />
             {content}
-            <ShareBar title={frontMatter.title} />
-            <Comments.Embed id={frontMatter.path} />
+            <ShareBar title={data.title} />
+            <Comments.Embed id={data.slug} />
         </div>
     )
 }
@@ -48,8 +52,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-    const postContent = await getPostdata(params.slug)
-    const { data, content } = matter(postContent)
+    const { data, content } = await getPostDataAndContent(params.slug)
     const mdxSource = await renderToString(content, {
         components,
         scope: data
@@ -57,7 +60,7 @@ export async function getStaticProps({ params }) {
     return {
         props: {
             source: mdxSource,
-            frontMatter: data
+            data
         }
     }
 }

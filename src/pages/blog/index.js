@@ -11,7 +11,7 @@ export default ({ allPostsData }) => {
             <br />
             All articles:
             <ul>
-                {allPostsData.map(({ slug, date, title, excerpt }) => (
+                {allPostsData.map(({ slug, title  }) => (
                     <li key={slug}>
                         <Link
                             href="/blog/[slug]"
