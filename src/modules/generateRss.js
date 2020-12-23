@@ -1,6 +1,5 @@
 import fs from 'fs'
 import { Feed } from 'feed'
-import mkdirp from 'mkdirp'
 
 const SITE_ROOT = 'https://www.bluprince13.com'
 const AUTHOR = 'Vipin Ajayakumar'
@@ -63,14 +62,7 @@ export default async ({ articles }) => {
     const atom = feed.atom1()
     const json = feed.json1()
 
-    await mkdirp('dist')
-
     fs.writeFileSync('public/feed.xml', rss, 'utf8', handleError)
-    fs.writeFileSync('dist/feed.xml', rss, 'utf8', handleError)
-
     fs.writeFileSync('public/atom.xml', atom, 'utf8', handleError)
-    fs.writeFileSync('dist/atom.xml', rss, 'utf8', handleError)
-
     fs.writeFileSync('public/feed.json', json, 'utf8', handleError)
-    fs.writeFileSync('dist/feed.json', json, 'utf8', handleError)
 }
