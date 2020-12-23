@@ -2,6 +2,7 @@ import Link from 'next/link'
 
 import Title from '@Components/common/Title'
 import { getSortedPosts } from '@Modules/posts'
+import generateRss from '@Modules/generateRss'
 
 export default ({ allPostsData }) => {
     return (
@@ -27,6 +28,7 @@ export default ({ allPostsData }) => {
 
 export async function getStaticProps() {
     const allPostsData = getSortedPosts()
+    await generateRss({ articles: allPostsData })
     return {
         props: {
             allPostsData

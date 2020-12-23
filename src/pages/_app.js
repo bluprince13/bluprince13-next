@@ -1,5 +1,7 @@
-import { useContext, useEffect } from 'react'
+import { useEffect } from 'react'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
+import ReactGA from 'react-ga'
 
 import { ThemeProvider } from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
@@ -9,7 +11,6 @@ import '../styles/globals.css'
 import { store, StateProvider } from '@Modules/store'
 import SearchAppBar from '@Components/common/SearchAppBar'
 import Footer from '@Components/common/Footer'
-// import getHitCount from '@Modules/getHitCount'
 
 const Container = ({ children }) => (
     <div
@@ -24,13 +25,11 @@ const Container = ({ children }) => (
 )
 
 const Content = ({ children }) => {
-    // const location = useLocation()
-    // const { dispatch } = useContext(store)
+    const { asPath } = useRouter()
 
-    // useEffect(() => {
-    //     ReactGA.pageview(location.pathname + location.search)
-    //     getHitCount({ url: location.href, dispatch })
-    // }, [dispatch, location])
+    useEffect(() => {
+        ReactGA.pageview(asPath)
+    }, [asPath])
 
     return <div style={{ padding: '1rem' }}>{children}</div>
 }

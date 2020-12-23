@@ -8,11 +8,7 @@ const { Provider } = store
 const StateProvider = ({ children }) => {
     // eslint-disable-next-line no-shadow
     const [state, dispatch] = useReducer((state, action) => {
-        let newState
         switch (action.type) {
-            case 'CHANGE_HIT_COUNT':
-                newState = { ...state, hitCount: action.payload }
-                return newState
             default:
                 throw new Error()
         }

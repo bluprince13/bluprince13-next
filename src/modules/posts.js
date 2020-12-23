@@ -3,6 +3,7 @@ import path from 'path'
 import matter from 'gray-matter'
 
 const postDirectory = path.join(process.cwd(), 'src/content/blog')
+const SITE_ROOT = 'https://www.bluprince13.com'
 
 export const getSortedPosts = () => {
     const fileNames = fs.readdirSync(postDirectory)
@@ -22,8 +23,10 @@ export const getSortedPosts = () => {
 
         const frontmatter = {
             ...data,
-            date: formattedDate
+            date: formattedDate,
+            href: `${SITE_ROOT}/blog/${slug}`,
         }
+
         return {
             slug,
             ...frontmatter

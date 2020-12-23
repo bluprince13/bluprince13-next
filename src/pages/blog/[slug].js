@@ -3,9 +3,7 @@ import { getAllPostSlugs, getPostdata } from '@Modules/posts'
 import renderToString from 'next-mdx-remote/render-to-string'
 import hydrate from 'next-mdx-remote/hydrate'
 import matter from 'gray-matter'
-import Typography from '@material-ui/core/Typography'
 
-import { store } from '@Modules/store'
 import Comments from '@Components/common/Comments'
 import Title from '@Components/common/Title'
 import ShareBar from '@Components/ShareBar'
@@ -17,15 +15,9 @@ const components = { Figure, Youtube }
 export default function Posts({ source, frontMatter }) {
     const content = hydrate(source, { components })
 
-    // const {
-    //     state: { hitCount }
-    // } = useContext(store)
-    // const location = useLocation()
-    // const { siteRoot } = useSiteData()
     return (
         <div style={{ maxWidth: '960px', margin: 'auto' }}>
             <Head>
-                {/* <meta property="og:url" content={location.href} /> */}
                 <meta property="og:type" content="article" />
                 <meta property="og:title" content={frontMatter.title} />
                 <meta property="og:description" content={frontMatter.description} />
@@ -40,11 +32,6 @@ export default function Posts({ source, frontMatter }) {
             />
             <Title title={frontMatter.title} />
             <span>{frontMatter.date}</span>
-            {/* {hitCount ? (
-                <Typography variant="body2">Hit count {hitCount}</Typography>
-            ) : (
-                ''
-            )} */}
             <Comments.CommentCount id={frontMatter.path} />
             {content}
             <ShareBar title={frontMatter.title} />
