@@ -17,3 +17,7 @@ body {
     height: 100%;
     border: 0;
 }
+/* TODO: Make anchors visible on hover only */
+.anchor {
+    padding-left: 0.5rem;
+}

@@ -2,6 +2,10 @@ import Head from 'next/head'
 import { getAllPostSlugs, getPostDataAndContent } from '@Modules/posts'
 import renderToString from 'next-mdx-remote/render-to-string'
 import hydrate from 'next-mdx-remote/hydrate'
+import toc from 'remark-toc'
+import emoji from 'remark-emoji'
+import slug from 'rehype-slug'
+import link from 'rehype-autolink-headings'
 
 import Comments from '@Components/common/Comments'
 import Title from '@Components/common/Title'
@@ -21,10 +25,7 @@ export default function Posts({ source, data }) {
             <Head>
                 <meta property="og:type" content="article" />
                 <meta property="og:title" content={data.title} />
-                <meta
-                    property="og:description"
-                    content={data.description}
-                />
+                <meta property="og:description" content={data.description} />
                 <meta property="og:image" content={SITE_ROOT + data.banner} />
                 <meta property="og:site_name" content="bluprince13" />
             </Head>
@@ -55,6 +56,28 @@ export async function getStaticProps({ params }) {
     const { data, content } = await getPostDataAndContent(params.slug)
     const mdxSource = await renderToString(content, {
         components,
+        mdxOptions: {
+            remarkPlugins: [
+                [toc, { tight: true }],
+                [emoji, { emoticon: true }]
+            ],
+            rehypePlugins: [
+                slug,
+                [
+                    link,
+                    {
+                        behaviour: 'append',
+                        properties: { ariaHidden: 'false', tabIndex: -1 },
+                        content: {
+                            type: 'element',
+                            tagName: 'span',
+                            properties: {className: ['anchor', 'fas', 'fa-link']},
+                            children: []
+                          }
+                    }
+                ]
+            ]
+        },
         scope: data
     })
     return {

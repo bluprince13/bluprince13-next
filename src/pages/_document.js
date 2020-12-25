@@ -17,6 +17,10 @@ class MyDocument extends Document {
                         rel="stylesheet"
                         href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
                     />
+                    <script
+                        src="https://kit.fontawesome.com/a4e8fa8339.js"
+                        crossOrigin="anonymous"
+                    />
                 </Head>
                 <body>
                     <Main />
