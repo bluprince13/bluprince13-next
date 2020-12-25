@@ -32,7 +32,6 @@
     "rehype-slug": "4.0.1",
     "remark-emoji": "2.1.0",
     "remark-toc": "7.0.0",
-    "styled-components": "5.2.1",
     "swr": "0.3.11",
     "typeface-roboto": "1.1.13"
   },

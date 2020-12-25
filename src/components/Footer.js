@@ -1,7 +1,6 @@
-
 import { SocialIcon } from 'react-social-icons'
-import styled from 'styled-components'
 
+import { makeStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 import AppBar from '@material-ui/core/AppBar'
 import Container from '@material-ui/core/Container'
@@ -10,34 +9,31 @@ import Divider from '@material-ui/core/Divider'
 import Box from '@material-ui/core/Box'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 
-const Link = styled.a`
-    text-decoration: none;
-    color: inherit;
-
-    &:focus,
-    &:hover,
-    &:visited,
-    &:link,
-    &:active {
-        text-decoration: none;
+const useStyles = makeStyles(() => ({
+    link: {
+        textDecoration: 'none',
+        color: 'inherit',
+        '&:focus, &:hover, &:visited, &:link, &:active': {
+            textDecoration: 'none'
+        }
+    },
+    socialIcon: {
+        display: "inline-block",
+        marginRight: "10px",
+        textAlign: "center",
+        cursor: "pointer",
+        "&:hover": {
+            opacity: 0.75
+        }
     }
-    }
-`
-const StyledIcon = styled(SocialIcon)`
-    display: inline-block;
-    margin-right: 10px;
-    text-align: center;
-    cursor: pointer;
-    &:hover: {
-        opacity: 0.75;
-    }
-`
+}))
 
 const AUTHOR = 'Vipin Ajayakumar'
 
 const FooterLink = ({ children, to }) => {
+    const classes = useStyles()
     return (
-        <Link href={to}>
+        <a className={classes.link} href={to}>
             <Typography
                 variant="body2"
                 color="inherit"
@@ -45,13 +41,15 @@ const FooterLink = ({ children, to }) => {
             >
                 {children}
             </Typography>
-        </Link>
+        </a>
     )
 }
 
 const Icon = ({ url, network }) => {
+    const classes = useStyles()
     return (
-        <StyledIcon
+        <SocialIcon
+            className={classes.socialIcon}
             url={url}
             network={network}
             style={{ height: 30, width: 30 }}
