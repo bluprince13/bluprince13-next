@@ -24,8 +24,7 @@ export default () => (
         <br />
         <Typography variant="body1">
             If you are interested in following my blog, you can subscribe to my
-            RSS feed. Alternatively, follow me on my social media accounts
-            linked to in the footer.
+            RSS feed or follow me on my social media accounts - see my social links in the footer.
         </Typography>
         <br />
         <Typography variant="body1">
