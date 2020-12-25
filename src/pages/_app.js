@@ -8,10 +8,10 @@ import '@Styles/globals.css'
 
 import { StateProvider } from '@Modules/store'
 import { initGA, logPageView } from '@Modules/googleAnalytics'
-import SearchAppBar from '@Components/common/SearchAppBar'
-import Footer from '@Components/common/Footer'
+import SearchAppBar from '@Components/SearchAppBar/SearchAppBar'
+import Footer from '@Components/Footer'
 
-const Container = ({ children }) => (
+const Layout = ({ children }) => (
     <div
         style={{
             display: 'flex',
@@ -82,13 +82,13 @@ function MyApp({ Component, pageProps }) {
             <ThemeProvider theme={theme}>
                 <CssBaseline />
                 <StateProvider>
-                    <Container>
+                    <Layout>
                         <SearchAppBar />
                         <Content>
                             <Component {...pageProps} />
                         </Content>
                         <Footer />
-                    </Container>
+                    </Layout>
                 </StateProvider>
             </ThemeProvider>
         </>

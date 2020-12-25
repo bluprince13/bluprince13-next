@@ -1,10 +1,10 @@
 import Typography from '@material-ui/core/Typography'
 
-import Comments from '@Components/common/Comments'
-import Title from '@Components/common/Title'
+import Comments from '@Components/Comments'
+import Title from '@Components/Title'
 
 export default () => (
-    <div>
+    <>
         <Title title="CV" />
         <br />
         <Typography variant="body1">
@@ -21,5 +21,5 @@ export default () => (
             ajayakumar_vipin_cv.tex`.
         </Typography>
         <Comments.Embed id="cv" />
-    </div>
+    </>
 )

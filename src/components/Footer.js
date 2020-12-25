@@ -1,3 +1,7 @@
+
+import { SocialIcon } from 'react-social-icons'
+import styled from 'styled-components'
+
 import Typography from '@material-ui/core/Typography'
 import AppBar from '@material-ui/core/AppBar'
 import Container from '@material-ui/core/Container'
@@ -5,8 +9,6 @@ import Toolbar from '@material-ui/core/Toolbar'
 import Divider from '@material-ui/core/Divider'
 import Box from '@material-ui/core/Box'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
-import { SocialIcon } from 'react-social-icons'
-import styled from 'styled-components'
 
 const Link = styled.a`
     text-decoration: none;

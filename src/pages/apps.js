@@ -1,6 +1,6 @@
-import Comments from '@Components/common/Comments'
+import Comments from '@Components/Comments'
 import AppsList from '@Components/appsPage/AppsList'
-import Title from '@Components/common/Title'
+import Title from '@Components/Title'
 
 export default () => (
     <div>

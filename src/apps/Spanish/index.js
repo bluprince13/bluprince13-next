@@ -1,4 +1,4 @@
-import Title from '@Components/common/Title'
+import Title from '@Components/Title'
 
 import Table from './components/Table'
 import data from './data'

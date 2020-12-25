@@ -1,5 +1,3 @@
-// https://material-ui.com/customization/theming/
-
 import { createMuiTheme } from '@material-ui/core/styles'
 
 const theme = createMuiTheme({

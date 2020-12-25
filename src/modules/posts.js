@@ -46,7 +46,6 @@ export const getSortedPosts = () => {
 
 export const getAllPostSlugs = () => {
     const fileNames = fs.readdirSync(postDirectory)
-
     return fileNames.map((filename) => {
         return {
             params: {

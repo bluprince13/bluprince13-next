@@ -26,6 +26,6 @@ settings:
             map:
               - ["@Components", "./src/components"]
               - ["@Modules", "./src/modules"]
+              - ["@Styles", "./src/styles"]
               - ["@Content", "./src/content"]
-              - ["@Assets", "./src/assets"]
-              - ["@Spanish", "./src/apps/Spanish"]
+              - ["@Apps", "./src/apps"]

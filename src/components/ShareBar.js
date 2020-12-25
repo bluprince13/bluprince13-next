@@ -1,5 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
-import React from 'react'
 import {
     FacebookShareCount,
     RedditShareCount,
@@ -45,67 +43,61 @@ export default ({ title, url }) => {
     const classes = useStyles()
 
     return (
-        <div>
-            <div className={classes.root}>
+        <div className={classes.root}>
+            <div>
+                <Typography variant="overline">
+                    Please share! <Emoji symbol="🙏" label="folded hands" />
+                </Typography>
+            </div>
+            <div className={classes.network}>
+                <FacebookShareButton
+                    url={url}
+                    quote={title}
+                    className={classes.shareButton}
+                >
+                    <FacebookIcon size={32} round />
+                </FacebookShareButton>
                 <div>
-                    <Typography variant="overline">
-                        Please share! <Emoji symbol="🙏" label="folded hands" />
-                    </Typography>
-                </div>
-                <div className={classes.network}>
-                    <FacebookShareButton
+                    <FacebookShareCount
                         url={url}
-                        quote={title}
-                        className={classes.shareButton}
+                        className={classes.shareCount}
                     >
-                        <FacebookIcon size={32} round />
-                    </FacebookShareButton>
-
-                    <div>
-                        <FacebookShareCount
-                            url={url}
-                            className={classes.shareCount}
-                        >
-                            {(count) => count}
-                        </FacebookShareCount>
-                    </div>
+                        {(count) => count}
+                    </FacebookShareCount>
                 </div>
+            </div>
 
-                <div className={classes.network}>
-                    <TwitterShareButton
-                        url={url}
-                        title={title}
-                        className={classes.shareButton}
-                    >
-                        <TwitterIcon size={32} round />
-                    </TwitterShareButton>
-                </div>
+            <div className={classes.network}>
+                <TwitterShareButton
+                    url={url}
+                    title={title}
+                    className={classes.shareButton}
+                >
+                    <TwitterIcon size={32} round />
+                </TwitterShareButton>
+            </div>
 
-                <div className={classes.network}>
-                    <LinkedinShareButton
-                        url={url}
-                        className={classes.shareButton}
-                    >
-                        <LinkedinIcon size={32} round />
-                    </LinkedinShareButton>
-                </div>
-                <div className={classes.network}>
-                    <RedditShareButton
-                        url={url}
-                        title={title}
-                        windowWidth={660}
-                        windowHeight={460}
-                        className={classes.shareButton}
-                    >
-                        <RedditIcon size={32} round />
-                    </RedditShareButton>
+            <div className={classes.network}>
+                <LinkedinShareButton url={url} className={classes.shareButton}>
+                    <LinkedinIcon size={32} round />
+                </LinkedinShareButton>
+            </div>
 
-                    <div>
-                        <RedditShareCount
-                            url={url}
-                            className={classes.shareCount}
-                        />
-                    </div>
+            <div className={classes.network}>
+                <RedditShareButton
+                    url={url}
+                    title={title}
+                    windowWidth={660}
+                    windowHeight={460}
+                    className={classes.shareButton}
+                >
+                    <RedditIcon size={32} round />
+                </RedditShareButton>
+                <div>
+                    <RedditShareCount
+                        url={url}
+                        className={classes.shareCount}
+                    />
                 </div>
             </div>
         </div>

@@ -6,8 +6,8 @@
         "paths": {
             "@Components/*": ["./src/components/*"],
             "@Modules/*": ["./src/modules/*"],
+            "@Styles/*": ["./src/styles/*"],
             "@Content/*": ["./src/content/*"],
-            "@Public/*": ["./public/*"],
             "@Apps/*": ["src/apps/*"]
         }
     },

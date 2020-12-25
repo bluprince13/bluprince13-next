@@ -1,14 +1,15 @@
 import Head from 'next/head'
-import { getAllPostSlugs, getPostDataAndContent } from '@Modules/posts'
 import renderToString from 'next-mdx-remote/render-to-string'
 import hydrate from 'next-mdx-remote/hydrate'
+
 import toc from 'remark-toc'
 import emoji from 'remark-emoji'
 import slug from 'rehype-slug'
 import link from 'rehype-autolink-headings'
 
-import Comments from '@Components/common/Comments'
-import Title from '@Components/common/Title'
+import { getAllPostSlugs, getPostDataAndContent } from '@Modules/posts'
+import Comments from '@Components/Comments'
+import Title from '@Components/Title'
 import ShareBar from '@Components/ShareBar'
 import Figure from '@Components/blog/Figure'
 import Youtube from '@Components/blog/Youtube'

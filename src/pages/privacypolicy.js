@@ -2,7 +2,7 @@
 
 import Typography from '@material-ui/core/Typography'
 
-import Title from '@Components/common/Title'
+import Title from '@Components/Title'
 
 export default () => (
     <div>

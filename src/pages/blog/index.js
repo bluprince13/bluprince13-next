@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import Title from '@Components/common/Title'
+import Title from '@Components/Title'
 import { getSortedPosts } from '@Modules/posts'
 import generateRss from '@Modules/generateRss'
 

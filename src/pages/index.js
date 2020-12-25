@@ -1,7 +1,7 @@
 import Typography from '@material-ui/core/Typography'
 
 import Facebook from '@Components/Facebook'
-import Title from '@Components/common/Title'
+import Title from '@Components/Title'
 
 export default () => (
     <>

@@ -1,7 +1,6 @@
-// store.js
 import { createContext, useReducer } from 'react'
 
-const initialState = { hitCount: 0 }
+const initialState = {}
 const store = createContext(initialState)
 const { Provider } = store
 
@@ -13,7 +12,6 @@ const StateProvider = ({ children }) => {
                 throw new Error()
         }
     }, initialState)
-
     return <Provider value={{ state, dispatch }}>{children}</Provider>
 }
 

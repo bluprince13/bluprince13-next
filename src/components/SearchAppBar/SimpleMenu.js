@@ -1,16 +1,11 @@
 import { useState } from 'react'
 import Link from 'next/link'
+
 import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
-import { makeStyles, withStyles } from '@material-ui/core/styles'
+import { withStyles } from '@material-ui/core/styles'
 import IconButton from '@material-ui/core/IconButton'
 import MenuIcon from '@material-ui/icons/Menu'
-
-const useStyles = makeStyles((theme) => ({
-    menuButton: {
-        marginRight: theme.spacing(2)
-    }
-}))
 
 const StyledMenu = withStyles({
     paper: {
@@ -34,8 +29,6 @@ const StyledMenu = withStyles({
 ))
 
 export default function SimpleMenu() {
-    const classes = useStyles()
-
     const [anchorEl, setAnchorEl] = useState(null)
 
     const handleClick = (event) => {
@@ -50,7 +43,6 @@ export default function SimpleMenu() {
         <div>
             <IconButton
                 edge="start"
-                className={classes.menuButton}
                 color="inherit"
                 aria-label="open drawer"
                 aria-controls="simple-menu"
@@ -61,7 +53,6 @@ export default function SimpleMenu() {
             </IconButton>
             <StyledMenu
                 id="simple-menu"
-                className={classes.menu}
                 anchorEl={anchorEl}
                 keepMounted
                 open={Boolean(anchorEl)}
