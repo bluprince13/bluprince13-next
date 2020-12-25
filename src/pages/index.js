@@ -35,7 +35,7 @@ export default () => (
             <a
                 target="_blank"
                 rel="noreferrer"
-                href="https://bluprince13.s3.eu-west-2.amazonaws.com/release.zip"
+                href="https://github.com/bluprince13/bluprince13-next"
             >
                 here
             </a>
