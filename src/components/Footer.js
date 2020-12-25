@@ -18,11 +18,11 @@ const useStyles = makeStyles(() => ({
         }
     },
     socialIcon: {
-        display: "inline-block",
-        marginRight: "10px",
-        textAlign: "center",
-        cursor: "pointer",
-        "&:hover": {
+        display: 'inline-block',
+        marginRight: '10px',
+        textAlign: 'center',
+        cursor: 'pointer',
+        '&:hover': {
             opacity: 0.75
         }
     }
@@ -75,8 +75,9 @@ const FooterLinks = ({ isLargeScreen }) => (
             flexGrow: 1
         }}
     >
-        <FooterLink to="/feed.xml">RSS feed</FooterLink>
-        <FooterLink to="/feed.json">JSON feed</FooterLink>
+        <FooterLink to="https://github.com/bluprince13/bluprince13-next">
+            Source code
+        </FooterLink>
         <FooterLink to="/privacypolicy">Privacy policy</FooterLink>
     </Box>
 )
