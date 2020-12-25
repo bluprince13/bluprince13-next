@@ -47,7 +47,7 @@ const Line = ({
     </>
 )
 
-export default ({ pointsInTime = [], lineInTime = {} }) => {
+const Arrow = ({ pointsInTime = [], lineInTime = {} }) => {
     const [ref, dms] = useChartDimensions(chartSettings)
 
     const xScale = useMemo(
@@ -122,3 +122,5 @@ export default ({ pointsInTime = [], lineInTime = {} }) => {
         </div>
     )
 }
+
+export default Arrow

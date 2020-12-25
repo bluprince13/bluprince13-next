@@ -16,14 +16,17 @@ const Caption = ({ caption, href, reference, referenceHref }) => (
     </figcaption>
 )
 
-export default ({ src, alt, caption, href, reference, referenceHref, maxWidth="500px" }) => (
+const Figure = ({
+    src,
+    alt,
+    caption,
+    href,
+    reference,
+    referenceHref,
+    maxWidth = '500px'
+}) => (
     <figure>
-        <img
-            src={src}
-            alt={alt ?? caption}
-            width="100%"
-            style={{ maxWidth }}
-        />
+        <img src={src} alt={alt ?? caption} width="100%" style={{ maxWidth }} />
         {caption ? (
             <Caption
                 caption={caption}
@@ -36,3 +39,5 @@ export default ({ src, alt, caption, href, reference, referenceHref, maxWidth="5
         )}
     </figure>
 )
+
+export default Figure

@@ -2,7 +2,7 @@ import Comments from '@Components/Comments'
 import AppsList from '@Components/appsPage/AppsList'
 import Title from '@Components/Title'
 
-export default () => (
+const Apps = () => (
     <div>
         <Title title="Apps" />
         <p>Apps that I made will be showcased here.</p>
@@ -10,3 +10,5 @@ export default () => (
         <Comments.Embed id="apps" />
     </div>
 )
+
+export default Apps

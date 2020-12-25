@@ -39,7 +39,7 @@ const useStyles = makeStyles(() => ({
     }
 }))
 
-export default ({ title, url }) => {
+const ShareBar = ({ title, url }) => {
     const classes = useStyles()
 
     return (
@@ -103,3 +103,5 @@ export default ({ title, url }) => {
         </div>
     )
 }
+
+export default ShareBar

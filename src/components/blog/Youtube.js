@@ -17,7 +17,7 @@ const useStyles = makeStyles(() => ({
     }
 }))
 
-export default ({ id }) => {
+const Youtube = ({ id }) => {
     const classes = useStyles()
     return (
         <div className={classes.youtubeWrapper}>
@@ -33,3 +33,5 @@ export default ({ id }) => {
         </div>
     )
 }
+
+export default Youtube

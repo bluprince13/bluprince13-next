@@ -13,7 +13,7 @@ const getTense = ({ tenseName }) => {
     return data.tenses.find((t) => t.name === tenseName)
 }
 
-export default () => {
+const Index = () => {
     const tenseNames = getTenseNames()
 
     return (
@@ -36,3 +36,5 @@ export default () => {
         </div>
     )
 }
+
+export default Index

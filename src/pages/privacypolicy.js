@@ -4,7 +4,7 @@ import Typography from '@material-ui/core/Typography'
 
 import Title from '@Components/Title'
 
-export default () => (
+const Privacypolicy = () => (
     <div>
         <Title title="Privacy Policy" />
         <br />
@@ -61,3 +61,5 @@ export default () => (
         </Typography>
     </div>
 )
+
+export default Privacypolicy

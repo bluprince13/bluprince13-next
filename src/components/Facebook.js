@@ -2,7 +2,7 @@ import { FacebookProvider, Like } from 'react-facebook'
 
 const FACEBOOK_APP_ID = 363651398085984
 
-export default ({ href }) => {
+const Facebook = ({ href }) => {
     return (
         <div style={{ paddingTop: '1rem' }}>
             <FacebookProvider appId={FACEBOOK_APP_ID}>
@@ -11,3 +11,5 @@ export default ({ href }) => {
         </div>
     )
 }
+
+export default Facebook
