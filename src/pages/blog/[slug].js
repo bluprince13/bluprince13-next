@@ -15,9 +15,6 @@ import Youtube from '@Components/blog/Youtube'
 import ViewCounter from '@Components/blog/ViewCounter'
 
 const components = { Figure, Youtube }
-
-const SITE_ROOT = 'https://www.bluprince13.com'
-
 export default function Posts({ source, data }) {
     const content = hydrate(source, { components })
 
@@ -27,7 +24,10 @@ export default function Posts({ source, data }) {
                 <meta property="og:type" content="article" />
                 <meta property="og:title" content={data.title} />
                 <meta property="og:description" content={data.description} />
-                <meta property="og:image" content={SITE_ROOT + data.banner} />
+                <meta
+                    property="og:image"
+                    content={data.bannerFullUrl}
+                />
                 <meta property="og:site_name" content="bluprince13" />
             </Head>
             <img
@@ -41,7 +41,7 @@ export default function Posts({ source, data }) {
             <ViewCounter slug={data.slug} />
             <Comments.CommentCount id={data.slug} />
             {content}
-            <ShareBar title={data.title} />
+            <ShareBar title={data.title} url={data.href} />
             <Comments.Embed id={data.slug} />
         </div>
     )
@@ -73,9 +73,11 @@ export async function getStaticProps({ params }) {
                         content: {
                             type: 'element',
                             tagName: 'span',
-                            properties: {className: ['anchor', 'fas', 'fa-link']},
+                            properties: {
+                                className: ['anchor', 'fas', 'fa-link']
+                            },
                             children: []
-                          }
+                        }
                     }
                 ]
             ]

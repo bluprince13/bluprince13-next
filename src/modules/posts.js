@@ -3,7 +3,7 @@ import path from 'path'
 import matter from 'gray-matter'
 
 const postDirectory = path.join(process.cwd(), 'src/content/blog')
-const SITE_ROOT = 'https://www.bluprince13.com'
+const { SITE_ROOT } = process.env
 
 export const getFileContent = (slug) => {
     const fullPath = path.join(postDirectory, `${slug}.mdx`)
@@ -22,6 +22,7 @@ export const getPostDataAndContent = (slug) => {
         slug,
         ...data,
         date: formattedDate,
+        bannerFullUrl: `${SITE_ROOT}${data.banner}`,
         href: `${SITE_ROOT}/blog/${slug}`
     }
 

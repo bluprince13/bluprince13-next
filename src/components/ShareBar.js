@@ -41,9 +41,7 @@ const useStyles = makeStyles(() => ({
     }
 }))
 
-export default ({ title }) => {
-    // TODO: get the URL
-    const url = "TODO"
+export default ({ title, url }) => {
     const classes = useStyles()
 
     return (

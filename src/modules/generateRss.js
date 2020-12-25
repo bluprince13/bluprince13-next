@@ -1,7 +1,7 @@
 import fs from 'fs'
 import { Feed } from 'feed'
 
-const SITE_ROOT = 'https://www.bluprince13.com'
+const { SITE_ROOT } = process.env
 const AUTHOR = 'Vipin Ajayakumar'
 const EMAIL = 'vipinajayakumar@icloud.com'
 
