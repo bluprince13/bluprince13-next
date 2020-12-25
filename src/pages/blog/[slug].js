@@ -12,6 +12,7 @@ import Title from '@Components/common/Title'
 import ShareBar from '@Components/ShareBar'
 import Figure from '@Components/blog/Figure'
 import Youtube from '@Components/blog/Youtube'
+import ViewCounter from '@Components/blog/ViewCounter'
 
 const components = { Figure, Youtube }
 
@@ -37,6 +38,7 @@ export default function Posts({ source, data }) {
             />
             <Title title={data.title} />
             <div>{data.date}</div>
+            <ViewCounter slug={data.slug} />
             <Comments.CommentCount id={data.slug} />
             {content}
             <ShareBar title={data.title} />
