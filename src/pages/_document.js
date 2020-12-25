@@ -13,6 +13,10 @@ class MyDocument extends Document {
                         name="theme-color"
                         content={theme.palette.primary.main}
                     />
+                    <script
+                        src="https://kit.fontawesome.com/a4e8fa8339.js"
+                        crossOrigin="anonymous"
+                    />
                 </Head>
                 <body>
                     <Main />
