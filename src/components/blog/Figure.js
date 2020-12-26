@@ -16,6 +16,9 @@ const Caption = ({ caption, href, reference, referenceHref }) => (
     </figcaption>
 )
 
+// TODO: Use https://nextjs.org/docs/api-reference/next/image when it's able to
+// infer width and height automatically.
+// See https://github.com/vercel/next.js/issues/18497
 const Figure = ({
     src,
     alt,
