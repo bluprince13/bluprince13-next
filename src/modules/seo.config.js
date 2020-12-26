@@ -13,7 +13,7 @@ const SEO = {
     description,
     images: [
       {
-        url: 'https://www.bluprince13.com/photo.jpeg',
+        url: 'https://www.bluprince13.com/photo.jpg',
         alt: title
       }
     ]

@@ -33,7 +33,7 @@ const Index = () => (
             cycling.
         </Typography>
         <br />
-        <Figure src="/photo.jpeg" maxWidth="200px" alt="My photo" />
+        <Figure src="/photo.jpg" maxWidth="200px" alt="My photo" />
         <br />
         <Typography variant="body1">
             If you are interested in following my blog, you can subscribe to my
