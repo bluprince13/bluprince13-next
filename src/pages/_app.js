@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import Head from 'next/head'
+import { DefaultSeo } from 'next-seo';
 
 import { ThemeProvider } from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
@@ -10,6 +11,7 @@ import { StateProvider } from '@Modules/store'
 import { initGA, logPageView } from '@Modules/googleAnalytics'
 import SearchAppBar from '@Components/SearchAppBar/SearchAppBar'
 import Footer from '@Components/Footer'
+import SEO from '@Modules/seo.config';
 
 const Layout = ({ children }) => (
     <div
@@ -75,6 +77,7 @@ function MyApp({ Component, pageProps }) {
                     href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
                 />
             </Head>
+            <DefaultSeo {...SEO} />
             <ThemeProvider theme={theme}>
                 <CssBaseline />
                 <StateProvider>

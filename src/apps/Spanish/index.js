@@ -1,5 +1,3 @@
-import Title from '@Components/Title'
-
 import Table from './components/Table'
 import data from './data'
 
@@ -18,7 +16,6 @@ const Index = () => {
 
     return (
         <div>
-            <Title title="Spanish tenses interactive table" />
             {tenseNames.map((tenseName) => {
                 const tense = getTense({ tenseName })
                 const { pointsInTime, lineInTime } = tense

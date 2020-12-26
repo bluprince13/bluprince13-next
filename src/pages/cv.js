@@ -2,9 +2,11 @@ import Typography from '@material-ui/core/Typography'
 
 import Comments from '@Components/Comments'
 import Title from '@Components/Title'
+import StandardSeo from '@Components/StandardSeo'
 
 export default () => (
     <>
+        <StandardSeo pageTitle="CV" description="My CV" path="/cv" />
         <Title title="CV" />
         <br />
         <Typography variant="body1">

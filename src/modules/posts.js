@@ -15,7 +15,7 @@ export const getPostDataAndContent = (slug) => {
     const { data, content } = matter(fileContent)
     const options = { month: 'long', day: 'numeric', year: 'numeric' }
     const formattedDate = new Date(data.date).toLocaleDateString(
-        'en-IN',
+        'en-GB',
         options
     )
     const modifiedData = {

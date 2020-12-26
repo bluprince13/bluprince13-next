@@ -4,7 +4,7 @@ import Facebook from '@Components/Facebook'
 import Title from '@Components/Title'
 import Figure from '@Components/blog/Figure'
 
-export default () => (
+const Index = () => (
     <>
         <Title title="Hello human" />
         <br />
@@ -33,7 +33,7 @@ export default () => (
             cycling.
         </Typography>
         <br />
-        <Figure src="/photo.jpeg" maxWidth="200px" />
+        <Figure src="/photo.jpeg" maxWidth="200px" alt="My photo" />
         <br />
         <Typography variant="body1">
             If you are interested in following my blog, you can subscribe to my
@@ -53,3 +53,5 @@ export default () => (
         <Facebook href="https://www.facebook.com/bluprince13" />
     </>
 )
+
+export default Index

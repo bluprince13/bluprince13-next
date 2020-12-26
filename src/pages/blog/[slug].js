@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import renderToString from 'next-mdx-remote/render-to-string'
 import hydrate from 'next-mdx-remote/hydrate'
 
@@ -14,6 +13,7 @@ import ShareBar from '@Components/ShareBar'
 import Figure from '@Components/blog/Figure'
 import Youtube from '@Components/blog/Youtube'
 import ViewCounter from '@Components/blog/ViewCounter'
+import BlogSeo from '@Components/blog/BlogSeo'
 
 const components = { Figure, Youtube }
 export default function Posts({ source, data }) {
@@ -21,16 +21,13 @@ export default function Posts({ source, data }) {
 
     return (
         <div style={{ maxWidth: '960px', margin: 'auto' }}>
-            <Head>
-                <meta property="og:type" content="article" />
-                <meta property="og:title" content={data.title} />
-                <meta property="og:description" content={data.description} />
-                <meta
-                    property="og:image"
-                    content={data.bannerFullUrl}
-                />
-                <meta property="og:site_name" content="bluprince13" />
-            </Head>
+            <BlogSeo
+                pageTitle={data.title}
+                description={data.description}
+                date={data.date}
+                url={data.href}
+                bannerFullUrl={data.bannerFullUrl}
+            />
             <img
                 style={{ width: '100%' }}
                 id="banner"

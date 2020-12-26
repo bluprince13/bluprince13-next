@@ -2,11 +2,17 @@
 
 import Typography from '@material-ui/core/Typography'
 
+import StandardSeo from '@Components/StandardSeo'
 import Title from '@Components/Title'
 
 const Privacypolicy = () => (
     <div>
-        <Title title="Privacy Policy" />
+        <StandardSeo
+            pageTitle="Privacy policy"
+            description="My privacy policy."
+            path="/privacypolicy"
+        />
+        <Title title="Privacy policy" />
         <br />
         <Typography variant="body1">
             Your privacy is important to us. It is bluprince13's policy to
