@@ -14,8 +14,13 @@ class MyDocument extends Document {
                         content={theme.palette.primary.main}
                     />
                     <script
+                        defer
                         src="https://kit.fontawesome.com/a4e8fa8339.js"
                         crossOrigin="anonymous"
+                    />
+                    <link
+                        rel="stylesheet"
+                        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
                     />
                 </Head>
                 <body>

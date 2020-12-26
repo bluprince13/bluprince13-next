@@ -72,10 +72,6 @@ function MyApp({ Component, pageProps }) {
                     title="bluprince13 JSON feed"
                     href="https://www.bluprince13.com/feed.json"
                 />
-                <link
-                    rel="stylesheet"
-                    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-                />
             </Head>
             <DefaultSeo {...SEO} />
             <ThemeProvider theme={theme}>
