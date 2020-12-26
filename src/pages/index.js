@@ -1,6 +1,5 @@
 import Typography from '@material-ui/core/Typography'
 
-import Facebook from '@Components/Facebook'
 import Title from '@Components/Title'
 import Figure from '@Components/blog/Figure'
 
@@ -49,8 +48,6 @@ const Index = () => (
             , but I do not plan to write there anymore.
             <br />
         </Typography>
-        <br />
-        <Facebook href="https://www.facebook.com/bluprince13" />
     </>
 )
 
