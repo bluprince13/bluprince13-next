@@ -4,6 +4,7 @@ import { ServerStyleSheets } from '@material-ui/core/styles'
 
 import theme from '@Modules/theme'
 
+// TODO: Add font optimization. https://github.com/vercel/next.js/pull/14746
 class MyDocument extends Document {
     render() {
         return (
