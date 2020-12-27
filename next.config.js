@@ -26,6 +26,14 @@ module.exports = {
             {
                 source: '/apps/renting-vs-buying/:path*',
                 destination: `https://renting-vs-buying.vercel.app/:path*`
+            },
+            {
+                source: '/slides',
+                destination: `https://bluprince13-slides.vercel.app/`
+            },
+            {
+                source: '/slides/:path*',
+                destination: `https://bluprince13-slides.vercel.app/:path*`
             }
         ]
     }
