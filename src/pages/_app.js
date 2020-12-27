@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import Head from 'next/head'
-import { DefaultSeo } from 'next-seo';
+import { DefaultSeo } from 'next-seo'
 
 import { ThemeProvider } from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
@@ -11,7 +11,7 @@ import { StateProvider } from '@Modules/store'
 import { initGA, logPageView } from '@Modules/googleAnalytics'
 import SearchAppBar from '@Components/SearchAppBar/SearchAppBar'
 import Footer from '@Components/Footer'
-import SEO from '@Modules/seo.config';
+import SEO from '@Modules/seo.config'
 
 const Layout = ({ children }) => (
     <div
@@ -58,19 +58,19 @@ function MyApp({ Component, pageProps }) {
                     rel="alternate"
                     type="application/rss+xml"
                     title="bluprince13 RSS feed"
-                    href="https://www.bluprince13.com/feed.xml"
+                    href="https://bluprince13.com/feed.xml"
                 />
                 <link
                     rel="alternate"
                     type="application/rss+xml"
                     title="bluprince13 Atom feed"
-                    href="https://www.bluprince13.com/atom.xml"
+                    href="https://bluprince13.com/atom.xml"
                 />
                 <link
                     rel="alternate"
                     type="application/json"
                     title="bluprince13 JSON feed"
-                    href="https://www.bluprince13.com/feed.json"
+                    href="https://bluprince13.com/feed.json"
                 />
             </Head>
             <DefaultSeo {...SEO} />
