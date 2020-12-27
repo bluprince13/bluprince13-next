@@ -18,6 +18,14 @@ module.exports = {
                 source: '/cv/source',
                 destination:
                     'https://bluprince13.gitlab.io/cv/ajayakumar_vipin_cv.tar.gz'
+            },
+            {
+                source: '/apps/renting-vs-buying',
+                destination: `https://renting-vs-buying.vercel.app/`
+            },
+            {
+                source: '/apps/renting-vs-buying/:path*',
+                destination: `https://renting-vs-buying.vercel.app/:path*`
             }
         ]
     }

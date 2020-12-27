@@ -2,7 +2,7 @@ export default [
     {
         id: 1,
         title: 'Renting vs. buying a house',
-        href: 'https://www.bluprince13.com/apps/renting-vs-buying/',
+        href: '/apps/renting-vs-buying',
         image: '/apps/renting-vs-buying.png',
         blurb:
             'I had a major argument with one of my friends. He believed that it was stupid of me not to buy a house and waste my money renting. I build renting vs. buying a house to both put that hypothesis to test and to learn more about React. It was my first significant web app and took several weekends of effort, on and off.'
