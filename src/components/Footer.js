@@ -30,6 +30,7 @@ const useStyles = makeStyles(() => ({
 
 const AUTHOR = 'Vipin Ajayakumar'
 
+// TODO: Make relative links work without page refresh
 const FooterLink = ({ children, to }) => {
     const classes = useStyles()
     return (
@@ -75,6 +76,7 @@ const FooterLinks = ({ isLargeScreen }) => (
             flexGrow: 1
         }}
     >
+        <FooterLink to="/values">Values</FooterLink>
         <FooterLink to="https://github.com/bluprince13/bluprince13-next">
             Source code
         </FooterLink>
