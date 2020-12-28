@@ -1,5 +1,3 @@
-import { SocialIcon } from 'react-social-icons'
-
 import { makeStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 import AppBar from '@material-ui/core/AppBar'
@@ -8,6 +6,7 @@ import Toolbar from '@material-ui/core/Toolbar'
 import Divider from '@material-ui/core/Divider'
 import Box from '@material-ui/core/Box'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
+import Icon from '@Components/Icon'
 
 const useStyles = makeStyles(() => ({
     link: {
@@ -15,15 +14,6 @@ const useStyles = makeStyles(() => ({
         color: 'inherit',
         '&:focus, &:hover, &:visited, &:link, &:active': {
             textDecoration: 'none'
-        }
-    },
-    socialIcon: {
-        display: 'inline-block',
-        marginRight: '10px',
-        textAlign: 'center',
-        cursor: 'pointer',
-        '&:hover': {
-            opacity: 0.75
         }
     }
 }))
@@ -46,24 +36,20 @@ const FooterLink = ({ children, to }) => {
     )
 }
 
-const Icon = ({ url, network }) => {
-    const classes = useStyles()
-    return (
-        <SocialIcon
-            className={classes.socialIcon}
-            url={url}
-            network={network}
-            style={{ height: 30, width: 30 }}
-        />
-    )
-}
-
 const IconBar = () => (
     <Box style={{ display: 'flex', justifyContent: 'center', flexGrow: 1 }}>
         <Icon url="http://linkedin.com/in/vipinajayakumar" />
         <Icon url="https://twitter.com/vipinajayakumar" />
         <Icon url="https://github.com/bluprince13" />
         <Icon url="https://www.youtube.com/channel/UCyDgfMZyUxO6Ave0KxtxcCw" />
+        <Icon
+            url="https://letterboxd.com/vipinajayakumar/"
+            network="letterboxd"
+        />
+        <Icon
+            url="https://www.goodreads.com/user/show/18863116-vipin-ajayakumar"
+            network="goodreads"
+        />
         <Icon url="/feed.xml" network="rss" />
     </Box>
 )
