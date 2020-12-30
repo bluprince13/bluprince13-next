@@ -26,7 +26,7 @@ const Figure = ({
     href,
     reference,
     referenceHref,
-    maxWidth = '500px'
+    maxWidth = '350px'
 }) => (
     <figure>
         <img src={src} alt={alt ?? caption} width="100%" style={{ maxWidth }} />
