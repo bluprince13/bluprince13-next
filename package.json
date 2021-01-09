@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "NODE_OPTIONS='--inspect' next dev",
+    "dev": "NODE_OPTIONS='--inspect' next-remote-watch src/content/blog",
     "build": "next build",
     "start": "next start"
   },
@@ -46,6 +46,7 @@
     "eslint-plugin-jsx-a11y": "6.4.1",
     "eslint-plugin-react": "7.21.5",
     "eslint-plugin-react-hooks": "4.2.0",
+    "next-remote-watch": "^0.3.0",
     "prettier": "2.2.1"
   }
 }
