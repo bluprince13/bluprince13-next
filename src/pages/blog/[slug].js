@@ -3,6 +3,8 @@ import hydrate from 'next-mdx-remote/hydrate'
 
 import toc from 'remark-toc'
 import emoji from 'remark-emoji'
+import codesandbox from 'remark-codesandbox'
+import prism from 'remark-prism'
 import slug from 'rehype-slug'
 import link from 'rehype-autolink-headings'
 
@@ -14,6 +16,8 @@ import Figure from '@Components/blog/Figure'
 import Youtube from '@Components/blog/Youtube'
 import ViewCounter from '@Components/blog/ViewCounter'
 import BlogSeo from '@Components/blog/BlogSeo'
+
+import "prism-theme-night-owl";
 
 const components = { Figure, Youtube }
 export default function Posts({ source, data }) {
@@ -59,7 +63,9 @@ export async function getStaticProps({ params }) {
         mdxOptions: {
             remarkPlugins: [
                 [toc, { tight: true }],
-                [emoji, { emoticon: true }]
+                [emoji, { emoticon: true }],
+                [codesandbox, { mode: 'button' }],
+                [prism]
             ],
             rehypePlugins: [
                 slug,
