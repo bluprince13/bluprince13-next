@@ -202,10 +202,19 @@ that I even have [my own list of values](https://bluprince13.com/values).
 
 ### Coding interview
 
-<Figure
- src="/blog/how-i-switched-careers-from-aerospace-engineering-to-web-development/assets/fizzbuzz.png"
- caption="If only it were this easy. Fizzbuzz solution."
-/>
+```python
+for fizzbuzz in range(51):
+    if fizzbuzz % 3 == 0 and fizzbuzz % 5 == 0:
+        print("fizzbuzz")
+        continue
+    elif fizzbuzz % 3 == 0:
+        print("fizz")
+        continue
+    elif fizzbuzz % 5 == 0:
+        print("buzz")
+        continue
+    print(fizzbuzz)
+```
 
 I have mixed feelings regarding the coding interview. On the one hand, problems
 I face day-to-day as a software developer have little relation with typical
