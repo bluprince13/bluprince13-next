@@ -23,12 +23,12 @@ const rewritesConfig = [
         destination: `https://renting-vs-buying.vercel.app/:path*`
     },
     {
-        source: '/slides',
-        destination: `https://bluprince13-slides.vercel.app/`
+        source: '/slides/:path*',
+        destination: `https://bluprince13-slides.vercel.app/slides/:path*`
     },
     {
-        source: '/slides/:path*',
-        destination: `https://bluprince13-slides.vercel.app/:path*`
+        source: '/reveal.js/:path*',
+        destination: `https://bluprince13-slides.vercel.app/slides/reveal.js/:path*`
     }
 ]
 
