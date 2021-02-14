@@ -2,16 +2,25 @@ import Typography from '@material-ui/core/Typography'
 
 import Title from '@Components/Title'
 import Figure from '@Components/blog/Figure'
+import Subscribe from '@Components/Subscribe'
 
 const Index = () => (
-    <>
+    <div style={{ maxWidth: '960px', margin: 'auto' }}>
         <Title title="Hello human" />
         <br />
         <Typography variant="body1">
             Welcome to my little slice of heaven. I use this space to showcase
             any apps I develop and to publish articles. Everything I publish
             here is, obviously, my personal stuff and opinions and has nothing
-            to do with whom I work for.
+            to do with whom I work for. My previous blog is at{' '}
+            <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://vipinajayakumar.com"
+            >
+                vipinajayakumar.com
+            </a>
+            , but I do not plan to write there anymore.
         </Typography>
         <br />
         <Typography variant="body1">
@@ -34,21 +43,8 @@ const Index = () => (
         <br />
         <Figure src="/photo.jpg" maxWidth="200px" alt="My photo" />
         <br />
-        <Typography variant="body1">
-            If you are interested in following my blog, you can subscribe to my
-            RSS feed or follow me on my social media accounts - links are in the
-            footer. My previous blog is at{' '}
-            <a
-                target="_blank"
-                rel="noreferrer"
-                href="https://vipinajayakumar.com"
-            >
-                vipinajayakumar.com
-            </a>
-            , but I do not plan to write there anymore.
-            <br />
-        </Typography>
-    </>
+        <Subscribe />
+    </div>
 )
 
 export default Index

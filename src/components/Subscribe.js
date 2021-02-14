@@ -92,7 +92,7 @@ function Subscribe() {
                 </div>
                 <div style={{ marginTop: '1rem' }}>
                     Prefer RSS? Subscribe to my{' '}
-                    <a href="https://bluprince13.com/feed.xml">RSS feed</a>
+                    <a href="https://bluprince13.com/feed.xml">RSS feed</a>.
                 </div>
             </form>
         </Box>
