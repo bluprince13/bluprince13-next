@@ -22,10 +22,11 @@ const useStyles = makeStyles(() => ({
     }
 }))
 
+// TODO: Add loading indicator to button
 function Subscribe() {
     const classes = useStyles()
 
-    const { data } = useSWR('/api/subscribers', fetcher)
+    const { data } = useSWR('/api/buttondown/subscribers', fetcher)
     const subscriberCount = format(data?.count)
 
     const inputEl = useRef(null)
@@ -34,7 +35,7 @@ function Subscribe() {
     const subscribe = async (e) => {
         e.preventDefault()
 
-        const res = await fetch('/api/subscribe', {
+        const res = await fetch('/api/buttondown/subscribe', {
             body: JSON.stringify({
                 email: inputEl.current.value
             }),
