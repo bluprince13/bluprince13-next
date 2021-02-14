@@ -16,8 +16,9 @@ import Figure from '@Components/blog/Figure'
 import Youtube from '@Components/blog/Youtube'
 import ViewCounter from '@Components/blog/ViewCounter'
 import BlogSeo from '@Components/blog/BlogSeo'
+import Subscribe from '@Components/Subscribe'
 
-import "prism-theme-night-owl";
+import 'prism-theme-night-owl'
 
 const components = { Figure, Youtube }
 export default function Posts({ source, data }) {
@@ -44,6 +45,7 @@ export default function Posts({ source, data }) {
             <Comments.CommentCount id={data.slug} />
             {content}
             <ShareBar title={data.title} url={data.href} />
+            <Subscribe />
             <Comments.Embed id={data.slug} />
         </div>
     )
@@ -57,7 +59,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-    const { data, content } = await getPostDataAndContent(params.slug)
+    const { data, content } = getPostDataAndContent(params.slug)
     const mdxSource = await renderToString(content, {
         components,
         mdxOptions: {
