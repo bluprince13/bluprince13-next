@@ -16,6 +16,18 @@ const Caption = ({ caption, href, reference, referenceHref }) => (
     </figcaption>
 )
 
+const getMaxWidth = (size) => {
+    switch (size) {
+        case 's':
+            return '200px'
+        case 'l':
+            return ''
+        case 'm':
+        default:
+            return '350px'
+    }
+}
+
 // TODO: Use https://nextjs.org/docs/api-reference/next/image when it's able to
 // infer width and height automatically.
 // See https://github.com/vercel/next.js/issues/18497
@@ -26,21 +38,31 @@ const Figure = ({
     href,
     reference,
     referenceHref,
-    maxWidth = '350px'
-}) => (
-    <figure>
-        <img src={src} alt={alt ?? caption} width="100%" style={{ maxWidth }} />
-        {caption ? (
-            <Caption
-                caption={caption}
-                href={href}
-                reference={reference}
-                referenceHref={referenceHref}
+    maxWidth,
+    size = 'm'
+}) => {
+    const maxWidthToUse = maxWidth || getMaxWidth(size)
+
+    return (
+        <figure>
+            <img
+                src={src}
+                alt={alt ?? caption}
+                width="100%"
+                style={{ maxWidth: maxWidthToUse }}
             />
-        ) : (
-            ''
-        )}
-    </figure>
-)
+            {caption ? (
+                <Caption
+                    caption={caption}
+                    href={href}
+                    reference={reference}
+                    referenceHref={referenceHref}
+                />
+            ) : (
+                ''
+            )}
+        </figure>
+    )
+}
 
 export default Figure
