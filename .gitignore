@@ -39,3 +39,4 @@ yarn-error.log*
 **/feed.json
 **/atom.xml
 !.vscode/launch.json
+.idea
