@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Figure renders correctly 1`] = `
+<img
+  alt="alt"
+  src="https://src.com"
+  style="max-width: 350px;"
+  width="100%"
+/>
+`;
