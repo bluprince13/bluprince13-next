@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "NODE_OPTIONS='--inspect' next-remote-watch src/content/blog",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "test": "jest",
+    "watch": "yarn test --watch"
   },
   "dependencies": {
     "@juggle/resize-observer": "3.2.0",
@@ -42,6 +44,9 @@
     "typeface-roboto": "1.1.13"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.0.0",
+    "babel-jest": "^27.0.6",
     "eslint": "7.14.0",
     "eslint-config-airbnb": "18.2.1",
     "eslint-config-prettier": "6.15.0",
@@ -50,7 +55,9 @@
     "eslint-plugin-jsx-a11y": "6.4.1",
     "eslint-plugin-react": "7.21.5",
     "eslint-plugin-react-hooks": "4.2.0",
+    "jest": "^27.0.6",
     "next-remote-watch": "^0.3.0",
-    "prettier": "2.2.1"
+    "prettier": "2.2.1",
+    "react-test-renderer": "^17.0.2"
   }
 }
