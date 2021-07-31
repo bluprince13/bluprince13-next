@@ -16,6 +16,7 @@ parserOptions:
   sourceType: module
 plugins:
   - react
+  - jest
 rules:
   react/jsx-filename-extension: [1, { "extensions": [".js", ".jsx"] }]
   react/react-in-jsx-scope: off
