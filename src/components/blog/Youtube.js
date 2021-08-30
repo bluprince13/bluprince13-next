@@ -1,4 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles'
+import { Typography } from '@material-ui/core'
 
 const useStyles = makeStyles(() => ({
     youtubeWrapper: {
@@ -17,19 +18,22 @@ const useStyles = makeStyles(() => ({
     }
 }))
 
-const Youtube = ({ id }) => {
+const Youtube = ({ id, caption }) => {
     const classes = useStyles()
     return (
-        <div className={classes.youtubeWrapper}>
-            <iframe
-                title={id}
-                width="560"
-                height="315"
-                src={`https://www.youtube.com/embed/${id}`}
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-            />
+        <div>
+            <div className={classes.youtubeWrapper}>
+                <iframe
+                    title={id}
+                    width="560"
+                    height="315"
+                    src={`https://www.youtube.com/embed/${id}`}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                />
+            </div>
+            {caption && <Typography variant="caption">{caption}</Typography>}
         </div>
     )
 }
