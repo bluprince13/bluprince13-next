@@ -1,0 +1,211 @@
+---
+title: Why and how to use RSS for consuming knowledge
+description:
+ An introduction to RSS and how to make use of it to keep up to date with your
+ favourite websites and blogs
+date: '2021-08-31'
+categories:
+ - learning
+banner: /blog/why-and-how-to-use-RSS-for-consuming-knowledge/assets/banner.svg
+bannerRef: https://pixabay.com/vectors/rss-news-feed-blog-web-icon-40674/
+---
+
+# Why and how to use RSS for consuming knowledge
+
+Consuming knowledge is the first step towards getting good at anything. Today,
+the primary way I consume knowledge is via the Internet. As a software
+developer, keeping up to date with developments in my industry is something I
+used to find particularly challenging. I used to rely on social media, but I
+became tired of the noise and advertisements. Today, I use a technology called
+RSS which allows me to subscribe to new content from blogs and other websites. I
+love it! In this article, I introduce you to RSS and how to make the best use of
+it. Hopefully, this article will help you decide whether it's worth a shot.
+
+<!--more-->
+
+## Introduction
+
+Learning or consuming knowledge is one of our primary functions. It is a
+lifelong process that is a joy in itself and helps us thrive and find happiness
+in this rapidly changing world. We read, we watch, and we listen. We consume
+knowledge from a myriad of sources. Traditionally, these included books, radio,
+TV, conversations, lectures, presentations, conferences, educational courses
+etc. However, thanks to the Internet, we also have blogs, podcasts, tweets,
+online courses, online communities etc., thrown into the mix.
+
+<Youtube
+ id="yUcd_gXByoQ"
+ caption="I was inspired by this talk by Kent Dodds where he describes the Consume -> Build -> Teach  for maximizing your productivity and learning rate."
+/>
+
+## The problem: How to follow websites and blogs that I find interesting
+
+I wanted to keep up to date with developments in my field, particularly by
+following blogs and websites that I like. Visiting them manually is a pain. I
+tried subscribing to some of them via email. However, I found that very
+inefficient for the following reasons:
+
+1. Not all websites have email newsletters.
+1. I prefer using my email for essential and one-off things, especially since I
+   follow the [Inbox Zero](https://www.youtube.com/watch?v=9ql1CQfxWxQ)
+   philosophy.
+1. I like to do all my content consumption in one go, typically just one or two
+   times a week. I don't want to be notified of every single update
+   instantaneously.
+
+Over the years, I also learned not to rely on social media for knowledge
+consumption. Sure, I can stay on top of things with Twitter or Facebook, but I
+get so little control over what I see. With social media, all I see is the stuff
+other people share because they find it interesting, aka echo chambers/filter
+bubbles. There's a lot of noise there, not to mention advertisements. I'm sick
+of it. For the most part, I've dialled down on social media by deleting their
+apps from my phone this year.
+
+## Enter [RSS](https://www.wikiwand.com/en/RSS)
+
+[RSS](https://www.wikiwand.com/en/RSS) stands for Really Simple Syndication. It
+allows users and applications to access updates to websites in a standardized,
+computer-readable format. The idea is that websites provide an RSS feed, a
+simple text file, that contains the title, description, and link for each post.
+An RSS reader application then allows you to subscribe to RSS feeds belonging to
+different websites and thus keep track of multiple websites in a single place.
+Isn't that neat?
+
+With an RSS feed, I can see everything a website publishes. I can then decide
+for myself what is interesting and what isn't. I'm entirely in control over what
+takes up my time/attention.
+
+RSS originated in the 90s and enjoyed peak popularity in 2006 or so before
+fading into relative obscurity. In 2013, Google discontinued
+[Google Reader](https://www.wikiwand.com/en/Google_Reader), a popular RSS reader
+at that time, citing declining usage. Arguably, they wanted to kill RSS because
+it wasn't compatible with an advertising business model that depends on
+pageviews. Fun fact: [Podcasts](https://www.wikiwand.com/en/Podcast) are still
+distributed using RSS.
+
+Curious about what an RSS feed looks like? It uses the
+[XML](https://www.wikiwand.com/en/XML) format. However, there are also newer
+formats such as [Atom](<https://www.wikiwand.com/en/Atom_(Web_standard)>), and
+[JSON feed](https://www.jsonfeed.org/). My website's feeds are listed below. For
+the coders amongst you, these are generated using
+[this script](https://github.com/bluprince13/bluprince13-next/blob/main/src/modules/generateRss.js).
+
+- [feed.xml](https://bluprince13.com/feed.xml)
+- [atom.xml](https://bluprince13.com/atom.xml)
+- [feed.json](https://bluprince13.com/feed.json)
+
+Not all websites have RSS feeds setup. However, fortunately you can convert
+email newsletters to an RSS feed using something like
+[Kill the newsletter](https://kill-the-newsletter.com/).
+
+## My RSS setup
+
+### Subscription manager - [Inoreader](https://www.inoreader.com/) - Free
+
+[Inoreader](https://www.inoreader.com/) is a free RSS subscription manager that
+works well enough. The handy browser extension lets you quickly detect and
+subscribe to the feeds of the websites you visit. There are
+[Inoreader apps](https://www.inoreader.com/apps) you could use to read your
+feeds as well. Another popular alternative is [Feedly](https://feedly.com/).
+
+<Figure
+ src="/blog/why-and-how-to-use-rss-for-consuming-knowledge/assets/inoreader-browser-extension.png"
+ caption="Inoreader browser extension"
+ size="l"
+/>
+
+### Mac - [Reeder](https://reederapp.com/) - $9.99
+
+[Reeder](https://reederapp.com/) is the most popular RSS reader app for Macs. I
+tend not to use it too much because I usually read my feeds on my tablet or
+phone. Reeder is recommended by
+[The Sweet Setup](https://thesweetsetup.com/apps/best-rss-reader-os-x/).
+
+<Figure
+ src="/blog/why-and-how-to-use-rss-for-consuming-knowledge/assets/reeder.png"
+ caption="Reeder"
+ size="l"
+/>
+
+### iPhone/iPad - [Unread](https://www.goldenhillsoftware.com/unread/) - $19.99/year
+
+I am not fond of the subscription model for
+[Unread](https://www.goldenhillsoftware.com/unread/) to be honest. However, I
+can't help but love the UI. The widget is an excellent way of keeping track of
+unread articles. The unread articles count motivates me to get my reading done
+regularly. Typically, I do all of my reading during weekends. It's also easy to
+unsubscribe from a feed from within the app. I'm pretty quick to unsubscribe
+from feeds that feel spammy - without this, my unread count would get out of
+control. Unread is also recommended by
+[The Sweet Setup](https://thesweetsetup.com/apps/best-rss-app-ipad/).
+
+<Figure
+ src="/blog/why-and-how-to-use-rss-for-consuming-knowledge/assets/unread.jpeg"
+ caption="Unread"
+ size="l"
+/>
+
+## Recommendations for RSS feeds
+
+Feel like giving RSS a try? Here are some recommendations for feeds to subscribe
+to. I currently have 37 subscriptions, but what I've listed below are just some
+of my favourites.
+
+If you have any recommendations for RSS feeds to follow, please let me know in
+the comments below.
+
+### Software development
+
+- [Zero to mastery blog](https://zerotomastery.io/blog/)
+
+  Monthly newsletters on `Web development`, `Python` and `Machine learning`. See
+  [Web Developer Monthly 💻🚀 July 2021 edition](https://zerotomastery.io/blog/web-developer-monthly-july-2021)
+  for example.
+
+- [React status](https://javascriptweekly.com/) or other weekly newsletters by
+  [Cooperpress](https://cooperpress.com/publications/)
+
+- [Kent Dodds blog](https://kentcdodds.com/blog/)
+
+  This guy is a God in the front-end development industry and one of my heroes.
+
+- [AWS This Week](https://acloud.guru/series/aws-this-week)
+
+  Keep up to date with developments in AWS.
+
+### Finance
+
+- [Financial Samurai](https://www.financialsamurai.com/)
+
+  Advice about investing, real estate, retirement planning etc., aimed at early
+  retirement. See
+  [Ranking The Best Passive Income Investments](https://www.financialsamurai.com/ranking-the-best-passive-income-investments/)
+  for example.
+
+### Other
+
+- [The Sweet Setup ](https://thesweetsetup.com/blog/)
+
+  This is where I get most of my Mac / iPhone / iPad app recommendations.
+
+## Conclusion
+
+In general, websites that curate interesting news, e.g.,
+[zerotomastery blog](https://zerotomastery.io/blog/), are better value for time
+than individually subscribing to multiple different websites. Subscribe to
+websites as and when you feel like it, but remember to unsubscribe immediately
+if you find any of them spammy or not as interesting as you thought it would be.
+Your time is precious. I tend to avoid websites with daily updates for this
+reason. It's just noise.
+
+Don't put all your eggs in one basket. Subscribe to multiple websites and people
+with different points of view so that you're better informed. However, you don't
+need to read everything you get in full detail. You should expect only to read
+the headings and summaries or have a skim through for 80% of the feeds. The aim
+is to have a general awareness of what's happening, not be an expert in all of
+it.
+
+RSS isn't overly popular yet because people generally find it easier to use
+social media. However, as more and more people suffer social media burnout, I
+think they will turn to RSS or something similar that puts them back in the
+driver's seat.
