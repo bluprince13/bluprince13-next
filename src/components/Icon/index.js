@@ -1,5 +1,5 @@
 import { SocialIcon } from 'react-social-icons'
-import { makeStyles } from '@material-ui/core/styles'
+import makeStyles from '@mui/styles/makeStyles';
 
 import GoodReadsIcon from './goodreads.svg'
 import LetterboxdIcon from './letterboxd.svg'

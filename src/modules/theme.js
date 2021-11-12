@@ -1,13 +1,13 @@
-import { createMuiTheme } from '@material-ui/core/styles'
+import { createTheme, adaptV4Theme } from '@mui/material/styles';
 
-const theme = createMuiTheme({
+const theme = createTheme(adaptV4Theme({
     palette: {},
     apps: {
         spanish: {
             columnWidth: '25%'
         }
     }
-})
+}))
 
 theme.typography.h1.fontSize = '4rem'
 

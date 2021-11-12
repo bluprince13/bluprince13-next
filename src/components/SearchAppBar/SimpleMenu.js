@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import Link from 'next/link'
 
-import Menu from '@material-ui/core/Menu'
-import MenuItem from '@material-ui/core/MenuItem'
-import { withStyles } from '@material-ui/core/styles'
-import IconButton from '@material-ui/core/IconButton'
-import MenuIcon from '@material-ui/icons/Menu'
+import Menu from '@mui/material/Menu'
+import MenuItem from '@mui/material/MenuItem'
+import withStyles from '@mui/styles/withStyles';
+import IconButton from '@mui/material/IconButton'
+import MenuIcon from '@mui/icons-material/Menu'
 
 const StyledMenu = withStyles({
     paper: {
@@ -48,7 +48,7 @@ export default function SimpleMenu() {
                 aria-controls="simple-menu"
                 aria-haspopup="true"
                 onClick={handleClick}
-            >
+                size="large">
                 <MenuIcon />
             </IconButton>
             <StyledMenu
@@ -80,5 +80,5 @@ export default function SimpleMenu() {
                 </div>
             </StyledMenu>
         </div>
-    )
+    );
 }

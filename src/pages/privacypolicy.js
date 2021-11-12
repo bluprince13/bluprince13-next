@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 
-import Typography from '@material-ui/core/Typography'
+import Typography from '@mui/material/Typography'
 
 import StandardSeo from '@Components/StandardSeo'
 import Title from '@Components/Title'

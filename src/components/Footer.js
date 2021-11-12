@@ -1,11 +1,11 @@
-import { makeStyles } from '@material-ui/core/styles'
-import Typography from '@material-ui/core/Typography'
-import AppBar from '@material-ui/core/AppBar'
-import Container from '@material-ui/core/Container'
-import Toolbar from '@material-ui/core/Toolbar'
-import Divider from '@material-ui/core/Divider'
-import Box from '@material-ui/core/Box'
-import useMediaQuery from '@material-ui/core/useMediaQuery'
+import makeStyles from '@mui/styles/makeStyles';
+import Typography from '@mui/material/Typography'
+import AppBar from '@mui/material/AppBar'
+import Container from '@mui/material/Container'
+import Toolbar from '@mui/material/Toolbar'
+import Divider from '@mui/material/Divider'
+import Box from '@mui/material/Box'
+import useMediaQuery from '@mui/material/useMediaQuery'
 import Icon from '@Components/Icon'
 
 const useStyles = makeStyles(() => ({

@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import Typography from '@material-ui/core/Typography'
+import Typography from '@mui/material/Typography'
 import Link from 'next/link'
 
 import Comments from '@Components/Comments'

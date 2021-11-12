@@ -1,4 +1,4 @@
-import Typography from '@material-ui/core/Typography'
+import Typography from '@mui/material/Typography'
 
 import Title from '@Components/Title'
 import Figure from '@Components/blog/Figure'

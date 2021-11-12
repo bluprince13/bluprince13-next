@@ -10,8 +10,8 @@ import {
     LinkedinIcon,
     RedditIcon
 } from 'react-share'
-import { makeStyles } from '@material-ui/core/styles'
-import Typography from '@material-ui/core/Typography'
+import makeStyles from '@mui/styles/makeStyles';
+import Typography from '@mui/material/Typography'
 import Emoji from 'a11y-react-emoji'
 
 const useStyles = makeStyles(() => ({

@@ -2,8 +2,8 @@ import { useEffect } from 'react'
 import Head from 'next/head'
 import { DefaultSeo } from 'next-seo'
 
-import { ThemeProvider } from '@material-ui/core/styles'
-import CssBaseline from '@material-ui/core/CssBaseline'
+import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline'
 import theme from '@Modules/theme'
 import '@Styles/globals.css'
 
@@ -46,34 +46,34 @@ function MyApp({ Component, pageProps }) {
         }
     }, [])
 
-    return (
-        <>
-            <Head>
-                <title>bluprince13</title>
-                <meta
-                    name="viewport"
-                    content="minimum-scale=1, initial-scale=1, width=device-width"
-                />
-                <link
-                    rel="alternate"
-                    type="application/rss+xml"
-                    title="bluprince13 RSS feed"
-                    href="https://bluprince13.com/feed.xml"
-                />
-                <link
-                    rel="alternate"
-                    type="application/rss+xml"
-                    title="bluprince13 Atom feed"
-                    href="https://bluprince13.com/atom.xml"
-                />
-                <link
-                    rel="alternate"
-                    type="application/json"
-                    title="bluprince13 JSON feed"
-                    href="https://bluprince13.com/feed.json"
-                />
-            </Head>
-            <DefaultSeo {...SEO} />
+    return <>
+        <Head>
+            <title>bluprince13</title>
+            <meta
+                name="viewport"
+                content="minimum-scale=1, initial-scale=1, width=device-width"
+            />
+            <link
+                rel="alternate"
+                type="application/rss+xml"
+                title="bluprince13 RSS feed"
+                href="https://bluprince13.com/feed.xml"
+            />
+            <link
+                rel="alternate"
+                type="application/rss+xml"
+                title="bluprince13 Atom feed"
+                href="https://bluprince13.com/atom.xml"
+            />
+            <link
+                rel="alternate"
+                type="application/json"
+                title="bluprince13 JSON feed"
+                href="https://bluprince13.com/feed.json"
+            />
+        </Head>
+        <DefaultSeo {...SEO} />
+        <StyledEngineProvider injectFirst>
             <ThemeProvider theme={theme}>
                 <CssBaseline />
                 <StateProvider>
@@ -86,8 +86,8 @@ function MyApp({ Component, pageProps }) {
                     </Layout>
                 </StateProvider>
             </ThemeProvider>
-        </>
-    )
+        </StyledEngineProvider>
+    </>;
 }
 
 export default MyApp

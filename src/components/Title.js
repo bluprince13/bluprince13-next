@@ -1,4 +1,4 @@
-import Typography from '@material-ui/core/Typography'
+import Typography from '@mui/material/Typography'
 
 const Title = ({ title }) => <Typography variant="h1">{title}</Typography>
 
