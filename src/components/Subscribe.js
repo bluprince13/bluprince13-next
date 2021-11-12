@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react'
 import useSWR from 'swr'
 import format from 'comma-number'
 
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from '@mui/styles/makeStyles'
 import Typography from '@mui/material/Typography'
 import Emoji from 'a11y-react-emoji'
 import TextField from '@mui/material/TextField'
@@ -10,7 +10,7 @@ import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import fetcher from '@Modules/fetcher'
 
-import { lightBlue as blue } from '@mui/material/colors';
+import { lightBlue as blue } from '@mui/material/colors'
 
 const useStyles = makeStyles(() => ({
     root: {
@@ -70,6 +70,7 @@ function Subscribe() {
                         <Box flexGrow={1}>
                             <TextField
                                 placeholder="hero@awesome.com"
+                                variant="standard"
                                 type="email"
                                 inputRef={inputEl}
                                 fullWidth
