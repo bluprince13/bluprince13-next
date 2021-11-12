@@ -1,5 +1,5 @@
-import renderToString from 'next-mdx-remote/render-to-string'
-import hydrate from 'next-mdx-remote/hydrate'
+import { serialize } from 'next-mdx-remote/serialize'
+import { MDXRemote } from 'next-mdx-remote'
 
 import toc from 'remark-toc'
 import emoji from 'remark-emoji'
@@ -22,8 +22,6 @@ import 'prism-theme-night-owl'
 
 const components = { Figure, Youtube }
 export default function Posts({ source, data }) {
-    const content = hydrate(source, { components })
-
     return (
         <div style={{ maxWidth: '960px', margin: 'auto' }}>
             <BlogSeo
@@ -43,7 +41,7 @@ export default function Posts({ source, data }) {
             <div>{data.date}</div>
             <ViewCounter slug={data.slug} />
             <Comments.CommentCount id={data.slug} />
-            {content}
+            <MDXRemote {...source} components={components} />
             <ShareBar title={data.title} url={data.href} />
             <Subscribe />
             <Comments.Embed id={data.slug} />
@@ -60,8 +58,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
     const { data, content } = getPostDataAndContent(params.slug)
-    const mdxSource = await renderToString(content, {
-        components,
+    const mdxSource = await serialize(content, {
         mdxOptions: {
             remarkPlugins: [
                 [toc, { tight: true }],
