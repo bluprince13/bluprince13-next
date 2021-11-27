@@ -1,4 +1,4 @@
-import Figure from '@Components/blog/Figure'
+import Figure from '@Components/Figure'
 import { cleanup, render, screen } from '@testing-library/react'
 
 describe('Figure', () => {

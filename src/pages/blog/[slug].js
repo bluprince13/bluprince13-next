@@ -12,15 +12,18 @@ import { getAllPostSlugs, getPostDataAndContent } from '@Modules/posts'
 import Comments from '@Components/Comments'
 import Title from '@Components/Title'
 import ShareBar from '@Components/ShareBar'
-import Figure from '@Components/blog/Figure'
-import Youtube from '@Components/blog/Youtube'
 import ViewCounter from '@Components/blog/ViewCounter'
 import BlogSeo from '@Components/blog/BlogSeo'
 import Subscribe from '@Components/Subscribe'
 
+import Figure from '@Components/Figure'
+import Youtube from '@Components/Youtube'
+import Timeline from '@Components/Timeline'
+import Table from '@Components/Table'
+
 import 'prism-theme-night-owl'
 
-const components = { Figure, Youtube }
+const components = { Figure, Youtube, Timeline, Table }
 export default function Posts({ source, data }) {
     return (
         <div style={{ maxWidth: '960px', margin: 'auto' }}>

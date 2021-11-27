@@ -1,7 +1,7 @@
 import Typography from '@mui/material/Typography'
 
 import Title from '@Components/Title'
-import Figure from '@Components/blog/Figure'
+import Figure from '@Components/Figure'
 import Subscribe from '@Components/Subscribe'
 
 const Index = () => (

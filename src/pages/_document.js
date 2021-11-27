@@ -1,6 +1,6 @@
 import { Children } from 'react'
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-import ServerStyleSheets from '@mui/styles/ServerStyleSheets';
+import ServerStyleSheets from '@mui/styles/ServerStyleSheets'
 
 import theme from '@Modules/theme'
 
@@ -23,6 +23,10 @@ class MyDocument extends Document {
                         rel="stylesheet"
                         href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
                     />
+                    <link
+                        href="https://fonts.googleapis.com/icon?family=Material+Icons"
+                        rel="stylesheet"
+                    ></link>
                 </Head>
                 <body>
                     <Main />
