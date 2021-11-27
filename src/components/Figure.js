@@ -44,7 +44,7 @@ const Figure = ({
     const maxWidthToUse = maxWidth || getMaxWidth(size)
 
     return (
-        <figure>
+        <figure style={{ marginLeft: 0, marginRight: 0 }}>
             <img
                 src={src}
                 alt={alt ?? caption}

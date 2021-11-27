@@ -1,10 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Figure renders correctly 1`] = `
-<img
-  alt="alt"
-  src="https://src.com"
-  style="max-width: 350px;"
-  width="100%"
-/>
+<DocumentFragment>
+  <figure
+    style="margin-left: 0px; margin-right: 0px;"
+  >
+    <img
+      alt="alt"
+      src="https://src.com"
+      style="max-width: 350px;"
+      width="100%"
+    />
+    <figcaption>
+      <a
+        href="https://href.com"
+      >
+        caption
+      </a>
+      <span>
+         
+        <a
+          href="https://reference-href.com"
+        >
+          [reference]
+        </a>
+      </span>
+    </figcaption>
+  </figure>
+</DocumentFragment>
 `;

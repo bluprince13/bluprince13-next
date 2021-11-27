@@ -21,7 +21,7 @@ describe('Figure', () => {
     }
 
     it('renders correctly', () => {
-        const { image } = setup()
+        const { asFragment, image } = setup()
 
         const caption = screen.getByText('caption')
         const reference = screen.getByText('[reference]')
@@ -29,9 +29,7 @@ describe('Figure', () => {
         expect(reference.href).toBe('https://reference-href.com/')
         expect(image.src).toBe('https://src.com/')
         expect(image).toHaveStyle('max-width: 350px')
-
-        // TODO: Remove snapshot and test image width directly
-        expect(image).toMatchSnapshot()
+        expect(asFragment()).toMatchSnapshot()
     })
 
     it('sets correct max-width for given size', () => {
