@@ -35,6 +35,7 @@ const rewritesConfig = [
 module.exports = withPlugins(
     [
         [
+            // TODO: Reduce width of MDX based pages
             withMDX,
             {
                 pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx']
