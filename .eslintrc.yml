@@ -2,7 +2,7 @@ env:
   browser: true
   es6: true
   jest/globals: true
-parser: "@typescript-eslint/parser",
+parser: "@typescript-eslint/parser"
 extends:
   - airbnb
   - prettier
