@@ -31,6 +31,17 @@ const getMaxWidth = (size) => {
 // TODO: Use https://nextjs.org/docs/api-reference/next/image when it's able to
 // infer width and height automatically.
 // See https://github.com/vercel/next.js/issues/18497
+type FigureProps = {
+    src: string
+    alt?: string
+    caption?: string
+    href?: string
+    reference?: string
+    referenceHref?: string
+    maxWidth?: string
+    size?: 's' | 'm' | 'l'
+}
+
 const Figure = ({
     src,
     alt,
@@ -40,7 +51,7 @@ const Figure = ({
     referenceHref,
     maxWidth,
     size = 'm'
-}) => {
+}: FigureProps) => {
     const maxWidthToUse = maxWidth || getMaxWidth(size)
 
     return (
