@@ -40,3 +40,4 @@ yarn-error.log*
 **/atom.xml
 !.vscode/launch.json
 .idea
+next-env.d.ts

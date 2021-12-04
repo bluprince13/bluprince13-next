@@ -2,10 +2,12 @@ env:
   browser: true
   es6: true
   jest/globals: true
+parser: "@typescript-eslint/parser",
 extends:
   - airbnb
   - prettier
   - prettier/react
+  - plugin:@typescript-eslint/recommended
 globals:
   Atomics: readonly
   SharedArrayBuffer: readonly
@@ -17,6 +19,7 @@ parserOptions:
 plugins:
   - react
   - jest
+  - @typescript-eslint
 rules:
   react/jsx-filename-extension: [1, { "extensions": [".js", ".jsx"] }]
   react/react-in-jsx-scope: off
