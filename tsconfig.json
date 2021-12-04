@@ -1,13 +1,14 @@
 // https://code.visualstudio.com/docs/languages/jsconfig
 {
     "compilerOptions": {
-        "baseUrl": "src",
+        "baseUrl": ".",
         "paths": {
-            "@Components/*": ["components/*"],
-            "@Modules/*": ["modules/*"],
-            "@Styles/*": ["styles/*"],
-            "@Content/*": ["content/*"],
-            "@Apps/*": ["apps/*"]
+            "@Public/*": ["public/*"],
+            "@Components/*": ["src/components/*"],
+            "@Modules/*": ["src/modules/*"],
+            "@Styles/*": ["src/styles/*"],
+            "@Content/*": ["src/content/*"],
+            "@Apps/*": ["src/apps/*"]
         },
         "target": "es5",
         "lib": ["dom", "dom.iterable", "esnext"],

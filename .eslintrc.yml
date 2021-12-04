@@ -29,6 +29,7 @@ settings:
     import/resolver:
         alias:
             map:
+              - ["@Public", "./public"]
               - ["@Components", "./src/components"]
               - ["@Modules", "./src/modules"]
               - ["@Styles", "./src/styles"]

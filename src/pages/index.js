@@ -1,8 +1,9 @@
 import Typography from '@mui/material/Typography'
+import Image from 'next/image'
 
 import Title from '@Components/Title'
-import Figure from '@Components/Figure'
 import Subscribe from '@Components/Subscribe'
+import Photo from '@Public/photo.jpg'
 
 const Index = () => (
     <div style={{ maxWidth: '960px', margin: 'auto' }}>
@@ -41,7 +42,12 @@ const Index = () => (
             cycling.
         </Typography>
         <br />
-        <Figure src="/photo.jpg" maxWidth="200px" alt="My photo" />
+        <Image
+            src={Photo}
+            width="200px"
+            height="286px"
+            alt="My photo"
+        />
         <br />
         <Subscribe />
     </div>
