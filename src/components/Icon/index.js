@@ -1,5 +1,6 @@
 import { SocialIcon } from 'react-social-icons'
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from '@mui/styles/makeStyles'
+import Image from 'next/image'
 
 import GoodReadsIcon from './goodreads.svg'
 import LetterboxdIcon from './letterboxd.svg'
@@ -26,9 +27,8 @@ const CustomIconMap = {
 const CustomIcon = ({ url, network }) => {
     const classes = useStyles()
     return (
-        <a href={url}>
-            <img
-                className={classes.socialIcon}
+        <a href={url} className={classes.socialIcon}>
+            <Image
                 src={CustomIconMap[network]}
                 height={SIZE}
                 width={SIZE}
