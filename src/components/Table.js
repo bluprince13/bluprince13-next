@@ -60,7 +60,7 @@ export default function BasicTable({ rows, columns }) {
                                 >
                                     <Typography
                                         variant="body1"
-                                        style={{ whiteSpace: 'pre-line' }}
+                                        // style={{ whiteSpace: 'pre-line' }}
                                     >
                                         {row[key]}
                                     </Typography>
