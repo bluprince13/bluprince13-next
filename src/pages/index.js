@@ -48,7 +48,6 @@ const Index = () => (
             height="286px"
             alt="My photo"
         />
-        <br />
         <Subscribe />
     </div>
 )

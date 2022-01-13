@@ -15,7 +15,8 @@ import { lightBlue as blue } from '@mui/material/colors'
 const useStyles = makeStyles(() => ({
     root: {
         padding: '0.5rem',
-        borderRadius: 10
+        borderRadius: 10,
+        margin: "1rem 0"
     },
     subscribeButton: {
         marginLeft: '1rem'
