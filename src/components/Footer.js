@@ -1,4 +1,4 @@
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from '@mui/styles/makeStyles'
 import Typography from '@mui/material/Typography'
 import AppBar from '@mui/material/AppBar'
 import Container from '@mui/material/Container'
@@ -62,6 +62,7 @@ const FooterLinks = ({ isLargeScreen }) => (
             flexGrow: 1
         }}
     >
+        <FooterLink to="/uses">Uses</FooterLink>
         <FooterLink to="/kudos">Kudos</FooterLink>
         <FooterLink to="/values">Values</FooterLink>
         <FooterLink to="https://github.com/bluprince13/bluprince13-next">

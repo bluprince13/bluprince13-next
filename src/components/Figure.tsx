@@ -18,6 +18,8 @@ const Caption = ({ caption, href, reference, referenceHref }) => (
 
 const getMaxWidth = (size) => {
     switch (size) {
+        case 'xs':
+            return '75px'
         case 's':
             return '200px'
         case 'l':
@@ -39,7 +41,8 @@ type FigureProps = {
     reference?: string
     referenceHref?: string
     maxWidth?: string
-    size?: 's' | 'm' | 'l'
+    size?: 'xs' | 's' | 'm' | 'l'
+    align?: 'center'
 }
 
 const Figure = ({
@@ -50,18 +53,18 @@ const Figure = ({
     reference,
     referenceHref,
     maxWidth,
-    size = 'm'
+    size = 'm',
+    align
 }: FigureProps) => {
     const maxWidthToUse = maxWidth || getMaxWidth(size)
-
+    const style: any = { maxWidth: maxWidthToUse }
+    if (align == 'center') {
+        style.margin = 'auto'
+        style.display = 'block'
+    }
     return (
         <figure style={{ marginLeft: 0, marginRight: 0 }}>
-            <img
-                src={src}
-                alt={alt ?? caption}
-                width="100%"
-                style={{ maxWidth: maxWidthToUse }}
-            />
+            <img src={src} alt={alt ?? caption} width="100%" style={style} />
             {caption ? (
                 <Caption
                     caption={caption}
