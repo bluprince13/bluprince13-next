@@ -11,6 +11,7 @@ import StarRateRoundedIcon from '@mui/icons-material/StarRateRounded'
 import Link from 'next/link'
 import Tooltip from '@mui/material/Tooltip'
 import Comments from '@Components/Comments'
+import Subscribe from '@Components/Subscribe'
 
 import data, {
     PLATFORMS,
@@ -142,6 +143,7 @@ const UsesThis = ({ data }) => {
                     <AppCard {...app} />
                 ))}
             </Stack>
+            <Subscribe />
             <Comments.Embed id="uses" />
         </Box>
     )
