@@ -41,7 +41,6 @@ exports[`Table renders correctly 1`] = `
           >
             <p
               class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-              style="white-space: pre-line;"
             >
               row1-col1
             </p>
@@ -51,7 +50,6 @@ exports[`Table renders correctly 1`] = `
           >
             <p
               class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-              style="white-space: pre-line;"
             >
               row1-col2
             </p>
@@ -66,7 +64,6 @@ exports[`Table renders correctly 1`] = `
           >
             <p
               class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-              style="white-space: pre-line;"
             >
               row2-col1
             </p>
@@ -76,7 +73,6 @@ exports[`Table renders correctly 1`] = `
           >
             <p
               class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-              style="white-space: pre-line;"
             >
               row2-col2
             </p>
