@@ -112,7 +112,9 @@ const UsesThis = ({ data }) => {
                 pageTitle="Uses"
                 description="The apps I use"
                 path="/uses"
+                bannerPath="/uses/banner.jpeg"
             />
+            <Figure alt="banner" src="uses/banner.jpeg" size="l" />
             <Title title="Uses" />
             <br />
             <Typography variant="body1">
