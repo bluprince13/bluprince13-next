@@ -273,6 +273,13 @@ I use this for personal note taking as I prefer to write using [Markdown](https:
         platforms: [WEB]
     },
     {
+        appName: 'PDF Expert',
+        use: 'PDF',
+        href: 'https://pdfexpert.com/',
+        image: 'uses/pdfexpert.png',
+        platforms: [MAC]
+    },
+    {
         appName: 'yEd',
         use: 'Diagramming',
         href: 'https://www.yworks.com/products/yed',
@@ -308,6 +315,13 @@ I use this for personal note taking as I prefer to write using [Markdown](https:
         use: 'Drag and drop',
         href: 'https://eternalstorms.at/yoink/mac/index.html',
         image: 'uses/yoinkmac.png',
+        platforms: [MAC]
+    },
+    {
+        appName: 'Default Folder X',
+        use: 'Open/save dialog',
+        href: 'https://www.stclairsoft.com/DefaultFolderX/',
+        image: 'uses/defaultfolderx.webp',
         platforms: [MAC]
     },
     {
