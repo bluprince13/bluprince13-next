@@ -202,7 +202,9 @@ I use this for personal note taking as I prefer to write using [Markdown](https:
         use: 'Mail',
         href: 'https://www.edisonmail.com/',
         image: 'uses/edison.png',
-        platforms: [MAC, IPHONE, IPAD]
+        platforms: [MAC, IPHONE, IPAD],
+        description: `Star feature: One click to unsubscribe / block emails from spammers. I have not seen any other email client do it so well.`,
+        recommended: true
     },
     {
         appName: 'Whatsapp',
