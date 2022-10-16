@@ -237,11 +237,10 @@ I use this for personal note taking as I prefer to write using [Markdown](https:
         platforms: [IPHONE, IPAD, WEB]
     },
     {
-        appName: 'YouTube music',
-        use: 'Music',
-        href: 'https://music.youtube.com/',
-        image: 'uses/youtubemusic.png',
-        description: `I listen to English, Hindi and Malayalam songs and this is the only platform that has good coverage across all three languages.`,
+        appName: 'Spotify',
+        use: 'Music / Podcasts',
+        href: 'https://www.spotify.com/',
+        image: 'uses/spotify.jpeg',
         platforms: [MAC, IPHONE, IPAD]
     },
     {
