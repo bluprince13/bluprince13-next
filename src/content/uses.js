@@ -175,13 +175,6 @@ I use this for personal note taking as I prefer to write using [Markdown](https:
         platforms: [CHROME_EXTENSION, WEB]
     },
     {
-        appName: 'Raindrop.io',
-        use: 'Bookmarks',
-        href: 'https://raindrop.io/',
-        image: 'uses/raindrop.png',
-        platforms: [IPHONE, IPAD, CHROME_EXTENSION]
-    },
-    {
         appName: 'Letterboxd',
         use: 'Movie ratings',
         href: 'https://letterboxd.com/',
@@ -205,10 +198,10 @@ I use this for personal note taking as I prefer to write using [Markdown](https:
         platforms: [IPHONE, IPAD]
     },
     {
-        appName: 'Spark',
+        appName: 'Edison Mail',
         use: 'Mail',
-        href: 'https://sparkmailapp.com/',
-        image: 'uses/spark.png',
+        href: 'https://www.edisonmail.com/',
+        image: 'uses/edison.png',
         platforms: [MAC, IPHONE, IPAD]
     },
     {
