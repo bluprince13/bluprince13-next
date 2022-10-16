@@ -312,13 +312,6 @@ I use this for personal note taking as I prefer to write using [Markdown](https:
         platforms: [MAC]
     },
     {
-        appName: 'Default Folder X',
-        use: 'Open/save dialog',
-        href: 'https://www.stclairsoft.com/DefaultFolderX/',
-        image: 'uses/defaultfolderx.webp',
-        platforms: [MAC]
-    },
-    {
         appName: 'Ancestry',
         use: 'Family tree',
         href: 'https://www.ancestry.com/',
