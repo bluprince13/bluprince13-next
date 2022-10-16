@@ -259,6 +259,14 @@ I use this for personal note taking as I prefer to write using [Markdown](https:
         platforms: [WEB]
     },
     {
+        appName: 'Kiwi',
+        use: 'Flights',
+        href: 'https://www.kiwi.com/',
+        image: 'uses/kiwi.webp',
+        description: `The UX for searching for cheap flights is great. I particularly love that you can specify a range of start dates and duration of holiday.`,
+        platforms: [WEB, IPHONE, IPAD]
+    },
+    {
         appName: 'reveal.js',
         use: 'Slides',
         href: 'https://revealjs.com/',
