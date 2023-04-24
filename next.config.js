@@ -22,6 +22,10 @@ const rewritesConfig = [
         destination: `https://renting-vs-buying.vercel.app/:path*`
     },
     {
+        source: '/apps/coding-interview-prep',
+        destination: `https://coding-interview-prep.netlify.app/`
+    },
+    {
         source: '/slides/:path*',
         destination: `https://bluprince13-slides.vercel.app/slides/:path*`
     },

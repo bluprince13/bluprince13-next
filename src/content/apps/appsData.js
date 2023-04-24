@@ -23,5 +23,13 @@ export default [
         image: '/apps/spanish.jpg',
         blurb:
             'I learn Spanish for fun, and wanted to make a simple, interactive table that I could refer to.'
+    },
+    {
+        id: 4,
+        title: 'Coding interview prep',
+        href: '/apps/coding-interview-prep',
+        image: '/apps//coding-interview-prep.jpg',
+        blurb:
+            'This is a collection of coding challenges that I have solved, in preparation for coding interviews.'
     }
 ]
