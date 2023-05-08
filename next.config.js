@@ -26,6 +26,10 @@ const rewritesConfig = [
         destination: `https://coding-interview-prep.netlify.app/`
     },
     {
+        source: '/apps/coding-interview-prep/:path*',
+        destination: `https://coding-interview-prep.netlify.app/:path*`
+    },
+    {
         source: '/slides/:path*',
         destination: `https://bluprince13-slides.vercel.app/slides/:path*`
     },
