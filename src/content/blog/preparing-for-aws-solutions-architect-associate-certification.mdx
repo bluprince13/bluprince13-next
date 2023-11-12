@@ -1,0 +1,280 @@
+---
+title: Preparing for AWS Certified Solutions Architect - Associate SAA-C03
+description:
+ Tips from my wife's experience of preparing for and getting AWS Certified
+ Solutions Architect - Associate SAA-C03 certification.
+date: '2023-10-08'
+categories:
+ - software
+banner: /blog/preparing-for-aws-solutions-architect-associate-certification/banner.jpg
+banner_attribution:
+ Photo by <a
+ href="https://unsplash.com/@jeshoots?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">JESHOOTS.COM</a>
+ on <a
+ href="https://unsplash.com/photos/-2vD8lIhdnw?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+---
+
+Recently, my wife, [Geethu](https://www.linkedin.com/in/graveend/), passed the
+[AWS Solutions Architect - Associate SAA-C03 exam](https://aws.amazon.com/certification/certified-solutions-architect-associate/).
+Following her move to the UK from India, she hoped that it would help in her web
+developer job search as many roles expect some cloud experience and she had only
+a little exposure to [AWS](https://aws.amazon.com) in her previous role. I
+helped her prepare for it and was surprised by how difficult the multiple-choice
+exam was. Apparently, the failure rate is above 72%
+[[Certizard](https://certwizard.com/blog/dont-fail-aws-solutions-architect-test)]!
+In this article, I will list resources we used to prepare for the exam and
+provide some tips.
+
+<!--more-->
+
+## Table of contents
+
+## AWS is Amazon's Cloud product
+
+In the past, if you wanted to create a web service you would have to buy your
+servers to host your application. It was expensive and time-consuming. Amazon,
+in the 2000s, released
+[Amazon Elastic Compute Cloud [EC2]](https://aws.amazon.com/pm/ec2) which allows
+users to rent virtual computers which completely changed the game. Whereas in
+the past, you'd need a dedicated individual or team to manage infrastructure,
+these days it is fairly common for web developers to manage their infrastructure
+themselves. Since then AWS has grown rapidly adding a plethora of cloud
+infrastructure products.
+
+<Youtube id="3XFODda6YXo" />
+
+## Motivation for AWS certification
+
+It is fairly common these days for companies to expect developers to have cloud
+experience. AWS currently leads the cloud market over competitors like
+[Microsoft Azure](https://azure.microsoft.com) and
+[Google Cloud](https://cloud.google.com).
+
+<Figure
+ src="/blog/preparing-for-aws-solutions-architect-associate-certification/aws-market-share.jpeg"
+ referenceHref="https://www.statista.com/chart/18819/worldwide-market-share-of-leading-cloud-infrastructure-service-providers/"
+ size="m"
+/>
+
+Whilst she had worked with AWS before, she did not have a ton of experience. A
+friend of ours recommended AWS certification as a way of addressing the gap in
+her CV. It was worth a try. She already had an interest in learning about
+architecture so she picked the
+[AWS Solutions Architect - Associate certification](https://aws.amazon.com/certification/certified-solutions-architect-associate/)
+after looking at
+[AWS's various certification paths](https://d1.awsstatic.com/training-and-certification/docs/AWS_certification_paths.pdf).
+She decided to skip the foundational
+[AWS Certified Cloud Practitioner](https://aws.amazon.com/certification/certified-cloud-practitioner/)
+since she already had some experience with AWS and she could lean on me if she
+needed any help.
+
+## It covers more AWS services than I would like to list here!
+
+Following is a list of some key services that I hoped the certification would
+cover based on my experience of using AWS. However, if you check out the
+[exam guide](https://d1.awsstatic.com/training-and-certification/docs-sa-assoc/AWS-Certified-Solutions-Architect-Associate_Exam-Guide.pdf),
+you can see that the certification covers way more. It looks quite daunting.
+
+- Analytics
+  - [Amazon Athena](https://aws.amazon.com/athena)
+  - [AWS Glue](https://aws.amazon.com/glue)
+  - [Amazon Redshift](https://aws.amazon.com/redshift)
+- Application Integration
+  - [Amazon Simple Notification Service](https://aws.amazon.com/sns)
+  - [Amazon Simple Queue Service](https://aws.amazon.com/sqs)
+  - [AWS Step Functions](https://aws.amazon.com/step-functions)
+- Compute
+  - [Amazon Elastic Compute Cloud [EC2]](https://aws.amazon.com/pm/ec2)
+- Containers
+  - [Amazon Elastic Container Registry](https://aws.amazon.com/ecr)
+  - [Amazon Elastic Container Service [ECS]](https://aws.amazon.com/ecs)
+  - [Amazon Elastic Kubernetes Service](https://aws.amazon.com/eks)
+  - [AWS Fargate](https://aws.amazon.com/fargate)
+- Database
+  - [Amazon Aurora](https://aws.amazon.com/rds/aurora)
+  - [Amazon DocumentDB (with MongoDB compatibility)](https://aws.amazon.com/documentdb/)
+  - [Amazon DynamoDB](https://aws.amazon.com/dynamodb)
+  - [Amazon ElastiCache](https://aws.amazon.com/pm/elasticache)
+  - [Amazon Relational Database Service](https://aws.amazon.com/rds)
+- Developer Tools
+  - [AWS Cloud Development Kit (AWS CDK)](https://aws.amazon.com/cdk/)
+- Front-End Web and Mobile
+  - [Amazon API Gateway](https://aws.amazon.com/api-gateway)
+- Networking and Content Delivery
+  - [Amazon CloudFront](https://aws.amazon.com/cloudfront/)
+  - [Amazon Route 53](https://aws.amazon.com/route53)
+  - [Amazon Virtual Private Cloud](https://aws.amazon.com/vpc)
+  - [Elastic Load Balancing](https://aws.amazon.com/elasticloadbalancing)
+- Management and Governance
+  - [Amazon CloudWatch](https://aws.amazon.com/cloudwatch)
+  - [AWS CloudFormation](https://aws.amazon.com/cloudformation)
+  - [AWS CloudTrail](https://aws.amazon.com/cloudtrail)
+- Security, Identity, and Compliance
+  - [Amazon Cognito](https://aws.amazon.com/pm/cognito)
+  - [AWS Certificate Manager](https://aws.amazon.com/certificate-manager)
+  - [AWS Identity and Access Management [IAM]](https://aws.amazon.com/iam)
+  - [AWS Key Management Service](https://aws.amazon.com/kms)
+  - [AWS Secrets Manager](https://aws.amazon.com/secrets-manager)
+  - [AWS Systems Manager](https://aws.amazon.com/systems-manager)
+  - [AWS WAF](https://aws.amazon.com/waf)
+- Serverless
+  - [AWS Lambda](https://aws.amazon.com/pm/lambda)
+- Storage
+  - [Amazon S3](https://aws.amazon.com/pm/serv-s3/)
+
+## Roadmap
+
+Overall, it took about 3 months of preparation. Here is a rough timeline.
+
+<Timeline
+ items={[
+  {
+   marker: 'Start',
+   title: 'Decided which AWS certification to do',
+   iconName: 'start',
+   color: 'info'
+  },
+  {
+   marker: '1st month',
+   title: 'Completed an online course on Udemy',
+   iconName: 'tv',
+   color: 'warning'
+  },
+  {
+   marker: '2nd month',
+   title: 'Practiced mock exams until somewhat ready and booked the exam',
+   description:
+    'On her first few attempts, she was scoring less than 40%. After a month, she was scoring 65-75%.',
+   iconName: 'fitness_center',
+   color: 'secondary'
+  },
+  {
+   marker: '3rd month',
+   title: 'Continued practising mock exams',
+   description:
+    'Achieved goal of scoring 80% in a timed test, above the ~72% pass threshold.',
+   iconName: 'fitness_center',
+   color: 'secondary'
+  },
+  {
+   marker: 'End',
+   title: 'Passed the exam with a score of 803/1000 🥳',
+   iconName: 'done',
+   color: 'success'
+  }
+ ]}
+/>
+
+### 1. Do an online course
+
+The
+[Ultimate AWS Certified Solutions Architect Associate SAA-C03](https://www.udemy.com/course/aws-certified-solutions-architect-associate-saa-c03)
+is a highly reviewed online course on AWS. This in itself will not teach you
+everything you need to know for the exam but will give you a holistic
+understanding of all of the key areas and services. I would recommend not
+getting bogged down on any part of the online course. It is best to go through
+it quickly and go to the next step. If necessary, you can always redo the course
+or revisit particular sections later.
+
+### 2. (Optional) Play around on AWS
+
+You do not have to check out every service on AWS, but it is nice to get a feel
+for what it is like to work with AWS. Even before deciding to go for the
+certification, she had made a simple application,
+[aws-cdk-example](https://github.com/graveend/aws-cdk-example), consisting of a
+few lambdas, DynamoDb, S3 bucket, SNS and SQS. You do not have to write the
+infrastructure as code (using [CDK](https://docs.aws.amazon.com/cdk/)) like she
+did, but instead, you could create the resources directly in the AWS console.
+Just be wary of usage beyond the [AWS Free Tier ](https://aws.amazon.com/free)
+and remember to delete any resources you create.
+
+### 3. Practice mock exams
+
+Practising mock exams is probably what helped the most. It is worth doing some
+of the mock exams as timed tests, so you can get a feel for the time pressure
+and how you are progressing. She was scoring less than 40% on her first few
+timed tests and got to about 80% by the end of three months which was her goal.
+When you encounter difficult questions, check out the AWS documentation or
+relevant YouTube videos/blogs to improve your understanding.
+
+1. [AWS Certified Solutions Architect Associate Practice Exams](https://www.udemy.com/course/aws-certified-solutions-architect-associate-amazon-practice-exams-saa-c03/)
+
+   This is a set of 6 mock exams on Udemy from Jon Bonso. You can answer
+   questions interactively and get detailed explanations for each answer. These
+   papers were quite hard and she found them the most representative of her real
+   exam. She went through all of these exams at least twice.
+
+2. [Whizlabs AWS Certified Solutions Architect Associate practice exams](https://www.whizlabs.com/aws-solutions-architect-associate/)
+
+   This includes 6 mock exams, tests on specific topics, and one final mock
+   exam. These were less difficult, but still very helpful.
+
+3. [ExamTopics](https://www.examtopics.com/exams/amazon/aws-certified-solutions-architect-associate-saa-c03/view/)
+
+   This is a dump of 656 questions out of which around half are free to access.
+   The questions were relatively easy. Each question also has discussions from
+   users which is useful. However, there were several questions where users
+   disagreed with the suggested `correct` answer. I would not recommend this
+   resource much.
+
+### 4. Book the exam before you feel ready
+
+At 150 USD, the exam is quite expensive, and ideally, something you could pass
+the first time. However, I highly recommend that you do not wait until you feel
+fully ready to take the exam because having a bit of time pressure could be motivating.
+You can
+[reschedule your exam](https://aws.amazon.com/certification/policies/before-testing/#Scheduling_Exams)
+later if necessary. She booked the exam after spending two months studying for
+it and gave herself another four weeks to study.
+
+If you are lucky you may be able to find some discount vouchers online. She got
+a 50% discount for signing up to an
+[Associate Challenge](https://pages.awscloud.com/GLOBAL-ln-GC-Traincert-Associate-Certification-Challenge-Registration-2023.html)
+which is unfortunately now closed.
+
+Another tip, especially if you are a non-native English speaker, is to
+[request an extra 30 minutes of accommodation for your exam](https://aws.amazon.com/certification/policies/before-testing/#Requesting_Accommodations).
+You need to do this before registering for the exam. It only takes a few
+minutes.
+
+## Reflections
+
+The exam itself was quite tedious to study for. As you might expect, most of the
+questions are about what might be appropriate services or configurations of
+services to use for a given problem. However, sometimes it was genuinely
+difficult to decide between the options and the explanations were not convincing
+enough. Some questions required knowing such fine-grained detail that is useless
+in the real world. For example, one question required knowing that for an EC2
+instance, the maximum ratio of provisioned IOPS to the requested volume size is
+50:1. The
+[pass mark of 720/1000](https://aws.amazon.com/blogs/training-and-certification/demystifying-your-aws-certification-exam-score/)
+was also difficult to achieve.
+
+She found the actual exam quite hard and was not confident she had passed it.
+Fortunately, she found out a few days later that she passed by a good margin with
+a score of 803. She also received a verifiable digital badge which is now
+proudly displayed on her [LinkedIn page](https://www.linkedin.com/in/graveend/).
+
+<Figure
+ src="/blog/preparing-for-aws-solutions-architect-associate-certification/solutions-architect-badge.png"
+ caption="Verifiable badge"
+ href="https://www.credly.com/badges/656b3774-e89f-4d9d-b3af-7e40edd50c3e"
+ size="m"
+/>
+
+In the weeks following the exam, she noticed a slight uptick in invitations to
+interviews. One interviewer even mentioned that they were impressed by the
+certification. Therefore, it looks like it has had a positive impact on
+employability.
+
+The exam did provide a good foundational understanding of AWS, and she felt more
+at ease having conversations about AWS architecture. This was her biggest gain
+from doing the certification, as she will be apply that knowledge in her next
+role.
+
+Even if you already work with AWS, the learning process can help fill
+some gaps in your knowledge, as it did for me. I couldn't be asked to write the
+exam myself in the end though so I have no badge to display. 😛
+
+That's all. If you have any questions or anything to add, please do comment
+below.
