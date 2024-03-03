@@ -19,7 +19,7 @@ const Privacypolicy = () => (
             respect your privacy regarding any information we may collect from
             you across our website,{' '}
             <a href="https://bluprince13.com">https://bluprince13.com</a>, and
-            other sites we own and operate.
+            other sites and apps we own and operate.
         </Typography>
         <br />
         <Typography variant="body1">
