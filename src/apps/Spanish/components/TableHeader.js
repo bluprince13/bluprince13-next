@@ -1,26 +1,38 @@
-import makeStyles from '@mui/styles/makeStyles';
+import { styled } from '@mui/material/styles';
 import Button from '@mui/material/Button'
 
-const useStyles = makeStyles((theme) => ({
-    root: {
+const PREFIX = 'TableHeader';
+
+const classes = {
+    root: `${PREFIX}-root`,
+    button: `${PREFIX}-button`
+};
+
+const Root = styled('div')((
+    {
+        theme
+    }
+) => ({
+    [`&.${classes.root}`]: {
         '& > *': {
             margin: theme.spacing(1)
         },
         display: 'inline-block',
         width: theme.apps.spanish.columnWidth
     },
-    button: {
+
+    [`& .${classes.button}`]: {
         width: '80%'
     }
-}))
+}));
 
 export default function TableHeader({ children, type = 'primary' }) {
-    const classes = useStyles()
+
 
     const color = type === 'title' ? 'primary' : 'secondary'
 
     return (
-        <div className={classes.root}>
+        <Root className={classes.root}>
             <Button
                 variant="contained"
                 color={color}
@@ -28,6 +40,6 @@ export default function TableHeader({ children, type = 'primary' }) {
             >
                 {children}
             </Button>
-        </div>
-    )
+        </Root>
+    );
 }

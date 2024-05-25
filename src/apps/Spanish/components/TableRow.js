@@ -1,14 +1,23 @@
-import makeStyles from '@mui/styles/makeStyles';
+import { styled } from '@mui/material/styles';
+const PREFIX = 'TableRow';
 
-const useStyles = makeStyles((theme) => ({
-    root: {
+const classes = {
+    root: `${PREFIX}-root`
+};
+
+const Root = styled('div')((
+    {
+        theme
+    }
+) => ({
+    [`&.${classes.root}`]: {
         width: '100%',
         backgroundColor: theme.palette.background.paper
     }
-}))
+}));
 
 export default function TableRow({ children }) {
-    const classes = useStyles()
 
-    return <div className={classes.root}>{children}</div>
+
+    return <Root className={classes.root}>{children}</Root>;
 }

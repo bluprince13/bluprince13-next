@@ -1,34 +1,56 @@
 import Link from 'next/link'
 
+import { styled } from '@mui/material/styles';
+
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import Button from '@mui/material/Button'
 import InputBase from '@mui/material/InputBase'
 import { alpha } from '@mui/material/styles';
-import makeStyles from '@mui/styles/makeStyles';
 import SearchIcon from '@mui/icons-material/Search'
 import { Box } from '@mui/material'
 
 import SimpleMenu from './SimpleMenu'
 
-const useStyles = makeStyles((theme) => ({
-    root: {},
-    menuButton: {
+const PREFIX = 'SearchAppBar';
+
+const classes = {
+    root: `${PREFIX}-root`,
+    menuButton: `${PREFIX}-menuButton`,
+    title: `${PREFIX}-title`,
+    titleButton: `${PREFIX}-titleButton`,
+    search: `${PREFIX}-search`,
+    searchIcon: `${PREFIX}-searchIcon`,
+    inputRoot: `${PREFIX}-inputRoot`,
+    inputInput: `${PREFIX}-inputInput`
+};
+
+const Root = styled('div')((
+    {
+        theme
+    }
+) => ({
+    [`&.${classes.root}`]: {},
+
+    [`& .${classes.menuButton}`]: {
         marginRight: theme.spacing(2)
     },
-    title: {
+
+    [`& .${classes.title}`]: {
         flexGrow: 1,
         display: 'none',
         [theme.breakpoints.up('sm')]: {
             display: 'block'
         }
     },
-    titleButton: {
+
+    [`& .${classes.titleButton}`]: {
         textTransform: 'none',
         fontSize: '1.2rem',
         color: '#fff'
     },
-    search: {
+
+    [`& .${classes.search}`]: {
         position: 'relative',
         borderRadius: theme.shape.borderRadius,
         backgroundColor: alpha(theme.palette.common.white, 0.15),
@@ -42,7 +64,8 @@ const useStyles = makeStyles((theme) => ({
             width: 'auto'
         }
     },
-    searchIcon: {
+
+    [`& .${classes.searchIcon}`]: {
         padding: theme.spacing(0, 2),
         height: '100%',
         position: 'absolute',
@@ -51,10 +74,12 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
         justifyContent: 'center'
     },
-    inputRoot: {
+
+    [`& .${classes.inputRoot}`]: {
         color: 'inherit'
     },
-    inputInput: {
+
+    [`& .${classes.inputInput}`]: {
         padding: theme.spacing(1, 1, 1, 0),
         // vertical padding + font size from searchIcon
         paddingLeft: `calc(1em + ${theme.spacing(4)})`,
@@ -67,12 +92,12 @@ const useStyles = makeStyles((theme) => ({
             }
         }
     }
-}))
+}));
 
 export default function SearchAppBar() {
-    const classes = useStyles()
+
     return (
-        <div className={classes.root}>
+        <Root className={classes.root}>
             <AppBar position="static">
                 <Toolbar>
                     <SimpleMenu />
@@ -101,6 +126,6 @@ export default function SearchAppBar() {
                     </div>
                 </Toolbar>
             </AppBar>
-        </div>
-    )
+        </Root>
+    );
 }

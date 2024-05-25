@@ -1,21 +1,31 @@
-import makeStyles from '@mui/styles/makeStyles';
+import { styled } from '@mui/material/styles';
 import List from '@mui/material/List'
 import ListItem from '@mui/material/ListItem'
 import ListItemText from '@mui/material/ListItemText'
 
-const useStyles = makeStyles((theme) => ({
-    root: {
+const PREFIX = 'TableColumn';
+
+const classes = {
+    root: `${PREFIX}-root`
+};
+
+const Root = styled('div')((
+    {
+        theme
+    }
+) => ({
+    [`&.${classes.root}`]: {
         width: theme.apps.spanish.columnWidth,
         backgroundColor: theme.palette.background.paper,
         display: 'inline-block'
     }
-}))
+}));
 
 export default function TableColumn({ items }) {
-    const classes = useStyles()
+
 
     return (
-        <div className={classes.root}>
+        <Root className={classes.root}>
             <List component="nav" aria-label="label">
                 {items.map((item) => (
                     <ListItem button key={item}>
@@ -23,6 +33,6 @@ export default function TableColumn({ items }) {
                     </ListItem>
                 ))}
             </List>
-        </div>
-    )
+        </Root>
+    );
 }

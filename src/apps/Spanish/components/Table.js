@@ -1,4 +1,4 @@
-import makeStyles from '@mui/styles/makeStyles';
+import { styled } from '@mui/material/styles';
 
 import TableColumn from './TableColumn'
 import TableHeader from './TableHeader'
@@ -6,13 +6,23 @@ import TableRow from './TableRow'
 
 import Arrow from './Arrow'
 
-const useStyles = makeStyles((theme) => ({
-    root: {
+const PREFIX = 'Table';
+
+const classes = {
+    root: `${PREFIX}-root`
+};
+
+const Root = styled('div')((
+    {
+        theme
+    }
+) => ({
+    [`&.${classes.root}`]: {
         width: '45%',
         display: 'inline-block',
         margin: theme.spacing(2)
     }
-}))
+}));
 
 export default function Table({
     tense,
@@ -21,7 +31,7 @@ export default function Table({
     pointsInTime,
     lineInTime
 }) {
-    const classes = useStyles()
+
 
     const tenseName = tense.name
 
@@ -32,7 +42,7 @@ export default function Table({
     }
 
     return (
-        <div className={classes.root}>
+        <Root className={classes.root}>
             <TableRow>
                 <TableHeader type="title">{tenseName}</TableHeader>
                 {forms.map((f) => (
@@ -51,6 +61,6 @@ export default function Table({
                 ))}
             </TableRow>
             <Arrow pointsInTime={pointsInTime} lineInTime={lineInTime} />
-        </div>
-    )
+        </Root>
+    );
 }

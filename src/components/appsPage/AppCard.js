@@ -1,21 +1,27 @@
-import makeStyles from '@mui/styles/makeStyles';
+import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card'
 import CardActionArea from '@mui/material/CardActionArea'
 import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
 import Typography from '@mui/material/Typography'
 
-const useStyles = makeStyles({
-    root: {
+const PREFIX = 'AppCard';
+
+const classes = {
+    root: `${PREFIX}-root`
+};
+
+const StyledCard = styled(Card)({
+    [`&.${classes.root}`]: {
         width: '100%'
     }
-})
+});
 
 export default function AppCard({ app }) {
-    const classes = useStyles()
+
 
     return (
-        <Card className={classes.root} variant="outlined">
+        <StyledCard className={classes.root} variant="outlined">
             <CardActionArea
                 href={app.href}
             >
@@ -39,6 +45,6 @@ export default function AppCard({ app }) {
                     </Typography>
                 </CardContent>
             </CardActionArea>
-        </Card>
-    )
+        </StyledCard>
+    );
 }

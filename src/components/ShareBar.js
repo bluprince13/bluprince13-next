@@ -10,19 +10,30 @@ import {
     LinkedinIcon,
     RedditIcon
 } from 'react-share'
-import makeStyles from '@mui/styles/makeStyles';
+import { styled } from '@mui/material/styles';
 import Typography from '@mui/material/Typography'
 import Emoji from 'a11y-react-emoji'
 
-const useStyles = makeStyles(() => ({
-    root: {},
-    network: {
+const PREFIX = 'ShareBar';
+
+const classes = {
+    root: `${PREFIX}-root`,
+    network: `${PREFIX}-network`,
+    shareCount: `${PREFIX}-shareCount`,
+    shareButton: `${PREFIX}-shareButton`
+};
+
+const Root = styled('div')(() => ({
+    [`&.${classes.root}`]: {},
+
+    [`& .${classes.network}`]: {
         verticalAlign: 'top',
         display: 'inline-block',
         marginRight: '10px',
         textAlign: 'center'
     },
-    shareCount: {
+
+    [`& .${classes.shareCount}`]: {
         display: 'inline-flex',
         justifyContent: 'center',
         whiteSpace: 'nowrap',
@@ -31,19 +42,20 @@ const useStyles = makeStyles(() => ({
         marginTop: '3px',
         fontSize: '12px'
     },
-    shareButton: {
+
+    [`& .${classes.shareButton}`]: {
         cursor: 'pointer',
         '&:hover': {
             opacity: 0.75
         }
     }
-}))
+}));
 
 const ShareBar = ({ title, url }) => {
-    const classes = useStyles()
+
 
     return (
-        <div className={classes.root}>
+        <Root className={classes.root}>
             <div>
                 <Typography variant="overline">
                     Please share! <Emoji symbol="🙏" label="folded hands" />
@@ -100,8 +112,8 @@ const ShareBar = ({ title, url }) => {
                     />
                 </div>
             </div>
-        </div>
-    )
+        </Root>
+    );
 }
 
 export default ShareBar

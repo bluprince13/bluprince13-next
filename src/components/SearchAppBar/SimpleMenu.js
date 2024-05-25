@@ -1,17 +1,13 @@
 import { useState } from 'react'
+import { styled } from '@mui/material/styles'
 import Link from 'next/link'
 
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
-import withStyles from '@mui/styles/withStyles';
 import IconButton from '@mui/material/IconButton'
 import MenuIcon from '@mui/icons-material/Menu'
 
-const StyledMenu = withStyles({
-    paper: {
-        border: '1px solid #d3d4d5'
-    }
-})((props) => (
+const StyledMenu = styled((props) => (
     <Menu
         elevation={0}
         getContentAnchorEl={null}
@@ -26,7 +22,12 @@ const StyledMenu = withStyles({
         // eslint-disable-next-line react/jsx-props-no-spreading
         {...props}
     />
-))
+))(() => ({
+    '& .MuiPaper-root': {
+        border: '1px solid #d3d4d5'
+    }
+}))
+
 
 export default function SimpleMenu() {
     const [anchorEl, setAnchorEl] = useState(null)

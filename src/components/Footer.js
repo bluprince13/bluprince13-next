@@ -1,4 +1,4 @@
-import makeStyles from '@mui/styles/makeStyles'
+import { styled } from '@mui/material/styles';
 import Typography from '@mui/material/Typography'
 import AppBar from '@mui/material/AppBar'
 import Container from '@mui/material/Container'
@@ -8,21 +8,27 @@ import Box from '@mui/material/Box'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import Icon from '@Components/Icon'
 
-const useStyles = makeStyles(() => ({
-    link: {
+const PREFIX = 'Footer';
+
+const classes = {
+    link: `${PREFIX}-link`
+};
+
+const Root = styled('div')(() => ({
+    [`& .${classes.link}`]: {
         textDecoration: 'none',
         color: 'inherit',
         '&:focus, &:hover, &:visited, &:link, &:active': {
             textDecoration: 'none'
         }
     }
-}))
+}));
 
 const AUTHOR = 'Vipin Ajayakumar'
 
 // TODO: Make relative links work without page refresh
 const FooterLink = ({ children, to }) => {
-    const classes = useStyles()
+
     return (
         <a className={classes.link} href={to}>
             <Typography
@@ -76,7 +82,7 @@ export default function Footer() {
     const isLargeScreen = useMediaQuery('(min-width:800px)')
 
     return (
-        <div style={{ marginTop: 'auto' }}>
+        <Root style={{ marginTop: 'auto' }}>
             <AppBar position="static" color="transparent" elevation={0}>
                 <Container maxWidth="lg">
                     <Divider />
@@ -113,6 +119,6 @@ export default function Footer() {
                     <IconBar />
                 </AppBar>
             )}
-        </div>
-    )
+        </Root>
+    );
 }

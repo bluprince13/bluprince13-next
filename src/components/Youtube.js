@@ -1,8 +1,14 @@
-import makeStyles from '@mui/styles/makeStyles';
+import { styled } from '@mui/material/styles';
 import { Typography } from '@mui/material'
 
-const useStyles = makeStyles(() => ({
-    youtubeWrapper: {
+const PREFIX = 'Youtube';
+
+const classes = {
+    youtubeWrapper: `${PREFIX}-youtubeWrapper`
+};
+
+const Root = styled('div')(() => ({
+    [`& .${classes.youtubeWrapper}`]: {
         position: 'relative',
         width: '100%',
         height: 0,
@@ -16,12 +22,12 @@ const useStyles = makeStyles(() => ({
             border: 0
         }
     }
-}))
+}));
 
 const Youtube = ({ id, caption }) => {
-    const classes = useStyles()
+
     return (
-        <div>
+        <Root>
             <div className={classes.youtubeWrapper}>
                 <iframe
                     title={id}
@@ -34,8 +40,8 @@ const Youtube = ({ id, caption }) => {
                 />
             </div>
             {caption && <Typography variant="caption">{caption}</Typography>}
-        </div>
-    )
+        </Root>
+    );
 }
 
 export default Youtube
