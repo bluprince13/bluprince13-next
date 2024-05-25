@@ -1,7 +1,7 @@
 import db from '@Modules/firebase'
 
 // eslint-disable-next-line consistent-return
-const fn = () => async (req, res) => {
+const fn = async (req, res) => {
     if (req.method === 'POST') {
         const ref = db.ref('views').child(req.query.slug)
         const { snapshot } = await ref.transaction((currentViews) => {
