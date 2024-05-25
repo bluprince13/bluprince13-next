@@ -14,12 +14,12 @@ const CV = () => (
         <Typography variant="body1">
             Download my CV{' '}
             <Link href="/cv/pdf">
-                <a>here</a>
+                here
             </Link>
             . If you like my CV and would like to see the source code, you can
             download my repo{' '}
             <Link href="/cv/source">
-                <a>here</a>
+                here
             </Link>
             . You can build the latex file with the command `lualatex
             ajayakumar_vipin_cv.tex`.
