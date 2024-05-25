@@ -21,6 +21,7 @@
         "@mui/material": "^5.1.0",
         "@mui/styles": "^5.1.0",
         "@next/mdx": "14.2.3",
+        "@vercel/speed-insights": "^1.0.11",
         "a11y-react-emoji": "1.2.0",
         "comma-number": "2.1.0",
         "d3": "7.9.0",

@@ -6,6 +6,7 @@ import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline'
 import theme from '@Modules/theme'
 import '@Styles/globals.css'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 import { StateProvider } from '@Modules/store'
 import { initGA, logPageView } from '@Modules/googleAnalytics'
@@ -46,48 +47,51 @@ function MyApp({ Component, pageProps }) {
         }
     }, [])
 
-    return <>
-        <Head>
-            <title>bluprince13</title>
-            <meta
-                name="viewport"
-                content="minimum-scale=1, initial-scale=1, width=device-width"
-            />
-            <link
-                rel="alternate"
-                type="application/rss+xml"
-                title="bluprince13 RSS feed"
-                href="https://bluprince13.com/feed.xml"
-            />
-            <link
-                rel="alternate"
-                type="application/rss+xml"
-                title="bluprince13 Atom feed"
-                href="https://bluprince13.com/atom.xml"
-            />
-            <link
-                rel="alternate"
-                type="application/json"
-                title="bluprince13 JSON feed"
-                href="https://bluprince13.com/feed.json"
-            />
-        </Head>
-        <DefaultSeo {...SEO} />
-        <StyledEngineProvider injectFirst>
-            <ThemeProvider theme={theme}>
-                <CssBaseline />
-                <StateProvider>
-                    <Layout>
-                        <SearchAppBar />
-                        <Content>
-                            <Component {...pageProps} />
-                        </Content>
-                        <Footer />
-                    </Layout>
-                </StateProvider>
-            </ThemeProvider>
-        </StyledEngineProvider>
-    </>;
+    return (
+        <>
+            <Head>
+                <title>bluprince13</title>
+                <meta
+                    name="viewport"
+                    content="minimum-scale=1, initial-scale=1, width=device-width"
+                />
+                <link
+                    rel="alternate"
+                    type="application/rss+xml"
+                    title="bluprince13 RSS feed"
+                    href="https://bluprince13.com/feed.xml"
+                />
+                <link
+                    rel="alternate"
+                    type="application/rss+xml"
+                    title="bluprince13 Atom feed"
+                    href="https://bluprince13.com/atom.xml"
+                />
+                <link
+                    rel="alternate"
+                    type="application/json"
+                    title="bluprince13 JSON feed"
+                    href="https://bluprince13.com/feed.json"
+                />
+            </Head>
+            <DefaultSeo {...SEO} />
+            <StyledEngineProvider injectFirst>
+                <ThemeProvider theme={theme}>
+                    <CssBaseline />
+                    <StateProvider>
+                        <Layout>
+                            <SearchAppBar />
+                            <Content>
+                                <Component {...pageProps} />
+                            </Content>
+                            <Footer />
+                            <SpeedInsights />
+                        </Layout>
+                    </StateProvider>
+                </ThemeProvider>
+            </StyledEngineProvider>
+        </>
+    )
 }
 
 export default MyApp
