@@ -48,7 +48,8 @@ export default function SimpleMenu() {
                 aria-controls="simple-menu"
                 aria-haspopup="true"
                 onClick={handleClick}
-                size="large">
+                size="large"
+            >
                 <MenuIcon />
             </IconButton>
             <StyledMenu
@@ -59,26 +60,26 @@ export default function SimpleMenu() {
                 onClose={handleClose}
             >
                 <div>
-                    <Link href="/">
+                    <Link href="/" legacyBehavior>
                         <MenuItem onClick={handleClose}>Home</MenuItem>
                     </Link>
                 </div>
                 <div>
-                    <Link href="/blog">
+                    <Link href="/blog" legacyBehavior>
                         <MenuItem onClick={handleClose}>Blog</MenuItem>
                     </Link>
                 </div>
                 <div>
-                    <Link href="/apps">
+                    <Link href="/apps" legacyBehavior>
                         <MenuItem onClick={handleClose}>Apps</MenuItem>
                     </Link>
                 </div>
                 <div>
-                    <Link href="/cv">
+                    <Link href="/cv" legacyBehavior>
                         <MenuItem onClick={handleClose}>CV</MenuItem>
                     </Link>
                 </div>
             </StyledMenu>
         </div>
-    );
+    )
 }
