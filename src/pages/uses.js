@@ -85,7 +85,7 @@ const AppCard = ({
                     {platforms.map((platform) => {
                         const Icon = platformIconMap[platform]
                         return (
-                            <Tooltip title={platform}>
+                            <Tooltip title={platform} key={platform}>
                                 <Icon />
                             </Tooltip>
                         )
@@ -122,7 +122,7 @@ const UsesThis = ({ data }) => {
                 most of my app recommendations from{' '}
                 <Link href="https://thesweetsetup.com/">The Sweet Setup</Link>{' '}
                 and <Link href="https://usesthis.com/">uses this</Link>. I
-                starred the apps I feel like I can't live without.You can also
+                starred the apps I feel like I cannot live without.You can also
                 use the filter below to filter by platforms that I use the app
                 on.
             </Typography>
@@ -142,7 +142,7 @@ const UsesThis = ({ data }) => {
             </Grid>
             <Stack spacing={2}>
                 {filteredData.map((app) => (
-                    <AppCard {...app} />
+                    <AppCard {...app} key={app.appName} />
                 ))}
             </Stack>
             <Subscribe />

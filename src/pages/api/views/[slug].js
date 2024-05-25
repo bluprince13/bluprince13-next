@@ -1,7 +1,7 @@
 import db from '@Modules/firebase'
 
 // eslint-disable-next-line consistent-return
-export default async (req, res) => {
+const fn = () => async (req, res) => {
     if (req.method === 'POST') {
         const ref = db.ref('views').child(req.query.slug)
         const { snapshot } = await ref.transaction((currentViews) => {
@@ -24,3 +24,5 @@ export default async (req, res) => {
         return res.status(200).json({ total: views })
     }
 }
+
+export default fn

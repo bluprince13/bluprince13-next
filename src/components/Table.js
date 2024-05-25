@@ -36,7 +36,7 @@ export default function BasicTable({ rows, columns }) {
                 <TableHead>
                     <TableRow>
                         {columns.map(({ name }) => (
-                            <StyledTableCell scope="col">
+                            <StyledTableCell scope="col" key={name}>
                                 {name}
                             </StyledTableCell>
                         ))}

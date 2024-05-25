@@ -4,10 +4,9 @@ env:
   jest/globals: true
 parser: "@typescript-eslint/parser"
 extends:
-  - airbnb
   - prettier
-  - prettier/react
   - plugin:@typescript-eslint/recommended
+  - next/core-web-vitals
 globals:
   Atomics: readonly
   SharedArrayBuffer: readonly

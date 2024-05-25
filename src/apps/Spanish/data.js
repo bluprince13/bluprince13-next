@@ -1,4 +1,4 @@
-export default {
+const data =  {
     language: 'Spanish',
     pronouns: [
         'yo',
@@ -290,3 +290,5 @@ export default {
         }
     ]
 }
+
+export default data

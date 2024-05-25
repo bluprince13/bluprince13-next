@@ -1,4 +1,6 @@
-const Reference = ({ reference, referenceHref }) => (
+/* eslint-disable react/jsx-filename-extension */
+/* eslint-disable @next/next/no-img-element */
+const Reference = ({ reference, referenceHref }: {reference: string, referenceHref:string}) => (
     <span>
         {' '}
         {referenceHref ? (
@@ -57,7 +59,7 @@ const Figure = ({
     align
 }: FigureProps) => {
     const maxWidthToUse = maxWidth || getMaxWidth(size)
-    const style: any = { maxWidth: maxWidthToUse }
+    const style: {margin?: string, display?: string, maxWidth?: string} = { maxWidth: maxWidthToUse }
     if (align == 'center') {
         style.margin = 'auto'
         style.display = 'block'

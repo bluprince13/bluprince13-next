@@ -5,6 +5,7 @@
     "scripts": {
         "dev": "NODE_OPTIONS='--inspect' next-remote-watch src/content/blog",
         "build": "next build",
+        "lint": "next lint",
         "start": "next start",
         "test": "jest",
         "watch": "yarn test --watch"
@@ -47,6 +48,7 @@
         "typeface-roboto": "1.1.13"
     },
     "devDependencies": {
+        "@next/eslint-plugin-next": "^14.2.3",
         "@testing-library/jest-dom": "^6.4.5",
         "@testing-library/react": "^15.0.7",
         "@types/react": "^18.3.3",
@@ -54,8 +56,7 @@
         "@typescript-eslint/eslint-plugin": "^7.10.0",
         "@typescript-eslint/parser": "^7.10.0",
         "babel-jest": "^29.7.0",
-        "eslint": "^9.3.0",
-        "eslint-config-airbnb": "19.0.4",
+        "eslint": "^8.0.0",
         "eslint-config-next": "^14.2.3",
         "eslint-config-prettier": "9.1.0",
         "eslint-import-resolver-alias": "1.1.2",

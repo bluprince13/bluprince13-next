@@ -28,7 +28,7 @@ const combineChartDimensions = (dimensions) => {
     }
 }
 
-export default (passedSettings) => {
+const useChartDimensions = (passedSettings) => {
     const ref = useRef()
     const dimensions = combineChartDimensions(passedSettings)
 
@@ -63,3 +63,5 @@ export default (passedSettings) => {
 
     return [ref, newSettings]
 }
+
+export default useChartDimensions

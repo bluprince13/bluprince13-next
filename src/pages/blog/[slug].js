@@ -1,6 +1,6 @@
+/* eslint-disable @next/next/no-img-element */
 import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemote } from 'next-mdx-remote'
-
 import toc from 'remark-toc'
 import emoji from 'remark-emoji'
 import codesandbox from 'remark-codesandbox'

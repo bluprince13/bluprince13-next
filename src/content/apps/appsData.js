@@ -1,4 +1,4 @@
-export default [
+const data = [
     {
         id: 1,
         title: 'Renting vs. buying a house',
@@ -33,3 +33,5 @@ export default [
             'This is a collection of coding challenges that I have solved, in preparation for coding interviews.'
     }
 ]
+
+export default data

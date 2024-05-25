@@ -56,7 +56,7 @@ const handleError = (err) => {
     }
 }
 
-export default async ({ articles }) => {
+const fn = () =>  async ({ articles }) => {
     const feed = getFeed({ articles })
     const rss = feed.rss2()
     const atom = feed.atom1()
@@ -66,3 +66,5 @@ export default async ({ articles }) => {
     fs.writeFileSync('public/atom.xml', atom, 'utf8', handleError)
     fs.writeFileSync('public/feed.json', json, 'utf8', handleError)
 }
+
+export default fn

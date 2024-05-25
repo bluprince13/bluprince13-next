@@ -6,7 +6,7 @@ export const WEB = 'Web app'
 
 export const PLATFORMS = [MAC, IPHONE, IPAD, CHROME_EXTENSION, WEB]
 
-export default [
+const data = [
     {
         appName: '1Password',
         use: 'Password manager',
@@ -371,3 +371,5 @@ I use this for personal note taking as I prefer to write using [Markdown](https:
         platforms: [WEB]
     }
 ]
+
+export default data
