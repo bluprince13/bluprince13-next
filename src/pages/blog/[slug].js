@@ -9,7 +9,7 @@ import slug from 'rehype-slug'
 import link from 'rehype-autolink-headings'
 
 import { getAllPostSlugs, getPostDataAndContent } from '@Modules/posts'
-import Comments from '@Components/Comments'
+import { MyComments, MyCommentCount } from '@Components/Comments'
 import Title from '@Components/Title'
 import ShareBar from '@Components/ShareBar'
 import ViewCounter from '@Components/blog/ViewCounter'
@@ -44,11 +44,11 @@ export default function Posts({ source, data }) {
             <Title title={data.title} />
             <div>{data.date}</div>
             <ViewCounter slug={data.slug} />
-            <Comments.CommentCount id={data.slug} />
+            <MyCommentCount id={data.slug} />
             <MDXRemote {...source} components={components} />
             <ShareBar title={data.title} url={data.href} />
             <Subscribe />
-            <Comments.Embed id={data.slug} />
+            <MyComments id={data.slug} />
         </div>
     )
 }

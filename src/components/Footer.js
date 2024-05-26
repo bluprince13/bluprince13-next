@@ -1,4 +1,6 @@
-import { styled } from '@mui/material/styles';
+'use client'
+
+import { styled } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
 import AppBar from '@mui/material/AppBar'
 import Container from '@mui/material/Container'
@@ -8,11 +10,11 @@ import Box from '@mui/material/Box'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import Icon from '@Components/Icon'
 
-const PREFIX = 'Footer';
+const PREFIX = 'Footer'
 
 const classes = {
     link: `${PREFIX}-link`
-};
+}
 
 const Root = styled('div')(() => ({
     [`& .${classes.link}`]: {
@@ -22,13 +24,12 @@ const Root = styled('div')(() => ({
             textDecoration: 'none'
         }
     }
-}));
+}))
 
 const AUTHOR = 'Vipin Ajayakumar'
 
 // TODO: Make relative links work without page refresh
 const FooterLink = ({ children, to }) => {
-
     return (
         <a className={classes.link} href={to}>
             <Typography
@@ -120,5 +121,5 @@ export default function Footer() {
                 </AppBar>
             )}
         </Root>
-    );
+    )
 }

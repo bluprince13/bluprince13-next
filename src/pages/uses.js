@@ -10,7 +10,7 @@ import Grid from '@mui/material/Grid'
 import StarRateRoundedIcon from '@mui/icons-material/StarRateRounded'
 import Link from 'next/link'
 import Tooltip from '@mui/material/Tooltip'
-import Comments from '@Components/Comments'
+import { MyComments } from '@Components/Comments'
 import Subscribe from '@Components/Subscribe'
 
 import data, {
@@ -146,7 +146,7 @@ const UsesThis = ({ data }) => {
                 ))}
             </Stack>
             <Subscribe />
-            <Comments.Embed id="uses" />
+            <MyComments id="uses" />
         </Box>
     )
 }

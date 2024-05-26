@@ -1,18 +1,20 @@
+'use client'
+
 import Link from 'next/link'
 
-import { styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles'
 
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import Button from '@mui/material/Button'
 import InputBase from '@mui/material/InputBase'
-import { alpha } from '@mui/material/styles';
+import { alpha } from '@mui/material/styles'
 import SearchIcon from '@mui/icons-material/Search'
 import { Box } from '@mui/material'
 
 import SimpleMenu from './SimpleMenu'
 
-const PREFIX = 'SearchAppBar';
+const PREFIX = 'SearchAppBar'
 
 const classes = {
     root: `${PREFIX}-root`,
@@ -23,13 +25,9 @@ const classes = {
     searchIcon: `${PREFIX}-searchIcon`,
     inputRoot: `${PREFIX}-inputRoot`,
     inputInput: `${PREFIX}-inputInput`
-};
+}
 
-const Root = styled('div')((
-    {
-        theme
-    }
-) => ({
+const Root = styled('div')(({ theme }) => ({
     [`&.${classes.root}`]: {},
 
     [`& .${classes.menuButton}`]: {
@@ -92,10 +90,9 @@ const Root = styled('div')((
             }
         }
     }
-}));
+}))
 
 export default function SearchAppBar() {
-
     return (
         <Root className={classes.root}>
             <AppBar position="static">
@@ -127,5 +124,5 @@ export default function SearchAppBar() {
                 </Toolbar>
             </AppBar>
         </Root>
-    );
+    )
 }

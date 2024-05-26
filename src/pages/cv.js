@@ -2,7 +2,7 @@
 import Typography from '@mui/material/Typography'
 import Link from 'next/link'
 
-import Comments from '@Components/Comments'
+import { MyComments } from '@Components/Comments'
 import Title from '@Components/Title'
 import StandardSeo from '@Components/StandardSeo'
 
@@ -12,19 +12,12 @@ const CV = () => (
         <Title title="CV" />
         <br />
         <Typography variant="body1">
-            Download my CV{' '}
-            <Link href="/cv/pdf">
-                here
-            </Link>
-            . If you like my CV and would like to see the source code, you can
-            download my repo{' '}
-            <Link href="/cv/source">
-                here
-            </Link>
-            . You can build the latex file with the command `lualatex
-            ajayakumar_vipin_cv.tex`.
+            Download my CV <Link href="/cv/pdf">here</Link>. If you like my CV
+            and would like to see the source code, you can download my repo{' '}
+            <Link href="/cv/source">here</Link>. You can build the latex file
+            with the command `lualatex ajayakumar_vipin_cv.tex`.
         </Typography>
-        <Comments.Embed id="cv" />
+        <MyComments id="cv" />
     </>
 )
 

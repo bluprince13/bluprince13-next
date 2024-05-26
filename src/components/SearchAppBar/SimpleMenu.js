@@ -1,3 +1,5 @@
+'use client'
+
 import { useState } from 'react'
 import { styled } from '@mui/material/styles'
 import Link from 'next/link'
@@ -27,7 +29,6 @@ const StyledMenu = styled((props) => (
         border: '1px solid #d3d4d5'
     }
 }))
-
 
 export default function SimpleMenu() {
     const [anchorEl, setAnchorEl] = useState(null)
