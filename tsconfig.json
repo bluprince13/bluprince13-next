@@ -3,6 +3,7 @@
     "compilerOptions": {
         "baseUrl": ".",
         "paths": {
+            "@App/*": ["src/app/*"],
             "@Public/*": ["public/*"],
             "@Components/*": ["src/components/*"],
             "@Modules/*": ["src/modules/*"],
@@ -23,9 +24,22 @@
         "moduleResolution": "node",
         "resolveJsonModule": true,
         "isolatedModules": true,
-        "jsx": "preserve"
+        "jsx": "preserve",
+        "plugins": [
+            {
+                "name": "next"
+            }
+        ],
+        "strictNullChecks": true
     },
     //Add any build/compiled folders here to stop vscode searching those
     "exclude": ["node_modules", "build"],
-    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js"]
+    "include": [
+        "./jest-setup.ts",
+        "next-env.d.ts",
+        "**/*.ts",
+        "**/*.tsx",
+        "**/*.js",
+        ".next/types/**/*.ts"
+    ]
 }

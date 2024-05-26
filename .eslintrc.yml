@@ -20,7 +20,7 @@ plugins:
   - jest
   - '@typescript-eslint'
 rules:
-  react/jsx-filename-extension: [1, { "extensions": [".js", ".jsx"] }]
+  react/jsx-filename-extension: [1, { "extensions": [".js", ".jsx", 'tsx'] }]
   react/react-in-jsx-scope: off
   react/prop-types: off
   react/jsx-props-no-spreading: off
@@ -28,6 +28,7 @@ settings:
     import/resolver:
         alias:
             map:
+              - ["@App", "./src/app"]
               - ["@Public", "./public"]
               - ["@Components", "./src/components"]
               - ["@Modules", "./src/modules"]

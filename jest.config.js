@@ -82,6 +82,7 @@ module.exports = {
 
     // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
     moduleNameMapper: {
+        '^@App(.*)$': ['<rootDir>/src/app$1'],
         '^@Components(.*)$': ['<rootDir>/src/components$1'],
         '^@Modules(.*)$': ['<rootDir>/src/modules$1'],
         '^@Styles(.*)$': ['<rootDir>/src/styles$1'],
@@ -134,7 +135,7 @@ module.exports = {
     // setupFiles: [],
 
     // A list of paths to modules that run some code to configure or set up the testing framework before each test
-    setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
+    setupFilesAfterEnv: ['<rootDir>/jest-setup.ts'],
 
     // The number of seconds after which a test is considered as slow and reported as such in the results.
     // slowTestThreshold: 5,
