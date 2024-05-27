@@ -35,7 +35,7 @@
     //Add any build/compiled folders here to stop vscode searching those
     "exclude": ["node_modules", "build"],
     "include": [
-        "./jest-setup.ts",
+        "jest.setup.ts",
         "next-env.d.ts",
         "**/*.ts",
         "**/*.tsx",

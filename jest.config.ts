@@ -1,9 +1,17 @@
+import type { Config } from 'jest'
+import nextJest from 'next/jest.js'
+
+const createJestConfig = nextJest({
+    // Provide the path to your Next.js app to load next.config.js and .env files in your test environment
+    dir: './'
+})
+
 /*
  * For a detailed explanation regarding each configuration property, visit:
  * https://jestjs.io/docs/configuration
  */
 
-module.exports = {
+const config: Config = {
     // All imported modules in your tests should be mocked automatically
     // automock: false,
 
@@ -132,10 +140,10 @@ module.exports = {
     // runner: "jest-runner",
 
     // The paths to modules that run some code to configure or set up the testing environment before each test
-    // setupFiles: [],
+    // setupFiles: ['<rootDir>/jest.setup.ts'],
 
     // A list of paths to modules that run some code to configure or set up the testing framework before each test
-    setupFilesAfterEnv: ['<rootDir>/jest-setup.ts'],
+    setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
 
     // The number of seconds after which a test is considered as slow and reported as such in the results.
     // slowTestThreshold: 5,
@@ -182,11 +190,6 @@ module.exports = {
     transform: {
         '^.+\\.(js|jsx|ts|tsx)$': ['babel-jest', { presets: ['next/babel'] }]
     }
-    // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
-    // transformIgnorePatterns: [
-    //   "/node_modules/",
-    //   "\\.pnp\\.[^\\/]+$"
-    // ],
 
     // An array of regexp pattern strings that are matched against all modules before the module loader will automatically return a mock for them
     // unmockedModulePathPatterns: undefined,
@@ -200,3 +203,11 @@ module.exports = {
     // Whether to use watchman for file crawling
     // watchman: true,
 }
+
+module.exports = async () => ({
+    ...(await createJestConfig(config)())
+    // An array of regexp pattern strings that are matched against all source
+    // file paths, matched files will skip transformation
+    // https://stackoverflow.com/a/72926763/3521109
+    // transformIgnorePatterns: []
+})
