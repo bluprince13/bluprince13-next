@@ -4,11 +4,16 @@ import Link from 'next/link'
 
 import { MyComments } from '@Components/Comments'
 import Title from '@Components/Title'
-import StandardSeo from '@Components/StandardSeo'
+import { generateMetadata } from '@Modules/metadata'
+
+export const metadata = generateMetadata({
+    pageTitle: 'CV',
+    description: 'My CV',
+    path: '/cv'
+})
 
 const CV = () => (
     <>
-        <StandardSeo pageTitle="CV" description="My CV" path="/cv" />
         <Title title="CV" />
         <br />
         <Typography variant="body1">
