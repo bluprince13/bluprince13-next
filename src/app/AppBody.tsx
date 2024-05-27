@@ -3,6 +3,7 @@ import CssBaseline from '@mui/material/CssBaseline'
 import theme from '@Modules/theme'
 import '@Styles/globals.css'
 import { SpeedInsights } from '@vercel/speed-insights/next'
+import { Analytics } from "@vercel/analytics/react"
 
 import { StateProvider } from '@Modules/store'
 import { GoogleAnalytics } from '@Components/GoogleAnalytics'
@@ -28,6 +29,7 @@ export const AppBody = ({ children }: { children: React.ReactNode }) => {
     return (
         <>
             <GoogleAnalytics />
+            <Analytics />
             <StyledEngineProvider injectFirst>
                 <ThemeProvider theme={theme}>
                     <CssBaseline />
