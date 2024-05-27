@@ -2,6 +2,9 @@ import { NextSeo } from 'next-seo'
 
 const SITE_ROOT = 'https://bluprince13.com'
 
+/**
+ * @deprecated Use generateMetadata instead.
+ */
 const StandardSeo = ({ pageTitle, description, path, bannerPath }) => {
     const title = `${pageTitle} - Vipin Ajayakumar`
     const url = `${SITE_ROOT}${path}`
