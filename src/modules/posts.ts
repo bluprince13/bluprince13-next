@@ -5,15 +5,36 @@ import matter from 'gray-matter'
 const postDirectory = path.join(process.cwd(), 'src/content/blog')
 const { SITE_ROOT } = process.env
 
+export type PostData = {
+    slug: string
+    date: string
+    banner: string
+    href: string
+    title: string
+    description: string
+    bannerFullUrl: string
+}
+
+export type PostContent = string
+
+export type GetPostDataAndContentOutput = {
+    data: PostData
+    content: PostContent
+}
+
 export const getFileContent = (slug) => {
     const fullPath = path.join(postDirectory, `${slug}.mdx`)
     const fileContent = fs.readFileSync(fullPath, 'utf8')
     return fileContent
 }
-export const getPostDataAndContent = (slug) => {
+export const getPostDataAndContent = (slug): GetPostDataAndContentOutput => {
     const fileContent = getFileContent(slug)
     const { data, content } = matter(fileContent)
-    const options = { month: 'long', day: 'numeric', year: 'numeric' }
+    const options: Intl.DateTimeFormatOptions = {
+        month: 'long',
+        day: 'numeric',
+        year: 'numeric'
+    }
     const formattedDate = new Date(data.date).toLocaleDateString(
         'en-GB',
         options
@@ -26,7 +47,7 @@ export const getPostDataAndContent = (slug) => {
         href: `${SITE_ROOT}/blog/${slug}`
     }
 
-    return { data: modifiedData, content }
+    return { data: modifiedData as unknown as PostData, content }
 }
 export const getSortedPosts = () => {
     const fileNames = fs.readdirSync(postDirectory)
