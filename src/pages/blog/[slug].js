@@ -21,10 +21,11 @@ import Youtube from '@Components/Youtube'
 import Timeline from '@Components/Timeline'
 import Table from '@Components/Table'
 import Alert from '@Components/Alert'
+import { ComparisonTable } from '@Components/ComparisonTable'
 
 import 'prism-theme-night-owl'
 
-const components = { Figure, Youtube, Timeline, Table, Alert }
+const components = { Figure, Youtube, Timeline, Table, Alert, ComparisonTable }
 export default function Posts({ source, data }) {
     return (
         <div style={{ maxWidth: '960px', margin: 'auto' }}>
