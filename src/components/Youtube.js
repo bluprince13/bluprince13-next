@@ -22,7 +22,7 @@ const Root = styled('div')(() => ({
             border: 0
         }
     }
-}));
+}))
 
 const Youtube = ({ id, caption }) => {
 

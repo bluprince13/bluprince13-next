@@ -29,6 +29,7 @@ import Alert from '@Components/Alert'
 import { ComparisonTable } from '@Components/ComparisonTable'
 import { Typography } from '@mui/material'
 import 'prism-theme-night-owl'
+import Link from 'next/link'
 
 const components = {
     Figure,
@@ -37,7 +38,8 @@ const components = {
     Table,
     Alert,
     ComparisonTable,
-    Typography
+    Typography,
+    Link
 }
 
 interface Props {
