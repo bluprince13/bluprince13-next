@@ -13,6 +13,7 @@ export type PostData = {
     title: string
     description: string
     bannerFullUrl: string
+    bibliography?: string
 }
 
 export type PostContent = string
@@ -44,6 +45,7 @@ export const getPostDataAndContent = (slug): GetPostDataAndContentOutput => {
         ...data,
         date: formattedDate,
         bannerFullUrl: `${SITE_ROOT}${data.banner}`,
+        bibliography: data.bibliography ? `${SITE_ROOT}${data.bibliography}` : null,
         href: `${SITE_ROOT}/blog/${slug}`
     }
 

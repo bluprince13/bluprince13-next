@@ -8,6 +8,8 @@ import codesandbox from 'remark-codesandbox'
 import prism from 'remark-prism'
 import slug from 'rehype-slug'
 import link from 'rehype-autolink-headings'
+import mdxMermaid from 'mdx-mermaid'
+import rehypeCitation from 'rehype-citation'
 
 import {
     getAllPostSlugs,
@@ -26,6 +28,7 @@ import Youtube from '@Components/Youtube'
 import Timeline from '@Components/Timeline'
 import Table from '@Components/Table'
 import Alert from '@Components/Alert'
+import { Mermaid } from '@Components/Mermaid'
 import { ComparisonTable } from '@Components/ComparisonTable'
 import { Typography } from '@mui/material'
 import 'prism-theme-night-owl'
@@ -39,7 +42,8 @@ const components = {
     Alert,
     ComparisonTable,
     Typography,
-    Link
+    Link,
+    mermaid: Mermaid
 }
 
 interface Props {
@@ -91,11 +95,20 @@ export const getStaticProps: GetStaticProps<{
             remarkPlugins: [
                 [toc, { tight: true }],
                 [emoji, { emoticon: true }],
+                [mdxMermaid],
                 [codesandbox, { mode: 'button' }],
                 [prism]
             ],
             rehypePlugins: [
                 slug,
+                [
+                    rehypeCitation,
+                    {
+                        bibliography: data.bibliography,
+                        linkCitations: true,
+                        csl: 'vancouver'
+                    }
+                ],
                 [
                     link,
                     {
