@@ -131,13 +131,17 @@ export const ComparisonTable: React.FC<TableProps> = ({
                     </TableBody>
                 </Table>
             </TableContainer>
-            <Typography
-                variant="body1"
-                sx={{ fontWeight: 'bold', marginTop: 2 }}
-            >
-                Summary:
-            </Typography>
-            <Typography variant="body1">{summary}</Typography>
+            {summary && (
+                <>
+                    <Typography
+                        variant="body1"
+                        sx={{ fontWeight: 'bold', marginTop: 2 }}
+                    >
+                        Summary:
+                    </Typography>
+                    <Typography variant="body1">{summary}</Typography>
+                </>
+            )}
             <Divider sx={{ marginTop: 2, marginBottom: 4 }} />
         </Box>
     )
