@@ -33,6 +33,7 @@ import { ComparisonTable } from '@Components/ComparisonTable'
 import { Typography } from '@mui/material'
 import 'prism-theme-night-owl'
 import Link from 'next/link'
+import { Iframe } from '@Components/Iframe'
 
 const components = {
     Figure,
@@ -43,7 +44,8 @@ const components = {
     ComparisonTable,
     Typography,
     Link,
-    mermaid: Mermaid
+    mermaid: Mermaid,
+    Iframe
 }
 
 interface Props {
@@ -102,26 +104,25 @@ export const getStaticProps: GetStaticProps<{
             rehypePlugins: [
                 slug,
                 [
-                    rehypeCitation,
-                    {
-                        bibliography: data.bibliography,
-                        linkCitations: true,
-                        csl: 'vancouver'
-                    }
-                ],
-                [
                     link,
                     {
-                        behaviour: 'append',
-                        properties: { ariaHidden: 'false', tabIndex: -1 },
+                        behavior: 'append',
+                        properties: { ariaHidden: 'false', tabIndex: 0 },
                         content: {
                             type: 'element',
                             tagName: 'span',
                             properties: {
                                 className: ['anchor', 'fas', 'fa-link']
-                            },
-                            children: []
+                            }
                         }
+                    }
+                ],
+                [
+                    rehypeCitation,
+                    {
+                        bibliography: data.bibliography,
+                        linkCitations: true,
+                        csl: 'vancouver'
                     }
                 ]
             ]
