@@ -1,6 +1,12 @@
 import { render } from '@testing-library/react'
 import { ComparisonTable } from '@Components/ComparisonTable'
 
+jest.mock('react-markdown', () => {
+    return ({ children }) => {
+        return children
+    }
+})
+
 describe('ComparisonTable', () => {
     const setup = ({} = {}) => {
         const queries = render(
