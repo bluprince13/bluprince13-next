@@ -11,6 +11,7 @@ import {
     Divider,
     Box
 } from '@mui/material'
+import Markdown from 'react-markdown'
 
 interface CellContent {
     content: string | React.ReactNode
@@ -50,17 +51,17 @@ const tableCellSx = {
     }
 }
 
-const TableHeaderCell: React.FC<{ name: string; description?: string }> = ({
-    name,
-    description
-}) => {
+const TableHeaderCell: React.FC<{
+    name: string
+    description?: string
+}> = ({ name, description }) => {
     return (
         <TableCell sx={tableCellSx}>
             <Typography
                 variant="subtitle1"
                 sx={{ fontWeight: 'bold', textAlign: 'center' }}
             >
-                {name}
+                <Markdown>{name}</Markdown>
             </Typography>
             {description && (
                 <Typography
@@ -73,7 +74,7 @@ const TableHeaderCell: React.FC<{ name: string; description?: string }> = ({
                         margin: 'auto'
                     }}
                 >
-                    {description}
+                    <Markdown>{description}</Markdown>
                 </Typography>
             )}
         </TableCell>
@@ -140,9 +141,9 @@ export const ComparisonTable: React.FC<TableProps> = ({
                         Summary:
                     </Typography>
                     <Typography variant="body1">{summary}</Typography>
+                    <Divider sx={{ marginTop: 2, marginBottom: 4 }} />
                 </>
             )}
-            <Divider sx={{ marginTop: 2, marginBottom: 4 }} />
         </Box>
     )
 }

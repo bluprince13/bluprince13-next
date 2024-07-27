@@ -164,7 +164,7 @@ exports[`ComparisonTable renders correctly 1`] = `
               <p
                 class="MuiTypography-root MuiTypography-body2 css-l3td95-MuiTypography-root"
               >
-                A very long descripition of Option 3 that needs more than 1 line
+                A very long descripition that needs more than one line
               </p>
             </td>
             <td
@@ -185,7 +185,7 @@ exports[`ComparisonTable renders correctly 1`] = `
               class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-10396rc-MuiTableCell-root"
             >
               <span>
-                Good
+                Very long content that needs more than one line
               </span>
             </td>
           </tr>
