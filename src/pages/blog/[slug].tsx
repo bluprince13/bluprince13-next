@@ -34,8 +34,10 @@ import { Typography } from '@mui/material'
 import 'prism-theme-night-owl'
 import Link from 'next/link'
 import { Iframe } from '@Components/Iframe'
+import { SymbolOverviewWidget } from '@Components/SymbolOverviewWidget'
 
 const components = {
+    SymbolOverviewWidget,
     Figure,
     Youtube,
     Timeline,
