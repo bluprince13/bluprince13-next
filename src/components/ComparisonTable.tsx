@@ -141,9 +141,9 @@ export const ComparisonTable: React.FC<TableProps> = ({
                         Summary:
                     </Typography>
                     <Typography variant="body1">{summary}</Typography>
+                    <Divider sx={{ marginTop: 2, marginBottom: 4 }} />
                 </>
             )}
-            <Divider sx={{ marginTop: 2, marginBottom: 4 }} />
         </Box>
     )
 }
