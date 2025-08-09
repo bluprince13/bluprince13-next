@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { useState } from 'react'
 
 import { styled } from '@mui/material/styles'
 
@@ -93,6 +94,27 @@ const Root = styled('div')(({ theme }) => ({
 }))
 
 export default function SearchAppBar() {
+    const [searchTerm, setSearchTerm] = useState('')
+
+    const handleSearchSubmit = (e) => {
+        e.preventDefault()
+        if (searchTerm.trim()) {
+            const googleSearchUrl = `https://www.google.com/search?q=site:bluprince13.com ${encodeURIComponent(searchTerm)}`
+            window.open(googleSearchUrl, '_blank')
+            setSearchTerm('')
+        }
+    }
+
+    const handleInputChange = (e) => {
+        setSearchTerm(e.target.value)
+    }
+
+    const handleKeyPress = (e) => {
+        if (e.key === 'Enter') {
+            handleSearchSubmit(e)
+        }
+    }
+
     return (
         <Root className={classes.root}>
             <AppBar position="static">
@@ -108,19 +130,27 @@ export default function SearchAppBar() {
                             </Button>
                         </Link>
                     </Box>
-                    <div className={classes.search}>
-                        <div className={classes.searchIcon}>
-                            <SearchIcon />
+                    <form onSubmit={handleSearchSubmit}>
+                        <div className={classes.search}>
+                            <div
+                                className={classes.searchIcon}
+                                onClick={handleSearchSubmit}
+                            >
+                                <SearchIcon />
+                            </div>
+                            <InputBase
+                                placeholder="Search…"
+                                value={searchTerm}
+                                onChange={handleInputChange}
+                                onKeyPress={handleKeyPress}
+                                classes={{
+                                    root: classes.inputRoot,
+                                    input: classes.inputInput
+                                }}
+                                inputProps={{ 'aria-label': 'search' }}
+                            />
                         </div>
-                        <InputBase
-                            placeholder="Search…"
-                            classes={{
-                                root: classes.inputRoot,
-                                input: classes.inputInput
-                            }}
-                            inputProps={{ 'aria-label': 'search' }}
-                        />
-                    </div>
+                    </form>
                 </Toolbar>
             </AppBar>
         </Root>
