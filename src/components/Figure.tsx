@@ -1,6 +1,12 @@
 /* eslint-disable react/jsx-filename-extension */
 /* eslint-disable @next/next/no-img-element */
-const Reference = ({ reference, referenceHref }: {reference: string, referenceHref:string}) => (
+const Reference = ({
+    reference,
+    referenceHref
+}: {
+    reference: string
+    referenceHref: string
+}) => (
     <span>
         {' '}
         {referenceHref ? (
@@ -24,6 +30,8 @@ const getMaxWidth = (size) => {
             return '75px'
         case 's':
             return '200px'
+        case 'ml':
+            return '500px'
         case 'l':
             return ''
         case 'm':
@@ -43,7 +51,7 @@ type FigureProps = {
     reference?: string
     referenceHref?: string
     maxWidth?: string
-    size?: 'xs' | 's' | 'm' | 'l'
+    size?: 'xs' | 's' | 'm' | 'ml' | 'l'
     align?: 'center'
 }
 
@@ -59,7 +67,9 @@ const Figure = ({
     align
 }: FigureProps) => {
     const maxWidthToUse = maxWidth || getMaxWidth(size)
-    const style: {margin?: string, display?: string, maxWidth?: string} = { maxWidth: maxWidthToUse }
+    const style: { margin?: string; display?: string; maxWidth?: string } = {
+        maxWidth: maxWidthToUse
+    }
     if (align == 'center') {
         style.margin = 'auto'
         style.display = 'block'
