@@ -95,6 +95,7 @@ export const getStaticProps: GetStaticProps<{
 }> = async ({ params }) => {
     const { data, content } = getPostDataAndContent(params!.slug)
     const mdxSource = await serialize(content, {
+        blockJS: false,
         mdxOptions: {
             remarkPlugins: [
                 [toc, { tight: true }],
