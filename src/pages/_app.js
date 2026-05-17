@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { DefaultSeo } from 'next-seo'
 import { Roboto } from 'next/font/google'
-import { AppCacheProvider } from '@mui/material-nextjs/v15-pagesRouter'
+import { AppCacheProvider } from '@mui/material-nextjs/v16-pagesRouter'
 import '@fontsource/material-icons'
 import '@Styles/globals.css'
 import { AppBody } from 'src/app/AppBody'

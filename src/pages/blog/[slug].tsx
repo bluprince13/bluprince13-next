@@ -36,7 +36,8 @@ import Link from 'next/link'
 import { Iframe } from '@Components/Iframe'
 import { SymbolOverviewWidget } from '@Components/SymbolOverviewWidget'
 
-const components = {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const components: any = {
     SymbolOverviewWidget,
     Figure,
     Youtube,

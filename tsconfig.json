@@ -1,45 +1,67 @@
 // https://code.visualstudio.com/docs/languages/jsconfig
 {
-    "compilerOptions": {
-        "baseUrl": ".",
-        "paths": {
-            "@App/*": ["src/app/*"],
-            "@Public/*": ["public/*"],
-            "@Components/*": ["src/components/*"],
-            "@Modules/*": ["src/modules/*"],
-            "@Styles/*": ["src/styles/*"],
-            "@Content/*": ["src/content/*"],
-            "@Apps/*": ["src/apps/*"]
-        },
-        "target": "es5",
-        "lib": ["dom", "dom.iterable", "esnext"],
-        "allowJs": true,
-        "skipLibCheck": true,
-        "strict": false,
-        "forceConsistentCasingInFileNames": true,
-        "noEmit": true,
-        "incremental": true,
-        "esModuleInterop": true,
-        "module": "esnext",
-        "moduleResolution": "node",
-        "resolveJsonModule": true,
-        "isolatedModules": true,
-        "jsx": "preserve",
-        "plugins": [
-            {
-                "name": "next"
-            }
-        ],
-        "strictNullChecks": true
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@App/*": [
+        "src/app/*"
+      ],
+      "@Public/*": [
+        "public/*"
+      ],
+      "@Components/*": [
+        "src/components/*"
+      ],
+      "@Modules/*": [
+        "src/modules/*"
+      ],
+      "@Styles/*": [
+        "src/styles/*"
+      ],
+      "@Content/*": [
+        "src/content/*"
+      ],
+      "@Apps/*": [
+        "src/apps/*"
+      ]
     },
-    //Add any build/compiled folders here to stop vscode searching those
-    "exclude": ["node_modules", "build"],
-    "include": [
-        "jest.setup.ts",
-        "next-env.d.ts",
-        "**/*.ts",
-        "**/*.tsx",
-        "**/*.js",
-        ".next/types/**/*.ts"
-    ]
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "incremental": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "strictNullChecks": true
+  },
+  //Add any build/compiled folders here to stop vscode searching those
+  "exclude": [
+    "node_modules",
+    "build"
+  ],
+  "include": [
+    "jest.setup.ts",
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts"
+  ]
 }

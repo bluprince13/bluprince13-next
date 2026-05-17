@@ -8,7 +8,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Analytics } from "@vercel/analytics/react"
 
 import { StateProvider } from '@Modules/store'
-import { GoogleAnalytics } from '@Components/GoogleAnalytics'
+import { GoogleAnalytics } from '@next/third-parties/google'
 import SearchAppBar from '@Components/SearchAppBar/SearchAppBar'
 import Footer from '@Components/Footer'
 
@@ -31,7 +31,7 @@ const Content = ({ children }: { children: React.ReactNode }) => {
 export const AppBody = ({ children }: { children: React.ReactNode }) => {
     return (
         <>
-            <GoogleAnalytics />
+            <GoogleAnalytics gaId="G-XXXXXXXXXX" />
             <Analytics />
             <CssVarsProvider theme={theme}>
                 <CssBaseline />
