@@ -1,0 +1,78 @@
+- generic [ref=e4]:
+  - banner [ref=e6]:
+    - generic [ref=e7]:
+      - button "open drawer" [ref=e9] [cursor=pointer]:
+        - img [ref=e10]
+      - link "bluprince13" [ref=e13] [cursor=pointer]:
+        - /url: /
+        - button "bluprince13" [ref=e14]
+      - generic [ref=e16]:
+        - generic:
+          - img
+        - textbox "search" [ref=e18]:
+          - /placeholder: Search...
+      - button "toggle dark mode" [ref=e19] [cursor=pointer]
+  - generic [ref=e20]:
+    - heading "Values" [level=1] [ref=e21]
+    - paragraph [ref=e22]: I was inspired by Kenneth Reitz's list of personal values to produce one of my own. The list isn't static, it will evolve with time. These aren't rules, only guidelines.
+    - list [ref=e23]:
+      - listitem [ref=e24]: Time is your only currency; allocate it sparingly.
+      - listitem [ref=e25]: Obsession is an easy way to focus.
+      - listitem [ref=e26]: Laziness is a virtue.
+      - listitem [ref=e27]: Perfection is unattainable, but sometimes worth pursuing.
+      - listitem [ref=e28]: Aim to fail often and learn from it; success is overrated.
+      - listitem [ref=e29]: Intuition, logic and passion are a powerful combo.
+      - listitem [ref=e30]: Calculated risks are less risky than taking no risks at all.
+      - listitem [ref=e31]: Ask forgiveness, not permission.
+      - listitem [ref=e32]: Collaboration beats competition.
+      - listitem [ref=e33]: Never stop learning and therefore teaching.
+      - listitem [ref=e34]: Ask for opinions, but feel free to disregard them.
+      - listitem [ref=e35]: Never compromise on your honesty, loyalty and authenticity.
+      - listitem [ref=e36]: Forgive others for your own inner peace.
+      - listitem [ref=e37]: Believe that people are really good at heart; this is the foundation of hope.
+      - listitem [ref=e38]: Family, friends and love comes first; life is relationships.
+      - listitem [ref=e39]: Choose to be happy, if not for your own sake, for those who care about you.
+      - listitem [ref=e40]: Be gentle with yourself.
+  - generic [ref=e41]:
+    - banner [ref=e42]:
+      - generic [ref=e43]:
+        - separator [ref=e44]
+        - generic [ref=e46]:
+          - link "Uses" [ref=e47] [cursor=pointer]:
+            - /url: /uses
+            - paragraph [ref=e48]: Uses
+          - link "Kudos" [ref=e49] [cursor=pointer]:
+            - /url: /kudos
+            - paragraph [ref=e50]: Kudos
+          - link "Values" [ref=e51] [cursor=pointer]:
+            - /url: /values
+            - paragraph [ref=e52]: Values
+          - link "Source code" [ref=e53] [cursor=pointer]:
+            - /url: https://github.com/bluprince13/bluprince13-next
+            - paragraph [ref=e54]: Source code
+          - link "Privacy policy" [ref=e55] [cursor=pointer]:
+            - /url: /privacypolicy
+            - paragraph [ref=e56]: Privacy policy
+    - banner [ref=e57]:
+      - generic [ref=e58]:
+        - link [ref=e59] [cursor=pointer]:
+          - /url: http://linkedin.com/in/vipinajayakumar
+          - img [ref=e60]
+        - link [ref=e62] [cursor=pointer]:
+          - /url: https://twitter.com/vipinajayakumar
+          - img [ref=e63]
+        - link [ref=e65] [cursor=pointer]:
+          - /url: https://github.com/bluprince13
+          - img [ref=e66]
+        - link [ref=e68] [cursor=pointer]:
+          - /url: https://www.youtube.com/channel/UCyDgfMZyUxO6Ave0KxtxcCw
+          - img [ref=e69]
+        - link [ref=e71] [cursor=pointer]:
+          - /url: https://letterboxd.com/vipinajayakumar/
+          - img [ref=e72]
+        - link [ref=e74] [cursor=pointer]:
+          - /url: https://www.goodreads.com/user/show/18863116-vipin-ajayakumar
+          - img [ref=e75]
+        - link [ref=e77] [cursor=pointer]:
+          - /url: /feed.xml
+          - img [ref=e78]

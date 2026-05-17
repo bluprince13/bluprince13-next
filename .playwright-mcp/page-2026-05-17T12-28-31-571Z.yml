@@ -1,0 +1,80 @@
+- generic [ref=e4]:
+  - banner [ref=e6]:
+    - generic [ref=e7]:
+      - button "open drawer" [ref=e9] [cursor=pointer]:
+        - img [ref=e10]
+      - link "bluprince13" [ref=e13] [cursor=pointer]:
+        - /url: /
+        - button "bluprince13" [ref=e14]
+      - generic [ref=e16]:
+        - generic:
+          - img
+        - textbox "search" [ref=e18]:
+          - /placeholder: Search...
+      - button "toggle dark mode" [ref=e19] [cursor=pointer]
+  - generic [ref=e21]:
+    - heading "Hello human" [level=1] [ref=e22]
+    - paragraph [ref=e23]:
+      - text: Welcome to my little slice of heaven. I use this space to showcase any apps I develop and to publish articles. Everything I publish here is, obviously, my personal stuff and opinions and has nothing to do with whom I work for. My previous blog is at
+      - link "vipinajayakumar.com" [ref=e24] [cursor=pointer]:
+        - /url: https://vipinajayakumar.com
+      - text: ", but I do not plan to write there anymore."
+    - paragraph [ref=e25]: Here is a little bit about me. My name is Vipin. bluprince13 is just an alias I came up with when I was younger. I am from Kollam, a small seaside town in Kerala, a state in India. I also lived in Abu Dhabi for a few years. I have been to seven different schools - that was not fun. I came to the UK in 2010 to do my Masters in Aerospace Engineering at the University of Bath. I graduated in 2015 and then started working at Rolls-Royce, initially on their graduate scheme and later as an Aeroacoustics workstream lead. Whilst at Rolls-Royce, I developed a passion for software development. At the end of 2019, I switched to Amazon Prime Video in London as a full-stack web developer. I love being a developer. In particular, I love working with React.js, Python and AWS. Despite it being my day job, coding is still what I enjoy most in my free time. When I am not coding, I like learning Spanish, reading, hitting the gym and cycling.
+    - img "My photo" [ref=e26]
+    - generic [ref=e27]:
+      - generic [ref=e28]:
+        - generic [ref=e29]: Get emails from me about new articles
+        - img "subscribe" [ref=e30]: 📮
+      - generic [ref=e31]:
+        - text: Subscribe to email via
+        - link "buttondown.email/bluprince13" [ref=e32] [cursor=pointer]:
+          - /url: https://buttondown.email/bluprince13
+        - text: .
+      - generic [ref=e33]:
+        - text: Prefer RSS? Subscribe to my
+        - link "RSS feed" [ref=e34] [cursor=pointer]:
+          - /url: https://bluprince13.com/feed.xml
+        - text: .
+  - generic [ref=e35]:
+    - banner [ref=e36]:
+      - generic [ref=e37]:
+        - separator [ref=e38]
+        - generic [ref=e40]:
+          - link "Uses" [ref=e41] [cursor=pointer]:
+            - /url: /uses
+            - paragraph [ref=e42]: Uses
+          - link "Kudos" [ref=e43] [cursor=pointer]:
+            - /url: /kudos
+            - paragraph [ref=e44]: Kudos
+          - link "Values" [ref=e45] [cursor=pointer]:
+            - /url: /values
+            - paragraph [ref=e46]: Values
+          - link "Source code" [ref=e47] [cursor=pointer]:
+            - /url: https://github.com/bluprince13/bluprince13-next
+            - paragraph [ref=e48]: Source code
+          - link "Privacy policy" [ref=e49] [cursor=pointer]:
+            - /url: /privacypolicy
+            - paragraph [ref=e50]: Privacy policy
+    - banner [ref=e51]:
+      - generic [ref=e52]:
+        - link [ref=e53] [cursor=pointer]:
+          - /url: http://linkedin.com/in/vipinajayakumar
+          - img [ref=e54]
+        - link [ref=e56] [cursor=pointer]:
+          - /url: https://twitter.com/vipinajayakumar
+          - img [ref=e57]
+        - link [ref=e59] [cursor=pointer]:
+          - /url: https://github.com/bluprince13
+          - img [ref=e60]
+        - link [ref=e62] [cursor=pointer]:
+          - /url: https://www.youtube.com/channel/UCyDgfMZyUxO6Ave0KxtxcCw
+          - img [ref=e63]
+        - link [ref=e65] [cursor=pointer]:
+          - /url: https://letterboxd.com/vipinajayakumar/
+          - img [ref=e66]
+        - link [ref=e68] [cursor=pointer]:
+          - /url: https://www.goodreads.com/user/show/18863116-vipin-ajayakumar
+          - img [ref=e69]
+        - link [ref=e71] [cursor=pointer]:
+          - /url: /feed.xml
+          - img [ref=e72]

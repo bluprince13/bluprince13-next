@@ -1,9 +1,5 @@
-import { SocialIcon } from 'react-social-icons'
-import { Box } from '@mui/material'
-import Image from 'next/image'
-
-import GoodReadsIcon from './goodreads.svg'
-import LetterboxdIcon from './letterboxd.svg'
+import Box from '@mui/material/Box'
+import { SiGithub, SiX, SiLinkedin, SiYoutube, SiRss, SiGoodreads, SiLetterboxd } from '@icons-pack/react-simple-icons'
 
 const sx = {
     display: 'inline-block',
@@ -17,35 +13,55 @@ const sx = {
 
 const SIZE = 30
 
-const CustomIconMap = {
-    goodreads: GoodReadsIcon,
-    letterboxd: LetterboxdIcon
+const iconComponents = {
+    github: SiGithub,
+    twitter: SiX,
+    linkedin: SiLinkedin,
+    youtube: SiYoutube,
+    rss: SiRss,
+    goodreads: SiGoodreads,
+    letterboxd: SiLetterboxd,
 }
 
-const CustomIcon = ({ url, network }) => {
-    return (
-        <Box component="a" href={url} sx={sx}>
-            <Image
-                src={CustomIconMap[network]}
-                height={SIZE}
-                width={SIZE}
-                alt={network}
-            />
-        </Box>
-    )
+const iconColors = {
+    github: '#24292e',
+    twitter: '#1da1f2',
+    linkedin: '#0077b5',
+    youtube: '#ff0000',
+    rss: '#f26522',
+    goodreads: '#372213',
+    letterboxd: '#202830'
+}
+
+const getNetwork = (url) => {
+    if (!url) return null
+    if (url.includes('github.com')) return 'github'
+    if (url.includes('twitter.com') || url.includes('x.com')) return 'twitter'
+    if (url.includes('linkedin.com')) return 'linkedin'
+    if (url.includes('youtube.com') || url.includes('youtu.be')) return 'youtube'
+    return null
 }
 
 const Icon = ({ url, network }) => {
-    if (network in CustomIconMap) {
-        return <CustomIcon url={url} network={network} />
-    }
+    const resolvedNetwork = network || getNetwork(url)
+    const IconComponent = resolvedNetwork && iconComponents[resolvedNetwork]
+    const bgColor = (resolvedNetwork && iconColors[resolvedNetwork]) || '#666'
+
     return (
-        <Box sx={sx}>
-            <SocialIcon
-                url={url}
-                network={network}
-                style={{ height: SIZE, width: SIZE }}
-            />
+        <Box component="a" href={url} target="_blank" rel="noopener noreferrer" sx={sx}>
+            <Box
+                sx={{
+                    width: SIZE,
+                    height: SIZE,
+                    borderRadius: '50%',
+                    bgcolor: bgColor,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                }}
+            >
+                {IconComponent && <IconComponent color="white" size={SIZE * 0.6} />}
+            </Box>
         </Box>
     )
 }

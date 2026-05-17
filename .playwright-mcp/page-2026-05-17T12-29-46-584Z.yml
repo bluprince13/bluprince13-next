@@ -1,0 +1,109 @@
+- generic [ref=e4]:
+  - banner [ref=e6]:
+    - generic [ref=e7]:
+      - button "open drawer" [ref=e9] [cursor=pointer]:
+        - img [ref=e10]
+      - link "bluprince13" [ref=e13] [cursor=pointer]:
+        - /url: /
+        - button "bluprince13" [ref=e14]
+      - generic [ref=e16]:
+        - generic:
+          - img
+        - textbox "search" [ref=e18]:
+          - /placeholder: Search...
+      - button "toggle dark mode" [ref=e19] [cursor=pointer]
+  - generic [ref=e21]:
+    - heading "Blog" [level=1] [ref=e22]
+    - text: "All articles:"
+    - list [ref=e23]:
+      - listitem [ref=e24]:
+        - link "Baby finance 101" [ref=e25] [cursor=pointer]:
+          - /url: /blog/baby-finance-101
+      - listitem [ref=e26]:
+        - link "Applying for OCI for British minor" [ref=e27] [cursor=pointer]:
+          - /url: /blog/applying-for-oci-for-british-minor
+      - listitem [ref=e28]:
+        - link "Employee Provident Fund [EPF] withdrawal on becoming an NRI" [ref=e29] [cursor=pointer]:
+          - /url: /blog/epf-withdrawal-nri
+      - listitem [ref=e30]:
+        - link "Tax guide for UK-based NRIs" [ref=e31] [cursor=pointer]:
+          - /url: /blog/tax-guide-for-uk-based-nris
+      - listitem [ref=e32]:
+        - link "Preparing for AWS Certified Solutions Architect - Associate SAA-C03" [ref=e33] [cursor=pointer]:
+          - /url: /blog/preparing-for-aws-solutions-architect-associate-certification
+      - listitem [ref=e34]:
+        - link "Applying for UK citizenship" [ref=e35] [cursor=pointer]:
+          - /url: /blog/applying-for-uk-citizenship
+      - listitem [ref=e36]:
+        - link "My 2021 goals review" [ref=e37] [cursor=pointer]:
+          - /url: /blog/my-2021-goals-review
+      - listitem [ref=e38]:
+        - link "Living with back pain" [ref=e39] [cursor=pointer]:
+          - /url: /blog/living-with-backpain
+      - listitem [ref=e40]:
+        - link "Why and how to use RSS for consuming knowledge" [ref=e41] [cursor=pointer]:
+          - /url: /blog/why-and-how-to-use-rss-for-consuming-knowledge
+      - listitem [ref=e42]:
+        - link "India - UK Covid dashboard" [ref=e43] [cursor=pointer]:
+          - /url: /blog/india-uk-covid-dashboard
+      - listitem [ref=e44]:
+        - link "Google Docs, Sheets, and Slides as a Microsoft Office alternative" [ref=e45] [cursor=pointer]:
+          - /url: /blog/google-docs-sheets-slides-as-a-microsoft-office-alternative
+      - listitem [ref=e46]:
+        - link "How to get started with Spanish" [ref=e47] [cursor=pointer]:
+          - /url: /blog/how-to-get-started-with-spanish
+      - listitem [ref=e48]:
+        - link "How I switched from Aerospace Engineering to Web Development" [ref=e49] [cursor=pointer]:
+          - /url: /blog/how-i-switched-careers-from-aerospace-engineering-to-web-development
+      - listitem [ref=e50]:
+        - link "My 2021 New Year resolutions" [ref=e51] [cursor=pointer]:
+          - /url: /blog/my-2021-new-year-resolutions
+      - listitem [ref=e52]:
+        - link "Why I switched careers from Aerospace Engineering to Web Development" [ref=e53] [cursor=pointer]:
+          - /url: /blog/why-i-switched-careers-from-aerospace-engineering-to-web-development
+      - listitem [ref=e54]:
+        - link "My mind and I" [ref=e55] [cursor=pointer]:
+          - /url: /blog/my-mind-and-i
+  - generic [ref=e56]:
+    - banner [ref=e57]:
+      - generic [ref=e58]:
+        - separator [ref=e59]
+        - generic [ref=e61]:
+          - link "Uses" [ref=e62] [cursor=pointer]:
+            - /url: /uses
+            - paragraph [ref=e63]: Uses
+          - link "Kudos" [ref=e64] [cursor=pointer]:
+            - /url: /kudos
+            - paragraph [ref=e65]: Kudos
+          - link "Values" [ref=e66] [cursor=pointer]:
+            - /url: /values
+            - paragraph [ref=e67]: Values
+          - link "Source code" [ref=e68] [cursor=pointer]:
+            - /url: https://github.com/bluprince13/bluprince13-next
+            - paragraph [ref=e69]: Source code
+          - link "Privacy policy" [ref=e70] [cursor=pointer]:
+            - /url: /privacypolicy
+            - paragraph [ref=e71]: Privacy policy
+    - banner [ref=e72]:
+      - generic [ref=e73]:
+        - link [ref=e74] [cursor=pointer]:
+          - /url: http://linkedin.com/in/vipinajayakumar
+          - img [ref=e75]
+        - link [ref=e77] [cursor=pointer]:
+          - /url: https://twitter.com/vipinajayakumar
+          - img [ref=e78]
+        - link [ref=e80] [cursor=pointer]:
+          - /url: https://github.com/bluprince13
+          - img [ref=e81]
+        - link [ref=e83] [cursor=pointer]:
+          - /url: https://www.youtube.com/channel/UCyDgfMZyUxO6Ave0KxtxcCw
+          - img [ref=e84]
+        - link [ref=e86] [cursor=pointer]:
+          - /url: https://letterboxd.com/vipinajayakumar/
+          - img [ref=e87]
+        - link [ref=e89] [cursor=pointer]:
+          - /url: https://www.goodreads.com/user/show/18863116-vipin-ajayakumar
+          - img [ref=e90]
+        - link [ref=e92] [cursor=pointer]:
+          - /url: /feed.xml
+          - img [ref=e93]
