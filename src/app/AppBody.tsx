@@ -1,4 +1,6 @@
-import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles'
+'use client'
+
+import { CssVarsProvider } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
 import theme from '@Modules/theme'
 import '@Styles/globals.css'
@@ -9,7 +11,8 @@ import { StateProvider } from '@Modules/store'
 import { GoogleAnalytics } from '@Components/GoogleAnalytics'
 import SearchAppBar from '@Components/SearchAppBar/SearchAppBar'
 import Footer from '@Components/Footer'
-const Layout = ({ children }) => (
+
+const Layout = ({ children }: { children: React.ReactNode }) => (
     <div
         style={{
             display: 'flex',
@@ -21,7 +24,7 @@ const Layout = ({ children }) => (
     </div>
 )
 
-const Content = ({ children }) => {
+const Content = ({ children }: { children: React.ReactNode }) => {
     return <div style={{ padding: '1rem' }}>{children}</div>
 }
 
@@ -30,19 +33,17 @@ export const AppBody = ({ children }: { children: React.ReactNode }) => {
         <>
             <GoogleAnalytics />
             <Analytics />
-            <StyledEngineProvider injectFirst>
-                <ThemeProvider theme={theme}>
-                    <CssBaseline />
-                    <StateProvider>
-                        <Layout>
-                            <SearchAppBar />
-                            <Content>{children}</Content>
-                            <Footer />
-                            <SpeedInsights />
-                        </Layout>
-                    </StateProvider>
-                </ThemeProvider>
-            </StyledEngineProvider>
+            <CssVarsProvider theme={theme}>
+                <CssBaseline />
+                <StateProvider>
+                    <Layout>
+                        <SearchAppBar />
+                        <Content>{children}</Content>
+                        <Footer />
+                        <SpeedInsights />
+                    </Layout>
+                </StateProvider>
+            </CssVarsProvider>
         </>
     )
 }

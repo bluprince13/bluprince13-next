@@ -4,12 +4,15 @@ import Typography from '@mui/material/Typography'
 import Emoji from 'a11y-react-emoji'
 import Box from '@mui/material/Box'
 
-import { lightBlue as blue } from '@mui/material/colors'
-
 // TODO: Add loading indicator to button
 function Subscribe() {
     return (
-        <Box sx={{padding: 2, borderRadius: 5, marginY: 2}} bgcolor={blue[50]}>
+        <Box sx={{
+            padding: 2,
+            borderRadius: 5,
+            marginY: 2,
+            backgroundColor: 'rgba(var(--mui-palette-primary-mainChannel) / 0.08)',
+        }}>
                 <div>
                     <Typography variant="overline">
                         Get emails from me about new articles{' '}

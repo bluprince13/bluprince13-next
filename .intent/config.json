@@ -1,0 +1,52 @@
+{
+  "scripts": [
+    {
+      "name": "dev",
+      "command": "yarn dev",
+      "mode": "service",
+      "category": "dev"
+    },
+    {
+      "name": "build",
+      "command": "yarn build",
+      "mode": "command",
+      "category": "build"
+    },
+    {
+      "name": "lint",
+      "command": "yarn lint",
+      "mode": "command",
+      "category": "lint"
+    },
+    {
+      "name": "start",
+      "command": "yarn start",
+      "mode": "service",
+      "category": "dev"
+    },
+    {
+      "name": "test:e2e",
+      "command": "yarn test:e2e",
+      "mode": "command",
+      "category": "test"
+    },
+    {
+      "name": "test:jest",
+      "command": "yarn test:jest",
+      "mode": "command",
+      "category": "test"
+    },
+    {
+      "name": "test",
+      "command": "yarn test",
+      "mode": "command",
+      "category": "test"
+    },
+    {
+      "name": "watch",
+      "command": "yarn watch",
+      "mode": "service",
+      "category": "dev"
+    }
+  ]
+}

@@ -37,6 +37,12 @@ yarn-error.log*
 # worktrees
 .worktrees/
 
+# claude
+.claude/settings.local.json
+
+# typescript
+tsconfig.tsbuildinfo
+
 # custom
 **/feed.xml
 **/feed.json

@@ -1,10 +1,43 @@
 html {
     scroll-behavior: smooth;
 }
+
+/* Required for @mui/material/Icon ligature rendering (font loaded via @fontsource/material-icons) */
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    font-feature-settings: 'liga';
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+}
 body {
     font-size: 16px;
     margin: 0;
     padding: 0;
+}
+a {
+    color: var(--mui-palette-primary-main);
+}
+
+/* Prevent white flash on SPA navigation in dark mode.
+   getInitColorSchemeScript() sets data-mui-color-scheme on <html> before React hydrates,
+   but CssBaseline only applies background-color after rendering.
+   Setting both html and body ensures no white shows through at any level. */
+[data-mui-color-scheme='dark'] {
+    color-scheme: dark;
+    background-color: #121212;
+}
+[data-mui-color-scheme='dark'] body {
+    background-color: #121212;
 }
 /* TODO: Make anchors visible on hover only */
 .anchor {
@@ -12,7 +45,7 @@ body {
 }
 
 code {
-    background-color: #1b1f230d;
+    background-color: var(--mui-palette-action-selected);
     border-radius: 0.3em;
     padding: 0.2em 0.4em;
     white-space: nowrap;

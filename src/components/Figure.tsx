@@ -33,7 +33,7 @@ const getMaxWidth = (size) => {
         case 'ml':
             return '500px'
         case 'l':
-            return ''
+            return undefined
         case 'm':
         default:
             return '350px'
@@ -67,9 +67,8 @@ const Figure = ({
     align
 }: FigureProps) => {
     const maxWidthToUse = maxWidth || getMaxWidth(size)
-    const style: { margin?: string; display?: string; maxWidth?: string } = {
-        maxWidth: maxWidthToUse
-    }
+    const style: { margin?: string; display?: string; maxWidth?: string } = {}
+    if (maxWidthToUse) style.maxWidth = maxWidthToUse
     if (align == 'center') {
         style.margin = 'auto'
         style.display = 'block'
@@ -77,15 +76,13 @@ const Figure = ({
     return (
         <figure style={{ marginLeft: 0, marginRight: 0 }}>
             <img src={src} alt={alt ?? caption} width="100%" style={style} />
-            {caption ? (
+            {caption && (
                 <Caption
                     caption={caption}
                     href={href}
                     reference={reference}
                     referenceHref={referenceHref}
                 />
-            ) : (
-                ''
             )}
         </figure>
     )

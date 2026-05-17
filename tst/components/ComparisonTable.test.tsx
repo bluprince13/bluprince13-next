@@ -1,4 +1,5 @@
 import { render } from '@testing-library/react'
+import { Experimental_CssVarsProvider as CssVarsProvider } from '@mui/material/styles'
 import { ComparisonTable } from '@Components/ComparisonTable'
 
 jest.mock('react-markdown', () => {
@@ -10,6 +11,7 @@ jest.mock('react-markdown', () => {
 describe('ComparisonTable', () => {
     const setup = ({} = {}) => {
         const queries = render(
+            <CssVarsProvider>
             <ComparisonTable
                 columnHeaders={[
                     {
@@ -86,6 +88,7 @@ describe('ComparisonTable', () => {
                 ]}
                 summary="summary"
             />
+            </CssVarsProvider>
         )
         return queries
     }

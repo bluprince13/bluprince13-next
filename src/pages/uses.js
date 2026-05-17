@@ -6,7 +6,6 @@ import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import { CardActionArea } from '@mui/material'
 import Box from '@mui/material/Box'
-import Grid from '@mui/material/Grid'
 import StarRateRoundedIcon from '@mui/icons-material/StarRateRounded'
 import Link from 'next/link'
 import Tooltip from '@mui/material/Tooltip'
@@ -56,13 +55,10 @@ const AppCard = ({
         <Card sx={{ maxWidth: 700 }}>
             <CardContent>
                 <CardActionArea href={href} target="_blank">
-                    <Stack
-                        direction="row"
-                        justifyContent="space-between"
-                        alignItems="center"
-                        sx={{ margin: '0 1rem' }}
+                    <Box
+                        sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', margin: '0 1rem' }}
                     >
-                        <Stack direction="row" spacing={2} alignItems="center">
+                        <Box sx={{ display: 'flex', flexDirection: 'row', gap: 2, alignItems: 'center' }}>
                             <Figure
                                 src={image}
                                 alt={appName}
@@ -72,16 +68,16 @@ const AppCard = ({
                             <Typography variant="h5" component="div">
                                 {use} - {appName}
                             </Typography>
-                        </Stack>
+                        </Box>
                         {recommended && (
                             <StarRateRoundedIcon fontSize="small" />
                         )}
-                    </Stack>
+                    </Box>
                 </CardActionArea>
-                <Typography variant="body2" color="text.secondary">
+                <Typography variant="body2" color="text.secondary" component="div">
                     <MDXRemote {...description} />
                 </Typography>
-                <Stack direction="horizontal" spacing={2}>
+                <Stack direction="row" spacing={2}>
                     {platforms.map((platform) => {
                         const Icon = platformIconMap[platform]
                         return (
@@ -132,14 +128,14 @@ const UsesThis = ({ data }) => {
                 geographic areas, i.e., UK or India.
             </Typography>
             <br />
-            <Grid container justifyContent="right">
+            <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
                 <MultipleSelect
                     options={PLATFORMS}
                     label="Filter platforms"
                     selectedOptions={selectedOptions}
                     setSelectedOptions={setSelectedOptions}
                 />
-            </Grid>
+            </Box>
             <Stack spacing={2}>
                 {filteredData.map((app) => (
                     <AppCard {...app} key={app.appName} />

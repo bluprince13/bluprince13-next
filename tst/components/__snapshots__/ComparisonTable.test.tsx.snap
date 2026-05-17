@@ -6,63 +6,64 @@ exports[`ComparisonTable renders correctly 1`] = `
     class="MuiBox-root css-0"
   >
     <div
-      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiTableContainer-root css-11xur9t-MuiPaper-root-MuiTableContainer-root"
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiTableContainer-root css-if1821-MuiPaper-root-MuiTableContainer-root"
+      style="--Paper-shadow: var(--mui-shadows-1);"
     >
       <table
         aria-label="comparison table"
-        class="MuiTable-root css-quj9j6-MuiTable-root"
+        class="MuiTable-root css-pmti2x-MuiTable-root"
       >
         <thead
-          class="MuiTableHead-root css-15wwp11-MuiTableHead-root"
+          class="MuiTableHead-root css-1a7iywq-MuiTableHead-root"
         >
           <tr
-            class="MuiTableRow-root MuiTableRow-head css-1q1u3t4-MuiTableRow-root"
+            class="MuiTableRow-root MuiTableRow-head css-92sqde-MuiTableRow-root"
           >
             <th
-              class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-1ywhbpj-MuiTableCell-root"
+              class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-18z0d7s-MuiTableCell-root"
               scope="col"
             />
             <th
-              class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-1ywhbpj-MuiTableCell-root"
+              class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-18z0d7s-MuiTableCell-root"
               scope="col"
             >
               <h6
-                class="MuiTypography-root MuiTypography-subtitle1 css-1qtbcgy-MuiTypography-root"
+                class="MuiTypography-root MuiTypography-subtitle1 css-rz8w-MuiTypography-root"
               >
                 Feature A
               </h6>
               <p
-                class="MuiTypography-root MuiTypography-body2 css-l3td95-MuiTypography-root"
+                class="MuiTypography-root MuiTypography-body2 css-xj1ycg-MuiTypography-root"
               >
                 Description for Feature A
               </p>
             </th>
             <th
-              class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-1ywhbpj-MuiTableCell-root"
+              class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-18z0d7s-MuiTableCell-root"
               scope="col"
             >
               <h6
-                class="MuiTypography-root MuiTypography-subtitle1 css-1qtbcgy-MuiTypography-root"
+                class="MuiTypography-root MuiTypography-subtitle1 css-rz8w-MuiTypography-root"
               >
                 Feature B
               </h6>
               <p
-                class="MuiTypography-root MuiTypography-body2 css-l3td95-MuiTypography-root"
+                class="MuiTypography-root MuiTypography-body2 css-xj1ycg-MuiTypography-root"
               >
                 Description for Feature B
               </p>
             </th>
             <th
-              class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-1ywhbpj-MuiTableCell-root"
+              class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-18z0d7s-MuiTableCell-root"
               scope="col"
             >
               <h6
-                class="MuiTypography-root MuiTypography-subtitle1 css-1qtbcgy-MuiTypography-root"
+                class="MuiTypography-root MuiTypography-subtitle1 css-rz8w-MuiTypography-root"
               >
                 Feature C
               </h6>
               <p
-                class="MuiTypography-root MuiTypography-body2 css-l3td95-MuiTypography-root"
+                class="MuiTypography-root MuiTypography-body2 css-xj1ycg-MuiTypography-root"
               >
                 Description for Feature C
               </p>
@@ -70,41 +71,41 @@ exports[`ComparisonTable renders correctly 1`] = `
           </tr>
         </thead>
         <tbody
-          class="MuiTableBody-root css-apqrd9-MuiTableBody-root"
+          class="MuiTableBody-root css-gmh7jj-MuiTableBody-root"
         >
           <tr
-            class="MuiTableRow-root css-1q1u3t4-MuiTableRow-root"
+            class="MuiTableRow-root css-92sqde-MuiTableRow-root"
           >
             <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-3dnjc9-MuiTableCell-root"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-snhrv2-MuiTableCell-root"
             >
               <h6
-                class="MuiTypography-root MuiTypography-subtitle1 css-1qtbcgy-MuiTypography-root"
+                class="MuiTypography-root MuiTypography-subtitle1 css-rz8w-MuiTypography-root"
               >
                 Option 1
               </h6>
               <p
-                class="MuiTypography-root MuiTypography-body2 css-l3td95-MuiTypography-root"
+                class="MuiTypography-root MuiTypography-body2 css-xj1ycg-MuiTypography-root"
               >
                 Description for Option 1
               </p>
             </td>
             <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-10396rc-MuiTableCell-root"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-192o7e9-MuiTableCell-root"
             >
               <span>
                 Good
               </span>
             </td>
             <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-bgr10x-MuiTableCell-root"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-twhydj-MuiTableCell-root"
             >
               <span>
                 Average
               </span>
             </td>
             <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-5tm5lg-MuiTableCell-root"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-r18dcf-MuiTableCell-root"
             >
               <span>
                 Poor
@@ -112,38 +113,38 @@ exports[`ComparisonTable renders correctly 1`] = `
             </td>
           </tr>
           <tr
-            class="MuiTableRow-root css-1q1u3t4-MuiTableRow-root"
+            class="MuiTableRow-root css-92sqde-MuiTableRow-root"
           >
             <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-3dnjc9-MuiTableCell-root"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-snhrv2-MuiTableCell-root"
             >
               <h6
-                class="MuiTypography-root MuiTypography-subtitle1 css-1qtbcgy-MuiTypography-root"
+                class="MuiTypography-root MuiTypography-subtitle1 css-rz8w-MuiTypography-root"
               >
                 Option 2
               </h6>
               <p
-                class="MuiTypography-root MuiTypography-body2 css-l3td95-MuiTypography-root"
+                class="MuiTypography-root MuiTypography-body2 css-xj1ycg-MuiTypography-root"
               >
                 Description for Option 2
               </p>
             </td>
             <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-5tm5lg-MuiTableCell-root"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-r18dcf-MuiTableCell-root"
             >
               <span>
                 Poor
               </span>
             </td>
             <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-10396rc-MuiTableCell-root"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-192o7e9-MuiTableCell-root"
             >
               <span>
                 Good
               </span>
             </td>
             <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-bgr10x-MuiTableCell-root"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-twhydj-MuiTableCell-root"
             >
               <span>
                 Average
@@ -151,38 +152,38 @@ exports[`ComparisonTable renders correctly 1`] = `
             </td>
           </tr>
           <tr
-            class="MuiTableRow-root css-1q1u3t4-MuiTableRow-root"
+            class="MuiTableRow-root css-92sqde-MuiTableRow-root"
           >
             <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-3dnjc9-MuiTableCell-root"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-snhrv2-MuiTableCell-root"
             >
               <h6
-                class="MuiTypography-root MuiTypography-subtitle1 css-1qtbcgy-MuiTypography-root"
+                class="MuiTypography-root MuiTypography-subtitle1 css-rz8w-MuiTypography-root"
               >
                 Option 3
               </h6>
               <p
-                class="MuiTypography-root MuiTypography-body2 css-l3td95-MuiTypography-root"
+                class="MuiTypography-root MuiTypography-body2 css-xj1ycg-MuiTypography-root"
               >
                 A very long descripition that needs more than one line
               </p>
             </td>
             <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-bgr10x-MuiTableCell-root"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-twhydj-MuiTableCell-root"
             >
               <span>
                 Average
               </span>
             </td>
             <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-5tm5lg-MuiTableCell-root"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-r18dcf-MuiTableCell-root"
             >
               <span>
                 Poor
               </span>
             </td>
             <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-10396rc-MuiTableCell-root"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-192o7e9-MuiTableCell-root"
             >
               <span>
                 Very long content that needs more than one line
@@ -193,17 +194,17 @@ exports[`ComparisonTable renders correctly 1`] = `
       </table>
     </div>
     <p
-      class="MuiTypography-root MuiTypography-body1 css-1cl54jn-MuiTypography-root"
+      class="MuiTypography-root MuiTypography-body1 css-dugpz3-MuiTypography-root"
     >
       Summary:
     </p>
     <p
-      class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+      class="MuiTypography-root MuiTypography-body1 css-rizt0-MuiTypography-root"
     >
       summary
     </p>
     <hr
-      class="MuiDivider-root MuiDivider-fullWidth css-mm3ws1-MuiDivider-root"
+      class="MuiDivider-root MuiDivider-fullWidth css-1s5niau-MuiDivider-root"
     />
   </div>
 </DocumentFragment>

@@ -1,16 +1,19 @@
 'use client'
 
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, startTransition, useEffect } from 'react'
 
-import { styled } from '@mui/material/styles'
+import { styled, useColorScheme } from '@mui/material/styles'
 
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import Button from '@mui/material/Button'
 import InputBase from '@mui/material/InputBase'
+import IconButton from '@mui/material/IconButton'
 import { alpha } from '@mui/material/styles'
 import SearchIcon from '@mui/icons-material/Search'
+import Brightness4Icon from '@mui/icons-material/Brightness4'
+import Brightness7Icon from '@mui/icons-material/Brightness7'
 import { Box } from '@mui/material'
 
 import SimpleMenu from './SimpleMenu'
@@ -80,7 +83,6 @@ const Root = styled('div')(({ theme }) => ({
 
     [`& .${classes.inputInput}`]: {
         padding: theme.spacing(1, 1, 1, 0),
-        // vertical padding + font size from searchIcon
         paddingLeft: `calc(1em + ${theme.spacing(4)})`,
         transition: theme.transitions.create('width'),
         width: '100%',
@@ -95,6 +97,16 @@ const Root = styled('div')(({ theme }) => ({
 
 export default function SearchAppBar() {
     const [searchTerm, setSearchTerm] = useState('')
+    const [mounted, setMounted] = useState(false)
+    const { mode, setMode } = useColorScheme()
+
+    useEffect(() => setMounted(true), [])
+
+    const toggleColorMode = () => {
+        startTransition(() => {
+            setMode(mode === 'light' ? 'dark' : 'light')
+        })
+    }
 
     const handleSearchSubmit = (e) => {
         e.preventDefault()
@@ -139,7 +151,7 @@ export default function SearchAppBar() {
                                 <SearchIcon />
                             </div>
                             <InputBase
-                                placeholder="Search…"
+                                placeholder="Search..."
                                 value={searchTerm}
                                 onChange={handleInputChange}
                                 onKeyPress={handleKeyPress}
@@ -151,6 +163,9 @@ export default function SearchAppBar() {
                             />
                         </div>
                     </form>
+                    <IconButton color="inherit" onClick={toggleColorMode} aria-label="toggle dark mode">
+                        {mounted && (mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />)}
+                    </IconButton>
                 </Toolbar>
             </AppBar>
         </Root>

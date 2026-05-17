@@ -3,26 +3,27 @@
 exports[`Table renders correctly 1`] = `
 <DocumentFragment>
   <div
-    class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiTableContainer-root css-11xur9t-MuiPaper-root-MuiTableContainer-root"
+    class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiTableContainer-root css-y2ff7i-MuiPaper-root-MuiTableContainer-root"
+    style="--Paper-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);"
   >
     <table
       aria-label="simple table"
-      class="MuiTable-root css-quj9j6-MuiTable-root"
+      class="MuiTable-root css-1ks3uzw-MuiTable-root"
     >
       <thead
-        class="MuiTableHead-root css-15wwp11-MuiTableHead-root"
+        class="MuiTableHead-root css-1a7iywq-MuiTableHead-root"
       >
         <tr
-          class="MuiTableRow-root MuiTableRow-head css-1q1u3t4-MuiTableRow-root"
+          class="MuiTableRow-root MuiTableRow-head css-1xtozoh-MuiTableRow-root"
         >
           <th
-            class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-1obp5w9-MuiTableCell-root"
+            class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-1bw42a9-MuiTableCell-root"
             scope="col"
           >
             col1name
           </th>
           <th
-            class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-1obp5w9-MuiTableCell-root"
+            class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-1bw42a9-MuiTableCell-root"
             scope="col"
           >
             col2name
@@ -30,49 +31,49 @@ exports[`Table renders correctly 1`] = `
         </tr>
       </thead>
       <tbody
-        class="MuiTableBody-root css-apqrd9-MuiTableBody-root"
+        class="MuiTableBody-root css-gmh7jj-MuiTableBody-root"
       >
         <tr
-          class="MuiTableRow-root css-1ffuvkz-MuiTableRow-root"
+          class="MuiTableRow-root css-lpeob4-MuiTableRow-root"
         >
           <th
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-ojbc7e-MuiTableCell-root"
+            class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-1eoyd5a-MuiTableCell-root"
             scope="row"
           >
             <p
-              class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-body1 css-rizt0-MuiTypography-root"
             >
               row1-col1
             </p>
           </th>
           <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-ojbc7e-MuiTableCell-root"
+            class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-1eoyd5a-MuiTableCell-root"
           >
             <p
-              class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-body1 css-rizt0-MuiTypography-root"
             >
               row1-col2
             </p>
           </td>
         </tr>
         <tr
-          class="MuiTableRow-root css-1ffuvkz-MuiTableRow-root"
+          class="MuiTableRow-root css-lpeob4-MuiTableRow-root"
         >
           <th
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-ojbc7e-MuiTableCell-root"
+            class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-1eoyd5a-MuiTableCell-root"
             scope="row"
           >
             <p
-              class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-body1 css-rizt0-MuiTypography-root"
             >
               row2-col1
             </p>
           </th>
           <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-ojbc7e-MuiTableCell-root"
+            class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-1eoyd5a-MuiTableCell-root"
           >
             <p
-              class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-body1 css-rizt0-MuiTypography-root"
             >
               row2-col2
             </p>

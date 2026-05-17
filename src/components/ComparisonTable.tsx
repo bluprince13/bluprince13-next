@@ -11,6 +11,7 @@ import {
     Divider,
     Box
 } from '@mui/material'
+import { useColorScheme } from '@mui/material/styles'
 import Markdown from 'react-markdown'
 
 interface CellContent {
@@ -30,24 +31,12 @@ interface TableProps {
     summary: string
 }
 
-const getStatusColor = (status: 'bad' | 'neutral' | 'good') => {
-    switch (status) {
-        case 'bad':
-            return '#FFEBEE'
-        case 'neutral':
-            return '#FFFDE7'
-        case 'good':
-            return '#E8F5E9'
-        default:
-            return 'white'
-    }
-}
-
 const tableCellSx = {
     backgroundColor: 'background.paper',
-    border: '1px solid rgba(224, 224, 224, 1)',
+    border: '1px solid',
+    borderColor: 'divider',
     '&:hover': {
-        backgroundColor: 'grey.200'
+        backgroundColor: 'action.hover'
     }
 }
 
@@ -87,6 +76,26 @@ export const ComparisonTable: React.FC<TableProps> = ({
     rows,
     summary
 }) => {
+    const { mode } = useColorScheme()
+    const isDark = (mode ?? 'light') === 'dark'
+
+    const getStatusColor = (status: 'bad' | 'neutral' | 'good') => {
+        if (isDark) {
+            switch (status) {
+                case 'bad': return '#4e1717'
+                case 'neutral': return '#4a420b'
+                case 'good': return '#1b3d1e'
+                default: return 'transparent'
+            }
+        }
+        switch (status) {
+            case 'bad': return '#FFEBEE'
+            case 'neutral': return '#FFFDE7'
+            case 'good': return '#E8F5E9'
+            default: return 'white'
+        }
+    }
+
     return (
         <Box>
             <TableContainer component={Paper}>
