@@ -1,6 +1,5 @@
 'use client'
 
-import { styled } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
 import AppBar from '@mui/material/AppBar'
 import Container from '@mui/material/Container'
@@ -10,28 +9,17 @@ import Box from '@mui/material/Box'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import Icon from '@Components/Icon'
 
-const PREFIX = 'Footer'
-
-const classes = {
-    link: `${PREFIX}-link`
-}
-
-const Root = styled('div')(() => ({
-    [`& .${classes.link}`]: {
-        textDecoration: 'none',
-        color: 'inherit',
-        '&:focus, &:hover, &:visited, &:link, &:active': {
-            textDecoration: 'none'
-        }
-    }
-}))
-
 const AUTHOR = 'Vipin Ajayakumar'
 
-// TODO: Make relative links work without page refresh
 const FooterLink = ({ children, to }) => {
     return (
-        <a className={classes.link} href={to}>
+        <Box component="a" href={to} sx={{
+            textDecoration: 'none',
+            color: 'inherit',
+            '&:hover': { textDecoration: 'none' },
+            '&:focus': { textDecoration: 'none' },
+            '&:active': { textDecoration: 'none' },
+        }}>
             <Typography
                 variant="body2"
                 color="inherit"
@@ -39,7 +27,7 @@ const FooterLink = ({ children, to }) => {
             >
                 {children}
             </Typography>
-        </a>
+        </Box>
     )
 }
 
@@ -49,14 +37,8 @@ const IconBar = () => (
         <Icon url="https://twitter.com/vipinajayakumar" />
         <Icon url="https://github.com/bluprince13" />
         <Icon url="https://www.youtube.com/channel/UCyDgfMZyUxO6Ave0KxtxcCw" />
-        <Icon
-            url="https://letterboxd.com/vipinajayakumar/"
-            network="letterboxd"
-        />
-        <Icon
-            url="https://www.goodreads.com/user/show/18863116-vipin-ajayakumar"
-            network="goodreads"
-        />
+        <Icon url="https://letterboxd.com/vipinajayakumar/" network="letterboxd" />
+        <Icon url="https://www.goodreads.com/user/show/18863116-vipin-ajayakumar" network="goodreads" />
         <Icon url="/feed.xml" network="rss" />
     </Box>
 )
@@ -83,7 +65,7 @@ export default function Footer() {
     const isLargeScreen = useMediaQuery('(min-width:800px)')
 
     return (
-        <Root style={{ marginTop: 'auto' }}>
+        <Box style={{ marginTop: 'auto' }}>
             <AppBar position="static" color="transparent" elevation={0}>
                 <Container maxWidth="lg">
                     <Divider />
@@ -120,6 +102,6 @@ export default function Footer() {
                     <IconBar />
                 </AppBar>
             )}
-        </Root>
+        </Box>
     )
 }

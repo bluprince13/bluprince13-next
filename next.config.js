@@ -1,4 +1,3 @@
-const withPlugins = require('next-compose-plugins')
 const withMDX = require('@next/mdx')({
     extension: /\.(md|mdx)$/
 })
@@ -39,17 +38,8 @@ const rewritesConfig = [
     }
 ]
 
-module.exports = withPlugins(
-    [
-        [
-            // TODO: Reduce width of MDX based pages
-            withMDX,
-            {
-                pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx']
-            }
-        ]
-    ],
-    {
-        rewrites: async () => rewritesConfig
-    }
-)
+// TODO: Reduce width of MDX based pages
+module.exports = withMDX({
+    pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
+    rewrites: async () => rewritesConfig
+})
