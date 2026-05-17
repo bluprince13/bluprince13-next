@@ -1,13 +1,23 @@
-import { FlatCompat } from "@eslint/eslintrc";
+import nextConfig from "eslint-config-next";
+import eslintConfigPrettier from "eslint-config-prettier";
+import jestPlugin from "eslint-plugin-jest";
 
-const compat = new FlatCompat();
-
-export default [
+const eslintConfig = [
   {
-    ignores: ["node_modules/", ".next/", "out/"],
+    ignores: ["node_modules/", ".next/", "out/", "coverage/"],
   },
-  ...compat.extends("next/core-web-vitals", "prettier"),
-  ...compat.plugins("react", "jest"),
+  ...nextConfig,
+  eslintConfigPrettier,
+  {
+    ...jestPlugin.configs['flat/recommended'],
+    files: ["**/*.test.{js,jsx,ts,tsx}", "**/tst/**/*.{js,jsx,ts,tsx}"],
+  },
+  {
+    files: ["tst-e2e/**/*.{js,jsx,ts,tsx}"],
+    rules: {
+      "react-hooks/rules-of-hooks": "off",
+    },
+  },
   {
     settings: {
       "import/resolver": {
@@ -32,6 +42,10 @@ export default [
       "react/react-in-jsx-scope": "off",
       "react/prop-types": "off",
       "react/jsx-props-no-spreading": "off",
+      "react-hooks/set-state-in-effect": "off",
+      "react-hooks/static-components": "off",
     },
   },
 ];
+
+export default eslintConfig;

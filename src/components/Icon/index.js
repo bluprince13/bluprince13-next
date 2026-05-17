@@ -1,5 +1,5 @@
 import Box from '@mui/material/Box'
-import { SiGithub, SiX, SiLinkedin, SiYoutube, SiRss, SiGoodreads, SiLetterboxd } from '@icons-pack/react-simple-icons'
+import { Icon as IconifyIcon } from '@iconify/react'
 
 const sx = {
     display: 'inline-block',
@@ -13,14 +13,14 @@ const sx = {
 
 const SIZE = 30
 
-const iconComponents = {
-    github: SiGithub,
-    twitter: SiX,
-    linkedin: SiLinkedin,
-    youtube: SiYoutube,
-    rss: SiRss,
-    goodreads: SiGoodreads,
-    letterboxd: SiLetterboxd,
+const iconNames = {
+    github: 'simple-icons:github',
+    twitter: 'simple-icons:x',
+    linkedin: 'simple-icons:linkedin',
+    youtube: 'simple-icons:youtube',
+    rss: 'simple-icons:rss',
+    goodreads: 'simple-icons:goodreads',
+    letterboxd: 'simple-icons:letterboxd',
 }
 
 const iconColors = {
@@ -44,7 +44,7 @@ const getNetwork = (url) => {
 
 const Icon = ({ url, network }) => {
     const resolvedNetwork = network || getNetwork(url)
-    const IconComponent = resolvedNetwork && iconComponents[resolvedNetwork]
+    const iconName = resolvedNetwork && iconNames[resolvedNetwork]
     const bgColor = (resolvedNetwork && iconColors[resolvedNetwork]) || '#666'
 
     return (
@@ -60,7 +60,7 @@ const Icon = ({ url, network }) => {
                     justifyContent: 'center',
                 }}
             >
-                {IconComponent && <IconComponent color="white" size={SIZE * 0.6} />}
+                {iconName && <IconifyIcon icon={iconName} color="white" width={SIZE * 0.6} />}
             </Box>
         </Box>
     )

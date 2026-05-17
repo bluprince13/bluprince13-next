@@ -8,6 +8,8 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Analytics } from "@vercel/analytics/react"
 import Script from 'next/script'
 import { StateProvider } from '@Modules/store'
+
+const GA_MEASUREMENT_ID = 'G-Y7P3Z69032'
 import SearchAppBar from '@Components/SearchAppBar/SearchAppBar'
 import Footer from '@Components/Footer'
 
@@ -32,7 +34,7 @@ export const AppBody = ({ children }: { children: React.ReactNode }) => {
         <>
             <Analytics />
             <Script
-                src="https://www.googletagmanager.com/gtag/js?id=G-Y7P3Z69032"
+                src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
                 strategy="afterInteractive"
             />
             <Script id="google-analytics" strategy="afterInteractive">
@@ -40,7 +42,7 @@ export const AppBody = ({ children }: { children: React.ReactNode }) => {
                   window.dataLayer = window.dataLayer || [];
                   function gtag(){dataLayer.push(arguments);}
                   gtag('js', new Date());
-                  gtag('config', 'G-Y7P3Z69032');
+                  gtag('config', '${GA_MEASUREMENT_ID}');
                 `}
             </Script>
             <CssVarsProvider theme={theme}>

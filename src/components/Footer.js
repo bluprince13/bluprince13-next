@@ -11,14 +11,15 @@ import Icon from '@Components/Icon'
 
 const AUTHOR = 'Vipin Ajayakumar'
 
-const footerLinkStyle = {
-    textDecoration: 'none',
-    color: 'inherit'
-}
-
 const FooterLink = ({ children, to }) => {
     return (
-        <a style={footerLinkStyle} href={to}>
+        <Box component="a" href={to} sx={{
+            textDecoration: 'none',
+            color: 'inherit',
+            '&:hover': { textDecoration: 'none' },
+            '&:focus': { textDecoration: 'none' },
+            '&:active': { textDecoration: 'none' },
+        }}>
             <Typography
                 variant="body2"
                 color="inherit"
@@ -26,7 +27,7 @@ const FooterLink = ({ children, to }) => {
             >
                 {children}
             </Typography>
-        </a>
+        </Box>
     )
 }
 

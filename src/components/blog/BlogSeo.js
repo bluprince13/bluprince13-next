@@ -36,7 +36,7 @@ const BlogSeo = ({ pageTitle, description, date, url, bannerFullUrl }) => {
             <link rel="canonical" href={url} />
             <meta property="og:type" content="article" />
             <meta property="og:url" content={url} />
-            <meta property="og:title" content={pageTitle} />
+            <meta property="og:title" content={`${pageTitle} – Vipin Ajayakumar`} />
             <meta property="og:description" content={description} />
             {bannerFullUrl && <meta property="og:image" content={bannerFullUrl} />}
             {bannerFullUrl && <meta property="og:image:alt" content={pageTitle} />}
