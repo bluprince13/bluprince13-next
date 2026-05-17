@@ -19,7 +19,7 @@ const StyledList = styled(List)((
     [`&.${classes.root}`]: {
         width: '100%',
         maxWidth: 750,
-        backgroundColor: theme.palette.background.paper,
+        backgroundColor: theme.vars ? theme.vars.palette.background.paper : theme.palette.background.paper,
         margin: '0 auto'
     }
 }));

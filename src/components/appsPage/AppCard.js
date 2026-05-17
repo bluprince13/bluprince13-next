@@ -11,11 +11,13 @@ const classes = {
     root: `${PREFIX}-root`
 };
 
-const StyledCard = styled(Card)({
+const StyledCard = styled(Card)(({ theme }) => ({
     [`&.${classes.root}`]: {
-        width: '100%'
+        width: '100%',
+        borderColor: theme.vars ? theme.vars.palette.divider : theme.palette.divider,
+        backgroundColor: theme.vars ? theme.vars.palette.background.paper : theme.palette.background.paper,
     }
-});
+}));
 
 export default function AppCard({ app }) {
 

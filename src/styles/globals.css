@@ -29,14 +29,14 @@ a {
 }
 
 /* Prevent white flash on SPA navigation in dark mode.
-   getInitColorSchemeScript() sets data-mui-color-scheme on <html> before React hydrates,
+   InitColorSchemeScript sets data-color-scheme on <html> before React hydrates,
    but CssBaseline only applies background-color after rendering.
    Setting both html and body ensures no white shows through at any level. */
-[data-mui-color-scheme='dark'] {
+[data-color-scheme='dark'] {
     color-scheme: dark;
     background-color: #121212;
 }
-[data-mui-color-scheme='dark'] body {
+[data-color-scheme='dark'] body {
     background-color: #121212;
 }
 /* TODO: Make anchors visible on hover only */

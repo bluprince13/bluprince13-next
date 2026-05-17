@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "dev": "NODE_OPTIONS='--inspect' next-remote-watch src/content/blog",
+        "dev": "NODE_OPTIONS='--inspect' next-remote-watch src/content/blog -p ${PORT:-3000}",
         "build": "next build",
         "lint": "eslint .",
         "start": "next start",
@@ -57,7 +57,6 @@
         "swr": "2.2.5"
     },
     "devDependencies": {
-
         "@playwright/test": "^1.44.1",
         "@testing-library/jest-dom": "^6.4.5",
         "@testing-library/react": "^15.0.7",

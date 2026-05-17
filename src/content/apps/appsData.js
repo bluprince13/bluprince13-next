@@ -17,14 +17,6 @@ const data = [
             'I wanted to make a desktop app using Electron and React and see how difficult it would be. I made a ssh key manager, which to be fair, doesn’t have much practical use. However, I found this very easy to make.'
     },
     {
-        id: 3,
-        title: 'Spanish tenses interactive table',
-        href: '/apps/spanish',
-        image: '/apps/spanish.jpg',
-        blurb:
-            'I learn Spanish for fun, and wanted to make a simple, interactive table that I could refer to.'
-    },
-    {
         id: 4,
         title: 'Coding interview prep',
         href: '/apps/coding-interview-prep',
