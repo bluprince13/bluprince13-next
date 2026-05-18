@@ -44,7 +44,7 @@ a {
     padding-left: 0.5rem;
 }
 
-code {
+:not(pre) > code {
     background-color: var(--mui-palette-action-selected);
     border-radius: 0.3em;
     padding: 0.2em 0.4em;
