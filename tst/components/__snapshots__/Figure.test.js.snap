@@ -17,14 +17,15 @@ exports[`Figure renders correctly 1`] = `
       >
         caption
       </a>
-      <span>
-         
+      <small>
+         [
         <a
           href="https://reference-href.com"
         >
-          [reference]
+          reference
         </a>
-      </span>
+        ]
+      </small>
     </figcaption>
   </figure>
 </DocumentFragment>

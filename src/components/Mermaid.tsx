@@ -1,3 +1,4 @@
+'use client'
 import dynamic from 'next/dynamic.js'
 import type { MermaidProps } from 'mdx-mermaid/lib/Mermaid'
 

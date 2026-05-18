@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
+import { cache } from 'react'
 
 const postDirectory = path.join(process.cwd(), 'src/content/blog')
 const { SITE_ROOT } = process.env
@@ -28,7 +29,7 @@ export const getFileContent = (slug) => {
     const fileContent = fs.readFileSync(fullPath, 'utf8')
     return fileContent
 }
-export const getPostDataAndContent = (slug): GetPostDataAndContentOutput => {
+export const getPostDataAndContent = cache((slug): GetPostDataAndContentOutput => {
     const fileContent = getFileContent(slug)
     const { data, content } = matter(fileContent)
     const options: Intl.DateTimeFormatOptions = {
@@ -50,7 +51,7 @@ export const getPostDataAndContent = (slug): GetPostDataAndContentOutput => {
     }
 
     return { data: modifiedData as unknown as PostData, content }
-}
+})
 export const getSortedPosts = () => {
     const fileNames = fs.readdirSync(postDirectory)
     const allPostsData = fileNames.map((filename) => {

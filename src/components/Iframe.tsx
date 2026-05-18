@@ -1,3 +1,4 @@
+'use client'
 import * as React from 'react'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import Figure from './Figure'

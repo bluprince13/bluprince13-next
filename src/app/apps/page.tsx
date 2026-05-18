@@ -1,15 +1,16 @@
 import { MyComments } from '@Components/Comments'
 import AppsList from '@Components/appsPage/AppsList'
 import Title from '@Components/Title'
-import StandardSeo from '@Components/StandardSeo'
+import { generateMetadata } from '@Modules/metadata'
+
+export const metadata = generateMetadata({
+    pageTitle: 'Apps',
+    description: 'Apps that I make will be showcased here.',
+    path: '/apps'
+})
 
 const Apps = () => (
     <div>
-        <StandardSeo
-            pageTitle="Apps"
-            description="Apps that I make will be showcased here."
-            path="/apps"
-        />
         <Title title="Apps" />
         <p>Apps that I make will be showcased here.</p>
         <AppsList />

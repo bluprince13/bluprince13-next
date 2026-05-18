@@ -8,10 +8,10 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Analytics } from "@vercel/analytics/react"
 import Script from 'next/script'
 import { StateProvider } from '@Modules/store'
-
-const GA_MEASUREMENT_ID = 'G-Y7P3Z69032'
 import SearchAppBar from '@Components/SearchAppBar/SearchAppBar'
 import Footer from '@Components/Footer'
+
+const GA_MEASUREMENT_ID = 'G-Y7P3Z69032'
 
 const Layout = ({ children }: { children: React.ReactNode }) => (
     <div

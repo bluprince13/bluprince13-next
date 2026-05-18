@@ -2,7 +2,7 @@
 import { extendTheme } from '@mui/material/styles'
 
 const theme = extendTheme({
-    colorSchemeSelector: 'data-color-scheme',
+    colorSchemeSelector: 'data-theme',
     colorSchemes: {
         light: true,
         dark: {

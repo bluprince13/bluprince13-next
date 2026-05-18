@@ -23,10 +23,10 @@ describe('Figure', () => {
     it('renders correctly', () => {
         const { asFragment, image } = setup()
 
-        const caption = screen.getByText('caption')
-        const reference = screen.getByText('[reference]')
-        expect(caption.href).toBe('https://href.com/')
-        expect(reference.href).toBe('https://reference-href.com/')
+        const caption = screen.getByRole('link', { name: 'caption' })
+        const reference = screen.getByRole('link', { name: 'reference' })
+        expect(caption).toHaveAttribute('href', 'https://href.com')
+        expect(reference).toHaveAttribute('href', 'https://reference-href.com')
         expect(image.src).toBe('https://src.com/')
         expect(image).toHaveStyle('max-width: 350px')
         expect(asFragment()).toMatchSnapshot()

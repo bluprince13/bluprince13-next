@@ -9,10 +9,10 @@ export const siteMetadata: Metadata = {
     description,
     alternates: {
         canonical: SITE_ROOT,
-        // TODO: Support multiple RSS feeds
-        // https://github.com/vercel/next.js/discussions/62365
         types: {
-            'application/rss+xml': `${SITE_ROOT}/feed.xml`
+            'application/rss+xml': `${SITE_ROOT}/feed.xml`,
+            'application/atom+xml': `${SITE_ROOT}/atom.xml`,
+            'application/json': `${SITE_ROOT}/feed.json`
         }
     },
     openGraph: {

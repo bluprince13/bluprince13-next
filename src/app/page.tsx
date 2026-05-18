@@ -4,6 +4,13 @@ import Image from 'next/image'
 import Title from '@Components/Title'
 import Subscribe from '@Components/Subscribe'
 import Photo from '@Public/photo.jpg'
+import { generateMetadata } from '@Modules/metadata'
+
+export const metadata = generateMetadata({
+    pageTitle: 'Home',
+    description: 'Full-stack web developer',
+    path: '/'
+})
 
 const Index = () => (
     <div style={{ maxWidth: '960px', margin: 'auto' }}>
@@ -44,8 +51,8 @@ const Index = () => (
         <br />
         <Image
             src={Photo}
-            width="200px"
-            height="286px"
+            width={200}
+            height={286}
             alt="My photo"
         />
         <Subscribe />

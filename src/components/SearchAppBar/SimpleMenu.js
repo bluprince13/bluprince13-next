@@ -12,7 +12,6 @@ import MenuIcon from '@mui/icons-material/Menu'
 const StyledMenu = styled((props) => (
     <Menu
         elevation={0}
-        getContentAnchorEl={null}
         anchorOrigin={{
             vertical: 'bottom',
             horizontal: 'center'
@@ -21,7 +20,6 @@ const StyledMenu = styled((props) => (
             vertical: 'top',
             horizontal: 'center'
         }}
-        // eslint-disable-next-line react/jsx-props-no-spreading
         {...props}
     />
 ))(() => ({
@@ -61,26 +59,10 @@ export default function SimpleMenu() {
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
             >
-                <div>
-                    <Link href="/" legacyBehavior>
-                        <MenuItem onClick={handleClose}>Home</MenuItem>
-                    </Link>
-                </div>
-                <div>
-                    <Link href="/blog" legacyBehavior>
-                        <MenuItem onClick={handleClose}>Blog</MenuItem>
-                    </Link>
-                </div>
-                <div>
-                    <Link href="/apps" legacyBehavior>
-                        <MenuItem onClick={handleClose}>Apps</MenuItem>
-                    </Link>
-                </div>
-                <div>
-                    <Link href="/cv" legacyBehavior>
-                        <MenuItem onClick={handleClose}>CV</MenuItem>
-                    </Link>
-                </div>
+                <MenuItem component={Link} href="/" onClick={handleClose}>Home</MenuItem>
+                <MenuItem component={Link} href="/blog" onClick={handleClose}>Blog</MenuItem>
+                <MenuItem component={Link} href="/apps" onClick={handleClose}>Apps</MenuItem>
+                <MenuItem component={Link} href="/cv" onClick={handleClose}>CV</MenuItem>
             </StyledMenu>
         </div>
     )

@@ -1,6 +1,4 @@
-const withMDX = require('@next/mdx')({
-    extension: /\.(md|mdx)$/
-})
+import createMDX from '@next/mdx'
 
 const rewritesConfig = [
     {
@@ -38,8 +36,10 @@ const rewritesConfig = [
     }
 ]
 
-// TODO: Reduce width of MDX based pages
-module.exports = withMDX({
+const withMDX = createMDX({})
+
+export default withMDX({
     pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
-    rewrites: async () => rewritesConfig
+    experimental: { mdxRs: true },
+    rewrites: async () => rewritesConfig,
 })

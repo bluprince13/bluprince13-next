@@ -27,46 +27,46 @@ exports[`ComparisonTable renders correctly 1`] = `
               class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-18z0d7s-MuiTableCell-root"
               scope="col"
             >
-              <h6
+              <div
                 class="MuiTypography-root MuiTypography-subtitle1 css-rz8w-MuiTypography-root"
               >
                 Feature A
-              </h6>
-              <p
+              </div>
+              <div
                 class="MuiTypography-root MuiTypography-body2 css-xj1ycg-MuiTypography-root"
               >
                 Description for Feature A
-              </p>
+              </div>
             </th>
             <th
               class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-18z0d7s-MuiTableCell-root"
               scope="col"
             >
-              <h6
+              <div
                 class="MuiTypography-root MuiTypography-subtitle1 css-rz8w-MuiTypography-root"
               >
                 Feature B
-              </h6>
-              <p
+              </div>
+              <div
                 class="MuiTypography-root MuiTypography-body2 css-xj1ycg-MuiTypography-root"
               >
                 Description for Feature B
-              </p>
+              </div>
             </th>
             <th
               class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-18z0d7s-MuiTableCell-root"
               scope="col"
             >
-              <h6
+              <div
                 class="MuiTypography-root MuiTypography-subtitle1 css-rz8w-MuiTypography-root"
               >
                 Feature C
-              </h6>
-              <p
+              </div>
+              <div
                 class="MuiTypography-root MuiTypography-body2 css-xj1ycg-MuiTypography-root"
               >
                 Description for Feature C
-              </p>
+              </div>
             </th>
           </tr>
         </thead>
@@ -79,16 +79,16 @@ exports[`ComparisonTable renders correctly 1`] = `
             <td
               class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-snhrv2-MuiTableCell-root"
             >
-              <h6
+              <div
                 class="MuiTypography-root MuiTypography-subtitle1 css-rz8w-MuiTypography-root"
               >
                 Option 1
-              </h6>
-              <p
+              </div>
+              <div
                 class="MuiTypography-root MuiTypography-body2 css-xj1ycg-MuiTypography-root"
               >
                 Description for Option 1
-              </p>
+              </div>
             </td>
             <td
               class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-192o7e9-MuiTableCell-root"
@@ -118,16 +118,16 @@ exports[`ComparisonTable renders correctly 1`] = `
             <td
               class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-snhrv2-MuiTableCell-root"
             >
-              <h6
+              <div
                 class="MuiTypography-root MuiTypography-subtitle1 css-rz8w-MuiTypography-root"
               >
                 Option 2
-              </h6>
-              <p
+              </div>
+              <div
                 class="MuiTypography-root MuiTypography-body2 css-xj1ycg-MuiTypography-root"
               >
                 Description for Option 2
-              </p>
+              </div>
             </td>
             <td
               class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-r18dcf-MuiTableCell-root"
@@ -157,16 +157,16 @@ exports[`ComparisonTable renders correctly 1`] = `
             <td
               class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-snhrv2-MuiTableCell-root"
             >
-              <h6
+              <div
                 class="MuiTypography-root MuiTypography-subtitle1 css-rz8w-MuiTypography-root"
               >
                 Option 3
-              </h6>
-              <p
+              </div>
+              <div
                 class="MuiTypography-root MuiTypography-body2 css-xj1ycg-MuiTypography-root"
               >
                 A very long descripition that needs more than one line
-              </p>
+              </div>
             </td>
             <td
               class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-twhydj-MuiTableCell-root"

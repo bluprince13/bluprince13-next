@@ -1,7 +1,7 @@
-import React from 'react'
+'use client'
+
+import { useState } from 'react'
 import Typography from '@mui/material/Typography'
-import StandardSeo from '@Components/StandardSeo'
-import Title from '@Components/Title'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import { CardActionArea } from '@mui/material'
@@ -9,23 +9,7 @@ import Box from '@mui/material/Box'
 import StarRateRoundedIcon from '@mui/icons-material/StarRateRounded'
 import Link from 'next/link'
 import Tooltip from '@mui/material/Tooltip'
-import { MyComments } from '@Components/Comments'
-import Subscribe from '@Components/Subscribe'
-
-import data, {
-    PLATFORMS,
-    MAC,
-    IPHONE,
-    IPAD,
-    CHROME_EXTENSION,
-    WEB
-} from '@Content/uses'
-import Figure from '@Components/Figure'
-import { serialize } from 'next-mdx-remote/serialize'
-import { MDXRemote } from 'next-mdx-remote'
 import Stack from '@mui/material/Stack'
-import MultipleSelect from '@Components/MultipleSelect'
-import { useState } from 'react'
 import {
     LaptopMac,
     TabletMac,
@@ -33,6 +17,24 @@ import {
     Google,
     Web
 } from '@mui/icons-material'
+
+import { PLATFORMS, MAC, IPHONE, IPAD, CHROME_EXTENSION, WEB } from '@Content/uses'
+import Figure from '@Components/Figure'
+import { MdxRenderer } from '@Components/MdxRenderer'
+import { MyComments } from '@Components/Comments'
+import Subscribe from '@Components/Subscribe'
+import Title from '@Components/Title'
+import MultipleSelect from '@Components/MultipleSelect'
+
+interface AppEntry {
+    use: string
+    appName: string
+    href: string
+    description: string
+    image: string
+    platforms: string[]
+    recommended?: boolean
+}
 
 const platformIconMap = {
     [MAC]: LaptopMac,
@@ -50,7 +52,7 @@ const AppCard = ({
     image,
     platforms,
     recommended
-}) => {
+}: AppEntry): JSX.Element => {
     return (
         <Card sx={{ maxWidth: 700 }}>
             <CardContent>
@@ -75,7 +77,7 @@ const AppCard = ({
                     </Box>
                 </CardActionArea>
                 <Typography variant="body2" color="text.secondary" component="div">
-                    <MDXRemote {...description} />
+                    <MdxRenderer compiledSource={description} />
                 </Typography>
                 <Stack direction="row" spacing={2}>
                     {platforms.map((platform) => {
@@ -92,7 +94,7 @@ const AppCard = ({
     )
 }
 
-const UsesThis = ({ data }) => {
+const UsesThis = ({ data }: { data: AppEntry[] }) => {
     const [selectedOptions, setSelectedOptions] = useState(PLATFORMS)
     const numApps = data.length
 
@@ -104,12 +106,6 @@ const UsesThis = ({ data }) => {
 
     return (
         <Box style={{ maxWidth: '960px', margin: 'auto' }}>
-            <StandardSeo
-                pageTitle="Uses"
-                description="The apps I use"
-                path="/uses"
-                bannerPath="/uses/banner.jpeg"
-            />
             <Figure alt="banner" src="uses/banner.jpeg" size="l" />
             <Title title="Uses" />
             <br />
@@ -145,19 +141,6 @@ const UsesThis = ({ data }) => {
             <MyComments id="uses" />
         </Box>
     )
-}
-
-export async function getStaticProps() {
-    return {
-        props: {
-            data: await Promise.all(
-                data.map(async (app) => {
-                    const source = await serialize(app.description)
-                    return { ...app, description: source }
-                })
-            )
-        }
-    }
 }
 
 export default UsesThis

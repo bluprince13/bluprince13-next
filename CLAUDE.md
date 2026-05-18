@@ -88,3 +88,4 @@ Full details in `docs/ideas.md`. Summary by priority:
 - Per-post Open Graph image generation with `@vercel/og` (M)
 - Fix stale `getContentAnchorEl` prop in `SimpleMenu.tsx` — removed in MUI v5 (XS)
 - Pagination on the blog index once post count grows (S)
+- Remove unnecessary `'use client'` from pure display components (`Alert`, `Figure`, `Timeline`) once App Router migration is complete — they have no hooks/event handlers and could run as Server Components (XS)

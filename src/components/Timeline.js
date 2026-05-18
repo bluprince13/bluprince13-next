@@ -1,3 +1,4 @@
+'use client'
 import Timeline from '@mui/lab/Timeline'
 import TimelineItem from '@mui/lab/TimelineItem'
 import TimelineSeparator from '@mui/lab/TimelineSeparator'
@@ -36,9 +37,9 @@ const Item = ({ marker, title, description, iconName, color }) => (
 export default function CustomizedTimeline({ items }) {
     return (
         <Timeline position="alternate">
-            {items.map(({ marker, title, description, iconName, color }) => (
+            {items.map(({ marker, title, description, iconName, color }, index) => (
                 <Item
-                    key={marker}
+                    key={index}
                     marker={marker}
                     title={title}
                     description={description}

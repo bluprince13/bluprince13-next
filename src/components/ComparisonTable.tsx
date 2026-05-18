@@ -1,3 +1,4 @@
+'use client'
 import * as React from 'react'
 import {
     Table,
@@ -47,6 +48,7 @@ const TableHeaderCell: React.FC<{
     return (
         <TableCell sx={tableCellSx}>
             <Typography
+                component="div"
                 variant="subtitle1"
                 sx={{ fontWeight: 'bold', textAlign: 'center' }}
             >
@@ -54,6 +56,7 @@ const TableHeaderCell: React.FC<{
             </Typography>
             {description && (
                 <Typography
+                    component="div"
                     variant="body2"
                     sx={{
                         fontSize: '0.8rem',

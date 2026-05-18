@@ -50,7 +50,7 @@ const getFeed = ({ articles }) => {
 
 const handleError = (err) => {
     if (err) {
-        // eslint-disable-next-line no-console
+         
         console.error('Problem generating RSS')
         throw err
     }

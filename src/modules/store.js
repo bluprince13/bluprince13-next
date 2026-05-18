@@ -7,7 +7,7 @@ const store = createContext(initialState)
 const { Provider } = store
 
 const StateProvider = ({ children }) => {
-    // eslint-disable-next-line no-shadow
+     
     const [state, dispatch] = useReducer((state, action) => {
         switch (action.type) {
             default:

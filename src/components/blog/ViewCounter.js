@@ -1,18 +1,19 @@
-import { useEffect } from 'react'
-import useSWR from 'swr'
+'use client'
+
+import { useEffect, useState } from 'react'
 import format from 'comma-number'
-import fetcher from '@Modules/fetcher'
 
 export default function ViewCounter({ slug }) {
-    const { data } = useSWR(`/api/views/${slug}`, fetcher)
-    const views = data?.total
+    const [views, setViews] = useState(null)
 
     useEffect(() => {
-        const registerView = () =>
-            fetch(`/api/views/${slug}`, {
-                method: 'POST'
-            })
-        registerView()
+        fetch(`/api/views/${slug}`)
+            .then((res) => res.json())
+            .then((data) => setViews(data.total))
+    }, [slug])
+
+    useEffect(() => {
+        fetch(`/api/views/${slug}`, { method: 'POST' })
     }, [slug])
 
     return <div>{`${views ? format(views) : '–––'} views`}</div>

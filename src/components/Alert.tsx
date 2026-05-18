@@ -1,9 +1,7 @@
-/* eslint-disable react/jsx-filename-extension */
+'use client'
+
 import Alert from '@mui/material/Alert'
 
-// https://mui.com/components/alert/
-const fn = (props) => {
+export default function AlertComponent(props) {
     return <Alert {...props}>{props.children}</Alert>
 }
-
-export default fn

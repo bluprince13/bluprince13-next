@@ -2,16 +2,17 @@
 
 import Typography from '@mui/material/Typography'
 
-import StandardSeo from '@Components/StandardSeo'
 import Title from '@Components/Title'
+import { generateMetadata } from '@Modules/metadata'
+
+export const metadata = generateMetadata({
+    pageTitle: 'Privacy policy',
+    description: 'My privacy policy.',
+    path: '/privacypolicy'
+})
 
 const Privacypolicy = () => (
     <div>
-        <StandardSeo
-            pageTitle="Privacy policy"
-            description="My privacy policy."
-            path="/privacypolicy"
-        />
         <Title title="Privacy policy" />
         <br />
         <Typography variant="body1">
@@ -25,20 +26,20 @@ const Privacypolicy = () => (
         <Typography variant="body1">
             We only ask for personal information when we truly need it to
             provide a service to you. We collect it by fair and lawful means,
-            with your knowledge and consent. We also let you know why we’re
+            with your knowledge and consent. We also let you know why we're
             collecting it and how it will be used.
         </Typography>
         <br />
         <Typography variant="body1">
             We only retain collected information for as long as necessary to
-            provide you with your requested service. What data we store, we’ll
+            provide you with your requested service. What data we store, we'll
             protect within commercially acceptable means to prevent loss and
             theft, as well as unauthorised access, disclosure, copying, use or
             modification.
         </Typography>
         <br />
         <Typography variant="body1">
-            We don’t share any personally identifying information publicly or
+            We don't share any personally identifying information publicly or
             with third-parties, except when required to by law.
         </Typography>
         <br />

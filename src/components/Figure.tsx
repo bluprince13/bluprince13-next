@@ -1,21 +1,14 @@
-/* eslint-disable react/jsx-filename-extension */
-/* eslint-disable @next/next/no-img-element */
-const Reference = ({
-    reference,
-    referenceHref
-}: {
-    reference: string
-    referenceHref: string
-}) => (
-    <span>
-        {' '}
-        {referenceHref ? (
-            <a href={referenceHref}>{`[${reference}]`}</a>
-        ) : (
-            [reference]
-        )}
-    </span>
-)
+'use client'
+
+const Reference = ({ reference, referenceHref }) =>
+    reference
+        ? (
+            <small>
+                {' '}
+                [<a href={referenceHref ?? '#'}>{reference}</a>]
+            </small>
+        )
+        : null
 
 const Caption = ({ caption, href, reference, referenceHref }) => (
     <figcaption>
