@@ -785,17 +785,17 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/retry/-/retry-0.4.3.tgz#c2b9d2e374ee62c586d3adbea87199b1d7a7a6ba"
   integrity sha512-bV0Tgo9K4hfPCek+aMAn81RppFKv2ySDQeMoSZuvTASywNTnVJCArCZE2FWqpvIatKu7VMRLWlR1EazvVhDyhQ==
 
-"@hyvor/hyvor-talk-base@^0.0.6":
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/@hyvor/hyvor-talk-base/-/hyvor-talk-base-0.0.6.tgz#ac04f855830b3aed7909482005fc6a9018fd9626"
-  integrity sha512-7pgWggo6hGplIU9Tt9mgZ4y5su7gpqn2o8aVa5FQhD0f/qriI3XN1yXxvTp1A4et+psBnfOUwgkeYH/xzhdHew==
+"@hyvor/hyvor-talk-base@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@hyvor/hyvor-talk-base/-/hyvor-talk-base-1.0.1.tgz#9f1675f0d3160795656460fc5cee650d2d70786f"
+  integrity sha512-/Y7hDJ0rRODHjzFvv6jsqiSkJYpvZyLhEeO4PN0NnDGhcnLSIPTqB1VoaoA3aFedMz2YVcL8G80ciOrIeC9C+A==
 
-"@hyvor/hyvor-talk-react@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@hyvor/hyvor-talk-react/-/hyvor-talk-react-0.0.3.tgz#f5962961edd1fab3dd9d9bdf989d94c8515224c6"
-  integrity sha512-Pb46TRAOYazqjnMRrkYaAf4ltFCfG/vlaSvrcj3cRrEvI37PRMx4/PB2Dkj+5/yT+BTQRBwgsZRHX0lR7hWbkg==
+"@hyvor/hyvor-talk-react@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@hyvor/hyvor-talk-react/-/hyvor-talk-react-1.0.2.tgz#83f63ac05a245cd2a292b0332c8c94946087b494"
+  integrity sha512-kD2RvygGbwOtvLRsJyshyOgFRY1j4Qzd591Oj30NsksU46fC1j7nrmuvVRh1A+dnUZdVsJeGl6dlhy0LCEI3lA==
   dependencies:
-    "@hyvor/hyvor-talk-base" "^0.0.6"
+    "@hyvor/hyvor-talk-base" "^1.0.1"
 
 "@iconify-json/simple-icons@^1.2.31":
   version "1.2.82"
