@@ -1,6 +1,7 @@
 'use client'
 
 import { runSync } from '@mdx-js/mdx'
+import type { MDXComponents } from 'mdx/types'
 import * as runtime from 'react/jsx-runtime'
 import { Fragment, useMemo } from 'react'
 import { mdxComponents } from '@Modules/mdxComponents'
@@ -27,5 +28,5 @@ export function MdxRenderer({ compiledSource }: MdxRendererProps) {
 
   if (!Content) return null
 
-  return <Content components={mdxComponents} />
+  return <Content components={mdxComponents as MDXComponents} />
 }
