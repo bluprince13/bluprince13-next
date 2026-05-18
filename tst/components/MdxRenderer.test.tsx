@@ -1,17 +1,18 @@
+import { vi } from 'vitest'
 import { render, screen } from '@testing-library/react'
 
-jest.mock('@mdx-js/mdx', () => ({
-    runSync: jest.fn()
+vi.mock('@mdx-js/mdx', () => ({
+    runSync: vi.fn()
 }))
 
-jest.mock('@Modules/mdxComponents', () => ({
+vi.mock('@Modules/mdxComponents', () => ({
     mdxComponents: {}
 }))
 
 import { MdxRenderer } from '@Components/MdxRenderer'
 import { runSync } from '@mdx-js/mdx'
 
-const mockRunSync = runSync as jest.Mock
+const mockRunSync = vi.mocked(runSync)
 
 describe('MdxRenderer', () => {
     it('renders text content from compiled MDX', () => {

@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Timeline renders correctly 1`] = `
+exports[`Timeline > renders correctly 1`] = `
 <DocumentFragment>
   <ul
     class="MuiTimeline-root MuiTimeline-positionAlternate css-i6popu-MuiTimeline-root"

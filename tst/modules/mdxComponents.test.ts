@@ -1,5 +1,7 @@
-jest.mock('next/dynamic', () => (fn: any) => fn())
-jest.mock('@Components/ComparisonTable', () => ({
+import { vi } from 'vitest'
+
+vi.mock('next/dynamic', () => ({ default: (fn: any) => fn() }))
+vi.mock('@Components/ComparisonTable', () => ({
     ComparisonTable: () => null,
 }))
 

@@ -1,12 +1,11 @@
+import { vi } from 'vitest'
 import { render } from '@testing-library/react'
 import { Experimental_CssVarsProvider as CssVarsProvider } from '@mui/material/styles'
 import { ComparisonTable } from '@Components/ComparisonTable'
 
-jest.mock('react-markdown', () => {
-    return ({ children }) => {
-        return children
-    }
-})
+vi.mock('react-markdown', () => ({
+    default: ({ children }: { children: React.ReactNode }) => children
+}))
 
 describe('ComparisonTable', () => {
     const setup = ({} = {}) => {

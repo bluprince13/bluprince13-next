@@ -1,6 +1,6 @@
 import nextConfig from "eslint-config-next";
 import eslintConfigPrettier from "eslint-config-prettier";
-import jestPlugin from "eslint-plugin-jest";
+import vitestPlugin from "eslint-plugin-vitest";
 
 const eslintConfig = [
   {
@@ -9,7 +9,7 @@ const eslintConfig = [
   ...nextConfig,
   eslintConfigPrettier,
   {
-    ...jestPlugin.configs['flat/recommended'],
+    ...vitestPlugin.configs.recommended,
     files: ["**/*.test.{js,jsx,ts,tsx}", "**/tst/**/*.{js,jsx,ts,tsx}"],
   },
   {

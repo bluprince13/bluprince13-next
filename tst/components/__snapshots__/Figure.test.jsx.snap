@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Figure renders correctly 1`] = `
+exports[`Figure > renders correctly 1`] = `
 <DocumentFragment>
   <figure
     style="margin-left: 0px; margin-right: 0px;"

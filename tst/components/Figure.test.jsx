@@ -42,7 +42,7 @@ describe('Figure', () => {
         cleanup()
 
         const { image: large } = setup({ size: 'l' })
-        expect(large).toHaveStyle('max-width:')
+        expect(large.style.maxWidth).toBeFalsy()
     })
 
     it('sets correct max-width for specified max-width', () => {
