@@ -50,29 +50,25 @@ export const generateMetadata = ({
 }: MetadataProps): Metadata => {
     const title = `${pageTitle} - Vipin Ajayakumar`
     const url = `${SITE_ROOT}${path}`
-    const featuredImage = bannerPath ? `${SITE_ROOT}${bannerPath}` : null
+    const featuredImage = bannerPath ? `${SITE_ROOT}${bannerPath}` : undefined
 
     return {
         title,
         description,
+        alternates: {
+            canonical: url
+        },
         openGraph: {
             url,
             title,
             description,
-            images: featuredImage
-                ? [
-                      {
-                          url: featuredImage,
-                          alt: title
-                      }
-                  ]
-                : []
+            images: featuredImage ? [{ url: featuredImage, alt: title }] : undefined
         },
         twitter: {
             card: 'summary_large_image',
             title,
             description,
-            images: featuredImage ? [featuredImage] : []
+            images: featuredImage ? [featuredImage] : undefined
         }
     }
 }
