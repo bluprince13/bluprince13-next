@@ -9,7 +9,15 @@ import TimelineDot from '@mui/lab/TimelineDot'
 import Typography from '@mui/material/Typography'
 import Icon from '@mui/material/Icon'
 
-const Item = ({ marker, title, description, iconName, color }) => (
+interface TimelineItemData {
+    marker: string
+    title: string
+    description: string
+    iconName: string
+    color?: 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning' | 'inherit' | 'grey'
+}
+
+const Item = ({ marker, title, description, iconName, color }: TimelineItemData) => (
     <TimelineItem>
         <TimelineOppositeContent
             sx={{ m: 'auto 0' }}
@@ -34,7 +42,8 @@ const Item = ({ marker, title, description, iconName, color }) => (
         </TimelineContent>
     </TimelineItem>
 )
-export default function CustomizedTimeline({ items }) {
+
+export default function CustomizedTimeline({ items }: { items: TimelineItemData[] }) {
     return (
         <Timeline position="alternate">
             {items.map(({ marker, title, description, iconName, color }, index) => (

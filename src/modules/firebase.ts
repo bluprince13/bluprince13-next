@@ -1,4 +1,4 @@
-import admin from 'firebase-admin';
+import admin from 'firebase-admin'
 
 if (!admin.apps.length) {
   admin.initializeApp({
@@ -6,9 +6,9 @@ if (!admin.apps.length) {
       project_id: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
       private_key: process.env.FIREBASE_PRIVATE_KEY,
       client_email: process.env.FIREBASE_CLIENT_EMAIL
-    }),
+    } as admin.ServiceAccount),
     databaseURL: 'https://bluprince13-default-rtdb.firebaseio.com/'
-  });
+  })
 }
 
-export default admin.database();
+export default admin.database()

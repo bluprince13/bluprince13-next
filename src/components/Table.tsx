@@ -9,6 +9,13 @@ import Paper from '@mui/material/Paper'
 import Typography from '@mui/material/Typography'
 import { styled } from '@mui/material/styles'
 
+interface Column {
+    name: string
+    key: string
+}
+
+type Row = Record<string, React.ReactNode>
+
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
         backgroundColor: theme.palette.primary.light,
@@ -30,7 +37,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
     }
 }))
 
-export default function BasicTable({ rows, columns }) {
+export default function BasicTable({ rows, columns }: { rows: Row[]; columns: Column[] }) {
     return (
         <TableContainer component={Paper}>
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -56,13 +63,10 @@ export default function BasicTable({ rows, columns }) {
                             {columns.map(({ key }, col_index) => (
                                 <StyledTableCell
                                     key={key}
-                                    component={col_index == 0 ? 'th' : null}
-                                    scope={col_index == 0 ? 'row' : null}
+                                    component={col_index == 0 ? 'th' : undefined}
+                                    scope={col_index == 0 ? 'row' : undefined}
                                 >
-                                    <Typography
-                                        variant="body1"
-                                        // style={{ whiteSpace: 'pre-line' }}
-                                    >
+                                    <Typography variant="body1">
                                         {row[key]}
                                     </Typography>
                                 </StyledTableCell>

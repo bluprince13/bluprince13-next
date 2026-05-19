@@ -108,7 +108,7 @@ export default function SearchAppBar() {
         })
     }
 
-    const handleSearchSubmit = (e) => {
+    const handleSearchSubmit = (e: React.FormEvent | React.MouseEvent) => {
         e.preventDefault()
         if (searchTerm.trim()) {
             const googleSearchUrl = `https://www.google.com/search?q=site:bluprince13.com ${encodeURIComponent(searchTerm)}`
@@ -117,11 +117,11 @@ export default function SearchAppBar() {
         }
     }
 
-    const handleInputChange = (e) => {
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setSearchTerm(e.target.value)
     }
 
-    const handleKeyPress = (e) => {
+    const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'Enter') {
             handleSearchSubmit(e)
         }
@@ -134,20 +134,14 @@ export default function SearchAppBar() {
                     <SimpleMenu />
                     <Box className={classes.title}>
                         <Link href="/" passHref>
-                            <Button
-                                className={classes.titleButton}
-                                disableRipple
-                            >
+                            <Button className={classes.titleButton} disableRipple>
                                 bluprince13
                             </Button>
                         </Link>
                     </Box>
                     <form onSubmit={handleSearchSubmit}>
                         <div className={classes.search}>
-                            <div
-                                className={classes.searchIcon}
-                                onClick={handleSearchSubmit}
-                            >
+                            <div className={classes.searchIcon} onClick={handleSearchSubmit}>
                                 <SearchIcon />
                             </div>
                             <InputBase

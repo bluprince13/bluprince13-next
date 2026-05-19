@@ -12,18 +12,17 @@ import {
     LinkedinIcon,
     RedditIcon
 } from 'react-share'
-import { styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
-import Emoji from 'a11y-react-emoji'
 
-const PREFIX = 'ShareBar';
+const PREFIX = 'ShareBar'
 
 const classes = {
     root: `${PREFIX}-root`,
     network: `${PREFIX}-network`,
     shareCount: `${PREFIX}-shareCount`,
     shareButton: `${PREFIX}-shareButton`
-};
+}
 
 const Root = styled('div')(() => ({
     [`&.${classes.root}`]: {},
@@ -51,42 +50,29 @@ const Root = styled('div')(() => ({
             opacity: 0.75
         }
     }
-}));
+}))
 
-const ShareBar = ({ title, url }) => {
-
-
+const ShareBar = ({ title, url }: { title: string; url: string }) => {
     return (
         <Root className={classes.root}>
             <div>
                 <Typography variant="overline">
-                    Please share! <Emoji symbol="🙏" label="folded hands" />
+                    Please share! <span role="img" aria-label="folded hands">🙏</span>
                 </Typography>
             </div>
             <div className={classes.network}>
-                <FacebookShareButton
-                    url={url}
-                    quote={title}
-                    className={classes.shareButton}
-                >
+                <FacebookShareButton url={url} className={classes.shareButton}>
                     <FacebookIcon size={32} round />
                 </FacebookShareButton>
                 <div>
-                    <FacebookShareCount
-                        url={url}
-                        className={classes.shareCount}
-                    >
+                    <FacebookShareCount url={url} className={classes.shareCount}>
                         {(count) => count}
                     </FacebookShareCount>
                 </div>
             </div>
 
             <div className={classes.network}>
-                <TwitterShareButton
-                    url={url}
-                    title={title}
-                    className={classes.shareButton}
-                >
+                <TwitterShareButton url={url} title={title} className={classes.shareButton}>
                     <TwitterIcon size={32} round />
                 </TwitterShareButton>
             </div>
@@ -108,14 +94,11 @@ const ShareBar = ({ title, url }) => {
                     <RedditIcon size={32} round />
                 </RedditShareButton>
                 <div>
-                    <RedditShareCount
-                        url={url}
-                        className={classes.shareCount}
-                    />
+                    <RedditShareCount url={url} className={classes.shareCount} />
                 </div>
             </div>
         </Root>
-    );
+    )
 }
 
 export default ShareBar

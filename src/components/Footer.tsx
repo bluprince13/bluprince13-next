@@ -11,25 +11,19 @@ import Icon from '@Components/Icon'
 
 const AUTHOR = 'Vipin Ajayakumar'
 
-const FooterLink = ({ children, to }) => {
-    return (
-        <Box component="a" href={to} sx={{
-            textDecoration: 'none',
-            color: 'inherit',
-            '&:hover': { textDecoration: 'none' },
-            '&:focus': { textDecoration: 'none' },
-            '&:active': { textDecoration: 'none' },
-        }}>
-            <Typography
-                variant="body2"
-                color="inherit"
-                style={{ paddingLeft: '1rem' }}
-            >
-                {children}
-            </Typography>
-        </Box>
-    )
-}
+const FooterLink = ({ children, to }: { children: React.ReactNode; to: string }) => (
+    <Box component="a" href={to} sx={{
+        textDecoration: 'none',
+        color: 'inherit',
+        '&:hover': { textDecoration: 'none' },
+        '&:focus': { textDecoration: 'none' },
+        '&:active': { textDecoration: 'none' },
+    }}>
+        <Typography variant="body2" color="inherit" style={{ paddingLeft: '1rem' }}>
+            {children}
+        </Typography>
+    </Box>
+)
 
 const IconBar = () => (
     <Box style={{ display: 'flex', justifyContent: 'center', flexGrow: 1 }}>
@@ -43,7 +37,7 @@ const IconBar = () => (
     </Box>
 )
 
-const FooterLinks = ({ isLargeScreen }) => (
+const FooterLinks = ({ isLargeScreen }: { isLargeScreen: boolean }) => (
     <Box
         style={{
             display: 'flex',
@@ -54,9 +48,7 @@ const FooterLinks = ({ isLargeScreen }) => (
         <FooterLink to="/uses">Uses</FooterLink>
         <FooterLink to="/kudos">Kudos</FooterLink>
         <FooterLink to="/values">Values</FooterLink>
-        <FooterLink to="https://github.com/bluprince13/bluprince13-next">
-            Source code
-        </FooterLink>
+        <FooterLink to="https://github.com/bluprince13/bluprince13-next">Source code</FooterLink>
         <FooterLink to="/privacypolicy">Privacy policy</FooterLink>
     </Box>
 )

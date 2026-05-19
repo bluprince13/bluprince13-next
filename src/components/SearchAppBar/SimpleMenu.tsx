@@ -4,12 +4,12 @@ import { useState } from 'react'
 import { styled } from '@mui/material/styles'
 import Link from 'next/link'
 
-import Menu from '@mui/material/Menu'
+import Menu, { MenuProps } from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import IconButton from '@mui/material/IconButton'
 import MenuIcon from '@mui/icons-material/Menu'
 
-const StyledMenu = styled((props) => (
+const StyledMenu = styled((props: MenuProps) => (
     <Menu
         elevation={0}
         anchorOrigin={{
@@ -29,9 +29,9 @@ const StyledMenu = styled((props) => (
 }))
 
 export default function SimpleMenu() {
-    const [anchorEl, setAnchorEl] = useState(null)
+    const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null)
 
-    const handleClick = (event) => {
+    const handleClick = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorEl(event.currentTarget)
     }
 

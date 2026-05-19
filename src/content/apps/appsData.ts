@@ -1,4 +1,12 @@
-const data = [
+export interface AppData {
+    id: number
+    title: string
+    href: string
+    image: string
+    blurb: string
+}
+
+const data: AppData[] = [
     {
         id: 1,
         title: 'Renting vs. buying a house',
@@ -14,7 +22,7 @@ const data = [
         image:
             'https://github.com/bluprince13/ssh-key-manager/raw/assets/demo.gif',
         blurb:
-            'I wanted to make a desktop app using Electron and React and see how difficult it would be. I made a ssh key manager, which to be fair, doesn’t have much practical use. However, I found this very easy to make.'
+            'I wanted to make a desktop app using Electron and React and see how difficult it would be. I made a ssh key manager, which to be fair, doesn\'t have much practical use. However, I found this very easy to make.'
     },
     {
         id: 4,

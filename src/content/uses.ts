@@ -6,7 +6,17 @@ export const WEB = 'Web app'
 
 export const PLATFORMS = [MAC, IPHONE, IPAD, CHROME_EXTENSION, WEB]
 
-const data = [
+export interface AppEntry {
+    appName: string
+    use: string
+    href: string
+    image: string
+    description?: string
+    platforms: string[]
+    recommended?: boolean
+}
+
+const data: AppEntry[] = [
     {
         appName: '1Password',
         use: 'Password manager',

@@ -7,11 +7,11 @@ import { useEffect, useState } from 'react'
 
 const HYVOR_WEBSITE_ID = 2205
 
-export const MyCommentCount = ({ id }) => (
+export const MyCommentCount = ({ id }: { id: string }) => (
     <CommentCount website-id={HYVOR_WEBSITE_ID} page-id={id} />
 )
 
-export function MyComments({ id }) {
+export function MyComments({ id }: { id: string }) {
     const { mode } = useColorScheme()
     const [mounted, setMounted] = useState(false)
     useEffect(() => setMounted(true), [])

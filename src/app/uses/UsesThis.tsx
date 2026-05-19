@@ -18,23 +18,13 @@ import {
     Web
 } from '@mui/icons-material'
 
-import { PLATFORMS, MAC, IPHONE, IPAD, CHROME_EXTENSION, WEB } from '@Content/uses'
+import { PLATFORMS, MAC, IPHONE, IPAD, CHROME_EXTENSION, WEB, AppEntry } from '@Content/uses'
 import Figure from '@Components/Figure'
 import { MdxRenderer } from '@Components/MdxRenderer'
 import { MyComments } from '@Components/Comments'
 import Subscribe from '@Components/Subscribe'
 import Title from '@Components/Title'
 import MultipleSelect from '@Components/MultipleSelect'
-
-interface AppEntry {
-    use: string
-    appName: string
-    href: string
-    description: string
-    image: string
-    platforms: string[]
-    recommended?: boolean
-}
 
 const platformIconMap = {
     [MAC]: LaptopMac,
@@ -76,9 +66,11 @@ const AppCard = ({
                         )}
                     </Box>
                 </CardActionArea>
-                <Typography variant="body2" color="text.secondary" component="div">
-                    <MdxRenderer compiledSource={description} />
-                </Typography>
+                {description && (
+                    <Typography variant="body2" color="text.secondary" component="div">
+                        <MdxRenderer compiledSource={description} />
+                    </Typography>
+                )}
                 <Stack direction="row" spacing={2}>
                     {platforms.map((platform) => {
                         const Icon = platformIconMap[platform]

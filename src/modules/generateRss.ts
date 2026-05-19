@@ -5,11 +5,19 @@ const { SITE_ROOT } = process.env
 const AUTHOR = 'Vipin Ajayakumar'
 const EMAIL = 'vipinajayakumar@icloud.com'
 
-const getFeed = ({ articles }) => {
+interface Article {
+    title: string
+    href: string
+    description: string
+    date: string
+    banner: string
+}
+
+const getFeed = ({ articles }: { articles: Article[] }) => {
     const feed = new Feed({
         title: 'bluprince13',
         description: 'This is my personal feed!',
-        id: SITE_ROOT,
+        id: SITE_ROOT!,
         link: SITE_ROOT,
         language: 'en',
         image: '',
@@ -48,23 +56,15 @@ const getFeed = ({ articles }) => {
     return feed
 }
 
-const handleError = (err) => {
-    if (err) {
-         
-        console.error('Problem generating RSS')
-        throw err
-    }
-}
-
-const fn = () =>  async ({ articles }) => {
+const fn = () => async ({ articles }: { articles: Article[] }) => {
     const feed = getFeed({ articles })
     const rss = feed.rss2()
     const atom = feed.atom1()
     const json = feed.json1()
 
-    fs.writeFileSync('public/feed.xml', rss, 'utf8', handleError)
-    fs.writeFileSync('public/atom.xml', atom, 'utf8', handleError)
-    fs.writeFileSync('public/feed.json', json, 'utf8', handleError)
+    fs.writeFileSync('public/feed.xml', rss, 'utf8')
+    fs.writeFileSync('public/atom.xml', atom, 'utf8')
+    fs.writeFileSync('public/feed.json', json, 'utf8')
 }
 
 export default fn

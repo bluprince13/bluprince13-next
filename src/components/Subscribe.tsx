@@ -1,7 +1,4 @@
-import React from 'react'
-
 import Typography from '@mui/material/Typography'
-import Emoji from 'a11y-react-emoji'
 import Box from '@mui/material/Box'
 
 // TODO: Add loading indicator to button
@@ -17,7 +14,7 @@ function Subscribe() {
                     <Typography variant="overline">
                         Get emails from me about new articles{' '}
                     </Typography>
-                    <Emoji symbol="📮" label="subscribe" />
+                    <span role="img" aria-label="subscribe">📮</span>
                 </div>
                 <div style={{ marginTop: '1rem' }}>
                     Subscribe to email via {' '}

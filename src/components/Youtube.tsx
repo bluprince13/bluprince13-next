@@ -1,12 +1,12 @@
 'use client'
-import { styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles'
 import { Typography } from '@mui/material'
 
-const PREFIX = 'Youtube';
+const PREFIX = 'Youtube'
 
 const classes = {
     youtubeWrapper: `${PREFIX}-youtubeWrapper`
-};
+}
 
 const Root = styled('div')(() => ({
     [`& .${classes.youtubeWrapper}`]: {
@@ -25,8 +25,7 @@ const Root = styled('div')(() => ({
     }
 }))
 
-const Youtube = ({ id, caption }) => {
-
+const Youtube = ({ id, caption }: { id: string; caption?: string }) => {
     return (
         <Root>
             <div className={classes.youtubeWrapper}>
@@ -42,7 +41,7 @@ const Youtube = ({ id, caption }) => {
             </div>
             {caption && <Typography variant="caption">{caption}</Typography>}
         </Root>
-    );
+    )
 }
 
 export default Youtube

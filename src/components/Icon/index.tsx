@@ -13,7 +13,7 @@ const sx = {
 
 const SIZE = 30
 
-const iconNames = {
+const iconNames: Record<string, string> = {
     github: 'simple-icons:github',
     twitter: 'simple-icons:x',
     linkedin: 'simple-icons:linkedin',
@@ -23,7 +23,7 @@ const iconNames = {
     letterboxd: 'simple-icons:letterboxd',
 }
 
-const iconColors = {
+const iconColors: Record<string, string> = {
     github: '#24292e',
     twitter: '#1da1f2',
     linkedin: '#0077b5',
@@ -33,7 +33,7 @@ const iconColors = {
     letterboxd: '#202830'
 }
 
-const getNetwork = (url) => {
+const getNetwork = (url: string): string | null => {
     if (!url) return null
     if (url.includes('github.com')) return 'github'
     if (url.includes('twitter.com') || url.includes('x.com')) return 'twitter'
@@ -42,7 +42,7 @@ const getNetwork = (url) => {
     return null
 }
 
-const Icon = ({ url, network }) => {
+const Icon = ({ url, network }: { url: string; network?: string }) => {
     const resolvedNetwork = network || getNetwork(url)
     const iconName = resolvedNetwork && iconNames[resolvedNetwork]
     const bgColor = (resolvedNetwork && iconColors[resolvedNetwork]) || '#666'

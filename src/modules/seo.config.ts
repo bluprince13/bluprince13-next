@@ -1,7 +1,26 @@
+interface SEOConfig {
+    title: string
+    description: string
+    canonical: string
+    openGraph: {
+        type: string
+        locale: string
+        url: string
+        title: string
+        description: string
+        images: { url: string; alt: string }[]
+    }
+    twitter: {
+        handle: string
+        site: string
+        cardType: string
+    }
+}
+
 const title = 'bluprince13'
 const description = 'Full-stack web developer'
 
-const SEO = {
+const SEO: SEOConfig = {
     title,
     description,
     canonical: 'https://bluprince13.com',

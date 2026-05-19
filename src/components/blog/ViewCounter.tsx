@@ -3,8 +3,8 @@
 import { useEffect, useState } from 'react'
 import format from 'comma-number'
 
-export default function ViewCounter({ slug }) {
-    const [views, setViews] = useState(null)
+export default function ViewCounter({ slug }: { slug: string }) {
+    const [views, setViews] = useState<number | null>(null)
 
     useEffect(() => {
         fetch(`/api/views/${slug}`)

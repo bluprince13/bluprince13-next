@@ -1618,6 +1618,11 @@
     "@types/deep-eql" "*"
     assertion-error "^2.0.1"
 
+"@types/comma-number@^2.1.2":
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/@types/comma-number/-/comma-number-2.1.2.tgz#5e1c45d277ec764d103613174f657dc44e6f9f96"
+  integrity sha512-jXqm98xOXsZtuFAmqDdPZNPHgLE3fWjA/UbMG77daB9SdS8SX315vK8OQQiCRJVRKE2aEtxVe8kJLyD34P53uw==
+
 "@types/connect@*":
   version "3.4.38"
   resolved "https://registry.yarnpkg.com/@types/connect/-/connect-3.4.38.tgz#5ba7f3bc4fbbdeaff8dded952e5ff2cc53f8d858"
@@ -2119,11 +2124,6 @@
     "@vitest/pretty-format" "4.1.6"
     convert-source-map "^2.0.0"
     tinyrainbow "^3.1.0"
-
-a11y-react-emoji@1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/a11y-react-emoji/-/a11y-react-emoji-1.2.0.tgz#6652b0d75821e8bc6ce5050e2b51c4c789eee840"
-  integrity sha512-lPzXEHbCfRic4xS5d5hpZm1SLrWH0xL3HvI3ZlqeAIxto0XBfY2gAIh6ftjZptvmqxyhQVDXnfVKiG/bqeek3g==
 
 abort-controller@^3.0.0:
   version "3.0.0"
