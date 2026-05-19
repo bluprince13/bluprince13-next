@@ -20,7 +20,7 @@ describe('MdxRenderer', () => {
         mockRunSync.mockReturnValue({ default: MockContent })
 
         render(<MdxRenderer compiledSource="some compiled source" />)
-        screen.getByText('Hello from MDX')
+        expect(screen.getByText('Hello from MDX')).toBeInTheDocument()
     })
 
     it('does not crash on empty compiledSource string', () => {

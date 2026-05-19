@@ -12,6 +12,6 @@ describe('Alert', () => {
     it('renders correctly', () => {
         setup()
 
-        screen.getByText('This is a warning!')
+        expect(screen.getByText('This is a warning!')).toBeInTheDocument()
     })
 })

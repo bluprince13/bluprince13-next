@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { useState, startTransition, useEffect } from 'react'
+import { useState, startTransition, useSyncExternalStore } from 'react'
 
 import { alpha, useColorScheme } from '@mui/material/styles'
 import AppBar from '@mui/material/AppBar'
@@ -18,10 +18,8 @@ import SimpleMenu from './SimpleMenu'
 
 export default function SearchAppBar() {
     const [searchTerm, setSearchTerm] = useState('')
-    const [mounted, setMounted] = useState(false)
+    const mounted = useSyncExternalStore(() => () => {}, () => true, () => false)
     const { mode, setMode } = useColorScheme()
-
-    useEffect(() => setMounted(true), [])
 
     const toggleColorMode = () => {
         startTransition(() => {

@@ -3,7 +3,7 @@
 import { Comments, CommentCount } from '@hyvor/hyvor-talk-react'
 import { Box } from '@mui/material'
 import { useColorScheme } from '@mui/material/styles'
-import { useEffect, useState } from 'react'
+import { useSyncExternalStore } from 'react'
 
 const HYVOR_WEBSITE_ID = 2205
 
@@ -13,8 +13,7 @@ export const MyCommentCount = ({ id }: { id: string }) => (
 
 export function MyComments({ id }: { id: string }) {
     const { mode } = useColorScheme()
-    const [mounted, setMounted] = useState(false)
-    useEffect(() => setMounted(true), [])
+    const mounted = useSyncExternalStore(() => () => {}, () => true, () => false)
 
     if (!mounted) return null
 

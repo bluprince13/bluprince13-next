@@ -4,7 +4,7 @@ import vitestPlugin from "eslint-plugin-vitest";
 
 const eslintConfig = [
   {
-    ignores: ["node_modules/", ".next/", "out/", "coverage/"],
+    ignores: ["node_modules/", ".next/", "out/", "coverage/", ".claude/"],
   },
   ...nextConfig,
   eslintConfigPrettier,
@@ -42,8 +42,6 @@ const eslintConfig = [
       "react/react-in-jsx-scope": "off",
       "react/prop-types": "off",
       "react/jsx-props-no-spreading": "off",
-      "react-hooks/set-state-in-effect": "off",
-      "react-hooks/static-components": "off",
     },
   },
 ];
