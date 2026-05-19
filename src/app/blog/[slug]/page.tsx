@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { getAllPostSlugs, getPostDataAndContent } from '@Modules/posts'
+import { getAllPostSlugs, getPostDataAndContent, getSortedPosts, getRelatedPosts } from '@Modules/posts'
 import { generateMetadata as genMetadataHelper } from '@Modules/metadata'
 import { evaluateBlogMdx } from '@Modules/mdx'
 import { mdxComponents } from '@Modules/mdxComponents'
@@ -8,6 +8,7 @@ import ViewCounter from '@Components/blog/ViewCounter'
 import { MyComments } from '@Components/Comments'
 import Subscribe from '@Components/Subscribe'
 import ShareBar from '@Components/ShareBar'
+import { RelatedPosts } from '@Components/blog/RelatedPosts'
 
 export async function generateStaticParams() {
     const paths = getAllPostSlugs()
@@ -29,7 +30,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params
     const { data, content } = getPostDataAndContent(slug)
-    const Post = await evaluateBlogMdx(content)
+    const [Post, relatedPosts] = await Promise.all([
+        evaluateBlogMdx(content),
+        Promise.resolve(getRelatedPosts(data, getSortedPosts()))
+    ])
 
     return (
         <div style={{ maxWidth: '960px', margin: 'auto' }}>
@@ -43,10 +47,11 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
                 priority
             />
             <Title title={data.title} />
-            <div>{data.date}</div>
+            <div>{data.dateFormatted}</div>
             <ViewCounter slug={data.slug} />
             <Post components={mdxComponents} />
             <ShareBar title={data.title} url={data.href} />
+            <RelatedPosts posts={relatedPosts} />
             <Subscribe />
             <MyComments id={data.slug} />
         </div>

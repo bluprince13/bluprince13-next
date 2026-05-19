@@ -25,7 +25,7 @@ const classes = {
 }
 
 const Root = styled('div')(() => ({
-    [`&.${classes.root}`]: {},
+    [`&.${classes.root}`]: { marginBottom: 0 },
 
     [`& .${classes.network}`]: {
         verticalAlign: 'top',
@@ -64,11 +64,11 @@ const ShareBar = ({ title, url }: { title: string; url: string }) => {
                 <FacebookShareButton url={url} className={classes.shareButton}>
                     <FacebookIcon size={32} round />
                 </FacebookShareButton>
-                <div>
+                <span>
                     <FacebookShareCount url={url} className={classes.shareCount}>
                         {(count) => count}
                     </FacebookShareCount>
-                </div>
+                </span>
             </div>
 
             <div className={classes.network}>
@@ -93,9 +93,9 @@ const ShareBar = ({ title, url }: { title: string; url: string }) => {
                 >
                     <RedditIcon size={32} round />
                 </RedditShareButton>
-                <div>
+                <span>
                     <RedditShareCount url={url} className={classes.shareCount} />
-                </div>
+                </span>
             </div>
         </Root>
     )

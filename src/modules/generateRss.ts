@@ -9,7 +9,7 @@ interface Article {
     title: string
     href: string
     description: string
-    date: string
+    dateFormatted: string
     banner: string
 }
 
@@ -48,7 +48,7 @@ const getFeed = ({ articles }: { articles: Article[] }) => {
                     link: SITE_ROOT
                 }
             ],
-            date: new Date(article.date),
+            date: new Date(article.dateFormatted),
             image: SITE_ROOT + article.banner
         })
     })

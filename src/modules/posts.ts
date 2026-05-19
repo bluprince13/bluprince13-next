@@ -8,13 +8,15 @@ const { SITE_ROOT } = process.env
 
 export type PostData = {
     slug: string
-    date: string
+    dateFormatted: string
+    dateISO: string
     banner: string
     href: string
     title: string
     description: string
     bannerFullUrl: string
     bibliography?: string
+    categories: string[]
 }
 
 export type PostContent = string
@@ -44,15 +46,17 @@ export const getPostDataAndContent = cache((slug): GetPostDataAndContentOutput =
     const modifiedData = {
         slug,
         ...data,
-        date: formattedDate,
+        dateFormatted: formattedDate,
+        dateISO: data.date,
         bannerFullUrl: `${SITE_ROOT}${data.banner}`,
         bibliography: data.bibliography ? `${SITE_ROOT}${data.bibliography}` : null,
-        href: `${SITE_ROOT}/blog/${slug}`
+        href: `${SITE_ROOT}/blog/${slug}`,
+        categories: data.categories ?? []
     }
 
     return { data: modifiedData as unknown as PostData, content }
 })
-export const getSortedPosts = () => {
+export const getSortedPosts = cache(() => {
     const fileNames = fs.readdirSync(postDirectory)
     const allPostsData = fileNames.map((filename) => {
         const slug = filename.replace('.mdx', '')
@@ -60,13 +64,10 @@ export const getSortedPosts = () => {
         return data
     })
 
-    return allPostsData.sort((a, b) => {
-        if (new Date(a.date) < new Date(b.date)) {
-            return 1
-        }
-        return -1
-    })
-}
+    return allPostsData.sort((a, b) =>
+        new Date(b.dateISO).getTime() - new Date(a.dateISO).getTime()
+    )
+})
 
 export const getAllPostSlugs = () => {
     const fileNames = fs.readdirSync(postDirectory)
@@ -77,4 +78,23 @@ export const getAllPostSlugs = () => {
             }
         }
     })
+}
+
+export function getRelatedPosts(current: PostData, all: PostData[]): PostData[] {
+    const others = all.filter(p => p.slug !== current.slug)
+    const currentCats = new Set(current.categories ?? [])
+
+    const scored = others.map(p => ({
+        post: p,
+        score: (p.categories ?? []).filter(c => currentCats.has(c)).length
+    }))
+
+    scored.sort((a, b) =>
+        b.score !== a.score
+            ? b.score - a.score
+            : new Date(b.post.dateISO).getTime() - new Date(a.post.dateISO).getTime()
+    )
+
+    const related = scored.filter(x => x.score > 0).slice(0, 3).map(x => x.post)
+    return related.length > 0 ? related : others.slice(0, 3)
 }
