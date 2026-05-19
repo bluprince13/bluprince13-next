@@ -1,7 +1,5 @@
-import fs from 'fs'
 import { Feed } from 'feed'
 
-const { SITE_ROOT } = process.env
 const AUTHOR = 'Vipin Ajayakumar'
 const EMAIL = 'vipinajayakumar@icloud.com'
 
@@ -14,24 +12,25 @@ interface Article {
 }
 
 const getFeed = ({ articles }: { articles: Article[] }) => {
+    const siteRoot = process.env.SITE_ROOT!
     const feed = new Feed({
         title: 'bluprince13',
         description: 'This is my personal feed!',
-        id: SITE_ROOT!,
-        link: SITE_ROOT,
+        id: siteRoot,
+        link: siteRoot,
         language: 'en',
         image: '',
-        favicon: `${SITE_ROOT}/favicon.ico`,
+        favicon: `${siteRoot}/favicon.ico`,
         copyright: `All rights reserved ${new Date().getFullYear()}, ${AUTHOR}`,
         feedLinks: {
-            json: `${SITE_ROOT}/feed.json`,
-            rss: `${SITE_ROOT}/feed.xml`,
-            atom: `${SITE_ROOT}/atom.xml`
+            json: `${siteRoot}/feed.json`,
+            rss: `${siteRoot}/feed.xml`,
+            atom: `${siteRoot}/atom.xml`
         },
         author: {
             name: AUTHOR,
             email: EMAIL,
-            link: SITE_ROOT
+            link: siteRoot
         }
     })
 
@@ -45,26 +44,22 @@ const getFeed = ({ articles }: { articles: Article[] }) => {
                 {
                     name: AUTHOR,
                     email: EMAIL,
-                    link: SITE_ROOT
+                    link: siteRoot
                 }
             ],
             date: new Date(article.dateFormatted),
-            image: SITE_ROOT + article.banner
+            image: siteRoot + article.banner
         })
     })
 
     return feed
 }
 
-const fn = () => async ({ articles }: { articles: Article[] }) => {
-    const feed = getFeed({ articles })
-    const rss = feed.rss2()
-    const atom = feed.atom1()
-    const json = feed.json1()
+export const getRssFeed = ({ articles }: { articles: Article[] }) =>
+    getFeed({ articles }).rss2()
 
-    fs.writeFileSync('public/feed.xml', rss, 'utf8')
-    fs.writeFileSync('public/atom.xml', atom, 'utf8')
-    fs.writeFileSync('public/feed.json', json, 'utf8')
-}
+export const getAtomFeed = ({ articles }: { articles: Article[] }) =>
+    getFeed({ articles }).atom1()
 
-export default fn
+export const getJsonFeed = ({ articles }: { articles: Article[] }) =>
+    getFeed({ articles }).json1()

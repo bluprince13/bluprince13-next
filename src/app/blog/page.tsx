@@ -2,7 +2,6 @@ import Link from 'next/link'
 
 import Title from '@Components/Title'
 import { getSortedPosts } from '@Modules/posts'
-import generateRss from '@Modules/generateRss'
 import { generateMetadata } from '@Modules/metadata'
 
 export const dynamic = 'force-static'
@@ -13,9 +12,8 @@ export const metadata = generateMetadata({
     path: '/blog'
 })
 
-const BlogPage = async () => {
+const BlogPage = () => {
     const allPostsData = getSortedPosts()
-    await generateRss()({ articles: allPostsData })
 
     return (
         <>
