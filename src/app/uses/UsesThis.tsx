@@ -97,8 +97,8 @@ const UsesThis = ({ data }: { data: AppEntry[] }) => {
     )
 
     return (
-        <Box style={{ maxWidth: '960px', margin: 'auto' }}>
-            <Figure alt="banner" src="uses/banner.jpeg" size="l" />
+        <Box>
+            <Figure alt="banner" src="/uses/banner.jpeg" size="l" />
             <Title title="Uses" />
             <br />
             <Typography variant="body1">

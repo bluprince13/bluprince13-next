@@ -24,7 +24,11 @@ const Layout = ({ children }: { children: React.ReactNode }) => (
 )
 
 const Content = ({ children }: { children: React.ReactNode }) => {
-    return <div style={{ padding: '1rem' }}>{children}</div>
+    return (
+        <div style={{ padding: '1rem' }}>
+            <div style={{ maxWidth: '960px', margin: '0 auto' }}>{children}</div>
+        </div>
+    )
 }
 
 export const AppBody = ({ children }: { children: React.ReactNode }) => {

@@ -36,7 +36,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     ])
 
     return (
-        <div style={{ maxWidth: '960px', margin: 'auto' }}>
+        <>
             <Image
                 src={data.banner}
                 alt="banner"
@@ -54,6 +54,6 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
             <RelatedPosts posts={relatedPosts} />
             <Subscribe />
             <MyComments id={data.slug} />
-        </div>
+        </>
     )
 }

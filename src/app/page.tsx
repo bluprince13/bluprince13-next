@@ -13,7 +13,7 @@ export const metadata = generateMetadata({
 })
 
 const Index = () => (
-    <div style={{ maxWidth: '960px', margin: 'auto' }}>
+    <>
         <Title title="Hello human" />
         <br />
         <Typography variant="body1">
@@ -56,7 +56,7 @@ const Index = () => (
             alt="My photo"
         />
         <Subscribe />
-    </div>
+    </>
 )
 
 export default Index
