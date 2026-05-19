@@ -5,7 +5,7 @@ import { evaluateBlogMdx } from '@Modules/mdx'
 import { mdxComponents } from '@Modules/mdxComponents'
 import Title from '@Components/Title'
 import ViewCounter from '@Components/blog/ViewCounter'
-import { MyComments } from '@Components/Comments'
+import { MyComments, MyCommentCount } from '@Components/Comments'
 import Subscribe from '@Components/Subscribe'
 import ShareBar from '@Components/ShareBar'
 import { RelatedPosts } from '@Components/blog/RelatedPosts'
@@ -49,6 +49,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
             <Title title={data.title} />
             <div>{data.dateFormatted}</div>
             <ViewCounter slug={data.slug} />
+            <MyCommentCount id={data.slug} />
             <Post components={mdxComponents} />
             <ShareBar title={data.title} url={data.href} />
             <RelatedPosts posts={relatedPosts} />
