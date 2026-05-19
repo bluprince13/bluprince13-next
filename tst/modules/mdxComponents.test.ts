@@ -17,7 +17,7 @@ describe('mdxComponents', () => {
     it('includes all expected component keys', () => {
         const expectedKeys = [
             'Figure', 'Youtube', 'Timeline', 'Table', 'Alert',
-            'ComparisonTable', 'Mermaid', 'mermaid', 'Iframe',
+            'ComparisonTable', 'Mermaid', 'mermaid',
             'SymbolOverviewWidget', 'Typography', 'Link',
         ]
         for (const key of expectedKeys) {

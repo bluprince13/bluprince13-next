@@ -40,7 +40,7 @@ export default function SearchAppBar() {
         setSearchTerm(e.target.value)
     }
 
-    const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'Enter') {
             handleSearchSubmit(e)
         }
@@ -86,7 +86,7 @@ export default function SearchAppBar() {
                             placeholder="Search..."
                             value={searchTerm}
                             onChange={handleInputChange}
-                            onKeyPress={handleKeyPress}
+                            onKeyDown={handleKeyDown}
                             inputProps={{ 'aria-label': 'search' }}
                             sx={(theme) => ({
                                 color: 'inherit',

@@ -16,5 +16,5 @@ export default function ViewCounter({ slug }: { slug: string }) {
         fetch(`/api/views/${slug}`, { method: 'POST' })
     }, [slug])
 
-    return <div>{`${views ? format(views) : '–––'} views`}</div>
+    return <div>{`${views !== null ? format(views) : '–––'} views`}</div>
 }

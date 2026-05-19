@@ -27,7 +27,7 @@ const FooterLink = ({ children, to }: { children: React.ReactNode; to: string })
 
 const IconBar = () => (
     <Box sx={{ display: 'flex', justifyContent: 'center', flexGrow: 1 }}>
-        <Icon url="http://linkedin.com/in/vipinajayakumar" />
+        <Icon url="https://linkedin.com/in/vipinajayakumar" />
         <Icon url="https://twitter.com/vipinajayakumar" />
         <Icon url="https://github.com/bluprince13" />
         <Icon url="https://www.youtube.com/channel/UCyDgfMZyUxO6Ave0KxtxcCw" />

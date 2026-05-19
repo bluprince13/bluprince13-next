@@ -46,7 +46,7 @@ const AppCard = ({
     return (
         <Card sx={{ maxWidth: 700 }}>
             <CardContent>
-                <CardActionArea href={href} target="_blank">
+                <CardActionArea href={href} target="_blank" rel="noopener noreferrer">
                     <Box
                         sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', margin: '0 1rem' }}
                     >

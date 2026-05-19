@@ -56,7 +56,7 @@
     "build"
   ],
   "include": [
-    "jest.setup.ts",
+    "vitest.setup.ts",
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
