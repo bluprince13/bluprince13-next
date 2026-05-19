@@ -1,4 +1,5 @@
-'use client'
+import type { CSSProperties } from 'react'
+import Image from 'next/image'
 
 const Reference = ({ reference, referenceHref }) =>
     reference
@@ -33,9 +34,6 @@ const getMaxWidth = (size) => {
     }
 }
 
-// TODO: Use https://nextjs.org/docs/api-reference/next/image when it's able to
-// infer width and height automatically.
-// See https://github.com/vercel/next.js/issues/18497
 type FigureProps = {
     src: string
     alt?: string
@@ -60,7 +58,7 @@ const Figure = ({
     align
 }: FigureProps) => {
     const maxWidthToUse = maxWidth || getMaxWidth(size)
-    const style: { margin?: string; display?: string; maxWidth?: string } = {}
+    const style: CSSProperties = { width: '100%', height: 'auto' }
     if (maxWidthToUse) style.maxWidth = maxWidthToUse
     if (align == 'center') {
         style.margin = 'auto'
@@ -68,7 +66,14 @@ const Figure = ({
     }
     return (
         <figure style={{ marginLeft: 0, marginRight: 0 }}>
-            <img src={src} alt={alt ?? caption} width="100%" style={style} />
+            <Image
+                src={src}
+                alt={alt ?? caption ?? ''}
+                width={0}
+                height={0}
+                sizes="100vw"
+                style={style}
+            />
             {caption && (
                 <Caption
                     caption={caption}

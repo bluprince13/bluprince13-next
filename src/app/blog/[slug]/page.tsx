@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { getAllPostSlugs, getPostDataAndContent } from '@Modules/posts'
 import { generateMetadata as genMetadataHelper } from '@Modules/metadata'
 import { evaluateBlogMdx } from '@Modules/mdx'
@@ -32,11 +33,14 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
 
     return (
         <div style={{ maxWidth: '960px', margin: 'auto' }}>
-            <img
-                style={{ width: '100%' }}
-                id="banner"
-                alt="banner"
+            <Image
                 src={data.banner}
+                alt="banner"
+                width={0}
+                height={0}
+                sizes="100vw"
+                style={{ width: '100%', height: 'auto' }}
+                priority
             />
             <Title title={data.title} />
             <div>{data.date}</div>
