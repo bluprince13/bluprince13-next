@@ -56,7 +56,7 @@
         "swr": "2.4.1"
     },
     "devDependencies": {
-        "@playwright/test": "^1.44.1",
+        "@playwright/test": "^1.60.0",
         "@testing-library/jest-dom": "^6.4.5",
         "@testing-library/react": "^15.0.7",
         "@types/comma-number": "^2.1.2",
