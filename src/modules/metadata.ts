@@ -62,13 +62,13 @@ export const generateMetadata = ({
             url,
             title,
             description,
-            images: featuredImage ? [{ url: featuredImage, alt: title }] : undefined
+            images: featuredImage ? [{ url: featuredImage, alt: title }] : []
         },
         twitter: {
             card: 'summary_large_image',
             title,
             description,
-            images: featuredImage ? [featuredImage] : undefined
+            images: featuredImage ? [featuredImage] : []
         }
     }
 }

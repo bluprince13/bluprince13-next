@@ -1,15 +1,15 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Timeline > renders correctly 1`] = `
+exports[`Timeline > renders as a left alignged Timeline on mobile 1`] = `
 <DocumentFragment>
   <ul
-    class="MuiTimeline-root MuiTimeline-positionAlternate css-i6popu-MuiTimeline-root"
+    class="MuiTimeline-root MuiTimeline-positionRight css-i6popu-MuiTimeline-root"
   >
     <li
-      class="MuiTimelineItem-root MuiTimelineItem-positionAlternate css-1sohoek-MuiTimelineItem-root"
+      class="MuiTimelineItem-root MuiTimelineItem-positionRight css-16ulaim-MuiTimelineItem-root"
     >
       <div
-        class="MuiTypography-root MuiTypography-body2 MuiTypography-alignRight MuiTimelineOppositeContent-root MuiTimelineOppositeContent-positionAlternate css-lww6xa-MuiTypography-root-MuiTimelineOppositeContent-root"
+        class="MuiTypography-root MuiTypography-body2 MuiTypography-alignRight MuiTimelineOppositeContent-root MuiTimelineOppositeContent-positionRight css-o9uan8-MuiTypography-root-MuiTimelineOppositeContent-root"
         style="--Typography-textAlign: right;"
       >
         marker1
@@ -35,8 +35,13 @@ exports[`Timeline > renders correctly 1`] = `
         />
       </div>
       <div
-        class="MuiTypography-root MuiTypography-body1 MuiTimelineContent-root MuiTimelineContent-positionAlternate css-zqg8yy-MuiTypography-root-MuiTimelineContent-root"
+        class="MuiTypography-root MuiTypography-body1 MuiTimelineContent-root MuiTimelineContent-positionRight css-39cgpi-MuiTypography-root-MuiTimelineContent-root"
       >
+        <span
+          class="MuiTypography-root MuiTypography-caption css-1en8eyq-MuiTypography-root"
+        >
+          marker1
+        </span>
         <span
           class="MuiTypography-root MuiTypography-h6 css-1miy0lu-MuiTypography-root"
         >
@@ -50,10 +55,10 @@ exports[`Timeline > renders correctly 1`] = `
       </div>
     </li>
     <li
-      class="MuiTimelineItem-root MuiTimelineItem-positionAlternate css-1sohoek-MuiTimelineItem-root"
+      class="MuiTimelineItem-root MuiTimelineItem-positionRight css-16ulaim-MuiTimelineItem-root"
     >
       <div
-        class="MuiTypography-root MuiTypography-body2 MuiTypography-alignRight MuiTimelineOppositeContent-root MuiTimelineOppositeContent-positionAlternate css-lww6xa-MuiTypography-root-MuiTimelineOppositeContent-root"
+        class="MuiTypography-root MuiTypography-body2 MuiTypography-alignRight MuiTimelineOppositeContent-root MuiTimelineOppositeContent-positionRight css-o9uan8-MuiTypography-root-MuiTimelineOppositeContent-root"
         style="--Typography-textAlign: right;"
       >
         marker2
@@ -79,8 +84,118 @@ exports[`Timeline > renders correctly 1`] = `
         />
       </div>
       <div
-        class="MuiTypography-root MuiTypography-body1 MuiTimelineContent-root MuiTimelineContent-positionAlternate css-zqg8yy-MuiTypography-root-MuiTimelineContent-root"
+        class="MuiTypography-root MuiTypography-body1 MuiTimelineContent-root MuiTimelineContent-positionRight css-39cgpi-MuiTypography-root-MuiTimelineContent-root"
       >
+        <span
+          class="MuiTypography-root MuiTypography-caption css-1en8eyq-MuiTypography-root"
+        >
+          marker2
+        </span>
+        <span
+          class="MuiTypography-root MuiTypography-h6 css-1miy0lu-MuiTypography-root"
+        >
+          Without description
+        </span>
+        <p
+          class="MuiTypography-root MuiTypography-body1 css-rizt0-MuiTypography-root"
+        />
+      </div>
+    </li>
+  </ul>
+</DocumentFragment>
+`;
+
+exports[`Timeline > renders as an alternating Timeline 1`] = `
+<DocumentFragment>
+  <ul
+    class="MuiTimeline-root MuiTimeline-positionAlternate css-i6popu-MuiTimeline-root"
+  >
+    <li
+      class="MuiTimelineItem-root MuiTimelineItem-positionAlternate css-1fhasit-MuiTimelineItem-root"
+    >
+      <div
+        class="MuiTypography-root MuiTypography-body2 MuiTypography-alignRight MuiTimelineOppositeContent-root MuiTimelineOppositeContent-positionAlternate css-o9uan8-MuiTypography-root-MuiTimelineOppositeContent-root"
+        style="--Typography-textAlign: right;"
+      >
+        marker1
+      </div>
+      <div
+        class="MuiTimelineSeparator-root css-1muvgbz-MuiTimelineSeparator-root"
+      >
+        <span
+          class="MuiTimelineConnector-root css-1ami7lv-MuiTimelineConnector-root"
+        />
+        <span
+          class="MuiTimelineDot-root MuiTimelineDot-filled MuiTimelineDot-filledInfo css-1mqyah4-MuiTimelineDot-root"
+        >
+          <span
+            aria-hidden="true"
+            class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeMedium css-1n5qiej-MuiIcon-root"
+          >
+            start
+          </span>
+        </span>
+        <span
+          class="MuiTimelineConnector-root css-1ami7lv-MuiTimelineConnector-root"
+        />
+      </div>
+      <div
+        class="MuiTypography-root MuiTypography-body1 MuiTimelineContent-root MuiTimelineContent-positionAlternate css-39cgpi-MuiTypography-root-MuiTimelineContent-root"
+      >
+        <span
+          class="MuiTypography-root MuiTypography-caption css-1en8eyq-MuiTypography-root"
+        >
+          marker1
+        </span>
+        <span
+          class="MuiTypography-root MuiTypography-h6 css-1miy0lu-MuiTypography-root"
+        >
+          With description
+        </span>
+        <p
+          class="MuiTypography-root MuiTypography-body1 css-rizt0-MuiTypography-root"
+        >
+          description1
+        </p>
+      </div>
+    </li>
+    <li
+      class="MuiTimelineItem-root MuiTimelineItem-positionAlternate css-1fhasit-MuiTimelineItem-root"
+    >
+      <div
+        class="MuiTypography-root MuiTypography-body2 MuiTypography-alignRight MuiTimelineOppositeContent-root MuiTimelineOppositeContent-positionAlternate css-o9uan8-MuiTypography-root-MuiTimelineOppositeContent-root"
+        style="--Typography-textAlign: right;"
+      >
+        marker2
+      </div>
+      <div
+        class="MuiTimelineSeparator-root css-1muvgbz-MuiTimelineSeparator-root"
+      >
+        <span
+          class="MuiTimelineConnector-root css-1ami7lv-MuiTimelineConnector-root"
+        />
+        <span
+          class="MuiTimelineDot-root MuiTimelineDot-filled MuiTimelineDot-filledError css-ia85ya-MuiTimelineDot-root"
+        >
+          <span
+            aria-hidden="true"
+            class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeMedium css-1n5qiej-MuiIcon-root"
+          >
+            end
+          </span>
+        </span>
+        <span
+          class="MuiTimelineConnector-root css-1ami7lv-MuiTimelineConnector-root"
+        />
+      </div>
+      <div
+        class="MuiTypography-root MuiTypography-body1 MuiTimelineContent-root MuiTimelineContent-positionAlternate css-39cgpi-MuiTypography-root-MuiTimelineContent-root"
+      >
+        <span
+          class="MuiTypography-root MuiTypography-caption css-1en8eyq-MuiTypography-root"
+        >
+          marker2
+        </span>
         <span
           class="MuiTypography-root MuiTypography-h6 css-1miy0lu-MuiTypography-root"
         >
