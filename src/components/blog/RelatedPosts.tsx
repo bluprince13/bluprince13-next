@@ -17,7 +17,7 @@ function RelatedPostCard({ slug, title, dateFormatted, banner, categories }: Pos
                     <Typography variant="subtitle1" sx={{ fontWeight: 600, lineHeight: 1.3, mb: 0.5 }}>
                         {title}
                     </Typography>
-                    <Typography variant="caption" color="text.secondary" display="block" sx={{ mb: 0.75 }}>
+                    <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 0.75 }}>
                         {dateFormatted}
                     </Typography>
                     <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
