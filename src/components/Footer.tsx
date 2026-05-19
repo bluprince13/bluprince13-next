@@ -19,14 +19,14 @@ const FooterLink = ({ children, to }: { children: React.ReactNode; to: string })
         '&:focus': { textDecoration: 'none' },
         '&:active': { textDecoration: 'none' },
     }}>
-        <Typography variant="body2" color="inherit" style={{ paddingLeft: '1rem' }}>
+        <Typography variant="body2" color="inherit" sx={{ pl: '1rem' }}>
             {children}
         </Typography>
     </Box>
 )
 
 const IconBar = () => (
-    <Box style={{ display: 'flex', justifyContent: 'center', flexGrow: 1 }}>
+    <Box sx={{ display: 'flex', justifyContent: 'center', flexGrow: 1 }}>
         <Icon url="http://linkedin.com/in/vipinajayakumar" />
         <Icon url="https://twitter.com/vipinajayakumar" />
         <Icon url="https://github.com/bluprince13" />
@@ -39,7 +39,7 @@ const IconBar = () => (
 
 const FooterLinks = ({ isLargeScreen }: { isLargeScreen: boolean }) => (
     <Box
-        style={{
+        sx={{
             display: 'flex',
             justifyContent: isLargeScreen ? 'flex-end' : 'center',
             flexGrow: 1
@@ -57,23 +57,17 @@ export default function Footer() {
     const isLargeScreen = useMediaQuery('(min-width:800px)')
 
     return (
-        <Box style={{ marginTop: 'auto' }}>
+        <Box sx={{ mt: 'auto' }}>
             <AppBar position="static" color="transparent" elevation={0}>
                 <Container maxWidth="lg">
                     <Divider />
                     <Toolbar>
                         {isLargeScreen && (
-                            <Box
-                                style={{
-                                    display: 'flex',
-                                    justifyContent: 'flex-start',
-                                    flexGrow: 1
-                                }}
-                            >
+                            <Box sx={{ display: 'flex', justifyContent: 'flex-start', flexGrow: 1 }}>
                                 <Typography
                                     variant="body2"
                                     color="inherit"
-                                    style={{ paddingLeft: '1rem' }}
+                                    sx={{ pl: '1rem' }}
                                 >
                                     &copy; {new Date().getFullYear()} {AUTHOR}
                                 </Typography>
@@ -89,7 +83,7 @@ export default function Footer() {
                     position="static"
                     color="transparent"
                     elevation={0}
-                    style={{ margin: '0.5rem' }}
+                    sx={{ m: '0.5rem' }}
                 >
                     <IconBar />
                 </AppBar>
