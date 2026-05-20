@@ -1,6 +1,7 @@
 import { compile, evaluate } from '@mdx-js/mdx'
 import * as runtime from 'react/jsx-runtime'
 import remarkToc from 'remark-toc'
+import remarkNumberHeadings from './remarkNumberHeadings'
 import remarkEmoji from 'remark-emoji'
 import remarkCodesandbox from 'remark-codesandbox'
 import mdxMermaid from 'mdx-mermaid'
@@ -22,6 +23,7 @@ export async function evaluateBlogMdx(content: string): Promise<React.ComponentT
   const { default: Content } = await evaluate(content, {
     ...(runtime as any),
     remarkPlugins: [
+      remarkNumberHeadings,
       remarkToc,
       remarkEmoji,
       [remarkCodesandbox, { mode: 'button' }],
