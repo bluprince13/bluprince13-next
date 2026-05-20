@@ -4,7 +4,7 @@ import { generateMetadata as genMetadataHelper } from '@Modules/metadata'
 import { evaluateBlogMdx } from '@Modules/mdx'
 import { mdxComponents } from '@Modules/mdxComponents'
 import Title from '@Components/Title'
-import ViewCounter from '@Components/blog/ViewCounter'
+import BlogPostViewCounter from '@Components/blog/ViewCounter'
 import { MyComments, MyCommentCount } from '@Components/Comments'
 import Subscribe from '@Components/Subscribe'
 import ShareBar from '@Components/ShareBar'
@@ -48,7 +48,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
             />
             <Title title={data.title} />
             <div>{data.dateFormatted}</div>
-            <ViewCounter slug={data.slug} />
+            <BlogPostViewCounter slug={data.slug} />
             <MyCommentCount id={data.slug} />
             <Post components={mdxComponents} />
             <ShareBar title={data.title} url={data.href} />

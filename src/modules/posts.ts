@@ -17,6 +17,8 @@ export type PostData = {
     bannerFullUrl: string
     bibliography?: string
     categories: string[]
+    readingTime: number
+    excerpt: string
 }
 
 export type PostContent = string
@@ -43,6 +45,23 @@ export const getPostDataAndContent = cache((slug): GetPostDataAndContentOutput =
         'en-GB',
         options
     )
+
+    const wordCount = content.split(/\s+/).filter(Boolean).length
+    const readingTime = Math.ceil(wordCount / 200)
+    const introRaw = content.split(/\n## /)[0]
+    const introPlain = introRaw
+        .replace(/<[^>]+>/g, '')
+        .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+        .replace(/!?\[([^\]]*)\]/g, '$1')
+        .replace(/[*_`#>~]/g, '')
+        .replace(/\s+/g, ' ')
+        .trim()
+
+    const excerpt =
+        introPlain.length > 300
+            ? introPlain.slice(0, 300).trimEnd() + '…'
+            : introPlain
+
     const modifiedData = {
         slug,
         ...data,
@@ -51,7 +70,9 @@ export const getPostDataAndContent = cache((slug): GetPostDataAndContentOutput =
         bannerFullUrl: `${SITE_ROOT}${data.banner}`,
         bibliography: data.bibliography ? `${SITE_ROOT}${data.bibliography}` : null,
         href: `${SITE_ROOT}/blog/${slug}`,
-        categories: data.categories ?? []
+        categories: data.categories ?? [],
+        readingTime,
+        excerpt,
     }
 
     return { data: modifiedData as unknown as PostData, content }

@@ -15,6 +15,9 @@ export async function POST(
   _request: NextRequest,
   { params }: { params: Promise<{ slug: string }> }
 ) {
+  if (process.env.NODE_ENV === 'development') {
+    return NextResponse.json({ total: null })
+  }
   const { slug } = await params
   const ref = db.ref('views').child(slug)
   const { snapshot } = await ref.transaction((currentViews: number | null) => {
