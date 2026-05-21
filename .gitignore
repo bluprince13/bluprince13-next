@@ -40,6 +40,7 @@ yarn-error.log*
 # claude
 .claude/settings.local.json
 .claude/worktrees
+.superpowers/brainstorm
 
 # typescript
 tsconfig.tsbuildinfo
