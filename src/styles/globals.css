@@ -44,6 +44,14 @@ a {
     padding-left: 0.5rem;
 }
 
+/* Pagefind excerpt highlights */
+mark {
+    background-color: rgba(var(--mui-palette-primary-mainChannel) / 0.18);
+    color: var(--mui-palette-primary-main);
+    border-radius: 2px;
+    padding: 0 2px;
+}
+
 :not(pre) > code {
     background-color: var(--mui-palette-action-selected);
     border-radius: 0.3em;

@@ -45,6 +45,7 @@ yarn-error.log*
 tsconfig.tsbuildinfo
 
 # custom
+/public/pagefind/
 **/feed.xml
 **/feed.json
 **/atom.xml
