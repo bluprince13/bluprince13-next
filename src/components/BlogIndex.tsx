@@ -1,9 +1,9 @@
 'use client'
 
+import { AnimatePresence, motion } from 'motion/react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Box from '@mui/material/Box'
 import Chip from '@mui/material/Chip'
-import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
 import PostCard, { type PostCardProps } from '@Components/PostCard'
 import { buildTagUrl } from '@Modules/tagUrl'
@@ -44,11 +44,20 @@ export default function BlogIndex({ posts }: Props) {
                     </Box>
                 )}
             </Box>
-            <Stack spacing={2}>
-                {filteredPosts.map(post => (
-                    <PostCard key={post.slug} {...post} />
-                ))}
-            </Stack>
+            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+                <AnimatePresence initial={false}>
+                    {filteredPosts.map(post => (
+                        <motion.div
+                            key={post.slug}
+                            layout
+                            exit={{ opacity: 0, scale: 0.97 }}
+                            transition={{ duration: 0.2 }}
+                        >
+                            <PostCard {...post} />
+                        </motion.div>
+                    ))}
+                </AnimatePresence>
+            </Box>
         </>
     )
 }
