@@ -1,5 +1,15 @@
-import { render, screen } from '@testing-library/react'
+import { fireEvent, render, screen } from '@testing-library/react'
 import PostCard from '@Components/PostCard'
+
+const { mockPush, mockGetAll } = vi.hoisted(() => ({
+    mockPush: vi.fn(),
+    mockGetAll: vi.fn().mockReturnValue([]),
+}))
+
+vi.mock('next/navigation', () => ({
+    useRouter: () => ({ push: mockPush }),
+    useSearchParams: () => ({ getAll: mockGetAll }),
+}))
 
 vi.mock('@Components/blog/ViewCounter', () => ({
     ViewCount: ({ slug }: { slug: string }) => <span>{slug} views</span>,
@@ -20,6 +30,11 @@ const defaultProps = {
 }
 
 describe('PostCard', () => {
+    beforeEach(() => {
+        mockPush.mockClear()
+        mockGetAll.mockReturnValue([])
+    })
+
     it('renders the post title', () => {
         render(<PostCard {...defaultProps} />)
         expect(screen.getByText('My Test Post')).toBeInTheDocument()
@@ -45,5 +60,25 @@ describe('PostCard', () => {
         render(<PostCard {...defaultProps} />)
         const link = screen.getByRole('link')
         expect(link).toHaveAttribute('href', '/blog/my-post')
+    })
+
+    it('clicking an inactive tag chip adds it to the URL', () => {
+        render(<PostCard {...defaultProps} />)
+        fireEvent.click(screen.getByText('tech'))
+        expect(mockPush).toHaveBeenCalledWith('/blog?tag=tech')
+    })
+
+    it('clicking an active tag chip removes it from the URL', () => {
+        mockGetAll.mockReturnValue(['tech', 'life'])
+        render(<PostCard {...defaultProps} />)
+        fireEvent.click(screen.getByText('tech'))
+        expect(mockPush).toHaveBeenCalledWith('/blog?tag=life')
+    })
+
+    it('clicking the last active tag chip navigates to /blog', () => {
+        mockGetAll.mockReturnValue(['tech'])
+        render(<PostCard {...defaultProps} />)
+        fireEvent.click(screen.getByText('tech'))
+        expect(mockPush).toHaveBeenCalledWith('/blog')
     })
 })

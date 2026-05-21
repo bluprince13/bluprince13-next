@@ -1,8 +1,12 @@
 import Image from 'next/image'
+import Link from 'next/link'
+import Box from '@mui/material/Box'
+import Chip from '@mui/material/Chip'
 import { getAllPostSlugs, getPostDataAndContent, getSortedPosts, getRelatedPosts } from '@Modules/posts'
 import { generateMetadata as genMetadataHelper } from '@Modules/metadata'
 import { evaluateBlogMdx } from '@Modules/mdx'
 import { mdxComponents } from '@Modules/mdxComponents'
+import { buildTagUrl } from '@Modules/tagUrl'
 import Title from '@Components/Title'
 import BlogPostViewCounter from '@Components/blog/ViewCounter'
 import { MyComments, MyCommentCount } from '@Components/Comments'
@@ -47,9 +51,20 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
                 priority
             />
             <Title title={data.title} />
-            <div>{data.dateFormatted}</div>
-            <BlogPostViewCounter slug={data.slug} />
-            <MyCommentCount id={data.slug} />
+            <Box sx={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', flexWrap: 'wrap', gap: 1 }}>
+                <Box>
+                    <div>{data.dateFormatted}</div>
+                    <BlogPostViewCounter slug={data.slug} />
+                    <MyCommentCount id={data.slug} />
+                </Box>
+                <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
+                    {data.categories.map(cat => (
+                        <Link key={cat} href={buildTagUrl([cat])} style={{ textDecoration: 'none' }}>
+                            <Chip label={cat} size="small" clickable />
+                        </Link>
+                    ))}
+                </Box>
+            </Box>
             <Post components={mdxComponents} />
             <ShareBar title={data.title} url={data.href} />
             <RelatedPosts posts={relatedPosts} />

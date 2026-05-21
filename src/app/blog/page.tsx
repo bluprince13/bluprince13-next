@@ -1,8 +1,7 @@
-import Stack from '@mui/material/Stack'
-import Typography from '@mui/material/Typography'
+import { Suspense } from 'react'
 
 import Title from '@Components/Title'
-import PostCard from '@Components/PostCard'
+import BlogIndex from '@Components/BlogIndex'
 import { getSortedPosts } from '@Modules/posts'
 import { generateMetadata } from '@Modules/metadata'
 import db from '@Modules/firebase'
@@ -18,17 +17,17 @@ const BlogPage = async () => {
     const snapshot = await db.ref('views').once('value')
     const viewCounts: Record<string, number> = snapshot.val() ?? {}
 
+    const posts = allPostsData.map(post => ({
+        ...post,
+        initialViewCount: viewCounts[post.slug],
+    }))
+
     return (
         <>
             <Title title="Blog" />
-            <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
-                {allPostsData.length} articles
-            </Typography>
-            <Stack spacing={2}>
-                {allPostsData.map(post => (
-                    <PostCard key={post.slug} {...post} initialViewCount={viewCounts[post.slug]} />
-                ))}
-            </Stack>
+            <Suspense>
+                <BlogIndex posts={posts} />
+            </Suspense>
         </>
     )
 }

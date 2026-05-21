@@ -6,11 +6,13 @@ import Chip from '@mui/material/Chip'
 import Typography from '@mui/material/Typography'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter, useSearchParams } from 'next/navigation'
 import type { PostData } from '@Modules/posts'
+import { buildTagUrl } from '@Modules/tagUrl'
 import { ViewCount } from '@Components/blog/ViewCounter'
 import { MyCommentCount } from '@Components/Comments'
 
-type PostCardProps = Pick<
+export type PostCardProps = Pick<
     PostData,
     'slug' | 'title' | 'banner' | 'dateFormatted' | 'categories' | 'readingTime' | 'excerpt'
 > & { initialViewCount?: number }
@@ -25,6 +27,17 @@ export default function PostCard({
     excerpt,
     initialViewCount,
 }: PostCardProps) {
+    const router = useRouter()
+    const searchParams = useSearchParams()
+    const activeTags = searchParams.getAll('tag')
+
+    function handleTagClick(e: React.MouseEvent, cat: string) {
+        e.preventDefault()
+        e.stopPropagation()
+        const next = activeTags.includes(cat) ? activeTags.filter(t => t !== cat) : [...activeTags, cat]
+        router.push(buildTagUrl(next))
+    }
+
     return (
         <Link href={`/blog/${slug}`} style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
             <Card
@@ -84,9 +97,21 @@ export default function PostCard({
                             <MyCommentCount id={slug} />
                         </Typography>
                         <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
-                            {categories.map(cat => (
-                                <Chip key={cat} label={cat} size="small" />
-                            ))}
+                            {categories.map(cat => {
+                                const active = activeTags.includes(cat)
+                                return (
+                                    <Chip
+                                        key={cat}
+                                        label={cat}
+                                        size="small"
+                                        variant={active ? 'filled' : 'outlined'}
+                                        color={active ? 'primary' : 'default'}
+                                        clickable
+                                        onClick={e => handleTagClick(e, cat)}
+                                        onDelete={active ? e => handleTagClick(e, cat) : undefined}
+                                    />
+                                )
+                            })}
                         </Box>
                     </Box>
                 </Box>
