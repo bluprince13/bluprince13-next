@@ -1,6 +1,7 @@
 import { Suspense } from 'react'
 
 import Title from '@Components/Title'
+import Breadcrumbs from '@Components/blog/Breadcrumbs'
 import BlogIndex from '@Components/BlogIndex'
 import { getSortedPosts } from '@Modules/posts'
 import { generateMetadata } from '@Modules/metadata'
@@ -24,6 +25,7 @@ const BlogPage = async () => {
 
     return (
         <>
+            <Breadcrumbs items={[{ label: 'Blog' }]} />
             <Title title="Blog" />
             <Suspense>
                 <BlogIndex posts={posts} />

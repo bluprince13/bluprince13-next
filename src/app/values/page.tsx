@@ -1,4 +1,5 @@
 import { generateMetadata } from '@Modules/metadata'
+import Breadcrumbs from '@Components/blog/Breadcrumbs'
 import ValuesContent from './content.mdx'
 
 export const metadata = generateMetadata({
@@ -8,5 +9,10 @@ export const metadata = generateMetadata({
 })
 
 export default function ValuesPage() {
-    return <ValuesContent />
+    return (
+        <>
+            <Breadcrumbs items={[{ label: 'Values' }]} />
+            <ValuesContent />
+        </>
+    )
 }

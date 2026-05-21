@@ -8,6 +8,7 @@ import { evaluateBlogMdx } from '@Modules/mdx'
 import { mdxComponents } from '@Modules/mdxComponents'
 import { buildTagUrl } from '@Modules/tagUrl'
 import Title from '@Components/Title'
+import Breadcrumbs from '@Components/blog/Breadcrumbs'
 import BlogPostViewCounter from '@Components/blog/ViewCounter'
 import { MyComments, MyCommentCount } from '@Components/Comments'
 import Subscribe from '@Components/Subscribe'
@@ -42,6 +43,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
 
     return (
         <FadeIn>
+            <Breadcrumbs items={[{ label: 'Blog', href: '/blog' }, { label: data.title }]} />
             <Image
                 src={data.banner}
                 alt="banner"

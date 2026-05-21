@@ -1,6 +1,7 @@
 import data from '@Content/uses'
 import { compileMdx } from '@Modules/mdx'
 import { generateMetadata } from '@Modules/metadata'
+import Breadcrumbs from '@Components/blog/Breadcrumbs'
 import UsesThis from './UsesThis'
 
 export const metadata = generateMetadata({
@@ -20,5 +21,10 @@ export default async function UsesPage() {
         })
     )
 
-    return <UsesThis data={compiledData} />
+    return (
+        <>
+            <Breadcrumbs items={[{ label: 'Uses' }]} />
+            <UsesThis data={compiledData} />
+        </>
+    )
 }

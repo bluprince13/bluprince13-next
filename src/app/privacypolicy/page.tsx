@@ -1,6 +1,7 @@
 import Typography from '@mui/material/Typography'
 
 import Title from '@Components/Title'
+import Breadcrumbs from '@Components/blog/Breadcrumbs'
 import { generateMetadata } from '@Modules/metadata'
 
 export const metadata = generateMetadata({
@@ -11,6 +12,7 @@ export const metadata = generateMetadata({
 
 const Privacypolicy = () => (
     <div>
+        <Breadcrumbs items={[{ label: 'Privacy policy' }]} />
         <Title title="Privacy policy" />
         <br />
         <Typography variant="body1">

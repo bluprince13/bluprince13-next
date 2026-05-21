@@ -4,6 +4,7 @@ import Link from 'next/link'
 
 import { MyComments } from '@Components/Comments'
 import Title from '@Components/Title'
+import Breadcrumbs from '@Components/blog/Breadcrumbs'
 import { generateMetadata } from '@Modules/metadata'
 
 export const metadata = generateMetadata({
@@ -14,6 +15,7 @@ export const metadata = generateMetadata({
 
 const CV = () => (
     <>
+        <Breadcrumbs items={[{ label: 'CV' }]} />
         <Title title="CV" />
         <br />
         <Typography variant="body1">
