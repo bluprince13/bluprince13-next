@@ -13,6 +13,7 @@ import { MyComments, MyCommentCount } from '@Components/Comments'
 import Subscribe from '@Components/Subscribe'
 import ShareBar from '@Components/ShareBar'
 import { RelatedPosts } from '@Components/blog/RelatedPosts'
+import FadeIn from '@Components/blog/FadeIn'
 
 export async function generateStaticParams() {
     const paths = getAllPostSlugs()
@@ -40,7 +41,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     ])
 
     return (
-        <>
+        <FadeIn>
             <Image
                 src={data.banner}
                 alt="banner"
@@ -70,6 +71,6 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
             <RelatedPosts posts={relatedPosts} />
             <Subscribe />
             <MyComments id={data.slug} />
-        </>
+        </FadeIn>
     )
 }

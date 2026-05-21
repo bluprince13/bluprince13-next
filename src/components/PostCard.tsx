@@ -6,6 +6,7 @@ import Chip from '@mui/material/Chip'
 import Typography from '@mui/material/Typography'
 import Image from 'next/image'
 import Link from 'next/link'
+import { motion } from 'motion/react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import type { PostData } from '@Modules/posts'
 import { buildTagUrl } from '@Modules/tagUrl'
@@ -39,15 +40,21 @@ export default function PostCard({
     }
 
     return (
+        <motion.div whileHover={{ y: -3 }} transition={{ duration: 0.15 }}>
         <Link href={`/blog/${slug}`} style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
             <Card
                 variant="outlined"
-                sx={{
+                sx={theme => ({
                     display: 'flex',
                     flexDirection: { xs: 'column', sm: 'row' },
                     transition: 'box-shadow 0.2s',
-                    '&:hover': { boxShadow: 3 },
-                }}
+                    '&:hover': {
+                        boxShadow: 3,
+                        ...theme.applyStyles('dark', {
+                            boxShadow: '0 2px 12px rgba(255, 255, 255, 0.12)',
+                        }),
+                    },
+                })}
             >
                 <Box
                     sx={{
@@ -117,5 +124,6 @@ export default function PostCard({
                 </Box>
             </Card>
         </Link>
+        </motion.div>
     )
 }
