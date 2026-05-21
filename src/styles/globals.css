@@ -39,9 +39,13 @@ a {
 [data-color-scheme='dark'] body {
     background-color: #121212;
 }
-/* TODO: Make anchors visible on hover only */
 .anchor {
     padding-left: 0.5rem;
+}
+
+.anchor:hover {
+    cursor: pointer;
+    opacity: 0.7;
 }
 
 /* Pagefind excerpt highlights */
