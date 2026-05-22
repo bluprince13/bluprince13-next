@@ -65,6 +65,20 @@ describe('getRelatedPosts', () => {
         expect(result.map(p => p.slug)).toEqual(['a', 'b', 'c'])
     })
 
+    it('fills to 3 with recent posts when fewer than 3 tag matches exist', () => {
+        const match = makePost({ slug: 'match', dateISO: '2024-03-01', categories: ['tech'] })
+        const recent1 = makePost({ slug: 'recent1', dateISO: '2024-05-01', categories: ['other'] })
+        const recent2 = makePost({ slug: 'recent2', dateISO: '2024-04-01', categories: ['other'] })
+        const older = makePost({ slug: 'older', dateISO: '2023-01-01', categories: ['other'] })
+        const all = [current, match, recent1, recent2, older]
+        const result = getRelatedPosts(current, all)
+        expect(result).toHaveLength(3)
+        expect(result[0].slug).toBe('match')
+        expect(result.map(p => p.slug)).toContain('recent1')
+        expect(result.map(p => p.slug)).toContain('recent2')
+        expect(result.map(p => p.slug)).not.toContain('older')
+    })
+
     it('returns empty array when no other posts exist', () => {
         expect(getRelatedPosts(current, [current])).toEqual([])
     })

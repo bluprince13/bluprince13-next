@@ -117,5 +117,9 @@ export function getRelatedPosts(current: PostData, all: PostData[]): PostData[] 
     )
 
     const related = scored.filter(x => x.score > 0).slice(0, 3).map(x => x.post)
-    return related.length > 0 ? related : others.slice(0, 3)
+    if (related.length >= 3) return related
+
+    const relatedSlugs = new Set(related.map(p => p.slug))
+    const fallbacks = others.filter(p => !relatedSlugs.has(p.slug))
+    return [...related, ...fallbacks].slice(0, 3)
 }
