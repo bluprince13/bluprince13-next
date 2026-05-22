@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { useState, useEffect, startTransition, useSyncExternalStore } from 'react'
+import { useState, useEffect, startTransition } from 'react'
 
 import { useColorScheme } from '@mui/material/styles'
 import MuiAppBar from '@mui/material/AppBar'
@@ -18,7 +18,6 @@ import SearchModal from './SearchModal'
 
 export default function AppBar() {
     const [searchOpen, setSearchOpen] = useState(false)
-    const mounted = useSyncExternalStore(() => () => {}, () => true, () => false)
     const { mode, setMode } = useColorScheme()
 
     useEffect(() => {
@@ -34,7 +33,7 @@ export default function AppBar() {
 
     const toggleColorMode = () => {
         startTransition(() => {
-            setMode(mode === 'light' ? 'dark' : 'light')
+            setMode(mode === 'dark' ? 'light' : 'dark')
         })
     }
 
@@ -43,9 +42,9 @@ export default function AppBar() {
             <MuiAppBar position="static">
                 <Toolbar>
                     <SimpleMenu />
-                    <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}>
+                    <Box sx={{ flexGrow: 1 }}>
                         <Link href="/" passHref>
-                            <Button sx={{ textTransform: 'none', fontSize: '1.2rem', color: '#fff' }} disableRipple>
+                            <Button sx={{ textTransform: 'none', fontSize: '1.2rem', color: '#fff', display: { xs: 'none', sm: 'inline-flex' } }} disableRipple>
                                 bluprince13
                             </Button>
                         </Link>
@@ -58,7 +57,8 @@ export default function AppBar() {
                         <SearchIcon />
                     </IconButton>
                     <IconButton color="inherit" onClick={toggleColorMode} aria-label="toggle dark mode">
-                        {mounted && (mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />)}
+                        <Brightness4Icon sx={{ '[data-theme="dark"] &': { display: 'none' } }} />
+                        <Brightness7Icon sx={{ '[data-theme="light"] &': { display: 'none' } }} />
                     </IconButton>
                 </Toolbar>
             </MuiAppBar>
