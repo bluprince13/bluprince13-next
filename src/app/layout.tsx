@@ -5,7 +5,6 @@ import { AppRouterCacheProvider } from '@mui/material-nextjs/v16-appRouter'
 import InitColorSchemeScript from '@mui/material/InitColorSchemeScript'
 import { AppBody } from '@App/AppBody'
 import { siteMetadata } from '@Modules/metadata'
-import Script from 'next/script'
 import type { Metadata, Viewport } from 'next'
 
 const roboto = Roboto({
@@ -41,11 +40,6 @@ export default function RootLayout({
                 <AppRouterCacheProvider>
                     <AppBody>{children}</AppBody>
                 </AppRouterCacheProvider>
-                <Script
-                    src="https://kit.fontawesome.com/a4e8fa8339.js"
-                    crossOrigin="anonymous"
-                    strategy="afterInteractive"
-                />
             </body>
         </html>
     )

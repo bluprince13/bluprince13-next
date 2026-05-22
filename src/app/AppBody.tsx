@@ -7,7 +7,6 @@ import '@Styles/globals.css'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Analytics } from "@vercel/analytics/react"
 import { GoogleAnalytics } from '@next/third-parties/google'
-import { StateProvider } from '@Modules/store'
 import AppBar from '@Components/appbar/AppBar'
 import Footer from '@Components/Footer'
 
@@ -38,14 +37,12 @@ export const AppBody = ({ children }: { children: React.ReactNode }) => {
             <GoogleAnalytics gaId="G-Y7P3Z69032" />
             <CssVarsProvider theme={theme}>
                 <CssBaseline />
-                <StateProvider>
-                    <Layout>
-                        <AppBar />
-                        <Content>{children}</Content>
-                        <Footer />
-                        <SpeedInsights />
-                    </Layout>
-                </StateProvider>
+                <Layout>
+                    <AppBar />
+                    <Content>{children}</Content>
+                    <Footer />
+                    <SpeedInsights />
+                </Layout>
             </CssVarsProvider>
         </>
     )

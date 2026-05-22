@@ -41,6 +41,10 @@ a {
 }
 .anchor {
     padding-left: 0.5rem;
+    font-size: 2rem;
+    display: inline-block;
+    transform: rotate(-45deg);
+    vertical-align: middle;
 }
 
 .anchor:hover {
