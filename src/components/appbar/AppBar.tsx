@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useState, useEffect, startTransition } from 'react'
+import { usePathname } from 'next/navigation'
 
 import { useColorScheme } from '@mui/material/styles'
 import MuiAppBar from '@mui/material/AppBar'
@@ -16,9 +17,16 @@ import Brightness7Icon from '@mui/icons-material/Brightness7'
 import SimpleMenu from './SimpleMenu'
 import SearchModal from './SearchModal'
 
+const NAV_LINKS = [
+    { label: 'Blog', href: '/blog' },
+    { label: 'Apps', href: '/apps' },
+    { label: 'CV', href: '/cv' },
+]
+
 export default function AppBar() {
     const [searchOpen, setSearchOpen] = useState(false)
     const { mode, setMode } = useColorScheme()
+    const pathname = usePathname()
 
     useEffect(() => {
         const handleKeyDown = (e: KeyboardEvent) => {
@@ -41,14 +49,43 @@ export default function AppBar() {
         <>
             <MuiAppBar position="static">
                 <Toolbar>
-                    <SimpleMenu />
-                    <Box sx={{ flexGrow: 1 }}>
-                        <Link href="/" passHref>
-                            <Button sx={{ textTransform: 'none', fontSize: '1.2rem', color: '#fff', display: { xs: 'none', sm: 'inline-flex' } }} disableRipple>
-                                bluprince13
-                            </Button>
-                        </Link>
+                    {/* Hamburger — mobile only */}
+                    <Box sx={{ display: { xs: 'flex', sm: 'none' } }}>
+                        <SimpleMenu />
                     </Box>
+
+                    {/* Logo — always visible */}
+                    <Link href="/" passHref>
+                        <Button sx={{ textTransform: 'none', fontSize: '1.2rem', color: '#fff' }} disableRipple>
+                            bluprince13
+                        </Button>
+                    </Link>
+
+                    {/* Inline nav links — desktop only */}
+                    <Box sx={{ display: { xs: 'none', sm: 'flex' }, ml: 2 }}>
+                        {NAV_LINKS.map(({ label, href }) => {
+                            const active = pathname === href || pathname.startsWith(href + '/')
+                            return (
+                                <Link key={href} href={href} passHref>
+                                    <Button
+                                        sx={{
+                                            color: '#fff',
+                                            textTransform: 'none',
+                                            borderBottom: active ? '2px solid #fff' : '2px solid transparent',
+                                            borderRadius: 0,
+                                            pb: '2px',
+                                        }}
+                                        disableRipple
+                                    >
+                                        {label}
+                                    </Button>
+                                </Link>
+                            )
+                        })}
+                    </Box>
+
+                    <Box sx={{ flexGrow: 1 }} />
+
                     <IconButton
                         onClick={() => setSearchOpen(true)}
                         color="inherit"
