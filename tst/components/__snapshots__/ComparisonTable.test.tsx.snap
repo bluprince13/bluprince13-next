@@ -1,0 +1,211 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ComparisonTable > renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiBox-root css-0"
+  >
+    <div
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiTableContainer-root css-if1821-MuiPaper-root-MuiTableContainer-root"
+      style="--Paper-shadow: var(--mui-shadows-1);"
+    >
+      <table
+        aria-label="comparison table"
+        class="MuiTable-root css-pmti2x-MuiTable-root"
+      >
+        <thead
+          class="MuiTableHead-root css-1a7iywq-MuiTableHead-root"
+        >
+          <tr
+            class="MuiTableRow-root MuiTableRow-head css-92sqde-MuiTableRow-root"
+          >
+            <th
+              class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-18z0d7s-MuiTableCell-root"
+              scope="col"
+            />
+            <th
+              class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-18z0d7s-MuiTableCell-root"
+              scope="col"
+            >
+              <div
+                class="MuiTypography-root MuiTypography-subtitle1 css-rz8w-MuiTypography-root"
+              >
+                Feature A
+              </div>
+              <div
+                class="MuiTypography-root MuiTypography-body2 css-xj1ycg-MuiTypography-root"
+              >
+                Description for Feature A
+              </div>
+            </th>
+            <th
+              class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-18z0d7s-MuiTableCell-root"
+              scope="col"
+            >
+              <div
+                class="MuiTypography-root MuiTypography-subtitle1 css-rz8w-MuiTypography-root"
+              >
+                Feature B
+              </div>
+              <div
+                class="MuiTypography-root MuiTypography-body2 css-xj1ycg-MuiTypography-root"
+              >
+                Description for Feature B
+              </div>
+            </th>
+            <th
+              class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-18z0d7s-MuiTableCell-root"
+              scope="col"
+            >
+              <div
+                class="MuiTypography-root MuiTypography-subtitle1 css-rz8w-MuiTypography-root"
+              >
+                Feature C
+              </div>
+              <div
+                class="MuiTypography-root MuiTypography-body2 css-xj1ycg-MuiTypography-root"
+              >
+                Description for Feature C
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody
+          class="MuiTableBody-root css-gmh7jj-MuiTableBody-root"
+        >
+          <tr
+            class="MuiTableRow-root css-92sqde-MuiTableRow-root"
+          >
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-snhrv2-MuiTableCell-root"
+            >
+              <div
+                class="MuiTypography-root MuiTypography-subtitle1 css-rz8w-MuiTypography-root"
+              >
+                Option 1
+              </div>
+              <div
+                class="MuiTypography-root MuiTypography-body2 css-xj1ycg-MuiTypography-root"
+              >
+                Description for Option 1
+              </div>
+            </td>
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-192o7e9-MuiTableCell-root"
+            >
+              <span>
+                Good
+              </span>
+            </td>
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-twhydj-MuiTableCell-root"
+            >
+              <span>
+                Average
+              </span>
+            </td>
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-r18dcf-MuiTableCell-root"
+            >
+              <span>
+                Poor
+              </span>
+            </td>
+          </tr>
+          <tr
+            class="MuiTableRow-root css-92sqde-MuiTableRow-root"
+          >
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-snhrv2-MuiTableCell-root"
+            >
+              <div
+                class="MuiTypography-root MuiTypography-subtitle1 css-rz8w-MuiTypography-root"
+              >
+                Option 2
+              </div>
+              <div
+                class="MuiTypography-root MuiTypography-body2 css-xj1ycg-MuiTypography-root"
+              >
+                Description for Option 2
+              </div>
+            </td>
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-r18dcf-MuiTableCell-root"
+            >
+              <span>
+                Poor
+              </span>
+            </td>
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-192o7e9-MuiTableCell-root"
+            >
+              <span>
+                Good
+              </span>
+            </td>
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-twhydj-MuiTableCell-root"
+            >
+              <span>
+                Average
+              </span>
+            </td>
+          </tr>
+          <tr
+            class="MuiTableRow-root css-92sqde-MuiTableRow-root"
+          >
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-snhrv2-MuiTableCell-root"
+            >
+              <div
+                class="MuiTypography-root MuiTypography-subtitle1 css-rz8w-MuiTypography-root"
+              >
+                Option 3
+              </div>
+              <div
+                class="MuiTypography-root MuiTypography-body2 css-xj1ycg-MuiTypography-root"
+              >
+                A very long descripition that needs more than one line
+              </div>
+            </td>
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-twhydj-MuiTableCell-root"
+            >
+              <span>
+                Average
+              </span>
+            </td>
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-r18dcf-MuiTableCell-root"
+            >
+              <span>
+                Poor
+              </span>
+            </td>
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-192o7e9-MuiTableCell-root"
+            >
+              <span>
+                Very long content that needs more than one line
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p
+      class="MuiTypography-root MuiTypography-body1 css-dugpz3-MuiTypography-root"
+    >
+      Summary:
+    </p>
+    <p
+      class="MuiTypography-root MuiTypography-body1 css-rizt0-MuiTypography-root"
+    >
+      summary
+    </p>
+    <hr
+      class="MuiDivider-root MuiDivider-fullWidth css-1s5niau-MuiDivider-root"
+    />
+  </div>
+</DocumentFragment>
+`;

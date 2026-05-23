@@ -1,17 +1,28 @@
 'use client'
 
 import { useEffect } from 'react'
-import { Comments, CommentCount } from '@hyvor/hyvor-talk-react'
-import { CommentCounts } from '@hyvor/hyvor-talk-base'
+import dynamic from 'next/dynamic'
 import { Box } from '@mui/material'
 import { useSyncExternalStore } from 'react'
 import { useColorMode } from '@Modules/useColorMode'
 
 const HYVOR_WEBSITE_ID = 2205
 
+const Comments = dynamic(
+    () => import('@hyvor/hyvor-talk-react').then((m) => m.Comments),
+    { ssr: false }
+)
+
+const CommentCount = dynamic(
+    () => import('@hyvor/hyvor-talk-react').then((m) => m.CommentCount),
+    { ssr: false }
+)
+
 export const MyCommentCount = ({ id }: { id: string }) => {
     useEffect(() => {
-        CommentCounts.load({ 'website-id': HYVOR_WEBSITE_ID })
+        import('@hyvor/hyvor-talk-base').then(({ CommentCounts }) => {
+            CommentCounts.load({ 'website-id': HYVOR_WEBSITE_ID })
+        })
     }, [])
 
     return <CommentCount website-id={HYVOR_WEBSITE_ID} page-id={id} />
