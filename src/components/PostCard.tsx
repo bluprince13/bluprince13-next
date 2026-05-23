@@ -66,7 +66,7 @@ export default function PostCard({
                         minHeight: { sm: 140 },
                     }}
                 >
-                    <Image src={banner} alt={title} fill style={{ objectFit: 'cover' }} priority={priority} />
+                    <Image src={banner} alt={title} fill sizes="(min-width: 600px) 220px, 100vw" style={{ objectFit: 'cover' }} priority={priority} />
                 </Box>
                 <Box
                     sx={{
