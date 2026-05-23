@@ -48,7 +48,7 @@ export const generateMetadata = ({
     path,
     bannerPath
 }: MetadataProps): Metadata => {
-    const title = `${pageTitle} - Vipin Ajayakumar`
+    const title = pageTitle
     const url = `${SITE_ROOT}${path}`
     const featuredImage = bannerPath ? `${SITE_ROOT}${bannerPath}` : undefined
 
