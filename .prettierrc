@@ -3,7 +3,7 @@
     "tabWidth": 4,
     "semi": false,
     "singleQuote": true,
-    "proseWrap": "always",
+    "proseWrap": "preserve",
     "overrides": [
         {
             "files": ["*.md", "*.mdx"],
