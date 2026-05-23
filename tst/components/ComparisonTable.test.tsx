@@ -1,6 +1,6 @@
 import { vi } from 'vitest'
 import { render } from '@testing-library/react'
-import { Experimental_CssVarsProvider as CssVarsProvider } from '@mui/material/styles'
+import { ThemeProvider } from '@mui/material/styles'
 import { ComparisonTable } from '@Components/ComparisonTable'
 
 vi.mock('react-markdown', () => ({
