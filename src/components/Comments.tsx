@@ -4,8 +4,8 @@ import { useEffect } from 'react'
 import { Comments, CommentCount } from '@hyvor/hyvor-talk-react'
 import { CommentCounts } from '@hyvor/hyvor-talk-base'
 import { Box } from '@mui/material'
-import { useColorScheme } from '@mui/material/styles'
 import { useSyncExternalStore } from 'react'
+import { useColorMode } from '@Modules/useColorMode'
 
 const HYVOR_WEBSITE_ID = 2205
 
@@ -18,12 +18,12 @@ export const MyCommentCount = ({ id }: { id: string }) => {
 }
 
 export function MyComments({ id }: { id: string }) {
-    const { mode } = useColorScheme()
+    const { isDark } = useColorMode()
     const mounted = useSyncExternalStore(() => () => {}, () => true, () => false)
 
     if (!mounted) return null
 
-    const colorMode = mode === 'dark' ? 'dark' : 'light'
+    const colorMode = isDark ? 'dark' : 'light'
     return (
         <Box sx={{ mt: 2 }}>
             <Comments

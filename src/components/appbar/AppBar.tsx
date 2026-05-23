@@ -1,11 +1,11 @@
 'use client'
 
 import Link from 'next/link'
-import { useState, useEffect, startTransition } from 'react'
+import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 
-import { useColorScheme } from '@mui/material/styles'
 import MuiAppBar from '@mui/material/AppBar'
+import { useColorMode } from '@Modules/useColorMode'
 import Box from '@mui/material/Box'
 import Toolbar from '@mui/material/Toolbar'
 import Button from '@mui/material/Button'
@@ -25,7 +25,7 @@ const NAV_LINKS = [
 
 export default function AppBar() {
     const [searchOpen, setSearchOpen] = useState(false)
-    const { mode, setMode } = useColorScheme()
+    const { toggleColorMode } = useColorMode()
     const pathname = usePathname()
 
     useEffect(() => {
@@ -38,12 +38,6 @@ export default function AppBar() {
         window.addEventListener('keydown', handleKeyDown)
         return () => window.removeEventListener('keydown', handleKeyDown)
     }, [])
-
-    const toggleColorMode = () => {
-        startTransition(() => {
-            setMode(mode === 'dark' ? 'light' : 'dark')
-        })
-    }
 
     return (
         <>

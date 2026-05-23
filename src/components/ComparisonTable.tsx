@@ -12,8 +12,8 @@ import {
     Divider,
     Box
 } from '@mui/material'
-import { useColorScheme } from '@mui/material/styles'
 import Markdown from 'react-markdown'
+import { useColorMode } from '@Modules/useColorMode'
 
 interface CellContent {
     content: string | React.ReactNode
@@ -79,8 +79,7 @@ export const ComparisonTable: React.FC<TableProps> = ({
     rows,
     summary
 }) => {
-    const { mode } = useColorScheme()
-    const isDark = (mode ?? 'light') === 'dark'
+    const { isDark } = useColorMode()
 
     const getStatusColor = (status: 'bad' | 'neutral' | 'good') => {
         if (isDark) {
