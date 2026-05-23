@@ -42,13 +42,24 @@ const getNetwork = (url: string): string | null => {
     return null
 }
 
+const labelNames: Record<string, string> = {
+    github: 'GitHub',
+    twitter: 'Twitter',
+    linkedin: 'LinkedIn',
+    youtube: 'YouTube',
+    rss: 'RSS feed',
+    goodreads: 'Goodreads',
+    letterboxd: 'Letterboxd',
+}
+
 const Icon = ({ url, network }: { url: string; network?: string }) => {
     const resolvedNetwork = network || getNetwork(url)
     const iconName = resolvedNetwork && iconNames[resolvedNetwork]
     const bgColor = (resolvedNetwork && iconColors[resolvedNetwork]) || '#666'
+    const ariaLabel = (resolvedNetwork && labelNames[resolvedNetwork]) || url
 
     return (
-        <Box component="a" href={url} target="_blank" rel="noopener noreferrer" sx={sx}>
+        <Box component="a" href={url} target="_blank" rel="noopener noreferrer" aria-label={ariaLabel} sx={sx}>
             <Box
                 sx={{
                     width: SIZE,
