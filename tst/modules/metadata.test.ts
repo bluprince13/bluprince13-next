@@ -2,9 +2,9 @@ import { generateMetadata } from '@Modules/metadata'
 import type { Metadata } from 'next'
 
 describe('generateMetadata', () => {
-    it('formats title as "PageTitle - Vipin Ajayakumar"', () => {
+    it('formats title as "PageTitle"', () => {
         const meta = generateMetadata({ pageTitle: 'My Page', description: 'desc', path: '/my-page' })
-        expect(meta.title).toBe('My Page - Vipin Ajayakumar')
+        expect(meta.title).toBe('My Page')
     })
 
     it('sets openGraph.url to https://bluprince13.com + path', () => {

@@ -1,5 +1,6 @@
 import type { CSSProperties } from 'react'
 import Image from 'next/image'
+import styles from './Figure.module.css'
 
 const Reference = ({ reference, referenceHref }) =>
     reference
@@ -12,7 +13,7 @@ const Reference = ({ reference, referenceHref }) =>
         : null
 
 const Caption = ({ caption, href, reference, referenceHref }) => (
-    <figcaption>
+    <figcaption style={{ marginTop: '0.4em', fontSize: '0.875em', color: 'gray', fontStyle: 'italic' }}>
         {href ? <a href={href}>{caption}</a> : caption}
         <Reference reference={reference} referenceHref={referenceHref} />
     </figcaption>
@@ -58,12 +59,9 @@ const Figure = ({
     align
 }: FigureProps) => {
     const maxWidthToUse = maxWidth || getMaxWidth(size)
-    const style: CSSProperties = { width: '100%', height: 'auto' }
+    const style: CSSProperties = { width: '100%', height: 'auto', display: 'block' }
     if (maxWidthToUse) style.maxWidth = maxWidthToUse
-    if (align == 'center') {
-        style.margin = 'auto'
-        style.display = 'block'
-    }
+    if (align == 'center') style.margin = 'auto'
     return (
         <figure style={{ marginLeft: 0, marginRight: 0 }}>
             <Image
@@ -73,6 +71,7 @@ const Figure = ({
                 height={0}
                 sizes="100vw"
                 style={style}
+                className={styles.image}
             />
             {caption && (
                 <Caption

@@ -7,6 +7,7 @@ exports[`Figure > renders correctly 1`] = `
   >
     <img
       alt="alt"
+      class="_image_bea771"
       data-nimg="1"
       decoding="async"
       height="0"
@@ -14,10 +15,12 @@ exports[`Figure > renders correctly 1`] = `
       sizes="100vw"
       src="/_next/image?url=%2Ftest.png&w=3840&q=75"
       srcset="/_next/image?url=%2Ftest.png&w=640&q=75 640w, /_next/image?url=%2Ftest.png&w=750&q=75 750w, /_next/image?url=%2Ftest.png&w=828&q=75 828w, /_next/image?url=%2Ftest.png&w=1080&q=75 1080w, /_next/image?url=%2Ftest.png&w=1200&q=75 1200w, /_next/image?url=%2Ftest.png&w=1920&q=75 1920w, /_next/image?url=%2Ftest.png&w=2048&q=75 2048w, /_next/image?url=%2Ftest.png&w=3840&q=75 3840w"
-      style="color: transparent; width: 100%; height: auto; max-width: 350px;"
+      style="color: transparent; width: 100%; height: auto; display: block; max-width: 350px;"
       width="0"
     />
-    <figcaption>
+    <figcaption
+      style="margin-top: 0.4em; font-size: 0.875em; color: gray; font-style: italic;"
+    >
       <a
         href="https://href.com"
       >
