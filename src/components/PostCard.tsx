@@ -16,7 +16,7 @@ import { MyCommentCount } from '@Components/Comments'
 export type PostCardProps = Pick<
     PostData,
     'slug' | 'title' | 'banner' | 'dateFormatted' | 'categories' | 'readingTime' | 'excerpt'
-> & { initialViewCount?: number }
+> & { initialViewCount?: number; priority?: boolean }
 
 export default function PostCard({
     slug,
@@ -27,6 +27,7 @@ export default function PostCard({
     readingTime,
     excerpt,
     initialViewCount,
+    priority = false,
 }: PostCardProps) {
     const router = useRouter()
     const searchParams = useSearchParams()
@@ -65,7 +66,7 @@ export default function PostCard({
                         minHeight: { sm: 140 },
                     }}
                 >
-                    <Image src={banner} alt={title} fill style={{ objectFit: 'cover' }} />
+                    <Image src={banner} alt={title} fill style={{ objectFit: 'cover' }} priority={priority} />
                 </Box>
                 <Box
                     sx={{

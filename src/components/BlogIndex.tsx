@@ -46,14 +46,14 @@ export default function BlogIndex({ posts }: Props) {
             </Box>
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
                 <AnimatePresence initial={false}>
-                    {filteredPosts.map(post => (
+                    {filteredPosts.map((post, index) => (
                         <motion.div
                             key={post.slug}
                             layout
                             exit={{ opacity: 0, scale: 0.97 }}
                             transition={{ duration: 0.2 }}
                         >
-                            <PostCard {...post} />
+                            <PostCard {...post} priority={index === 0} />
                         </motion.div>
                     ))}
                 </AnimatePresence>
