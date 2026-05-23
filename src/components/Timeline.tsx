@@ -6,16 +6,17 @@ import TimelineItem from '@mui/lab/TimelineItem'
 import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent'
 import TimelineSeparator from '@mui/lab/TimelineSeparator'
 import Timeline from '@mui/lab/Timeline'
-import Icon from '@mui/material/Icon'
-import { useTheme } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
 import useMediaQuery from '@mui/material/useMediaQuery'
+import { useTheme } from '@mui/material/styles'
+import MaterialIcon from '@Components/MaterialIcon'
+import type { IconName } from '@Components/MaterialIcon'
 
 interface TimelineItemData {
     marker: string
     title: string
     description: string
-    iconName: string
+    iconName: IconName
     color?: 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning' | 'inherit' | 'grey'
 }
 
@@ -32,7 +33,7 @@ const Item = ({ marker, title, description, iconName, color }: TimelineItemData)
         <TimelineSeparator>
             <TimelineConnector />
             <TimelineDot color={color ? color : 'primary'}>
-                <Icon>{iconName}</Icon>
+                <MaterialIcon name={iconName} />
             </TimelineDot>
             <TimelineConnector />
         </TimelineSeparator>

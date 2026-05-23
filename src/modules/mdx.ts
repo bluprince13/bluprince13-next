@@ -37,8 +37,8 @@ export async function evaluateBlogMdx(content: string): Promise<React.ComponentT
         content: {
           type: 'element',
           tagName: 'span',
-          properties: { className: ['anchor', 'material-icons'] },
-          children: [{ type: 'text', value: 'link' }],
+          properties: { className: ['anchor'] },
+          children: [{ type: 'text', value: '#' }],
         },
       }],
       rehypePrettyCode,

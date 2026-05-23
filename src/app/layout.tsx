@@ -1,4 +1,3 @@
-import '@fontsource/material-icons'
 import '@Styles/globals.css'
 import { Roboto } from 'next/font/google'
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v16-appRouter'

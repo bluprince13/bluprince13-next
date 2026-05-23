@@ -4,6 +4,9 @@ import { vi } from 'vitest'
 
 let mockIsMobile = false
 vi.mock('@mui/material/useMediaQuery', () => ({ default: () => mockIsMobile }))
+vi.mock('@Components/MaterialIcon', () => ({
+    default: ({ name }) => <span data-testid={`icon-${name}`} />,
+}))
 
 describe('Timeline', () => {
     const setup = () => {

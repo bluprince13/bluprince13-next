@@ -24,11 +24,8 @@ exports[`Timeline > renders as a left alignged Timeline on mobile 1`] = `
           class="MuiTimelineDot-root MuiTimelineDot-filled MuiTimelineDot-filledInfo css-1mqyah4-MuiTimelineDot-root"
         >
           <span
-            aria-hidden="true"
-            class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeMedium css-1n5qiej-MuiIcon-root"
-          >
-            start
-          </span>
+            data-testid="icon-start"
+          />
         </span>
         <span
           class="MuiTimelineConnector-root css-1ami7lv-MuiTimelineConnector-root"
@@ -73,11 +70,8 @@ exports[`Timeline > renders as a left alignged Timeline on mobile 1`] = `
           class="MuiTimelineDot-root MuiTimelineDot-filled MuiTimelineDot-filledError css-ia85ya-MuiTimelineDot-root"
         >
           <span
-            aria-hidden="true"
-            class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeMedium css-1n5qiej-MuiIcon-root"
-          >
-            end
-          </span>
+            data-testid="icon-end"
+          />
         </span>
         <span
           class="MuiTimelineConnector-root css-1ami7lv-MuiTimelineConnector-root"
@@ -129,11 +123,8 @@ exports[`Timeline > renders as an alternating Timeline 1`] = `
           class="MuiTimelineDot-root MuiTimelineDot-filled MuiTimelineDot-filledInfo css-1mqyah4-MuiTimelineDot-root"
         >
           <span
-            aria-hidden="true"
-            class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeMedium css-1n5qiej-MuiIcon-root"
-          >
-            start
-          </span>
+            data-testid="icon-start"
+          />
         </span>
         <span
           class="MuiTimelineConnector-root css-1ami7lv-MuiTimelineConnector-root"
@@ -178,11 +169,8 @@ exports[`Timeline > renders as an alternating Timeline 1`] = `
           class="MuiTimelineDot-root MuiTimelineDot-filled MuiTimelineDot-filledError css-ia85ya-MuiTimelineDot-root"
         >
           <span
-            aria-hidden="true"
-            class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeMedium css-1n5qiej-MuiIcon-root"
-          >
-            end
-          </span>
+            data-testid="icon-end"
+          />
         </span>
         <span
           class="MuiTimelineConnector-root css-1ami7lv-MuiTimelineConnector-root"
