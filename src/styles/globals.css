@@ -49,6 +49,13 @@ mark {
     padding: 0 2px;
 }
 
+/* TOC list — numbers already in text from remarkNumberHeadings */
+#table-of-contents + ul,
+#table-of-contents + ul ul {
+    list-style: none;
+    padding-left: 1.5rem;
+}
+
 :not(pre) > code {
     background-color: var(--mui-palette-action-selected);
     border-radius: 0.3em;
