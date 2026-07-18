@@ -20,6 +20,7 @@ import SearchModal from './SearchModal'
 const NAV_LINKS = [
     { label: 'Blog', href: '/blog' },
     { label: 'Apps', href: '/apps' },
+    { label: 'Slides', href: '/slides' },
     { label: 'CV', href: '/cv' },
 ]
 

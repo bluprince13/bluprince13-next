@@ -11,6 +11,9 @@ test.describe('Navigation', () => {
         await standardPage.gotoMenuItem('Apps')
         await expect(standardPage.heading).toContainText('Apps')
 
+        await standardPage.gotoMenuItem('Slides')
+        await expect(standardPage.heading).toContainText('Slides')
+
         await standardPage.gotoMenuItem('CV')
         await expect(standardPage.heading).toContainText('CV')
 

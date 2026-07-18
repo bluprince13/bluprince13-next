@@ -61,6 +61,7 @@ export default function SimpleMenu() {
             >
                 <MenuItem component={Link} href="/blog" onClick={handleClose}>Blog</MenuItem>
                 <MenuItem component={Link} href="/apps" onClick={handleClose}>Apps</MenuItem>
+                <MenuItem component={Link} href="/slides" onClick={handleClose}>Slides</MenuItem>
                 <MenuItem component={Link} href="/cv" onClick={handleClose}>CV</MenuItem>
             </StyledMenu>
         </div>

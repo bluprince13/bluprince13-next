@@ -5,6 +5,7 @@ const KEY_PAGES = [
     { path: '/', heading: 'Hello human' },
     { path: '/blog', heading: 'Blog' },
     { path: '/apps', heading: 'Apps' },
+    { path: '/slides', heading: 'Slides' },
     { path: '/cv', heading: 'CV' },
     { path: '/uses', heading: 'Uses' },
     { path: '/kudos', heading: 'Kudos' },

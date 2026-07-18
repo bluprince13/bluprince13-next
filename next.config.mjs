@@ -1,5 +1,7 @@
 import createMDX from '@next/mdx'
 
+const SLIDES_HOST = process.env.SLIDES_HOST ?? 'https://bluprince13-slides.vercel.app'
+
 const rewritesConfig = [
     {
         source: '/cv/pdf',
@@ -28,11 +30,11 @@ const rewritesConfig = [
     },
     {
         source: '/slides/:path*',
-        destination: `https://bluprince13-slides.vercel.app/slides/:path*`
+        destination: `${SLIDES_HOST}/slides/:path*`
     },
     {
         source: '/reveal.js/:path*',
-        destination: `https://bluprince13-slides.vercel.app/slides/reveal.js/:path*`
+        destination: `${SLIDES_HOST}/slides/reveal.js/:path*`
     }
 ]
 
