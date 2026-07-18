@@ -6,15 +6,15 @@ test.describe('Blog', () => {
         await standardPage.gotoMenuItem('Blog')
         await expect(standardPage.heading).toContainText('Blog')
 
-        const postLinks = standardPage.page.locator('ul li a')
+        const postLinks = standardPage.page.locator('a[href^="/blog/"]')
         await expect(postLinks).not.toHaveCount(0)
     })
 
     test('clicking a blog post navigates to the post', async ({ standardPage }) => {
         await standardPage.gotoMenuItem('Blog')
 
-        const firstPostLink = standardPage.page.locator('ul li a').first()
-        const postTitle = await firstPostLink.textContent()
+        const firstPostLink = standardPage.page.locator('a[href^="/blog/"]').first()
+        const postTitle = await firstPostLink.locator('h6').textContent()
         await firstPostLink.click()
 
         await expect(standardPage.heading).toContainText(postTitle!)
@@ -26,7 +26,7 @@ test.describe('Blog', () => {
         await expect(page.locator('h1')).toContainText('Tax guide for UK-based NRIs')
 
         // Mermaid renders asynchronously — wait for the SVG to appear
-        const mermaidSvg = page.locator('svg').first()
+        const mermaidSvg = page.locator('.mermaid svg').first()
         await expect(mermaidSvg).toBeVisible({ timeout: 15000 })
     })
 })

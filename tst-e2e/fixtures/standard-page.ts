@@ -1,11 +1,9 @@
 import type { Page, Locator } from '@playwright/test'
 
 export class StandardPage {
-    public readonly menu: Locator
     public readonly heading: Locator
 
     constructor(public readonly page: Page) {
-        this.menu = this.page.getByLabel('open drawer')
         this.heading = this.page.locator('h1')
     }
 
@@ -13,9 +11,13 @@ export class StandardPage {
         await this.page.goto('/')
     }
 
+    // Tests run at a desktop viewport, where nav links are inline in the app
+    // bar (the hamburger menu only renders on mobile widths)
     async gotoMenuItem(menuItemName: string) {
-        await this.menu.click()
-        await this.page.getByRole('menuitem', { name: menuItemName }).click()
+        await this.page
+            .getByRole('banner')
+            .getByRole('link', { name: menuItemName })
+            .click()
     }
 
     async gotoLink(linkName: string) {
