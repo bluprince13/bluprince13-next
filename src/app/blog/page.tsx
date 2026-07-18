@@ -7,6 +7,8 @@ import { getSortedPosts } from '@Modules/posts'
 import { generateMetadata } from '@Modules/metadata'
 import db from '@Modules/firebase'
 
+export const revalidate = 3600
+
 export const metadata = generateMetadata({
     pageTitle: 'Blog',
     description: 'List of all my articles',
