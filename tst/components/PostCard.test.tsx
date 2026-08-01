@@ -1,22 +1,19 @@
 import { fireEvent, render, screen } from '@testing-library/react'
 import PostCard from '@Components/PostCard'
 
-const { mockPush, mockGetAll } = vi.hoisted(() => ({
+const { mockPush, mockGetAll, mockGet } = vi.hoisted(() => ({
     mockPush: vi.fn(),
     mockGetAll: vi.fn().mockReturnValue([]),
+    mockGet: vi.fn().mockReturnValue(null),
 }))
 
 vi.mock('next/navigation', () => ({
     useRouter: () => ({ push: mockPush }),
-    useSearchParams: () => ({ getAll: mockGetAll }),
+    useSearchParams: () => ({ getAll: mockGetAll, get: mockGet }),
 }))
 
 vi.mock('@Components/blog/ViewCounter', () => ({
     ViewCount: ({ slug }: { slug: string }) => <span>{slug} views</span>,
-}))
-
-vi.mock('@Components/Comments', () => ({
-    MyCommentCount: ({ id }: { id: string }) => <span>{id} comments</span>,
 }))
 
 const defaultProps = {
@@ -33,6 +30,8 @@ describe('PostCard', () => {
     beforeEach(() => {
         mockPush.mockClear()
         mockGetAll.mockReturnValue([])
+        mockGet.mockReset()
+        mockGet.mockReturnValue(null)
     })
 
     it('renders the post title', () => {
@@ -80,5 +79,29 @@ describe('PostCard', () => {
         render(<PostCard {...defaultProps} />)
         fireEvent.click(screen.getByText('tech'))
         expect(mockPush).toHaveBeenCalledWith('/blog')
+    })
+
+    it('renders the comment count from server data', () => {
+        render(<PostCard {...defaultProps} commentCount={101} />)
+        expect(screen.getByText('101 comments')).toBeInTheDocument()
+    })
+
+    it('renders a zero comment count when none is supplied', () => {
+        render(<PostCard {...defaultProps} />)
+        expect(screen.getByText('0 comments')).toBeInTheDocument()
+    })
+
+    it('renders the singular form for one comment', () => {
+        render(<PostCard {...defaultProps} commentCount={1} />)
+        expect(screen.getByText('1 comment')).toBeInTheDocument()
+    })
+
+    it('clicking a tag chip keeps the active sort', () => {
+        mockGet.mockImplementation(key =>
+            key === 'sort' ? 'comments' : key === 'dir' ? 'asc' : null
+        )
+        render(<PostCard {...defaultProps} />)
+        fireEvent.click(screen.getByText('tech'))
+        expect(mockPush).toHaveBeenCalledWith('/blog?tag=tech&sort=comments&dir=asc')
     })
 })

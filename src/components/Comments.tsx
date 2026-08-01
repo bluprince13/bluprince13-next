@@ -5,27 +5,35 @@ import dynamic from 'next/dynamic'
 import { Box } from '@mui/material'
 import { useSyncExternalStore } from 'react'
 import { useColorMode } from '@Modules/useColorMode'
-
-const HYVOR_WEBSITE_ID = 2205
+import { HYVOR_WEBSITE_ID } from '@Modules/hyvor'
 
 const Comments = dynamic(
     () => import('@hyvor/hyvor-talk-react').then((m) => m.Comments),
     { ssr: false }
 )
 
-const CommentCount = dynamic(
-    () => import('@hyvor/hyvor-talk-react').then((m) => m.CommentCount),
-    { ssr: false }
-)
-
+/**
+ * Live comment count for a single page.
+ *
+ * The custom element is rendered directly rather than through the dynamically
+ * imported React wrapper. `CommentCounts.load()` fills in whichever
+ * `hyvor-talk-comment-count` elements are in the DOM when it runs and never
+ * retries, so loading the element lazily raced the loader: whenever the loader
+ * chunk arrived first it found nothing and the count stayed blank. Rendering
+ * the element inline puts it in the DOM in the same commit as this effect.
+ */
 export const MyCommentCount = ({ id }: { id: string }) => {
     useEffect(() => {
+        let cancelled = false
         import('@hyvor/hyvor-talk-base').then(({ CommentCounts }) => {
-            CommentCounts.load({ 'website-id': HYVOR_WEBSITE_ID })
+            if (!cancelled) CommentCounts.load({ 'website-id': HYVOR_WEBSITE_ID })
         })
+        return () => {
+            cancelled = true
+        }
     }, [])
 
-    return <CommentCount website-id={HYVOR_WEBSITE_ID} page-id={id} />
+    return <hyvor-talk-comment-count website-id={HYVOR_WEBSITE_ID} page-id={id} />
 }
 
 export function MyComments({ id }: { id: string }) {

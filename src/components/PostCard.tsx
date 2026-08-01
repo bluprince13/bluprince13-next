@@ -6,17 +6,18 @@ import Chip from '@mui/material/Chip'
 import Typography from '@mui/material/Typography'
 import Image from 'next/image'
 import Link from 'next/link'
+import format from 'comma-number'
 import { motion } from 'motion/react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import type { PostData } from '@Modules/posts'
-import { buildTagUrl } from '@Modules/tagUrl'
+import { parseSort } from '@Modules/blogSort'
+import { buildBlogUrl } from '@Modules/blogUrl'
 import { ViewCount } from '@Components/blog/ViewCounter'
-import { MyCommentCount } from '@Components/Comments'
 
 export type PostCardProps = Pick<
     PostData,
     'slug' | 'title' | 'banner' | 'dateFormatted' | 'categories' | 'readingTime' | 'excerpt'
-> & { initialViewCount?: number; priority?: boolean }
+> & { initialViewCount?: number; commentCount?: number; priority?: boolean }
 
 export default function PostCard({
     slug,
@@ -27,17 +28,19 @@ export default function PostCard({
     readingTime,
     excerpt,
     initialViewCount,
+    commentCount,
     priority = false,
 }: PostCardProps) {
     const router = useRouter()
     const searchParams = useSearchParams()
     const activeTags = searchParams.getAll('tag')
+    const sort = parseSort(searchParams.get('sort'), searchParams.get('dir'))
 
     function handleTagClick(e: React.MouseEvent, cat: string) {
         e.preventDefault()
         e.stopPropagation()
         const next = activeTags.includes(cat) ? activeTags.filter(t => t !== cat) : [...activeTags, cat]
-        router.push(buildTagUrl(next))
+        router.push(buildBlogUrl(next, sort))
     }
 
     return (
@@ -102,7 +105,10 @@ export default function PostCard({
                             <span>·</span>
                             <ViewCount slug={slug} initialCount={initialViewCount} />
                             <span>·</span>
-                            <MyCommentCount id={slug} />
+                            <span>
+                                {format(commentCount ?? 0)}{' '}
+                                {commentCount === 1 ? 'comment' : 'comments'}
+                            </span>
                         </Typography>
                         <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
                             {categories.map(cat => {

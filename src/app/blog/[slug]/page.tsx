@@ -6,7 +6,7 @@ import { getAllPostSlugs, getPostDataAndContent, getSortedPosts, getRelatedPosts
 import { generateMetadata as genMetadataHelper } from '@Modules/metadata'
 import { evaluateBlogMdx } from '@Modules/mdx'
 import { mdxComponents } from '@Modules/mdxComponents'
-import { buildTagUrl } from '@Modules/tagUrl'
+import { buildBlogUrl } from '@Modules/blogUrl'
 import Title from '@Components/Title'
 import Breadcrumbs from '@Components/blog/Breadcrumbs'
 import BlogPostViewCounter from '@Components/blog/ViewCounter'
@@ -61,7 +61,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
                 </Box>
                 <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
                     {data.categories.map(cat => (
-                        <Link key={cat} href={buildTagUrl([cat])} style={{ textDecoration: 'none' }}>
+                        <Link key={cat} href={buildBlogUrl([cat])} style={{ textDecoration: 'none' }}>
                             <Chip label={cat} size="small" clickable />
                         </Link>
                     ))}

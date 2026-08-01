@@ -1,14 +1,15 @@
-import { fireEvent, render, screen } from '@testing-library/react'
+import { fireEvent, render, screen, within } from '@testing-library/react'
 import BlogIndex from '@Components/BlogIndex'
 
-const { mockPush, mockGetAll } = vi.hoisted(() => ({
+const { mockPush, mockGetAll, mockGet } = vi.hoisted(() => ({
     mockPush: vi.fn(),
     mockGetAll: vi.fn().mockReturnValue([]),
+    mockGet: vi.fn().mockReturnValue(null),
 }))
 
 vi.mock('next/navigation', () => ({
     useRouter: () => ({ push: mockPush }),
-    useSearchParams: () => ({ getAll: mockGetAll }),
+    useSearchParams: () => ({ getAll: mockGetAll, get: mockGet }),
 }))
 
 vi.mock('@Components/PostCard', () => ({
@@ -21,34 +22,59 @@ const posts = [
         title: 'Post A',
         banner: '/a.jpg',
         dateFormatted: '1 Jan 2024',
+        dateISO: '2024-01-01',
         categories: ['react', 'typescript'],
         readingTime: 3,
         excerpt: 'Excerpt A',
+        initialViewCount: 30,
+        commentCount: 1,
     },
     {
         slug: 'post-b',
         title: 'Post B',
         banner: '/b.jpg',
         dateFormatted: '2 Jan 2024',
+        dateISO: '2024-01-02',
         categories: ['react'],
         readingTime: 5,
         excerpt: 'Excerpt B',
+        initialViewCount: 10,
+        commentCount: 7,
     },
     {
         slug: 'post-c',
         title: 'Post C',
         banner: '/c.jpg',
         dateFormatted: '3 Jan 2024',
+        dateISO: '2024-01-03',
         categories: ['typescript'],
         readingTime: 2,
         excerpt: 'Excerpt C',
+        initialViewCount: 20,
+        commentCount: 4,
     },
 ]
+
+/** Mocks `?sort=`/`?dir=`; anything else reads as absent. */
+function mockSortParams(sort: string | null, dir: string | null = null) {
+    mockGet.mockImplementation(key => (key === 'sort' ? sort : key === 'dir' ? dir : null))
+}
+
+const renderedTitles = () =>
+    posts
+        .map(p => ({ title: p.title, node: screen.queryByText(p.title) }))
+        .filter(p => p.node)
+        .sort((a, b) =>
+            a.node!.compareDocumentPosition(b.node!) & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1
+        )
+        .map(p => p.title)
 
 describe('BlogIndex', () => {
     beforeEach(() => {
         mockPush.mockClear()
         mockGetAll.mockReturnValue([])
+        mockGet.mockReset()
+        mockGet.mockReturnValue(null)
     })
 
     it('shows total article count with no active tags', () => {
@@ -111,5 +137,66 @@ describe('BlogIndex', () => {
         const reactChip = screen.getByText('react').closest('[role="button"]')!
         fireEvent.click(reactChip.querySelector('[data-testid="CancelIcon"]')!)
         expect(mockPush).toHaveBeenCalledWith('/blog')
+    })
+
+    it('deleting a tag chip keeps the active sort', () => {
+        mockGetAll.mockReturnValue(['react', 'typescript'])
+        mockSortParams('views', 'asc')
+        render(<BlogIndex posts={posts} />)
+        const reactChip = screen.getByText('react').closest('[role="button"]')!
+        fireEvent.click(reactChip.querySelector('[data-testid="CancelIcon"]')!)
+        expect(mockPush).toHaveBeenCalledWith('/blog?tag=typescript&sort=views&dir=asc')
+    })
+
+    it('sorts by date descending by default', () => {
+        render(<BlogIndex posts={posts} />)
+        expect(renderedTitles()).toEqual(['Post C', 'Post B', 'Post A'])
+    })
+
+    it('sorts by views when the URL asks for it', () => {
+        mockSortParams('views')
+        render(<BlogIndex posts={posts} />)
+        expect(renderedTitles()).toEqual(['Post A', 'Post C', 'Post B'])
+    })
+
+    it('sorts by comments ascending when the URL asks for it', () => {
+        mockSortParams('comments', 'asc')
+        render(<BlogIndex posts={posts} />)
+        expect(renderedTitles()).toEqual(['Post A', 'Post C', 'Post B'])
+    })
+
+    it('labels the sort button with the active field and direction', () => {
+        mockSortParams('comments', 'asc')
+        render(<BlogIndex posts={posts} />)
+        expect(
+            screen.getByRole('button', { name: 'Sort by Comments, ascending' })
+        ).toBeInTheDocument()
+    })
+
+    it('picking a new sort field puts it in the URL', () => {
+        render(<BlogIndex posts={posts} />)
+        fireEvent.click(screen.getByRole('button', { name: /^Sort by/ }))
+        fireEvent.click(within(screen.getByRole('menu')).getByRole('menuitem', { name: 'Sort by Views' }))
+        expect(mockPush).toHaveBeenCalledWith('/blog?sort=views')
+    })
+
+    it('picking the active sort field flips the direction', () => {
+        mockSortParams('views')
+        render(<BlogIndex posts={posts} />)
+        fireEvent.click(screen.getByRole('button', { name: /^Sort by/ }))
+        fireEvent.click(
+            within(screen.getByRole('menu')).getByRole('menuitem', { name: 'Sort by Views, descending' })
+        )
+        expect(mockPush).toHaveBeenCalledWith('/blog?sort=views&dir=asc')
+    })
+
+    it('keeps active tags when the sort changes', () => {
+        mockGetAll.mockReturnValue(['react'])
+        render(<BlogIndex posts={posts} />)
+        fireEvent.click(screen.getByRole('button', { name: /^Sort by/ }))
+        fireEvent.click(
+            within(screen.getByRole('menu')).getByRole('menuitem', { name: 'Sort by Comments' })
+        )
+        expect(mockPush).toHaveBeenCalledWith('/blog?tag=react&sort=comments')
     })
 })
