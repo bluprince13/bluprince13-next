@@ -112,8 +112,7 @@ Nothing else needs registering — `posts.ts` picks up any `.mdx` in `src/conten
 ```yaml
 ---
 title: A short title
-description:
- One or two sentences, indented by one space on continuation lines.
+description: One or two sentences, indented by one space on continuation lines.
 date: 'YYYY-MM-DD'
 categories:
  - uk
@@ -147,6 +146,7 @@ banner: /blog/<slug>/assets/banner.jpg
 - One paragraph per line — never hard-wrap inside a paragraph.
 - Cite sources inline as `[[Publisher - Page title](url)]`.
 - Use backticks for terms of art being introduced, e.g. `mirror wills`.
+- End every sentence with punctuation, including inside `Table` and `ComparisonTable` cells and inside bullet points. Bare fragments such as `£20/day`, `1 year` or `Not specified` are not sentences and take no full stop.
 
 ### MDX components
 
@@ -164,6 +164,5 @@ Full details in `docs/ideas.md`. Summary by priority:
 - Progress bar / table of contents sidebar on posts (M)
 
 **Nice to have**
-
 
 - Remove `'use client'` from pure display components (`Alert`, `Figure`, `Timeline`) — they have no hooks/event handlers (XS)
