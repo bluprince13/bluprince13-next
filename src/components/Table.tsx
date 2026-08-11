@@ -8,7 +8,7 @@ import TableRow from '@mui/material/TableRow'
 import Paper from '@mui/material/Paper'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
-import { alpha, styled, type Theme } from '@mui/material/styles'
+import { alpha, styled, type CSSObject, type Theme } from '@mui/material/styles'
 import Markdown from 'react-markdown'
 import { isValidElement, useEffect, useRef, useState } from 'react'
 
@@ -86,7 +86,7 @@ const hoverColour = (theme: Theme) =>
     theme.vars?.palette.action.hover ?? theme.palette.action.hover
 
 // Tints need more opacity in dark mode to read at all
-const byScheme = (theme: Theme, style: (opacity: number) => object) => ({
+const byScheme = (theme: Theme, style: (opacity: number) => CSSObject) => ({
     ...style(0.14),
     ...theme.applyStyles('dark', style(0.24))
 })
