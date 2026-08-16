@@ -3,84 +3,100 @@
 exports[`Table > renders correctly 1`] = `
 <DocumentFragment>
   <div
-    class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiTableContainer-root css-y2ff7i-MuiPaper-root-MuiTableContainer-root"
-    style="--Paper-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);"
+    class="MuiBox-root css-79elbk"
   >
-    <table
-      aria-label="simple table"
-      class="MuiTable-root css-1ks3uzw-MuiTable-root"
+    <div
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiTableContainer-root css-y2ff7i-MuiPaper-root-MuiTableContainer-root"
+      style="--Paper-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);"
     >
-      <thead
-        class="MuiTableHead-root css-1a7iywq-MuiTableHead-root"
+      <table
+        aria-label="simple table"
+        class="MuiTable-root css-1ks3uzw-MuiTable-root"
       >
-        <tr
-          class="MuiTableRow-root MuiTableRow-head css-1xtozoh-MuiTableRow-root"
+        <thead
+          class="MuiTableHead-root css-1a7iywq-MuiTableHead-root"
         >
-          <th
-            class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-1bw42a9-MuiTableCell-root"
-            scope="col"
+          <tr
+            class="MuiTableRow-root MuiTableRow-head css-1xtozoh-MuiTableRow-root"
           >
-            col1name
-          </th>
-          <th
-            class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-1bw42a9-MuiTableCell-root"
-            scope="col"
-          >
-            col2name
-          </th>
-        </tr>
-      </thead>
-      <tbody
-        class="MuiTableBody-root css-gmh7jj-MuiTableBody-root"
-      >
-        <tr
-          class="MuiTableRow-root css-lpeob4-MuiTableRow-root"
+            <th
+              class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-1ndjf6m-MuiTableCell-root"
+              scope="col"
+            >
+              col1name
+            </th>
+            <th
+              class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-1bw42a9-MuiTableCell-root"
+              scope="col"
+            >
+              col2name
+            </th>
+          </tr>
+        </thead>
+        <tbody
+          class="MuiTableBody-root css-gmh7jj-MuiTableBody-root"
         >
-          <th
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-1eoyd5a-MuiTableCell-root"
-            scope="row"
+          <tr
+            class="MuiTableRow-root css-xp7in5-MuiTableRow-root"
           >
-            <p
-              class="MuiTypography-root MuiTypography-body1 css-rizt0-MuiTypography-root"
+            <th
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-1eissbe-MuiTableCell-root"
+              scope="row"
             >
-              row1-col1
-            </p>
-          </th>
-          <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-1eoyd5a-MuiTableCell-root"
+              <div
+                class="MuiTypography-root MuiTypography-body1 css-56izy-MuiTypography-root"
+              >
+                <p>
+                  row1-col1
+                </p>
+              </div>
+            </th>
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-1eoyd5a-MuiTableCell-root"
+            >
+              <div
+                class="MuiTypography-root MuiTypography-body1 css-56izy-MuiTypography-root"
+              >
+                <p>
+                  row1-col2
+                </p>
+              </div>
+            </td>
+          </tr>
+          <tr
+            class="MuiTableRow-root css-xp7in5-MuiTableRow-root"
           >
-            <p
-              class="MuiTypography-root MuiTypography-body1 css-rizt0-MuiTypography-root"
+            <th
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-1vhvtfj-MuiTableCell-root"
+              scope="row"
             >
-              row1-col2
-            </p>
-          </td>
-        </tr>
-        <tr
-          class="MuiTableRow-root css-lpeob4-MuiTableRow-root"
-        >
-          <th
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-1eoyd5a-MuiTableCell-root"
-            scope="row"
-          >
-            <p
-              class="MuiTypography-root MuiTypography-body1 css-rizt0-MuiTypography-root"
+              <div
+                class="MuiTypography-root MuiTypography-body1 css-56izy-MuiTypography-root"
+              >
+                <p>
+                  row2-col1
+                </p>
+              </div>
+            </th>
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-1eoyd5a-MuiTableCell-root"
             >
-              row2-col1
-            </p>
-          </th>
-          <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-1eoyd5a-MuiTableCell-root"
-          >
-            <p
-              class="MuiTypography-root MuiTypography-body1 css-rizt0-MuiTypography-root"
-            >
-              row2-col2
-            </p>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+              <div
+                class="MuiTypography-root MuiTypography-body1 css-56izy-MuiTypography-root"
+              >
+                <p>
+                  row2-col2
+                </p>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div
+      aria-hidden="true"
+      class="MuiBox-root css-1e9kce7"
+    />
   </div>
 </DocumentFragment>
 `;
