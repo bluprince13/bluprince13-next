@@ -50,7 +50,7 @@ Also registered in `mdx-components.tsx` at the root for App Router MDX handling.
 ### UI Components
 
 - `src/components/appbar/` — `AppBar.tsx` (nav with dark-mode toggle and search), `SearchModal.tsx` (Pagefind-powered search overlay), `SimpleMenu.tsx` (mobile nav menu)
-- `src/components/blog/` — `Breadcrumbs.tsx`, `FadeIn.tsx` (motion wrapper), `RelatedPosts.tsx`, `ViewCounter.tsx`
+- `src/components/blog/` — `Breadcrumbs.tsx`, `FadeIn.tsx` (motion wrapper), `RelatedPosts.tsx`, `ViewCounter.tsx`, `TableOfContents.tsx` (hover-to-expand tick rail pinned to the right gutter, hidden on phones; reads headings from the rendered `#post-content` DOM)
 - `src/components/PostCard.tsx` — blog post card with banner, title, date, reading time, and category chips
 - `src/components/BlogIndex.tsx` — filterable blog list with tag filter and slide-in animation (uses `motion` package)
 
@@ -161,7 +161,7 @@ banner: /blog/<slug>/assets/banner.jpg
 
 Full details in `docs/ideas.md`. Summary by priority:
 
-- Progress bar / table of contents sidebar on posts (M)
+- Reading progress bar on posts (S)
 
 **Nice to have**
 

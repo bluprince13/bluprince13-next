@@ -2,6 +2,7 @@
 
 import { CssVarsProvider } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
+import Box from '@mui/material/Box'
 import theme from '@Modules/theme'
 import '@Styles/globals.css'
 import { SpeedInsights } from '@vercel/speed-insights/next'
@@ -22,11 +23,14 @@ const Layout = ({ children }: { children: React.ReactNode }) => (
     </div>
 )
 
+// The gutter widens from `sm` up to give the 960px column room to breathe. The
+// blog table-of-contents rail sits inside it, alongside space for an overlay
+// scrollbar, so narrowing it will crowd the rail.
 const Content = ({ children }: { children: React.ReactNode }) => {
     return (
-        <main style={{ padding: '1rem' }}>
+        <Box component="main" sx={{ py: 2, px: { xs: 2, sm: 5 } }}>
             <div style={{ maxWidth: '960px', margin: '0 auto' }}>{children}</div>
-        </main>
+        </Box>
     )
 }
 

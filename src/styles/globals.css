@@ -27,6 +27,12 @@ a:hover {
 [data-color-scheme='dark'] body {
     background-color: #121212;
 }
+/* Keep anchor jumps from landing flush against the top of the viewport */
+#post-content h2,
+#post-content h3 {
+    scroll-margin-top: 1rem;
+}
+
 .anchor {
     padding-left: 0.4rem;
     font-size: 0.9em;

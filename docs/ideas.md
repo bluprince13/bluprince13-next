@@ -121,10 +121,10 @@ The MUI theme is currently hardcoded light. Add a `paletteMode` toggle (`light`/
 
 ---
 
-### Progress bar / table of contents sidebar on posts
-**Size: M**
+### Reading progress bar on posts
+**Size: S**
 
-Posts already generate a TOC via `remark-toc` as an inline Markdown section. Optionally render the TOC as a sticky sidebar on wide screens (visible alongside the post body) and add a reading progress bar at the top. The headings are already slug-ified via `rehype-slug`, so anchor links work.
+Add a thin fixed bar at the top of the viewport tracking scroll progress through the article. The TOC that used to be paired with this idea now ships as a hover rail in `src/components/blog/TableOfContents.tsx`.
 
 ---
 
