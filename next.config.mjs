@@ -29,6 +29,14 @@ const rewritesConfig = [
         destination: `https://coding-interview-prep.netlify.app/:path*`
     },
     {
+        source: '/apps/is-it-worth-it',
+        destination: `https://is-it-worth-it-calculator.vercel.app/`
+    },
+    {
+        source: '/apps/is-it-worth-it/:path*',
+        destination: `https://is-it-worth-it-calculator.vercel.app/:path*`
+    },
+    {
         source: '/slides/:path*',
         destination: `${SLIDES_HOST}/slides/:path*`
     },

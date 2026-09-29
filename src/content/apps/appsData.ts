@@ -31,6 +31,14 @@ const data: AppData[] = [
         image: '/apps//coding-interview-prep.jpg',
         blurb:
             'This is a collection of coding challenges that I have solved, in preparation for coding interviews.'
+    },
+    {
+        id: 5,
+        title: 'Is it worth it?',
+        href: '/apps/is-it-worth-it',
+        image: '/apps/is-it-worth-it.png',
+        blurb:
+            'See what a purchase — one-off or recurring — costs you, measured in time, wealth and retirement.'
     }
 ]
 
