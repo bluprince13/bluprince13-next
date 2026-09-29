@@ -30,7 +30,7 @@ const rewritesConfig = [
     },
     {
         source: '/apps/is-it-worth-it',
-        destination: `https://is-it-worth-it-calculator.vercel.app/`
+        destination: `https://is-it-worth-it-calculator.vercel.app/apps/is-it-worth-it/`
     },
     {
         source: '/apps/is-it-worth-it/:path*',
