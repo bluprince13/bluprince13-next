@@ -22,10 +22,12 @@ const StyledList = styled(List)(({ theme }) => ({
     }
 }))
 
-export default function FolderList() {
+const appsByNewest = [...appsData].sort((a, b) => b.created.localeCompare(a.created))
+
+export default function AppsList() {
     return (
         <StyledList className={classes.root}>
-            {appsData.map((app) => (
+            {appsByNewest.map((app) => (
                 <ListItem key={app.title}>
                     <AppCard app={app} />
                 </ListItem>

@@ -21,14 +21,6 @@ const rewritesConfig = [
         destination: `https://renting-vs-buying.vercel.app/:path*`
     },
     {
-        source: '/apps/coding-interview-prep',
-        destination: `https://coding-interview-prep.netlify.app/`
-    },
-    {
-        source: '/apps/coding-interview-prep/:path*',
-        destination: `https://coding-interview-prep.netlify.app/:path*`
-    },
-    {
         source: '/apps/is-it-worth-it',
         destination: `https://is-it-worth-it-calculator.vercel.app/apps/is-it-worth-it/`
     },
