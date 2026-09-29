@@ -33,7 +33,8 @@ const data: AppData[] = [
         image: '/apps/is-it-worth-it.png',
         blurb:
             'See what a purchase — one-off or recurring — costs you, measured in time, wealth and retirement.',
-        created: '2026-09-29'
+        created: '2026-09-29',
+        source: 'https://github.com/bluprince13/is-it-worth-it'
     }
 ]
 
