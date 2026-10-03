@@ -1,3 +1,4 @@
+import Anchor from '@Components/Anchor'
 import Figure from '@Components/Figure'
 import Youtube from '@Components/Youtube'
 import Timeline from '@Components/Timeline'
@@ -10,6 +11,7 @@ import { Typography } from '@mui/material'
 import Link from 'next/link'
 
 export const mdxComponents = {
+    a: Anchor,
     Figure,
     Youtube,
     Timeline,

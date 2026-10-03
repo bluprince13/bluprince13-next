@@ -102,4 +102,10 @@ describe('Figure', () => {
         const { asFragment } = setup()
         expect(asFragment()).toMatchSnapshot()
     })
+
+    it('shows a referral badge when the caption links to a referral url', () => {
+        setup({ href: 'https://amzn.to/3Htmecp' })
+        expect(screen.getByRole('link', { name: 'caption' })).toHaveAttribute('rel', 'sponsored')
+        expect(screen.getByText('referral')).toBeInTheDocument()
+    })
 })

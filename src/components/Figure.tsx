@@ -1,5 +1,6 @@
 import type { CSSProperties } from 'react'
 import Image from 'next/image'
+import Anchor from './Anchor'
 import styles from './Figure.module.css'
 
 const Reference = ({ reference, referenceHref }) =>
@@ -7,14 +8,14 @@ const Reference = ({ reference, referenceHref }) =>
         ? (
             <small>
                 {' '}
-                [<a href={referenceHref ?? '#'}>{reference}</a>]
+                [<Anchor href={referenceHref ?? '#'}>{reference}</Anchor>]
             </small>
         )
         : null
 
 const Caption = ({ caption, href, reference, referenceHref }) => (
     <figcaption style={{ marginTop: '0.4em', fontSize: '0.875em', color: 'gray', fontStyle: 'italic' }}>
-        {href ? <a href={href}>{caption}</a> : caption}
+        {href ? <Anchor href={href}>{caption}</Anchor> : caption}
         <Reference reference={reference} referenceHref={referenceHref} />
     </figcaption>
 )
