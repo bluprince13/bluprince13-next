@@ -25,15 +25,20 @@ const Root = styled('div')(() => ({
     }
 }))
 
-const Youtube = ({ id, caption }: { id: string; caption?: string }) => {
+type YoutubeProps = { caption?: string } & ({ id: string; playlist?: never } | { id?: never; playlist: string })
+
+const Youtube = ({ id, playlist, caption }: YoutubeProps) => {
+    const src = playlist
+        ? `https://www.youtube.com/embed/videoseries?list=${playlist}`
+        : `https://www.youtube.com/embed/${id}`
     return (
         <Root>
             <div className={classes.youtubeWrapper}>
                 <iframe
-                    title={id}
+                    title={caption ?? id ?? playlist}
                     width="560"
                     height="315"
-                    src={`https://www.youtube.com/embed/${id}`}
+                    src={src}
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen

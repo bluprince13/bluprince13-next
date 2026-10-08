@@ -1,5 +1,6 @@
 import Anchor from '@Components/Anchor'
 import Figure from '@Components/Figure'
+import FigureGroup from '@Components/FigureGroup'
 import Youtube from '@Components/Youtube'
 import Timeline from '@Components/Timeline'
 import Table from '@Components/Table'
@@ -13,6 +14,7 @@ import Link from 'next/link'
 export const mdxComponents = {
     a: Anchor,
     Figure,
+    FigureGroup,
     Youtube,
     Timeline,
     Table,

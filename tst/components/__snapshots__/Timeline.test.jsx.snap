@@ -44,11 +44,13 @@ exports[`Timeline > renders as a left alignged Timeline on mobile 1`] = `
         >
           With description
         </span>
-        <p
-          class="MuiTypography-root MuiTypography-body1 css-rizt0-MuiTypography-root"
+        <div
+          class="MuiTypography-root MuiTypography-body1 css-7jxd6f-MuiTypography-root"
         >
-          description1
-        </p>
+          <p>
+            description1
+          </p>
+        </div>
       </div>
     </li>
     <li
@@ -90,8 +92,8 @@ exports[`Timeline > renders as a left alignged Timeline on mobile 1`] = `
         >
           Without description
         </span>
-        <p
-          class="MuiTypography-root MuiTypography-body1 css-rizt0-MuiTypography-root"
+        <div
+          class="MuiTypography-root MuiTypography-body1 css-7jxd6f-MuiTypography-root"
         />
       </div>
     </li>
@@ -143,11 +145,13 @@ exports[`Timeline > renders as an alternating Timeline 1`] = `
         >
           With description
         </span>
-        <p
-          class="MuiTypography-root MuiTypography-body1 css-rizt0-MuiTypography-root"
+        <div
+          class="MuiTypography-root MuiTypography-body1 css-7jxd6f-MuiTypography-root"
         >
-          description1
-        </p>
+          <p>
+            description1
+          </p>
+        </div>
       </div>
     </li>
     <li
@@ -189,8 +193,8 @@ exports[`Timeline > renders as an alternating Timeline 1`] = `
         >
           Without description
         </span>
-        <p
-          class="MuiTypography-root MuiTypography-body1 css-rizt0-MuiTypography-root"
+        <div
+          class="MuiTypography-root MuiTypography-body1 css-7jxd6f-MuiTypography-root"
         />
       </div>
     </li>

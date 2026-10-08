@@ -46,4 +46,36 @@ describe('Timeline', () => {
 
         mockIsMobile = false
     })
+
+    it('renders phase dividers between items', () => {
+        const { getByText, getAllByRole } = render(
+            <Timeline
+                items={[
+                    { phase: 'First trimester', subtitle: 'Weeks 1-12' },
+                    { marker: 'marker1', title: 'Item', description: 'description1', iconName: 'start' }
+                ]}
+            />
+        )
+
+        expect(getByText('First trimester')).toBeInTheDocument()
+        expect(getByText(/Weeks 1-12/)).toBeInTheDocument()
+        expect(getAllByRole('listitem')).toHaveLength(2)
+    })
+
+    it('renders markdown in descriptions', () => {
+        const { getByRole } = render(
+            <Timeline
+                items={[
+                    {
+                        marker: 'marker1',
+                        title: 'Item',
+                        description: 'Take [folic acid](https://www.nhs.uk/medicines/folic-acid/) daily.',
+                        iconName: 'start'
+                    }
+                ]}
+            />
+        )
+
+        expect(getByRole('link', { name: 'folic acid' })).toHaveAttribute('href', 'https://www.nhs.uk/medicines/folic-acid/')
+    })
 })

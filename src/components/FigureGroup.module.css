@@ -1,0 +1,13 @@
+.group {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-end;
+    margin: 1em 0;
+}
+
+/* Images size to 100% of their figure, so the figure must carry the width itself. */
+.group > figure {
+    flex: 0 1 var(--figure-max-width, 100%);
+    min-width: 0;
+    margin: 0;
+}

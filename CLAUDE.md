@@ -43,7 +43,7 @@ Blog posts live in `src/content/blog/*.mdx` with gray-matter frontmatter (`title
 ### MDX Components
 
 Custom components available inside blog MDX files, defined in `src/modules/mdxComponents.ts`:
-`Figure`, `Youtube`, `Timeline`, `Table`, `Alert`, `ComparisonTable`, `Mermaid`, `SymbolOverviewWidget`, `Typography` (MUI), `Link` (Next.js)
+`Figure`, `FigureGroup`, `Youtube`, `Timeline`, `Table`, `Alert`, `ComparisonTable`, `Mermaid`, `SymbolOverviewWidget`, `Typography` (MUI), `Link` (Next.js)
 
 Also registered in `mdx-components.tsx` at the root for App Router MDX handling.
 
@@ -150,7 +150,7 @@ banner: /blog/<slug>/assets/banner.jpg
 
 ### MDX components
 
-`Figure`, `Youtube`, `Timeline`, `Table`, `Alert`, `ComparisonTable`, `Mermaid`, `SymbolOverviewWidget`, `Typography`, `Link` (see `src/modules/mdxComponents.ts`). Wrap JSX with multi-line props in `{/* prettier-ignore-start */}` … `{/* prettier-ignore-end */}`, as `preparing-a-will.mdx` does for its `Timeline`.
+`Figure`, `FigureGroup`, `Youtube`, `Timeline`, `Table`, `Alert`, `ComparisonTable`, `Mermaid`, `SymbolOverviewWidget`, `Typography`, `Link` (see `src/modules/mdxComponents.ts`). Wrap two or more `Figure`s in a `FigureGroup` to show them side by side. Wrap JSX with multi-line props in `{/* prettier-ignore-start */}` … `{/* prettier-ignore-end */}`, as `preparing-a-will.mdx` does for its `Timeline`.
 
 ### Before publishing
 
