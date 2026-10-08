@@ -74,4 +74,11 @@ describe('remarkNumberHeadings', () => {
     expect(headings[0].text).toBe('Title')
     expect(headings[1].text).toBe('1. Section')
   })
+
+  it('generates heading ids from the unnumbered text', async () => {
+    const processor = unified().use(remarkParse).use(remarkNumberHeadings)
+    const tree = (await processor.run(processor.parse('## Alpha\n\n### Sub `code` £1\n\n## Alpha\n'))) as Root
+    const ids = tree.children.map((h) => (h as Heading).data?.hProperties?.id)
+    expect(ids).toEqual(['alpha', 'sub-code-1', 'alpha-1'])
+  })
 })
