@@ -3,7 +3,7 @@
 exports[`Figure > renders correctly 1`] = `
 <DocumentFragment>
   <figure
-    style="margin-left: 0px; margin-right: 0px; --figure-max-width: 350px;"
+    style="margin-left: 0px; margin-right: 0px;"
   >
     <img
       alt="alt"

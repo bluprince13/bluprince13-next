@@ -1,13 +1,25 @@
+/* Subgrid puts every image in one row and every caption in the next,
+   so images share a bottom edge however long each caption runs. */
 .group {
-    display: flex;
-    gap: 1.5rem;
-    align-items: flex-end;
+    display: grid;
+    grid-template-rows: auto auto;
+    column-gap: 1.5rem;
+    justify-content: start;
     margin: 1em 0;
 }
 
-/* Images size to 100% of their figure, so the figure must carry the width itself. */
 .group > figure {
-    flex: 0 1 var(--figure-max-width, 100%);
+    display: grid;
+    grid-row: span 2;
+    grid-template-rows: subgrid;
     min-width: 0;
     margin: 0;
+}
+
+.group > figure > :first-child {
+    align-self: end;
+}
+
+.group > figure > figcaption {
+    align-self: start;
 }

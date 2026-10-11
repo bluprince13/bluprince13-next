@@ -20,7 +20,7 @@ const Caption = ({ caption, href, reference, referenceHref }) => (
     </figcaption>
 )
 
-const getMaxWidth = (size) => {
+export const getFigureMaxWidth = (size?: string) => {
     switch (size) {
         case 'xs':
             return '75px'
@@ -59,12 +59,11 @@ const Figure = ({
     size = 'm',
     align
 }: FigureProps) => {
-    const maxWidthToUse = maxWidth || getMaxWidth(size)
+    const maxWidthToUse = maxWidth || getFigureMaxWidth(size)
     const style: CSSProperties = { width: '100%', height: 'auto', display: 'block' }
     if (maxWidthToUse) style.maxWidth = maxWidthToUse
     if (align == 'center') style.margin = 'auto'
     const figureStyle: CSSProperties = { marginLeft: 0, marginRight: 0 }
-    if (maxWidthToUse) figureStyle['--figure-max-width'] = maxWidthToUse
     return (
         <figure style={figureStyle}>
             <Image
