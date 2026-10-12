@@ -12,6 +12,7 @@ import Typography from '@mui/material/Typography'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import { useTheme } from '@mui/material/styles'
 import Markdown from 'react-markdown'
+import remarkCitations from '@Modules/remarkCitations'
 import MaterialIcon from '@Components/MaterialIcon'
 import type { IconName } from '@Components/MaterialIcon'
 
@@ -55,7 +56,7 @@ const Item = ({ marker, title, description, iconName, color }: TimelineItemData)
                 {title}
             </Typography>
             <Typography component="div" sx={{ '& p': { m: 0 } }}>
-                <Markdown>{description}</Markdown>
+                <Markdown remarkPlugins={[remarkCitations]}>{description}</Markdown>
             </Typography>
         </TimelineContent>
     </TimelineItem>

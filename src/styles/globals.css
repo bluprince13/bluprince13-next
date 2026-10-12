@@ -68,3 +68,23 @@ mark {
     padding: 0.2em 0.4em;
     white-space: nowrap;
 }
+
+/* Inline source attribution from remarkCitations, kept quieter than body text */
+.citation {
+    font-size: 0.82em;
+    font-style: normal;
+    color: var(--mui-palette-text-secondary);
+}
+
+.citation a {
+    color: inherit;
+    text-decoration: underline;
+    /* The underline is the only cue that this is a link, so keep it visible */
+    text-decoration-color: color-mix(in srgb, currentColor 55%, transparent);
+    text-underline-offset: 3px;
+}
+
+.citation-publisher {
+    font-style: normal;
+    font-weight: 500;
+}

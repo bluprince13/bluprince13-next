@@ -13,6 +13,7 @@ import {
     Box
 } from '@mui/material'
 import Markdown from 'react-markdown'
+import remarkCitations from '@Modules/remarkCitations'
 import { useColorMode } from '@Modules/useColorMode'
 
 interface CellContent {
@@ -52,7 +53,7 @@ const TableHeaderCell: React.FC<{
                 variant="subtitle1"
                 sx={{ fontWeight: 'bold', textAlign: 'center' }}
             >
-                <Markdown>{name}</Markdown>
+                <Markdown remarkPlugins={[remarkCitations]}>{name}</Markdown>
             </Typography>
             {description && (
                 <Typography
@@ -66,7 +67,7 @@ const TableHeaderCell: React.FC<{
                         margin: 'auto'
                     }}
                 >
-                    <Markdown>{description}</Markdown>
+                    <Markdown remarkPlugins={[remarkCitations]}>{description}</Markdown>
                 </Typography>
             )}
         </TableCell>

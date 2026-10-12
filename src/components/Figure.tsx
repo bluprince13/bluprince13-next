@@ -3,18 +3,33 @@ import Image from 'next/image'
 import Anchor from './Anchor'
 import styles from './Figure.module.css'
 
-const Reference = ({ reference, referenceHref }) =>
-    reference
-        ? (
-            <small>
-                {' '}
-                [<Anchor href={referenceHref ?? '#'}>{reference}</Anchor>]
-            </small>
+const CITATION_SEPARATOR = ' · '
+
+// Matches the markup remarkCitations produces for inline citations
+const Reference = ({ reference, referenceHref }) => {
+    if (!reference) return null
+    const split = reference.indexOf(CITATION_SEPARATOR)
+    const label =
+        split > 0 ? (
+            <>
+                <span className="citation-publisher">{reference.slice(0, split)}</span>
+                {reference.slice(split)}
+            </>
+        ) : (
+            reference
         )
-        : null
+    return (
+        <>
+            {' '}
+            <span className="citation">
+                (<Anchor href={referenceHref ?? '#'}>{label}</Anchor>)
+            </span>
+        </>
+    )
+}
 
 const Caption = ({ caption, href, reference, referenceHref }) => (
-    <figcaption style={{ marginTop: '0.4em', fontSize: '0.875em', color: 'gray', fontStyle: 'italic' }}>
+    <figcaption style={{ marginTop: '0.4em', fontSize: '0.875em', color: 'var(--mui-palette-text-primary)', fontStyle: 'italic' }}>
         {href ? <Anchor href={href}>{caption}</Anchor> : caption}
         <Reference reference={reference} referenceHref={referenceHref} />
     </figcaption>

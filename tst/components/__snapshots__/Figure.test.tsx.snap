@@ -19,22 +19,25 @@ exports[`Figure > renders correctly 1`] = `
       width="0"
     />
     <figcaption
-      style="margin-top: 0.4em; font-size: 0.875em; color: gray; font-style: italic;"
+      style="margin-top: 0.4em; font-size: 0.875em; color: var(--mui-palette-text-primary); font-style: italic;"
     >
       <a
         href="https://href.com"
       >
         caption
       </a>
-      <small>
-         [
+       
+      <span
+        class="citation"
+      >
+        (
         <a
           href="https://reference-href.com"
         >
           reference
         </a>
-        ]
-      </small>
+        )
+      </span>
     </figcaption>
   </figure>
 </DocumentFragment>

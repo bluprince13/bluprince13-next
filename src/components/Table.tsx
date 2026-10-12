@@ -10,6 +10,7 @@ import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import { alpha, styled, type CSSObject, type Theme } from '@mui/material/styles'
 import Markdown from 'react-markdown'
+import remarkCitations from '@Modules/remarkCitations'
 import { isValidElement, useEffect, useRef, useState } from 'react'
 
 interface Column {
@@ -278,7 +279,7 @@ export default function BasicTable({
                                                 >
                                                     {typeof content ===
                                                     'string' ? (
-                                                        <Markdown>
+                                                        <Markdown remarkPlugins={[remarkCitations]}>
                                                             {content}
                                                         </Markdown>
                                                     ) : (
