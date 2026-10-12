@@ -1,25 +1,26 @@
-/* Subgrid puts every image in one row and every caption in the next,
-   so images share a bottom edge however long each caption runs. */
+/* Images share row 1 and captions row 2, so images share a bottom edge
+   however long each caption runs. Flattening figures with display: contents
+   rather than subgrid, because Firefox doesn't grow a subgrid's parent when
+   lazy images load, letting the next block overlap the group. */
 .group {
     display: grid;
     grid-template-rows: auto auto;
+    grid-auto-flow: column;
     column-gap: 1.5rem;
     justify-content: start;
     margin: 1em 0;
 }
 
 .group > figure {
-    display: grid;
-    grid-row: span 2;
-    grid-template-rows: subgrid;
-    min-width: 0;
-    margin: 0;
+    display: contents;
 }
 
 .group > figure > :first-child {
+    grid-row: 1;
     align-self: end;
 }
 
 .group > figure > figcaption {
+    grid-row: 2;
     align-self: start;
 }
