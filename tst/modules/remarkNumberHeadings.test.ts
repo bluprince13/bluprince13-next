@@ -1,8 +1,10 @@
 import { describe, it, expect } from 'vitest'
 import { unified } from 'unified'
 import remarkParse from 'remark-parse'
-import type { Root, Heading, Text } from 'mdast'
-import remarkNumberHeadings from '@Modules/remarkNumberHeadings'
+import type { Root, Heading, Text, Link } from 'mdast'
+import remarkToc from 'remark-toc'
+import { visit } from 'unist-util-visit'
+import remarkNumberHeadings, { APPENDIX_SUBSECTION_TOC_SKIP } from '@Modules/remarkNumberHeadings'
 
 async function getHeadings(markdown: string): Promise<{ depth: number; text: string }[]> {
   const processor = unified().use(remarkParse).use(remarkNumberHeadings)
@@ -73,6 +75,42 @@ describe('remarkNumberHeadings', () => {
     const headings = await getHeadings('# Title\n\n## Section\n')
     expect(headings[0].text).toBe('Title')
     expect(headings[1].text).toBe('1. Section')
+  })
+
+  it('leaves the Appendix heading unnumbered and letters the appendices under it', async () => {
+    const headings = await getHeadings(
+      '## Intro\n\n## Appendix\n\n### Shopping\n\n#### Car seat\n\n#### Pram\n\n### Apps\n\n#### Tracker\n'
+    )
+    expect(headings.map((h) => h.text)).toEqual([
+      '1. Intro',
+      'Appendix',
+      'Appendix A - Shopping',
+      'A.1. Car seat',
+      'A.2. Pram',
+      'Appendix B - Apps',
+      'B.1. Tracker',
+    ])
+  })
+
+  it('resumes numbering after the appendix if another section follows', async () => {
+    const headings = await getHeadings('## Intro\n\n## Appendix\n\n### Extra\n\n## Outro\n\n### Sub\n')
+    expect(headings[3].text).toBe('2. Outro')
+    expect(headings[4].text).toBe('2.1. Sub')
+  })
+
+  it('keeps appendix subsections out of the table of contents', async () => {
+    const processor = unified()
+      .use(remarkParse)
+      .use(remarkNumberHeadings)
+      .use(remarkToc, { skip: APPENDIX_SUBSECTION_TOC_SKIP })
+    const markdown =
+      '## Table of contents\n\n## Intro\n\n### Detail\n\n## Appendix\n\n### Shopping\n\n#### Car seat\n'
+    const tree = (await processor.run(processor.parse(markdown))) as Root
+    const urls: string[] = []
+    visit(tree, 'link', (link: Link) => {
+      urls.push(link.url)
+    })
+    expect(urls).toEqual(['#intro', '#detail', '#appendix', '#shopping'])
   })
 
   it('generates heading ids from the unnumbered text', async () => {

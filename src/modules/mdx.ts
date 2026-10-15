@@ -1,7 +1,7 @@
 import { compile, evaluate } from '@mdx-js/mdx'
 import * as runtime from 'react/jsx-runtime'
 import remarkToc from 'remark-toc'
-import remarkNumberHeadings from './remarkNumberHeadings'
+import remarkNumberHeadings, { APPENDIX_SUBSECTION_TOC_SKIP } from './remarkNumberHeadings'
 import remarkCitations from './remarkCitations'
 import remarkEmoji from 'remark-emoji'
 import remarkCodesandbox from 'remark-codesandbox'
@@ -26,7 +26,7 @@ export async function evaluateBlogMdx(content: string): Promise<React.ComponentT
     remarkPlugins: [
       remarkNumberHeadings,
       remarkCitations,
-      remarkToc,
+      [remarkToc, { skip: APPENDIX_SUBSECTION_TOC_SKIP }],
       remarkEmoji,
       [remarkCodesandbox, { mode: 'button' }],
       [mdxMermaid, {}],
