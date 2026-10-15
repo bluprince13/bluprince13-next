@@ -13,6 +13,7 @@ const makePost = (overrides: Partial<PostData> = {}): PostData => ({
     description: 'A test post',
     bannerFullUrl: 'https://example.com/images/test-banner.jpg',
     categories: ['tech'],
+    wordCount: 300,
     readingTime: 3,
     excerpt: 'A short excerpt about the test post.',
     ...overrides

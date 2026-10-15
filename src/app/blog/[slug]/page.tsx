@@ -61,12 +61,15 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
                         <BlogPostViewCounter slug={data.slug} />
                         <MyCommentCount id={data.slug} />
                     </Box>
-                    <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
-                        {data.categories.map(cat => (
-                            <Link key={cat} href={buildBlogUrl([cat])} style={{ textDecoration: 'none' }}>
-                                <Chip label={cat} size="small" clickable />
-                            </Link>
-                        ))}
+                    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 0.5 }}>
+                        <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'flex-end', gap: 0.5 }}>
+                            {data.categories.map(cat => (
+                                <Link key={cat} href={buildBlogUrl([cat])} style={{ textDecoration: 'none' }}>
+                                    <Chip label={cat} size="small" clickable />
+                                </Link>
+                            ))}
+                        </Box>
+                        <div>{data.wordCount.toLocaleString('en-GB')} words · {data.readingTime} min read</div>
                     </Box>
                 </Box>
                 <Box id={POST_CONTENT_ID}>

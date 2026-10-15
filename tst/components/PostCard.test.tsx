@@ -22,6 +22,7 @@ const defaultProps = {
     banner: '/images/banner.jpg',
     dateFormatted: '1 January 2024',
     categories: ['tech', 'life'],
+    wordCount: 500,
     readingTime: 5,
     excerpt: 'This is a short excerpt about the post.',
 }

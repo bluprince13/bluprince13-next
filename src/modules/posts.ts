@@ -17,6 +17,7 @@ export type PostData = {
     bannerFullUrl: string
     bibliography?: string
     categories: string[]
+    wordCount: number
     readingTime: number
     excerpt: string
 }
@@ -33,6 +34,11 @@ export const getFileContent = (slug) => {
     const fileContent = fs.readFileSync(fullPath, 'utf8')
     return fileContent
 }
+const APPENDIX_SECTION = /^## +Appendix *\n[\s\S]*?(?=^## |(?![\s\S]))/gim
+
+export const countWords = (content: string) =>
+    content.replace(APPENDIX_SECTION, '').split(/\s+/).filter(Boolean).length
+
 export const getPostDataAndContent = cache((slug): GetPostDataAndContentOutput => {
     const fileContent = getFileContent(slug)
     const { data, content } = matter(fileContent)
@@ -46,7 +52,7 @@ export const getPostDataAndContent = cache((slug): GetPostDataAndContentOutput =
         options
     )
 
-    const wordCount = content.split(/\s+/).filter(Boolean).length
+    const wordCount = countWords(content)
     const readingTime = Math.ceil(wordCount / 200)
     const introRaw = content.split(/\n## /)[0]
     const introPlain = introRaw
@@ -71,6 +77,7 @@ export const getPostDataAndContent = cache((slug): GetPostDataAndContentOutput =
         bibliography: data.bibliography ? `${SITE_ROOT}${data.bibliography}` : null,
         href: `${SITE_ROOT}/blog/${slug}`,
         categories: data.categories ?? [],
+        wordCount,
         readingTime,
         excerpt,
     }

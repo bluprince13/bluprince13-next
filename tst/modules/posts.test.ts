@@ -1,4 +1,4 @@
-import { getPostDataAndContent } from '@Modules/posts'
+import { countWords, getPostDataAndContent } from '@Modules/posts'
 
 describe('getPostDataAndContent', () => {
     it('strips frontmatter from content', () => {
@@ -14,6 +14,20 @@ describe('getPostDataAndContent', () => {
             const { data } = getPostDataAndContent('applying-for-uk-citizenship')
             expect(data.readingTime).toBeGreaterThan(0)
             expect(Number.isInteger(data.readingTime)).toBe(true)
+        })
+    })
+
+    describe('countWords', () => {
+        it('ignores an appendix at the end of a post', () => {
+            expect(countWords('one two\n\n## Appendix\n\nthree four\n\n### A sub\n\nfive')).toBe(2)
+        })
+
+        it('resumes counting at the next section after an appendix', () => {
+            expect(countWords('one\n\n## Appendix\n\ntwo\n\n## Notes\n\nthree')).toBe(4)
+        })
+
+        it('counts a section whose title only starts with Appendix', () => {
+            expect(countWords('## Appendix guide\n\none')).toBe(4)
         })
     })
 
