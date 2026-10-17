@@ -23,6 +23,7 @@ import MedicalServices from '@mui/icons-material/MedicalServices'
 import MenuBook from '@mui/icons-material/MenuBook'
 import PanTool from '@mui/icons-material/PanTool'
 import Phone from '@mui/icons-material/Phone'
+import PhotoCamera from '@mui/icons-material/PhotoCamera'
 import PregnantWoman from '@mui/icons-material/PregnantWoman'
 import Scanner from '@mui/icons-material/Scanner'
 import Schedule from '@mui/icons-material/Schedule'
@@ -32,7 +33,7 @@ import Tv from '@mui/icons-material/Tv'
 import Vaccines from '@mui/icons-material/Vaccines'
 import type { SvgIconProps } from '@mui/material/SvgIcon'
 
-export type IconName = 'alarm' | 'approval' | 'biotech' | 'call' | 'check_circle' | 'child_care' | 'child_friendly' | 'description' | 'done' | 'edit' | 'edit_note' | 'email' | 'event' | 'fingerprint' | 'fitness_center' | 'flight' | 'groups' | 'home' | 'laptop_mac' | 'local_hospital' | 'mail' | 'medical_services' | 'menu_book' | 'pan_tool' | 'phone' | 'pregnant_woman' | 'scanner' | 'schedule' | 'shopping_cart' | 'start' | 'tv' | 'vaccines'
+export type IconName = 'alarm' | 'approval' | 'biotech' | 'call' | 'check_circle' | 'child_care' | 'child_friendly' | 'description' | 'done' | 'edit' | 'edit_note' | 'email' | 'event' | 'fingerprint' | 'fitness_center' | 'flight' | 'groups' | 'home' | 'laptop_mac' | 'local_hospital' | 'mail' | 'medical_services' | 'menu_book' | 'pan_tool' | 'phone' | 'photo_camera' | 'pregnant_woman' | 'scanner' | 'schedule' | 'shopping_cart' | 'start' | 'tv' | 'vaccines'
 
 const iconMap: Record<IconName, React.ComponentType<SvgIconProps>> = {
     alarm: Alarm,
@@ -60,6 +61,7 @@ const iconMap: Record<IconName, React.ComponentType<SvgIconProps>> = {
     menu_book: MenuBook,
     pan_tool: PanTool,
     phone: Phone,
+    photo_camera: PhotoCamera,
     pregnant_woman: PregnantWoman,
     scanner: Scanner,
     schedule: Schedule,
