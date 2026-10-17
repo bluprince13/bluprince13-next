@@ -1,0 +1,615 @@
+---
+title: Pregnancy journey in England
+description: A guide to the NHS pregnancy journey in England, from finding out you're expecting to the first few months with a newborn.
+date: '2026-10-30'
+categories:
+ - uk
+ - life
+ - parenting
+banner: /blog/pregnancy-journey-in-england/assets/banner.jpg
+---
+
+My wife and I had our first child in London in 2025. We're both originally from India, so we had a lot to learn about pregnancy in England. Plenty of excellent resources made it easier.
+
+In this article, I will share a general overview of the whole process, all the way from planning to have a child to the first few months with a newborn. I will link to resources so that you can learn more, as I won't be able to cover everything in detail. In the Appendix, I have also included some shopping recommendations, as well as apps that we found useful.
+
+<Alert severity="warning">
+ This is not medical advice. It is based on our personal experience. Always
+ follow the advice of your midwife, GP or hospital.
+</Alert>
+
+## Table of contents
+
+## The timeline
+
+{/* prettier-ignore-start */}
+
+<Timeline
+ items={[
+  { phase: 'Before pregnancy', subtitle: 'Planning' },
+  {
+   marker: '3 months before trying for a baby',
+   title: 'Plan ahead',
+   description:
+    "Start taking [folic acid](https://www.nhs.uk/medicines/folic-acid/). Get any vaccines you are missing. Check your employer's maternity and paternity policies.",
+   iconName: 'description',
+   color: 'warning'
+  },
+  { phase: 'First trimester', subtitle: 'Weeks 1-12' },
+  {
+   marker: 'Day 0',
+   title: 'First day of your last period',
+   description:
+    'Pregnancy is counted from this day, about two weeks before you conceive. Your due date is approximately 40 weeks later, depending on your cycle length ([NHS · Due date calculator](https://www.nhs.uk/pregnancy/finding-out/due-date-calculator/)).',
+   iconName: 'event',
+   color: 'grey'
+  },
+  {
+   marker: 'Week 4-6',
+   title: 'Positive test',
+   description:
+    'Once you have confirmed the pregnancy using a pregnancy test kit, self-refer to the hospital you want to deliver at.',
+   iconName: 'pregnant_woman',
+   color: 'primary'
+  },
+  {
+   marker: 'Week 8-10',
+   title: 'First appointment with a midwife',
+   description:
+    'The midwife will take your health history, do some tests, and confirm your pregnancy.',
+   iconName: 'edit_note',
+   color: 'info'
+  },
+  {
+   marker: 'Week 10-14',
+   title: 'Scan 1: 12-week dating scan',
+   description:
+    "The [dating scan](https://www.nhs.uk/pregnancy/your-pregnancy-care/12-week-scan/) confirms your due date (or Estimated Date of Delivery, EDD) and checks on your baby's development. It is also used to screen for Down's syndrome and other conditions.",
+   iconName: 'biotech',
+   color: 'secondary'
+  },
+  { phase: 'Second trimester', subtitle: 'Weeks 13-27' },
+   {
+   marker: 'Week 16',
+   title: 'Whooping cough vaccine',
+   description: 'You will be offered the [whooping cough vaccine](https://www.nhs.uk/pregnancy/keeping-well/whooping-cough-vaccination/).',
+   iconName: 'vaccines',
+   color: 'secondary'
+  },
+  {
+   marker: 'Week 18-21',
+   title: 'Scan 2: 20-week anomaly scan',
+   description:
+    'The [anomaly scan](https://www.nhs.uk/pregnancy/your-pregnancy-care/20-week-scan/) is a detailed ultrasound that checks how your baby is developing. If you want, you can also find out the sex of the baby.',
+   iconName: 'biotech',
+   color: 'secondary'
+  },
+  {
+   marker: 'Week 20',
+   title: 'Inform your employer',
+   description:
+    'You can get a MATB1 form from your midwife at 20 weeks. At least 15 weeks before your due date, use the MATB1 form to tell your employer when the baby is due and when you want to start your maternity leave ([gov.uk · Maternity pay and leave](https://www.gov.uk/maternity-pay-leave/how-to-claim)).',
+   iconName: 'groups',
+   color: 'info'
+  },
+  { phase: 'Third trimester', subtitle: 'Weeks 28-40' },
+  {
+   marker: 'Week 28',
+   title: 'RSV vaccine',
+   description: 'You will be offered the [RSV vaccine](https://www.nhs.uk/vaccinations/rsv-vaccine/) from 28 weeks.',
+   iconName: 'vaccines',
+   color: 'secondary'
+  },
+  {
+   marker: 'Week 28-34',
+   title: 'Antenatal classes',
+   description:
+    'Most courses run in the third trimester.',
+   iconName: 'menu_book',
+   color: 'primary'
+  },
+  {
+   marker: 'Week 28-36',
+   title: 'Reserve a nursery',
+   description:
+    'Pick and reserve a nursery in the third trimester or earlier.',
+   iconName: 'home',
+   color: 'success'
+  },
+  {
+   marker: 'Week 36',
+   title: 'Get ready',
+   description:
+    'Pack your hospital bag, fit the car seat, and agree your birth plan with your midwife.',
+   iconName: 'child_friendly',
+   color: 'success'
+  },
+  {
+   marker: 'Week 37-42',
+   title: 'Delivery',
+   description:
+    'Babies are considered full term from 37 weeks.',
+   iconName: 'local_hospital',
+   color: 'error'
+  },
+  { phase: 'After birth', subtitle: 'The first two years' },
+  {
+   marker: 'Day 5 after birth',
+   title: 'Heel prick test',
+   description:
+    'A midwife pricks your baby\'s heel to collect a few drops of blood, which are screened for rare but serious conditions such as sickle cell disease and cystic fibrosis ([NHS · Newborn blood spot test](https://www.nhs.uk/baby/newborn-screening/blood-spot-test/)).',
+   iconName: 'child_care',
+   color: 'error'
+  },
+  {
+   marker: 'Day 10-14 after birth',
+   title: 'Health visitor',
+   description:
+    "A health visitor visits you at home to check on your baby and give advice such as on feeding and safe sleeping ([NHS · Your baby's health and development reviews](https://www.nhs.uk/baby/babys-development/height-weight-and-reviews/baby-reviews/)).",
+   iconName: 'medical_services',
+   color: 'info'
+  },
+  {
+   marker: 'Week 1-6 after birth',
+   title: 'Register the birth',
+   description:
+    '[Register the birth](https://www.gov.uk/register-birth) within 42 days at the register office for the area where the baby was born. Once you have the birth certificate, you can [apply for a passport](https://www.gov.uk/get-a-child-passport).',
+   iconName: 'description',
+   color: 'info'
+  },
+  {
+   marker: 'Week 6-16 after birth',
+   title: 'GP checks and vaccinations',
+   description:
+    "A six-to-eight-week check for both mum and baby at the GP, followed by the baby's vaccinations at 8, 12 and 16 weeks.",
+   iconName: 'vaccines',
+   color: 'secondary'
+  }
+ ]}
+/>
+
+{/* prettier-ignore-end */}
+
+## Plan ahead
+
+### Get any missing vaccines before you conceive
+
+The NHS provides general advice on [planning your pregnancy](https://www.nhs.uk/pregnancy/trying-for-a-baby/planning-your-pregnancy/). We forgot to check for missing vaccines. Some vaccines, such as [MMR](https://www.nhs.uk/vaccinations/mmr-vaccine/) and [chickenpox](https://www.nhs.uk/vaccinations/chickenpox-vaccine/), are `live vaccines`, which means you cannot have them while pregnant. Check you are protected before you start trying. The chickenpox vaccine is only offered on the NHS in certain cases, so you may need to pay for it privately.
+
+### Start taking folic acid and vitamin D
+
+The NHS recommends taking 400 micrograms of folic acid every day while you are trying to get pregnant and until you are 12 weeks pregnant, ideally starting three months before you conceive. It helps your baby's brain and spinal cord develop ([NHS · Vitamins, supplements and nutrition in pregnancy](https://www.nhs.uk/pregnancy/keeping-well/pregnancy-vitamins-and-supplements/)). The NHS also recommends 10 micrograms of [vitamin D](https://www.nhs.uk/conditions/vitamins-and-minerals/vitamin-d/) a day. My wife took the Pregnacare Max multivitamin, which contains both, throughout her pregnancy.
+
+<Figure
+ src="/blog/pregnancy-journey-in-england/assets/pregnacare-max.webp"
+ size="s"
+ caption="Pregnacare Max"
+ href="https://link.amazon/B0b2xiUcT"
+/>
+
+### Check your employer's parental leave policies before you conceive
+
+Statutory maternity pay is low, so what your employer offers on top can make a big difference to your finances. Read both partners' policies before you start trying, not once you are pregnant. Things to look for:
+
+- How much enhanced maternity, paternity or shared parental pay is offered, and for how long.
+- How long you need to have worked there to qualify. For statutory maternity pay, you need to have been with the same employer for at least 26 weeks by the 15th week before your due date ([gov.uk · Maternity pay and leave: eligibility](https://www.gov.uk/maternity-pay-leave/eligibility)).
+- Whether you must pay back enhanced pay if you do not return to work, or leave within a certain period after returning.
+- Any rules on when you have to tell your employer and how to apply.
+
+This matters most if you are thinking of changing jobs. Moving to a new employer just before or during pregnancy could mean losing enhanced pay. See [Baby finance 101](/blog/baby-finance-101) for more detail.
+
+### Plan your travel around your pregnancy
+
+See the advice from the [NHS on travelling in pregnancy](https://www.nhs.uk/pregnancy/keeping-well/travelling/). The best time is in the middle of the pregnancy, between four and six months. In the first 12 weeks, nausea and tiredness are common and the risk of miscarriage is higher. In the last few months, travel can be tiring and uncomfortable.
+
+Healthy newborns can usually fly from about two weeks old, but the NCT suggests waiting until two to three months to give your baby's immune system a chance to develop ([NCT · Travelling abroad with a baby](https://www.nct.org.uk/information/life-parent/practicalities-being-parent/travelling-abroad-baby)). Your baby will also need a passport ([gov.uk · Get a passport for your child](https://www.gov.uk/get-a-child-passport)).
+
+We chose not to travel during the pregnancy and planned our first flight, to India, for when our baby was six months old. Decide what you're comfortable with and plan accordingly.
+
+## Once you find out you're pregnant
+
+### Consider waiting until the 12-week scan before spreading the news
+
+Miscarriage is more common than many people realise. Around 10 to 20% of pregnancies end in miscarriage in the first 12 weeks ([Tommy's · Miscarriage statistics](https://www.tommys.org/our-organisation/why-we-exist/miscarriage-statistics)). So many people wait until the [12-week dating scan](https://www.nhs.uk/pregnancy/your-pregnancy-care/12-week-scan/) before announcing the pregnancy to their wider circle.
+
+### Use CQC ratings to compare hospitals near you
+
+You can choose which hospital you give birth in. You do not need to see your GP first. The quality of maternity care varies widely between hospitals, so research them rather than defaulting to the closest. The [Care Quality Commission (CQC)](https://www.cqc.org.uk/care-services/find-hospital) inspects hospitals and publishes ratings for each service, including maternity. Other things worth considering:
+
+- How long it would take to get there in labour, including at rush hour.
+- Whether it has a [neonatal intensive care unit](https://www.nhs.uk/pregnancy/labour-and-birth/special-care-ill-or-premature-babies/), in case your baby needs extra care.
+- What friends or family who have used the hospital thought of it.
+
+Once you have picked a hospital, you can usually fill in a self-referral form on the hospital's website. Your midwife appointments and scans will usually be there too. See the [standard schedule of antenatal appointments](https://www.nhs.uk/pregnancy/your-pregnancy-care/your-antenatal-care-and-appointments/).
+
+### Get a maternity exemption certificate for free prescriptions and dental care
+
+At your first midwife appointment, ask for a [maternity exemption certificate](https://www.nhsbsa.nhs.uk/exemption-certificates/maternity-exemption-certificates). It gets you free NHS prescriptions and dental care during pregnancy and for the first 12 months after the birth.
+
+### Private scans are a nice extra, not a necessity
+
+Some parents pay for extra private scans for additional pictures of the baby. We did a [4D scan](https://windowtothewomb.co.uk/private-baby-scan-packages/standard-4d-scan/) at [Window to the Womb](https://windowtothewomb.co.uk/). Whether it is worth the £120 or so is debatable. 😅
+
+### Reserve a nursery in the third trimester
+
+If you plan to use a nursery, reserve one in the third trimester, as waiting lists can be long. That is roughly a year before most children start, at the end of maternity leave. I shortlisted the three nearest nurseries, read their most recent [Ofsted inspection reports](https://reports.ofsted.gov.uk/) and Google reviews, and toured all three. Seeing the nursery in person and talking to the staff helped us make up our minds.
+
+See [Baby finance 101](/blog/baby-finance-101#nursery-can-cost-around-1000-a-month-or-more) for details on costs and funding.
+
+## Learn about pregnancy and parenting
+
+### Baby Buddy app lets you follow your pregnancy week by week
+
+[Baby Buddy](https://apps.apple.com/gb/app/baby-buddy-pregnancy-parent/id1548271681) is a free app that gives you NHS-aligned information about each week of pregnancy. We liked getting the info in small doses.
+
+<Figure
+ src="/blog/pregnancy-journey-in-england/assets/baby-buddy-app-daily-info.jpg"
+ size="s"
+ caption="Baby Buddy"
+ href="https://apps.apple.com/gb/app/baby-buddy-pregnancy-parent/id1548271681"
+/>
+
+### Two books helped us prepare
+
+<FigureGroup>
+ <Figure
+  src="/blog/pregnancy-journey-in-england/assets/what-to-expect-when-youre-expecting.jpg"
+  size="s"
+  caption="What to Expect When You're Expecting"
+  href="https://link.amazon/B066OEdd1"
+ />
+ <Figure
+  src="/blog/pregnancy-journey-in-england/assets/first-time-parent.jpg"
+  size="s"
+  caption="First-Time Parent"
+  href="https://link.amazon/B05WUtXbL"
+ />
+</FigureGroup>
+
+### Antenatal classes prepare you for the birth and introduce you to other parents
+
+Antenatal classes cover labour, birth, feeding and looking after a newborn. I recommend one, especially if you are a first-time parent. We did the [NCT antenatal course](https://www.nct.org.uk/courses-workshops/nct-antenatal-course), which starts from £239. There are other providers too, so just pick something close to you. A class also introduces you to parents going through the same thing, which we found reassuring. You may also make some friends, although we didn't manage to keep in touch with ours. 😅
+
+We also did a free course at our hospital consisting of three sessions, each three hours long. It covered less than the NCT course but showed us how our hospital works.
+
+### Learn baby first aid
+
+Learning baby first aid can give you some peace of mind. We just watched a playlist on YouTube, but it'd have been nice to attend an in-person workshop.
+
+<Youtube
+ playlist="PL6m52O1KNFG8b6nkLhK8UhQnNlDyWXP-2"
+ caption="Baby and child first aid videos."
+/>
+
+## Get your shopping done in your second trimester
+
+Aim to get most of your shopping done during your second trimester rather than leaving it late. My recommendations for the big-ticket items are in [Appendix A](#shopping-recommendations).
+
+### Get free nursery advice before you buy
+
+A free nursery advice appointment helps you work out what baby products are out there, and decide what you actually need or want. We signed up for the [John Lewis nursery advice](https://www.johnlewis.com/our-services/nursery-advice) and I highly recommend it. An adviser walks you through everything, answers any question you have, and gives you discount codes to use afterwards. There was no pressure to buy anything. The slots get booked out quickly, so book ahead.
+
+Alternatively, you could try the [Mamas & Papas personal shopping](https://www.mamasandpapas.com/pages/personal-shopping-in-store).
+
+### Buy second-hand where you can
+
+Babies grow out of things quickly, so many items are barely used. [Facebook Marketplace](https://www.facebook.com/marketplace/) is particularly good, as you can find something local and inspect it before you pay. We bought our child's high chair and push bike from there. The downside is that you may need to set an alert and wait a while before you can find what you want for a reasonable price.
+
+## Our birth plan and how it actually went
+
+Sometime during your third trimester, you will be asked to write a [birth plan](https://www.nhs.uk/best-start-in-life/pregnancy/preparing-for-labour-and-birth/what-to-include-in-your-birth-plan/#birth-plan-template) and discuss it with your midwife. It records how you would like your labour to go, from big decisions like where to give birth to little things like what background music, if any, you would like.
+
+In this section, I will cover some of the more important aspects, and also what our experience was actually like on the day.
+
+### You can give birth at home, a midwife-led birth centre or a labour ward
+
+The NHS gives you three main options for where to give birth ([NHS · Where to give birth: the options](https://www.nhs.uk/pregnancy/labour-and-birth/preparing-for-the-birth/where-to-give-birth-the-options/)). We decided to go with a labour ward for two reasons:
+
+1. Direct access to doctors, especially if something goes wrong.
+2. Epidurals, a pain-relief option, are only available in a labour ward.
+
+At our hospital, the `delivery suite` was a private room with an en-suite. We planned to get to the hospital by Uber, about a 45-minute ride in rush hour. We had our bags packed well in advance ([NHS · Pack your bag for labour](https://www.nhs.uk/pregnancy/labour-and-birth/preparing-for-the-birth/pack-your-bag-for-labour/)).
+
+### Choose your birth partners
+
+You can typically have up to two nominated birth partners during labour.
+
+My mother-in-law and I accompanied my wife. I found it comforting to have another person there to support me. My mother-in-law wasn't allowed in the temporary ward where my wife was first placed upon arrival, but she was able to join us in the delivery suite later.
+
+### Decide what pain relief options you want to use
+
+Each [pain relief method](https://www.nhs.uk/pregnancy/labour-and-birth/pain-relief-in-labour/) has trade-offs. My wife planned to rely mainly on [gas and air (Entonox)](https://www.nct.org.uk/information/labour-birth/pain-labour/gas-and-air-entonox-labour) as it is simple, seemingly low-risk, fast-acting, and she could decide how much to inhale and when. We decided to use an [epidural](https://www.nhs.uk/tests-and-treatments/epidural/), an injection in the back, as our backup, since it provides near-complete pain relief by numbing the lower body. The main drawbacks, for us, were that it can make it harder to push the baby out, and that it carries some risks.
+
+<FigureGroup>
+ <Figure
+  src="/blog/pregnancy-journey-in-england/assets/entonox.jpg"
+  alt="A patient inhaling gas and air through an Entonox mouthpiece"
+  size="s"
+  caption="Gas and air (Entonox)"
+  reference="Hull University Teaching Hospitals NHS Trust"
+  referenceHref="https://www.hey.nhs.uk/wp/wp-content/uploads/2017/06/Patient-Using-Entonox-Demand-Valve.jpg"
+ />
+ <Figure
+  src="/blog/pregnancy-journey-in-england/assets/epidural.jpg"
+  alt="Diagram of an epidural catheter inserted into the lower back"
+  size="s"
+  caption="Epidural"
+  reference="Cleveland Clinic"
+  referenceHref="https://my.clevelandclinic.org/-/scassets/images/org/health/articles/epidural"
+ />
+</FigureGroup>
+
+On the day, we arrived at the hospital because my wife was already in a lot of pain and wanted pain relief. She was moved to a temporary ward and offered gas and air. She didn't like it at all as it made her dizzy and sick. The pain was getting worse, so we asked for an epidural. However, we were told that the delivery suites were all occupied and we had to wait to be transferred to one before getting an epidural! There was a frustrating lack of communication from the staff while we waited. Six hours passed before she was moved to a delivery suite.
+
+Fortunately, we had an amazing anaesthetist and midwife. They gave the epidural quickly. It was really tough, as my wife had to stay absolutely still between contractions while the anaesthetist worked.
+
+This part was a horrible experience, and we later complained to the hospital in the hope that it would lead to improvements.
+
+### The midwife plays a big role
+
+Which midwife you get is luck of the draw. The midwife we got was excellent: attentive, caring and reassuring. There was a staff changeover around an hour after our child was born, and the second midwife was not so great.
+
+My wife could no longer feel the contractions due to the epidural. When the contractions came, the midwife urged my wife to push. She kept monitoring progress and the vital signs of both my wife and the baby. A couple of times, the midwife raised the alarm, for example when there was a change in the baby's heartbeat, and several doctors rushed into the room. It was a bit of a rollercoaster.
+
+### Assisted delivery
+
+We were keen to avoid ventouse (suction cup) or forceps delivery as they can leave marks or bruises on the baby. However, the doctor recommended a ventouse as the delivery was taking a long time and my wife was getting exhausted. As a result, our child had a bump on his head for a couple of months. This is normal, but still a bit disconcerting.
+
+When they delivered him and placed him on my wife, it was pretty surreal.
+
+## After delivery
+
+We stayed in the delivery suite for an hour or so longer. My wife couldn't walk too well, as the epidural hadn't completely worn off yet. She freshened up in the bathroom, and then we moved over to the maternity ward. It was night-time by now, and the hospital would only allow one person to stay over, on a chair, so I went home for the night.
+
+The next day, our baby had a physical examination and a hearing test at the hospital before we were discharged. We also got a child health record, known as the `red book`, which you take along to your child's health appointments.
+
+<Figure
+ src="/blog/pregnancy-journey-in-england/assets/red-book.jpg"
+ alt="A red personal child health record booklet in front of a baby"
+ size="m"
+ caption="The red book"
+ reference="NHS"
+ referenceHref="https://www.nhs.uk/baby/babys-development/height-weight-and-reviews/baby-reviews/"
+/>
+
+We used another Uber, with our own car seat, to get back home.
+
+## The fourth trimester
+
+### The first couple of months are brutal
+
+My wife's mum stayed with us for a couple of months to support us. I also took three weeks off. It was hard enough with three of us. I can't imagine how tough it'd have been otherwise, especially as first-time parents who are learning on the job. The mum also needs time to recover from the birth, which can take a few weeks or months.
+
+The hardest part was that newborns need feeding every two to three hours, 8 to 12 times or more every 24 hours ([NHS · Breastfeeding: the first few days](https://www.nhs.uk/baby/breastfeeding-and-bottle-feeding/breastfeeding/the-first-few-days/)). Our baby also started [spitting up](https://www.nhs.uk/conditions/reflux-in-babies/) after feeds, so we had to hold him upright for a while afterwards. A two-hour cycle left little time for sleep, especially for the breastfeeding mum. The only comfort is knowing it gets easier. 😅
+
+### Consider vitamin supplements
+
+The NHS recommends that everyone, including breastfeeding mothers, consider taking 10 micrograms of vitamin D a day during the autumn and winter months ([NHS · Breastfeeding and diet](https://www.nhs.uk/baby/breastfeeding-and-bottle-feeding/breastfeeding-and-lifestyle/diet/)). After the birth, my wife switched to [Pregnacare Breast-feeding](https://link.amazon/B0bSMpR84) multivitamin tablets, which include it.
+
+Your baby needs vitamin D too. The NHS has guidance on vitamin D drops for breastfed and formula-fed babies, and recommends that all children aged six months to five years take a daily supplement containing vitamins A, C and D ([NHS · Vitamins for children](https://www.nhs.uk/baby/weaning-and-feeding/vitamins-for-children/)).
+
+We started with [Baby Ddrops](https://link.amazon/B05F6Xfxb), a single drop of which contains 10 micrograms of vitamin D, and after six months we moved on to [Wellbaby Multivitamin Drops](https://link.amazon/B0b3XRZud). The Wellbaby drops come with a syringe that makes it really easy. Our child even likes it, although I don't think it tastes that good.
+
+<FigureGroup>
+ <Figure
+  src="/blog/pregnancy-journey-in-england/assets/pregnacare-breastfeeding.jpg"
+  size="s"
+  caption="Pregnacare Breast-feeding"
+  href="https://link.amazon/B0bSMpR84"
+ />
+ <Figure
+  src="/blog/pregnancy-journey-in-england/assets/baby-ddrops.jpg"
+  size="s"
+  caption="Baby Ddrops"
+  href="https://link.amazon/B05F6Xfxb"
+ />
+ <Figure
+  src="/blog/pregnancy-journey-in-england/assets/wellbaby-multivitamin-drops.jpg"
+  size="s"
+  caption="Wellbaby Multivitamin Drops"
+  href="https://link.amazon/B0b3XRZud"
+ />
+</FigureGroup>
+
+## Conclusion
+
+Having your first child means a lot to learn and do, but it's a wonderful journey to share with your partner, and later with your child. I hope this guide helps you plan yours. Ask questions or share your own tips in the comments below.
+
+## Appendix
+
+### Shopping recommendations
+
+#### Car seat
+
+If you plan to drive home from hospital, you need a car seat. Practise fitting it beforehand as it's not easy. Car seats shouldn't be bought second-hand or borrowed as they are safety equipment and you can't see or assess any internal damage. They are also, unfortunately, quite expensive.
+
+If you don't have a car, buying one for just the ride from the hospital to home may feel excessive. A black cab has room for a pram, and the law lets children under three ride in a taxi without a car seat ([gov.uk · Child car seats: the law](https://www.gov.uk/child-car-seats-the-rules/when-a-child-can-travel-without-a-car-seat)). However, do consider that newborns are particularly vulnerable in a crash, and child restraints can cut infant deaths by 71% ([WHO · Road traffic injuries](https://www.who.int/news-room/fact-sheets/detail/road-traffic-injuries)). You're also likely to use the car seat more than once.
+
+I like the BeSafe system, although it is on the pricier side.
+
+<FigureGroup>
+ <Figure
+  src="/blog/pregnancy-journey-in-england/assets/besafe-beyond-isofix-base.jpg"
+  size="s"
+  caption="BeSafe Beyond ISOFIX base"
+  href="https://www.johnlewis.com/besafe-beyond-isofix-car-seat-base-black/p113404276"
+ />
+ <Figure
+  src="/blog/pregnancy-journey-in-england/assets/besafe-go-beyond-isize.jpg"
+  size="s"
+  caption="BeSafe Go Beyond i-Size (birth to 18 months)"
+  href="https://www.johnlewis.com/besafe-go-beyond-isize-baby-car-seat-dark-sand-softbreeze/p114515182"
+ />
+ <Figure
+  src="/blog/pregnancy-journey-in-england/assets/besafe-beyond-360-isize.jpg"
+  size="s"
+  caption="BeSafe Beyond 360 i-Size (six months to six years)"
+  href="https://www.johnlewis.com/besafe-beyond-360-isize-car-seat-meadow-green-softbreeze/p114515180"
+ />
+</FigureGroup>
+
+The BeSafe system had the following features that I looked for:
+
+- An ISOFIX base, which secures the seat more reliably than the car's own seatbelt.
+- The seat swivels to face the door, making it easy to get your child in and out.
+- The toddler seat keeps your child rear-facing for longer, until around age six.
+- The base and toddler seat were slightly lighter than some of the alternatives we considered.
+- ADAC rated the BeSafe carrier [1.8](https://www.adac.de/rund-ums-fahrzeug/ausstattung-technik-zubehoer/kindersitze/kindersitztest/marken/besafe/besafe-go-beyond-plus-beyond-base-id-878/) and the toddler seat [2.4](https://www.adac.de/rund-ums-fahrzeug/ausstattung-technik-zubehoer/kindersitze/kindersitztest/marken/besafe/besafe-beyond-360-plus-beyond-base-id-912/).
+
+_ADAC is a German motoring organisation whose car seat tests are more thorough than the UK's legal minimum [R129, "i-Size" certification](https://www.which.co.uk/reviews/child-car-seats/article/car-seat-weight-groups-aKNNS4n1r8f8#what-is-isize-and-how-is-it-linked-to-r129). A lower ADAC score is better, and anything up to 2.5 is good._
+
+#### Pram
+
+The right pram depends on how you'll use it. We wanted a super lightweight one that was easy to pick up (as I have lower back pain), and small enough to use on London's buses and the Tube.
+
+I recommend the [Joolz Aer 2](https://link.amazon/B014mOrwW). At 6.5 kg, it is lightweight, easy to fold, and comes with a whopping [10-year transferable warranty](https://www.joolz.com/uk/en/joolz-warranty.html)! We have the Joolz Aer+, its predecessor, and are very happy with it. Plan your routes around stairs, though. Carrying a pram up a staircase usually takes two adults: one to carry the baby and one to carry the pram.
+
+<Figure
+ src="/blog/pregnancy-journey-in-england/assets/joolz-aer2.jpg"
+ size="s"
+ caption="Joolz Aer 2"
+ href="https://link.amazon/B014mOrwW"
+/>
+
+#### Carrier
+
+A carrier lets you keep your baby close while having your hands free. We were considering buying the [Ergobaby Omni Breeze](https://link.amazon/B0c9nSUZa), but fortunately our friends lent us their [BabyBjörn Harmony](https://link.amazon/B03iiBqlf), another well-regarded carrier, which worked really well for us. We used it until our baby was about a year old. As he got heavier, we relied on the pram instead.
+
+<FigureGroup>
+ <Figure
+  src="/blog/pregnancy-journey-in-england/assets/babybjorn-harmony.jpg"
+  size="s"
+  caption="BabyBjörn Harmony"
+  href="https://link.amazon/B03iiBqlf"
+ />
+ <Figure
+  src="/blog/pregnancy-journey-in-england/assets/ergobaby-omni-breeze-cropped.jpg"
+  size="s"
+  caption="Ergobaby Omni Breeze"
+  href="https://link.amazon/B0c9nSUZa"
+ />
+</FigureGroup>
+
+#### Cot
+
+We bought the [John Lewis Elementary cotbed](https://www.johnlewis.com/john-lewis-elementary-cotbed/misty-green/p5496144). It worked well for the first few months, but if you can find one, I'd recommend a cot with a door in the side. Once your baby can crawl, the base has to go to its lowest setting, and bending over the rail to lay them down is really tough on your back.
+
+For at least the first six months, the NHS advises putting your baby down in a separate cot or Moses basket in the same room as you, for every sleep ([NHS · Sudden infant death syndrome (SIDS)](https://www.nhs.uk/baby/caring-for-a-newborn/sudden-infant-death-syndrome-sids/)).
+
+<FigureGroup>
+ <Figure
+  src="/blog/pregnancy-journey-in-england/assets/john-lewis-elementary-cotbed-cropped.jpg"
+  size="s"
+  caption="John Lewis Elementary cotbed"
+  href="https://www.johnlewis.com/john-lewis-elementary-cotbed/misty-green/p5496144"
+ />
+ <Figure
+  src="/blog/pregnancy-journey-in-england/assets/john-lewis-pocket-spring-cotbed-mattress-cropped.jpg"
+  size="s"
+  caption="John Lewis Pocket Spring Cotbed Mattress, 140 x 70cm"
+  href="https://www.johnlewis.com/john-lewis-pocket-spring-cotbed-mattress/p114554683"
+ />
+</FigureGroup>
+
+#### High chair
+
+You won't need a high chair until your baby starts solid food at around six months, but this is an excellent candidate to buy second-hand. We have the [Stokke Tripp Trapp](https://link.amazon/B09iWLJy2) with the baby set and tray, which I preferred to plasticky alternatives. We got ours second-hand from Facebook Marketplace for around £120.
+
+<Figure
+ src="/blog/pregnancy-journey-in-england/assets/stokke-tripp-trapp.jpg"
+ size="m"
+ caption="Stokke Tripp Trapp with baby set and tray"
+ href="https://link.amazon/B09iWLJy2"
+/>
+
+### App recommendations
+
+These are the apps we found useful once the baby arrived.
+
+#### Baby Tracker
+
+[Baby Tracker - Newborn Log](https://apps.apple.com/gb/app/baby-tracker-newborn-log/id779656557) is useful for the first few months, while both baby and mum are getting used to breastfeeding. Doctors will typically ask how often your baby has fed and had wet or dirty nappies, which our sleep-deprived brains couldn't track. It is so much easier when it's all in the app.
+
+<Figure
+ src="/blog/pregnancy-journey-in-england/assets/baby-tracker-app.jpg"
+ size="s"
+ caption="Baby Tracker - Newborn Log"
+ href="https://apps.apple.com/gb/app/baby-tracker-newborn-log/id779656557"
+/>
+
+#### Baby Check
+
+[The Lullaby Trust Baby Check](https://apps.apple.com/gb/app/the-lullaby-trust-baby-check/id1013901455) helps you decide whether your baby needs to see a professional, based on their symptoms. We didn't use this much, though, as we almost always rang [NHS 111](https://111.nhs.uk/), or went to A&E if we were unsure about something. Better safe than sorry.
+
+<Figure
+ src="/blog/pregnancy-journey-in-england/assets/baby-check-app.jpg"
+ size="s"
+ caption="The Lullaby Trust Baby Check"
+ href="https://apps.apple.com/gb/app/the-lullaby-trust-baby-check/id1013901455"
+/>
+
+#### Growth
+
+[Growth: baby & child charts](https://apps.apple.com/gb/app/growth-baby-child-charts/id446639811) lets you log your child's weight and height and plot them on growth charts. While that's very practical, we also have a [wall height chart](https://link.amazon/B09T0iByy), which is more fun.
+
+<FigureGroup>
+ <Figure
+  src="/blog/pregnancy-journey-in-england/assets/growth-app.jpg"
+  size="s"
+  caption="Growth: baby & child charts"
+  href="https://apps.apple.com/gb/app/growth-baby-child-charts/id446639811"
+ />
+ <Figure
+  src="/blog/pregnancy-journey-in-england/assets/height-chart.jpg"
+  size="s"
+  caption="Wall height chart"
+  href="https://link.amazon/B09T0iByy"
+ />
+</FigureGroup>
+
+#### Braun Family Care
+
+The [Braun Family Care](https://apps.apple.com/gb/app/braun-family-care/id1518074095) app syncs readings from Braun thermometers. We got the [Braun ThermoScan 7+ connect](https://link.amazon/B0iPrh0dP) ear thermometer. It was not very useful at first, as a newborn's ear is too small to measure the temperature accurately. Later on, though, it was great for tracking temperatures during fevers and deciding when to give paracetamol or ibuprofen. We pair it with an underarm [digital stick thermometer](https://link.amazon/B0aOwL9p5) to double-check readings.
+
+<FigureGroup>
+ <Figure
+  src="/blog/pregnancy-journey-in-england/assets/braun-family-care-app.jpg"
+  size="s"
+  caption="Braun Family Care"
+  href="https://apps.apple.com/gb/app/braun-family-care/id1518074095"
+ />
+ <Figure
+  src="/blog/pregnancy-journey-in-england/assets/braun-thermoscan-7-plus-connect.jpg"
+  size="s"
+  caption="Braun ThermoScan 7+ connect"
+  href="https://link.amazon/B0iPrh0dP"
+ />
+ <Figure
+  src="/blog/pregnancy-journey-in-england/assets/digital-thermometer.jpg"
+  size="s"
+  caption="Digital thermometer"
+  href="https://link.amazon/B0aOwL9p5"
+ />
+</FigureGroup>
+
+#### First Bites
+
+At six months, when you start introducing solids, [First Bites](https://apps.apple.com/gb/app/first-bites-baby-food-tracker/id6744072787) helps you track exposure to common allergens. Introducing them early and regularly helps reduce the risk of developing an allergy ([NHS · Food allergies in babies and young children](https://www.nhs.uk/baby/weaning-and-feeding/food-allergies-in-babies-and-young-children/)). I stopped using the app after a few weeks because it felt like too much effort.
+
+<Figure
+ src="/blog/pregnancy-journey-in-england/assets/first-bites-app.jpg"
+ size="s"
+ caption="First Bites"
+ href="https://apps.apple.com/gb/app/first-bites-baby-food-tracker/id6744072787"
+/>
+
+#### Peanut
+
+[Peanut](https://apps.apple.com/gb/app/peanut-pregnancy-baby-mum/id1178656034) is useful for finding other mums nearby to spend time with during maternity leave. My wife made a few friends through it.
+
+<Figure
+ src="/blog/pregnancy-journey-in-england/assets/peanut-app.jpg"
+ size="s"
+ caption="Peanut"
+ href="https://apps.apple.com/gb/app/peanut-pregnancy-baby-mum/id1178656034"
+/>
