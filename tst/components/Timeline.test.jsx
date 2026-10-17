@@ -78,4 +78,12 @@ describe('Timeline', () => {
 
         expect(getByRole('link', { name: 'folic acid' })).toHaveAttribute('href', 'https://www.nhs.uk/medicines/folic-acid/')
     })
+
+    it('links the title when an href is given', () => {
+        const { getByRole } = render(
+            <Timeline items={[{ marker: 'marker1', title: 'Plan ahead', href: '#plan-ahead', iconName: 'start' }]} />
+        )
+
+        expect(getByRole('link', { name: 'Plan ahead' })).toHaveAttribute('href', '#plan-ahead')
+    })
 })

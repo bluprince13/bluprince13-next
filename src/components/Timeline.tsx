@@ -8,6 +8,7 @@ import TimelineSeparator from '@mui/lab/TimelineSeparator'
 import Timeline from '@mui/lab/Timeline'
 import Box from '@mui/material/Box'
 import Chip from '@mui/material/Chip'
+import Link from '@mui/material/Link'
 import Typography from '@mui/material/Typography'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import { useTheme } from '@mui/material/styles'
@@ -19,7 +20,8 @@ import type { IconName } from '@Components/MaterialIcon'
 interface TimelineItemData {
     marker: string
     title: string
-    description: string
+    href?: string
+    description?: string
     iconName: IconName
     color?: 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning' | 'inherit' | 'grey'
 }
@@ -31,7 +33,7 @@ interface PhaseData {
 
 type TimelineEntry = TimelineItemData | PhaseData
 
-const Item = ({ marker, title, description, iconName, color }: TimelineItemData) => (
+const Item = ({ marker, title, href, description, iconName, color }: TimelineItemData) => (
     <TimelineItem sx={{ '&::before': { flex: { xs: 0, sm: 1 }, padding: { xs: 0, sm: '6px 16px' } } }}>
         <TimelineOppositeContent
             sx={{ m: 'auto 0', flex: '1 1 0%', minWidth: 0, display: { xs: 'none', sm: 'block' } }}
@@ -53,7 +55,13 @@ const Item = ({ marker, title, description, iconName, color }: TimelineItemData)
                 {marker}
             </Typography>
             <Typography variant="h6" component="span">
-                {title}
+                {href ? (
+                    <Link href={href} underline="hover">
+                        {title}
+                    </Link>
+                ) : (
+                    title
+                )}
             </Typography>
             <Typography component="div" sx={{ '& p': { m: 0 } }}>
                 <Markdown remarkPlugins={[remarkCitations]}>{description}</Markdown>
