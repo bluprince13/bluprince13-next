@@ -100,6 +100,8 @@ Configured in `tsconfig.json` and `vitest.config.mts`:
 
 ## Writing an article
 
+Before writing, editing or reviewing the prose of a blog post, invoke the `elements-of-style:writing-clearly-and-concisely` skill and apply it alongside the house style below. Where the two conflict, the house style wins.
+
 ### Files to create
 
 1. `src/content/blog/<slug>.mdx` — the post. Slug is the kebab-cased title, e.g. `hiring-a-car-for-the-first-time`.
@@ -127,6 +129,7 @@ banner: /blog/<slug>/assets/banner.jpg
 ### Banner images
 
 - Landscape, roughly 16:9, around 1280–1800px wide, kept under ~500KB.
+- Use JPEG (or PNG), never SVG. The banner doubles as the Open Graph image, and WhatsApp, Facebook, LinkedIn and X don't render SVG link previews. Rasterise an SVG with `sips -s format jpeg -s formatOptions 85 banner.svg --out banner.jpg` and commit only the JPEG.
 - Crop and resize a phone photo with `sips`:
 
 ```bash
@@ -144,7 +147,7 @@ banner: /blog/<slug>/assets/banner.jpg
 ### House style
 
 - One paragraph per line — never hard-wrap inside a paragraph.
-- Cite sources inline as `[[Publisher - Page title](url)]`.
+- Cite sources inline as `([Publisher · Page title](url))`, with the link wrapped directly in parentheses so the remark plugin styles it as a quiet citation. The same markup works inside `Timeline`, `Table` and `ComparisonTable` strings.
 - Use backticks for terms of art being introduced, e.g. `mirror wills`.
 - End every sentence with punctuation, including inside `Table` and `ComparisonTable` cells and inside bullet points. Bare fragments such as `£20/day`, `1 year` or `Not specified` are not sentences and take no full stop.
 
