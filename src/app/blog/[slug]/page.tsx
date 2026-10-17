@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import Box from '@mui/material/Box'
 import Chip from '@mui/material/Chip'
@@ -21,9 +22,14 @@ export async function generateStaticParams() {
     return paths.map(p => p.params)
 }
 
+const getPostOrNotFound = (slug: string) => {
+    if (!getAllPostSlugs().some(p => p.params.slug === slug)) notFound()
+    return getPostDataAndContent(slug)
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params
-    const { data } = getPostDataAndContent(slug)
+    const { data } = getPostOrNotFound(slug)
     return genMetadataHelper({
         pageTitle: data.title,
         description: data.description,
@@ -35,7 +41,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params
-    const { data, content } = getPostDataAndContent(slug)
+    const { data, content } = getPostOrNotFound(slug)
     const [Post, relatedPosts] = await Promise.all([
         evaluateBlogMdx(content),
         Promise.resolve(getRelatedPosts(data, getSortedPosts()))
