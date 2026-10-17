@@ -15,7 +15,8 @@ import { MyComments, MyCommentCount } from '@Components/Comments'
 import Subscribe from '@Components/Subscribe'
 import ShareBar from '@Components/ShareBar'
 import { RelatedPosts } from '@Components/blog/RelatedPosts'
-import TableOfContents, { POST_CONTENT_ID } from '@Components/blog/TableOfContents'
+import TableOfContents from '@Components/blog/TableOfContents'
+import { COMMENTS_ID, POST_CONTENT_ID } from '@Modules/postAnchors'
 
 export async function generateStaticParams() {
     const paths = getAllPostSlugs()
@@ -84,7 +85,9 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
                 <ShareBar title={data.title} url={data.href} />
                 <RelatedPosts posts={relatedPosts} />
                 <Subscribe />
-                <MyComments id={data.slug} />
+                <Box id={COMMENTS_ID}>
+                    <MyComments id={data.slug} />
+                </Box>
             </Box>
             <TableOfContents />
         </>

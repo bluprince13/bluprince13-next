@@ -95,4 +95,16 @@ describe('TableOfContents', () => {
 
         expect(within(container).queryByText('More articles')).toBeNull()
     })
+
+    it('ends with a link to the comments when the page has them', () => {
+        renderArticle(sampleHeadings)
+        const comments = document.createElement('div')
+        comments.id = 'comments'
+        document.body.appendChild(comments)
+        const { container } = render(<TableOfContents />)
+
+        const links = within(container).getAllByRole('link', { hidden: true })
+        expect(links[links.length - 1]).toHaveAttribute('href', '#comments')
+        expect(links[links.length - 1]).toHaveTextContent('Comments')
+    })
 })

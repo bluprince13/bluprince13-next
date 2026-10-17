@@ -7,8 +7,8 @@ import List from '@mui/material/List'
 import ListItemButton from '@mui/material/ListItemButton'
 import Paper from '@mui/material/Paper'
 import Typography from '@mui/material/Typography'
+import { COMMENTS_ID, POST_CONTENT_ID } from '@Modules/postAnchors'
 
-export const POST_CONTENT_ID = 'post-content'
 
 // The rail lives inside the horizontal padding <main> reserves from `sm` up (40px),
 // so it never sits on top of the article text. EDGE_INSET clears an overlay
@@ -37,9 +37,13 @@ function readHeadings(): Heading[] {
     const article = document.getElementById(POST_CONTENT_ID)
     if (!article) return []
 
-    return Array.from(article.querySelectorAll<HTMLHeadingElement>('h2, h3'))
+    const headings = Array.from(article.querySelectorAll<HTMLHeadingElement>('h2, h3'))
         .filter(h => h.id && h.id !== 'table-of-contents')
         .map(h => ({ id: h.id, text: headingText(h), level: Number(h.tagName[1]) }))
+
+    return document.getElementById(COMMENTS_ID)
+        ? [...headings, { id: COMMENTS_ID, text: 'Comments', level: 2 }]
+        : headings
 }
 
 function useActiveHeading(headings: Heading[]) {
