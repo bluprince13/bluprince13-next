@@ -12,7 +12,7 @@ export const siteMetadata: Metadata = {
         types: {
             'application/rss+xml': `${SITE_ROOT}/feed.xml`,
             'application/atom+xml': `${SITE_ROOT}/atom.xml`,
-            'application/json': `${SITE_ROOT}/feed.json`
+            'application/feed+json': `${SITE_ROOT}/feed.json`
         }
     },
     openGraph: {

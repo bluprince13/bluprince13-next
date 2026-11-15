@@ -36,3 +36,18 @@ for (const { path, heading } of KEY_PAGES) {
         expect(consoleErrors, `Console errors on ${path}: ${consoleErrors.join(', ')}`).toHaveLength(0)
     })
 }
+
+const FEEDS = [
+    { path: '/feed.xml', contentType: 'application/rss+xml', marker: '<rss' },
+    { path: '/atom.xml', contentType: 'application/atom+xml', marker: '<feed' },
+    { path: '/feed.json', contentType: 'application/feed+json', marker: '"items"' },
+]
+
+for (const { path, contentType, marker } of FEEDS) {
+    test(`${path} serves the feed`, async ({ request }) => {
+        const response = await request.get(path)
+        expect(response.status()).toBe(200)
+        expect(response.headers()['content-type']).toContain(contentType)
+        expect(await response.text()).toContain(marker)
+    })
+}

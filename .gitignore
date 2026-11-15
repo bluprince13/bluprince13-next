@@ -47,9 +47,6 @@ tsconfig.tsbuildinfo
 
 # custom
 /public/pagefind/
-**/feed.xml
-**/feed.json
-**/atom.xml
 !.vscode/launch.json
 .idea
 next-env.d.ts
