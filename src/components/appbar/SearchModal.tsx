@@ -14,6 +14,9 @@ import ArticleOutlinedIcon from '@mui/icons-material/ArticleOutlined'
 import SearchIcon from '@mui/icons-material/Search'
 import SearchOffIcon from '@mui/icons-material/SearchOff'
 import { getAllTags, getPagefind, type PagefindResult } from '@Modules/pagefind'
+import { track } from '@Modules/analytics'
+
+const SEARCH_TRACK_DELAY_MS = 1500
 
 function highlightTitle(title: string, query: string): string {
     if (!query.trim()) return title
@@ -30,6 +33,7 @@ export default function SearchModal({ open, onClose }: { open: boolean; onClose:
     const router = useRouter()
     const inputRef = useRef<HTMLInputElement>(null)
     const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+    const trackRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
     const hashIndex = query.indexOf('#')
     const isTagMode = hashIndex !== -1
@@ -67,6 +71,7 @@ export default function SearchModal({ open, onClose }: { open: boolean; onClose:
             return
         }
         debounceRef.current = setTimeout(async () => {
+            if (trackRef.current) clearTimeout(trackRef.current)
             setLoading(true)
             try {
                 const pf = await getPagefind()
@@ -76,6 +81,14 @@ export default function SearchModal({ open, onClose }: { open: boolean; onClose:
                 const data = await Promise.all(search.results.slice(0, 8).map(r => r.data()))
                 setResults(data)
                 setActiveIndex(0)
+                const trimmed = textQuery.trim()
+                if (trimmed) {
+                    // Searches run on every keystroke, so record only the query the reader paused on.
+                    trackRef.current = setTimeout(
+                        () => track('search', { query: trimmed.slice(0, 50), results: search.results.length }),
+                        SEARCH_TRACK_DELAY_MS
+                    )
+                }
             } finally {
                 setLoading(false)
             }

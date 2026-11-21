@@ -7,9 +7,10 @@ import theme from '@Modules/theme'
 import '@Styles/globals.css'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Analytics } from "@vercel/analytics/react"
-import { GoogleAnalytics } from '@next/third-parties/google'
 import AppBar from '@Components/appbar/AppBar'
 import Footer from '@Components/Footer'
+import { UmamiAnalytics } from '@Components/metrics/UmamiAnalytics'
+import { OutboundLinkTracker } from '@Components/metrics/OutboundLinkTracker'
 
 const Layout = ({ children }: { children: React.ReactNode }) => (
     <div
@@ -38,7 +39,8 @@ export const AppBody = ({ children }: { children: React.ReactNode }) => {
     return (
         <>
             <Analytics />
-            <GoogleAnalytics gaId="G-Y7P3Z69032" />
+            <UmamiAnalytics />
+            <OutboundLinkTracker />
             <CssVarsProvider theme={theme}>
                 <CssBaseline />
                 <Layout>

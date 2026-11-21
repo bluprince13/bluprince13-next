@@ -16,6 +16,7 @@ import Subscribe from '@Components/Subscribe'
 import ShareBar from '@Components/ShareBar'
 import { RelatedPosts } from '@Components/blog/RelatedPosts'
 import TableOfContents from '@Components/blog/TableOfContents'
+import ReadProgress from '@Components/blog/metrics/ReadProgress'
 import { COMMENTS_ID, POST_CONTENT_ID } from '@Modules/postAnchors'
 
 export async function generateStaticParams() {
@@ -90,6 +91,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
                 </Box>
             </Box>
             <TableOfContents />
+            <ReadProgress slug={data.slug} />
         </>
     )
 }
