@@ -12,10 +12,6 @@ vi.mock('next/navigation', () => ({
     useSearchParams: () => ({ getAll: mockGetAll, get: mockGet }),
 }))
 
-vi.mock('@Components/blog/ViewCounter', () => ({
-    ViewCount: ({ slug }: { slug: string }) => <span>{slug} views</span>,
-}))
-
 const defaultProps = {
     slug: 'my-post',
     title: 'My Test Post',
@@ -25,6 +21,7 @@ const defaultProps = {
     wordCount: 500,
     readingTime: 5,
     excerpt: 'This is a short excerpt about the post.',
+    viewCount: 1234,
 }
 
 describe('PostCard', () => {

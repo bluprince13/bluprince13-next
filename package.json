@@ -34,7 +34,6 @@
         "comma-number": "2.1.0",
         "d3": "7.9.0",
         "feed": "4.2.2",
-        "firebase-admin": "12.1.1",
         "github-slugger": "2.0.0",
         "gray-matter": "4.0.3",
         "mdast-util-to-string": "4.0.0",

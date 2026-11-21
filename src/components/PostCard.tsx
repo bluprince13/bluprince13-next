@@ -12,12 +12,11 @@ import { useRouter, useSearchParams } from 'next/navigation'
 import type { PostData } from '@Modules/posts'
 import { parseSort } from '@Modules/blogSort'
 import { buildBlogUrl } from '@Modules/blogUrl'
-import { ViewCount } from '@Components/blog/ViewCounter'
 
 export type PostCardProps = Pick<
     PostData,
     'slug' | 'title' | 'banner' | 'dateFormatted' | 'categories' | 'readingTime' | 'excerpt'
-> & { initialViewCount?: number; commentCount?: number; priority?: boolean }
+> & { viewCount: number; commentCount?: number; priority?: boolean }
 
 export default function PostCard({
     slug,
@@ -27,7 +26,7 @@ export default function PostCard({
     categories,
     readingTime,
     excerpt,
-    initialViewCount,
+    viewCount,
     commentCount,
     priority = false,
 }: PostCardProps) {
@@ -103,7 +102,7 @@ export default function PostCard({
                         <Typography variant="caption" color="text.secondary" sx={{ display: 'flex', gap: 0.5 }}>
                             <span>{dateFormatted} · {readingTime} min read</span>
                             <span>·</span>
-                            <ViewCount slug={slug} initialCount={initialViewCount} />
+                            <span>{format(viewCount)} views</span>
                             <span>·</span>
                             <span>
                                 {format(commentCount ?? 0)}{' '}

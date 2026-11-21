@@ -10,7 +10,7 @@ import { mdxComponents } from '@Modules/mdxComponents'
 import { buildBlogUrl } from '@Modules/blogUrl'
 import Title from '@Components/Title'
 import Breadcrumbs from '@Components/blog/Breadcrumbs'
-import BlogPostViewCounter from '@Components/blog/ViewCounter'
+import format from 'comma-number'
 import { MyComments, MyCommentCount } from '@Components/Comments'
 import Subscribe from '@Components/Subscribe'
 import ShareBar from '@Components/ShareBar'
@@ -18,6 +18,9 @@ import { RelatedPosts } from '@Components/blog/RelatedPosts'
 import TableOfContents from '@Components/blog/TableOfContents'
 import ReadProgress from '@Components/blog/metrics/ReadProgress'
 import { COMMENTS_ID, POST_CONTENT_ID } from '@Modules/postAnchors'
+import { getLifetimeViews } from '@Modules/views'
+
+export const revalidate = 3600
 
 export async function generateStaticParams() {
     const paths = getAllPostSlugs()
@@ -44,10 +47,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params
     const { data, content } = getPostOrNotFound(slug)
-    const [Post, relatedPosts] = await Promise.all([
-        evaluateBlogMdx(content),
-        Promise.resolve(getRelatedPosts(data, getSortedPosts()))
-    ])
+    const [Post, views] = await Promise.all([evaluateBlogMdx(content), getLifetimeViews()])
+    const relatedPosts = getRelatedPosts(data, getSortedPosts())
 
     return (
         <>
@@ -66,7 +67,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
                 <Box sx={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', flexWrap: 'wrap', gap: 1 }}>
                     <Box>
                         <div>{data.dateFormatted}</div>
-                        <BlogPostViewCounter slug={data.slug} />
+                        <div>{format(views[data.slug] ?? 0)} views</div>
                         <MyCommentCount id={data.slug} />
                     </Box>
                     <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 0.5 }}>

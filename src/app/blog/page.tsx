@@ -6,7 +6,7 @@ import BlogIndex from '@Components/BlogIndex'
 import { getSortedPosts } from '@Modules/posts'
 import { generateMetadata } from '@Modules/metadata'
 import { getCommentCounts } from '@Modules/hyvor'
-import db from '@Modules/firebase'
+import { getLifetimeViews } from '@Modules/views'
 
 export const revalidate = 3600
 
@@ -18,15 +18,14 @@ export const metadata = generateMetadata({
 
 const BlogPage = async () => {
     const allPostsData = getSortedPosts()
-    const [snapshot, commentCounts] = await Promise.all([
-        db.ref('views').once('value'),
+    const [viewCounts, commentCounts] = await Promise.all([
+        getLifetimeViews(),
         getCommentCounts(),
     ])
-    const viewCounts: Record<string, number> = snapshot.val() ?? {}
 
     const posts = allPostsData.map(post => ({
         ...post,
-        initialViewCount: viewCounts[post.slug],
+        viewCount: viewCounts[post.slug] ?? 0,
         commentCount: commentCounts[post.slug] ?? 0,
     }))
 

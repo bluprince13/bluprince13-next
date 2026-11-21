@@ -15,7 +15,7 @@ export const SORT_LABELS: Record<SortField, string> = {
 export type SortablePost = {
     slug: string
     dateISO?: string
-    initialViewCount?: number
+    viewCount?: number
     commentCount?: number
 }
 
@@ -36,7 +36,7 @@ function timestamp(post: SortablePost): number {
 function sortValue(post: SortablePost, field: SortField): number {
     switch (field) {
         case 'views':
-            return post.initialViewCount ?? 0
+            return post.viewCount ?? 0
         case 'comments':
             return post.commentCount ?? 0
         case 'date':

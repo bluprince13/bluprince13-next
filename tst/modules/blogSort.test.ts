@@ -1,9 +1,9 @@
 import { DEFAULT_SORT, parseSort, sortPosts } from '@Modules/blogSort'
 
 const posts = [
-    { slug: 'b', dateISO: '2024-01-02', initialViewCount: 50, commentCount: 3 },
-    { slug: 'a', dateISO: '2024-01-03', initialViewCount: 10, commentCount: 9 },
-    { slug: 'c', dateISO: '2024-01-01', initialViewCount: 90, commentCount: 0 },
+    { slug: 'b', dateISO: '2024-01-02', viewCount: 50, commentCount: 3 },
+    { slug: 'a', dateISO: '2024-01-03', viewCount: 10, commentCount: 9 },
+    { slug: 'c', dateISO: '2024-01-01', viewCount: 90, commentCount: 0 },
 ]
 
 const slugs = (sorted: { slug: string }[]) => sorted.map(p => p.slug)
@@ -48,7 +48,7 @@ describe('sortPosts', () => {
     it('treats missing counts as zero', () => {
         const withMissing = [
             { slug: 'none', dateISO: '2024-01-01' },
-            { slug: 'some', dateISO: '2024-01-02', initialViewCount: 5 },
+            { slug: 'some', dateISO: '2024-01-02', viewCount: 5 },
         ]
         expect(slugs(sortPosts(withMissing, { field: 'views', direction: 'desc' }))).toEqual([
             'some',

@@ -27,7 +27,7 @@ const posts = [
         wordCount: 300,
         readingTime: 3,
         excerpt: 'Excerpt A',
-        initialViewCount: 30,
+        viewCount: 30,
         commentCount: 1,
     },
     {
@@ -40,7 +40,7 @@ const posts = [
         wordCount: 500,
         readingTime: 5,
         excerpt: 'Excerpt B',
-        initialViewCount: 10,
+        viewCount: 10,
         commentCount: 7,
     },
     {
@@ -53,7 +53,7 @@ const posts = [
         wordCount: 200,
         readingTime: 2,
         excerpt: 'Excerpt C',
-        initialViewCount: 20,
+        viewCount: 20,
         commentCount: 4,
     },
 ]
