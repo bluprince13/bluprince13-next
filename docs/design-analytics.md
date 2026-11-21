@@ -155,7 +155,8 @@ Pageviews, referrers, UTM parameters, countries and devices come for free. Add t
 | --- | --- | --- |
 | `read-progress` | `slug`, `depth` (25, 50, 75, 100) | Do readers finish posts? Where do they drop off? |
 | `search` | `query`, `results` (count) | What do readers look for? Which queries find nothing, and so suggest new posts? |
-| `outbound-click` | `url`, `slug` | Which citations and recommendations get followed? |
+| `outbound-click` | `url`, `page` | Which citations and recommendations get followed? |
+| `referral-click` | `programme`, `url`, `page` | Which referral links get clicked, and on which posts? Sign-ups and earnings stay in each programme's own dashboard and never go into Umami. |
 | `related-post-click` | `from`, `to` | Does the related-posts block keep readers on the site? |
 | `toc-click` | `slug`, `heading` | Which sections draw readers in long posts? |
 | `blog-filter` | `tag`, `sort` | How do readers browse the index? |

@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react'
 import { track } from '@Modules/analytics'
+import { referralProgramme } from '@Modules/referral'
 
 export function outboundUrl(href: string, currentHost: string): string | null {
     let url: URL
@@ -20,7 +21,11 @@ export function OutboundLinkTracker() {
             const anchor = (event.target as Element | null)?.closest?.('a[href]') as HTMLAnchorElement | null
             if (!anchor) return
             const url = outboundUrl(anchor.href, window.location.host)
-            if (url) track('outbound-click', { url, page: window.location.pathname })
+            if (!url) return
+            const page = window.location.pathname
+            track('outbound-click', { url, page })
+            const programme = referralProgramme(anchor.href)
+            if (programme) track('referral-click', { programme, url, page })
         }
         // Capture phase, so links whose handlers stop propagation are still counted.
         document.addEventListener('click', onClick, true)

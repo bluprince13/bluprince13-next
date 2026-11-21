@@ -5,6 +5,7 @@ export type AnalyticsEvent =
     | 'read-progress'
     | 'search'
     | 'outbound-click'
+    | 'referral-click'
     | 'related-post-click'
     | 'toc-click'
     | 'blog-filter'
