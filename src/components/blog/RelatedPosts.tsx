@@ -9,7 +9,13 @@ import type { PostData } from '@Modules/posts'
 function RelatedPostCard({ slug, title, dateFormatted, banner, categories }: PostData) {
     return (
         <Link href={`/blog/${slug}`} style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
-            <Card variant="outlined" sx={{ height: '100%', transition: 'box-shadow 0.2s', '&:hover': { boxShadow: 3 } }}>
+            {/* Tagged inside the link: Umami reloads the page when the tagged element is the <a> itself. */}
+            <Card
+                variant="outlined"
+                data-umami-event="related-post-click"
+                data-umami-event-to={slug}
+                sx={{ height: '100%', transition: 'box-shadow 0.2s', '&:hover': { boxShadow: 3 } }}
+            >
                 <Box sx={{ position: 'relative', width: '100%', aspectRatio: '16/9' }}>
                     <Image src={banner} alt={title} fill sizes="(min-width: 600px) 33vw, 75vw" style={{ objectFit: 'cover' }} />
                 </Box>

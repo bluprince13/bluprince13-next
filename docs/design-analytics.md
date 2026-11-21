@@ -157,13 +157,12 @@ Pageviews, referrers, UTM parameters, countries and devices come for free. Add t
 | `search` | `query`, `results` (count) | What do readers look for? Which queries find nothing, and so suggest new posts? |
 | `outbound-click` | `url`, `page` | Which citations and recommendations get followed? |
 | `referral-click` | `programme`, `url`, `page` | Which referral links get clicked, and on which posts? Sign-ups and earnings stay in each programme's own dashboard and never go into Umami. |
-| `related-post-click` | `from`, `to` | Does the related-posts block keep readers on the site? |
-| `toc-click` | `slug`, `heading` | Which sections draw readers in long posts? |
-| `blog-filter` | `tag`, `sort` | How do readers browse the index? |
-| `subscribe-click` | `method` (rss, atom, json, email) | Does the subscribe section work? |
-| `share-click` | `network`, `slug` | Which posts get shared, and where? |
-| `code-copy` | `slug`, `language` | Which technical posts get used as references? |
-| `404` | `path` | Which broken inbound links need redirects? |
+| `related-post-click` | `to` | Does the related-posts block keep readers on the site? |
+| `blog-filter` | `tag` | Which tags do readers filter the index by? |
+| `subscribe-click` | `method` (email, rss) | Does the subscribe section work? |
+| `share-click` | `network` | Which posts get shared, and where? |
+
+Umami stores the page URL with every event, so events that don't name the post in a property can still be broken down by page. `code-copy` waits for a copy button on code blocks. Broken links need no event: Next's default 404 page records a pageview titled "404: This page could not be found.", so filter pageviews by that title in Umami. Feed subscriptions are counted only as `subscribe-click`: the feeds are static and served from Vercel's cache, so counting fetches would need a proxy and a separate Umami website.
 
 Self-hosted Umami has no event quota, but keep properties to two or three per event and fire `read-progress` at most four times per view, so storage stays small. At current traffic most events will have small counts; read them quarterly rather than monthly.
 
@@ -183,9 +182,16 @@ Readers reach the proxied apps and slides at `bluprince13.com` URLs, so add the 
     data-website-id={UMAMI_WEBSITE_ID}
     data-domains="bluprince13.com"
     data-exclude-search="true"
+    data-before-send="umamiBeforeSend"
+    data-performance="true"
+    data-errors="true"
     strategy="afterInteractive"
 />
 ```
+
+- `data-performance` reports LCP, INP, CLS, FCP and TTFB for each page, so Speed Insights can go after the comparison.
+- `data-errors` reports uncaught JavaScript errors.
+- `data-exclude-search` also strips `utm_*` tags, which would leave the UTM and attribution reports empty. `umamiBeforeSend` (`src/modules/umamiBeforeSend.ts`, registered on `window` from client code before the tracker loads) puts back only the `utm_*` parameters on pageviews.
 
 `UMAMI_HOST` is `https://metrics.bluprince13.com`. The website ID is public by nature, since it appears in every page's HTML, so it lives in code rather than an environment variable. The tracker sends events back to the host it loaded from. `data-exclude-search` stops query strings, which can carry personal details, from being stored.
 

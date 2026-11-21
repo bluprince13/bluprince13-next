@@ -16,6 +16,33 @@ describe('track', () => {
     })
 
     it('does nothing when the tracker has not loaded', () => {
-        expect(() => track('404', { path: '/missing' })).not.toThrow()
+        expect(() => track('blog-filter', { tag: 'uk' })).not.toThrow()
+    })
+})
+
+describe('track before the tracker loads', () => {
+    afterEach(() => {
+        vi.useRealTimers()
+        delete window.umami
+    })
+
+    it('sends the event once the tracker appears', () => {
+        vi.useFakeTimers()
+        const umamiTrack = vi.fn()
+
+        track('blog-filter', { tag: 'uk' })
+        window.umami = { track: umamiTrack }
+        vi.advanceTimersByTime(500)
+
+        expect(umamiTrack).toHaveBeenCalledWith('blog-filter', { tag: 'uk' })
+    })
+
+    it('gives up if the tracker never loads', () => {
+        vi.useFakeTimers()
+
+        track('blog-filter', { tag: 'uk' })
+        vi.runAllTimers()
+
+        expect(vi.getTimerCount()).toBe(0)
     })
 })

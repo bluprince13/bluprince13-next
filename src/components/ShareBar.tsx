@@ -60,7 +60,7 @@ const ShareBar = ({ title, url }: { title: string; url: string }) => {
                     Please share! <span role="img" aria-label="folded hands">🙏</span>
                 </Typography>
             </div>
-            <div className={classes.network}>
+            <div className={classes.network} data-umami-event="share-click" data-umami-event-network="facebook">
                 <FacebookShareButton url={url} className={classes.shareButton}>
                     <FacebookIcon size={32} round />
                 </FacebookShareButton>
@@ -71,19 +71,19 @@ const ShareBar = ({ title, url }: { title: string; url: string }) => {
                 </span>
             </div>
 
-            <div className={classes.network}>
+            <div className={classes.network} data-umami-event="share-click" data-umami-event-network="twitter">
                 <TwitterShareButton url={url} title={title} className={classes.shareButton}>
                     <TwitterIcon size={32} round />
                 </TwitterShareButton>
             </div>
 
-            <div className={classes.network}>
+            <div className={classes.network} data-umami-event="share-click" data-umami-event-network="linkedin">
                 <LinkedinShareButton url={url} className={classes.shareButton}>
                     <LinkedinIcon size={32} round />
                 </LinkedinShareButton>
             </div>
 
-            <div className={classes.network}>
+            <div className={classes.network} data-umami-event="share-click" data-umami-event-network="reddit">
                 <RedditShareButton
                     url={url}
                     title={title}

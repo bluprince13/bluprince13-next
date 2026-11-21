@@ -13,6 +13,9 @@ vi.mock('next/navigation', () => ({
     useSearchParams: () => ({ getAll: mockGetAll, get: mockGet }),
 }))
 
+const { mockTrack } = vi.hoisted(() => ({ mockTrack: vi.fn() }))
+vi.mock('@Modules/analytics', () => ({ track: mockTrack }))
+
 vi.mock('@Components/PostCard', () => ({
     default: ({ title, viewCount }: { title: string; viewCount: number | null }) => (
         <div data-views={viewCount ?? 'loading'}>{title}</div>
@@ -229,5 +232,30 @@ describe('BlogIndex', () => {
             within(screen.getByRole('menu')).getByRole('menuitem', { name: 'Sort by Comments' })
         )
         expect(mockPush).toHaveBeenCalledWith('/blog?tag=react&sort=comments')
+    })
+})
+
+describe('BlogIndex filter tracking', () => {
+    beforeEach(() => {
+        mockTrack.mockClear()
+        mockGetAll.mockReturnValue([])
+        mockGet.mockReturnValue(null)
+    })
+
+    it('does not count the unfiltered index', () => {
+        render(<BlogIndex posts={posts} />)
+        expect(mockTrack).not.toHaveBeenCalled()
+    })
+
+    it('counts a tag filter', () => {
+        mockGetAll.mockReturnValue(['react'])
+        render(<BlogIndex posts={posts} />)
+        expect(mockTrack).toHaveBeenCalledWith('blog-filter', { tag: 'react' })
+    })
+
+    it('does not count a sort change without tags', () => {
+        mockGet.mockImplementation((key: string) => (key === 'sort' ? 'views' : null))
+        render(<BlogIndex posts={posts} />)
+        expect(mockTrack).not.toHaveBeenCalled()
     })
 })

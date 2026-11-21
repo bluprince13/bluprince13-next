@@ -18,11 +18,11 @@ function Subscribe() {
                 </div>
                 <div style={{ marginTop: '1rem' }}>
                     Subscribe to email via {' '}
-                    <a href="https://buttondown.email/bluprince13">buttondown.email/bluprince13</a>.
+                    <a href="https://buttondown.email/bluprince13" data-umami-event="subscribe-click" data-umami-event-method="email">buttondown.email/bluprince13</a>.
                 </div>
                 <div style={{ marginTop: '1rem' }}>
                     Prefer RSS? Subscribe to my{' '}
-                    <a href="https://bluprince13.com/feed.xml">RSS feed</a>.
+                    <a href="https://bluprince13.com/feed.xml" data-umami-event="subscribe-click" data-umami-event-method="rss">RSS feed</a>.
                 </div>
         </Box>
     )

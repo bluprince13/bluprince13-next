@@ -7,12 +7,9 @@ export type AnalyticsEvent =
     | 'outbound-click'
     | 'referral-click'
     | 'related-post-click'
-    | 'toc-click'
     | 'blog-filter'
     | 'subscribe-click'
     | 'share-click'
-    | 'code-copy'
-    | '404'
 
 type EventData = Record<string, string | number>
 
@@ -22,6 +19,12 @@ declare global {
     }
 }
 
-export function track(event: AnalyticsEvent, data?: EventData) {
-    window.umami?.track(event, data)
+const RETRY_MS = 500
+const MAX_RETRIES = 10
+
+// Events fired on mount can beat the afterInteractive tracker script, so wait
+// a few seconds for it rather than dropping them. Blocked trackers never load.
+export function track(event: AnalyticsEvent, data?: EventData, retries = MAX_RETRIES) {
+    if (window.umami) window.umami.track(event, data)
+    else if (retries > 0) setTimeout(() => track(event, data, retries - 1), RETRY_MS)
 }

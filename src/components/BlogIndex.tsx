@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Box from '@mui/material/Box'
@@ -8,6 +9,7 @@ import Typography from '@mui/material/Typography'
 import PostCard, { type PostCardProps } from '@Components/PostCard'
 import BlogSortMenu from '@Components/BlogSortMenu'
 import { parseSort, sortPosts, type Sort } from '@Modules/blogSort'
+import { track } from '@Modules/analytics'
 import { buildBlogUrl } from '@Modules/blogUrl'
 import { resolveViews, useLiveViews } from '@Components/blog/useLiveViews'
 
@@ -31,6 +33,12 @@ export default function BlogIndex({ posts }: Props) {
         activeTags.length ? posts.filter(p => activeTags.every(t => p.categories.includes(t))) : posts
     ).map(post => ({ ...post, viewCount: resolveViews(live, post.slug, post.viewCount) ?? post.viewCount }))
     const visiblePosts = sortPosts(filteredPosts, sort)
+
+    // Keyed on the query string, so it also counts tag links followed from posts.
+    const tags = activeTags.join(',')
+    useEffect(() => {
+        if (tags) track('blog-filter', { tag: tags })
+    }, [tags])
 
     return (
         <>
