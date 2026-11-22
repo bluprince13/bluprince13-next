@@ -4,7 +4,6 @@ import matter from 'gray-matter'
 import { cache } from 'react'
 
 const postDirectory = path.join(process.cwd(), 'src/content/blog')
-const { SITE_ROOT } = process.env
 
 export type PostData = {
     slug: string
@@ -68,6 +67,7 @@ export const getPostDataAndContent = cache((slug): GetPostDataAndContentOutput =
             ? introPlain.slice(0, 300).trimEnd() + '…'
             : introPlain
 
+    const { SITE_ROOT } = process.env
     const modifiedData = {
         slug,
         ...data,

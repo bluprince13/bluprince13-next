@@ -1,16 +1,14 @@
 'use client'
 
 import {
-    FacebookShareCount,
-    RedditShareCount,
     FacebookShareButton,
     LinkedinShareButton,
     RedditShareButton,
-    TwitterShareButton,
-    FacebookIcon,
-    TwitterIcon,
-    LinkedinIcon,
-    RedditIcon
+    XShareButton,
+    FacebookLegacyIcon,
+    XLegacyIcon,
+    LinkedinLegacyIcon,
+    RedditLegacyIcon
 } from 'react-share'
 import { styled } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
@@ -20,7 +18,6 @@ const PREFIX = 'ShareBar'
 const classes = {
     root: `${PREFIX}-root`,
     network: `${PREFIX}-network`,
-    shareCount: `${PREFIX}-shareCount`,
     shareButton: `${PREFIX}-shareButton`
 }
 
@@ -32,16 +29,6 @@ const Root = styled('div')(() => ({
         display: 'inline-block',
         marginRight: '10px',
         textAlign: 'center'
-    },
-
-    [`& .${classes.shareCount}`]: {
-        display: 'inline-flex',
-        justifyContent: 'center',
-        whiteSpace: 'nowrap',
-        overflow: 'visible',
-        width: 0,
-        marginTop: '3px',
-        fontSize: '12px'
     },
 
     [`& .${classes.shareButton}`]: {
@@ -62,40 +49,32 @@ const ShareBar = ({ title, url }: { title: string; url: string }) => {
             </div>
             <div className={classes.network} data-umami-event="share-click" data-umami-event-network="facebook">
                 <FacebookShareButton url={url} className={classes.shareButton}>
-                    <FacebookIcon size={32} round />
+                    <FacebookLegacyIcon size={32} round />
                 </FacebookShareButton>
-                <span>
-                    <FacebookShareCount url={url} className={classes.shareCount}>
-                        {(count) => count}
-                    </FacebookShareCount>
-                </span>
             </div>
 
             <div className={classes.network} data-umami-event="share-click" data-umami-event-network="twitter">
-                <TwitterShareButton url={url} title={title} className={classes.shareButton}>
-                    <TwitterIcon size={32} round />
-                </TwitterShareButton>
+                <XShareButton url={url} text={title} className={classes.shareButton}>
+                    <XLegacyIcon size={32} round />
+                </XShareButton>
             </div>
 
             <div className={classes.network} data-umami-event="share-click" data-umami-event-network="linkedin">
                 <LinkedinShareButton url={url} className={classes.shareButton}>
-                    <LinkedinIcon size={32} round />
+                    <LinkedinLegacyIcon size={32} round />
                 </LinkedinShareButton>
             </div>
 
             <div className={classes.network} data-umami-event="share-click" data-umami-event-network="reddit">
                 <RedditShareButton
                     url={url}
-                    title={title}
+                    shareTitle={title}
                     windowWidth={660}
                     windowHeight={460}
                     className={classes.shareButton}
                 >
-                    <RedditIcon size={32} round />
+                    <RedditLegacyIcon size={32} round />
                 </RedditShareButton>
-                <span>
-                    <RedditShareCount url={url} className={classes.shareCount} />
-                </span>
             </div>
         </Root>
     )

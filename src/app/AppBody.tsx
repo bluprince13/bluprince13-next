@@ -6,7 +6,7 @@ import Box from '@mui/material/Box'
 import theme from '@Modules/theme'
 import '@Styles/globals.css'
 import { SpeedInsights } from '@vercel/speed-insights/next'
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/next"
 import AppBar from '@Components/appbar/AppBar'
 import Footer from '@Components/Footer'
 import { UmamiAnalytics } from '@Components/metrics/UmamiAnalytics'

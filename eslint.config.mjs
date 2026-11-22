@@ -1,6 +1,6 @@
 import nextConfig from "eslint-config-next";
 import eslintConfigPrettier from "eslint-config-prettier";
-import vitestPlugin from "eslint-plugin-vitest";
+import vitestPlugin from "@vitest/eslint-plugin";
 
 const eslintConfig = [
   {

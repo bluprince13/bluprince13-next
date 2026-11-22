@@ -43,5 +43,8 @@ const withMDX = createMDX({})
 export default withMDX({
     pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
     experimental: { mdxRs: true },
+    // Lets Node load mdx-mermaid at runtime, so the build doesn't need its optional
+    // puppeteer dependency, which is only imported for SVG output.
+    serverExternalPackages: ['mdx-mermaid'],
     rewrites: async () => rewritesConfig,
 })

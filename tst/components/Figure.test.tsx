@@ -1,3 +1,4 @@
+import type { ComponentProps } from 'react'
 import Figure from '@Components/Figure'
 import { cleanup, render, screen } from '@testing-library/react'
 
@@ -11,7 +12,7 @@ describe('Figure', () => {
         referenceHref: 'https://reference-href.com',
     }
 
-    const setup = (props: Partial<typeof defaultProps> & { size?: string; maxWidth?: string; align?: 'center' } = {}) => {
+    const setup = (props: Partial<ComponentProps<typeof Figure>> = {}) => {
         const queries = render(<Figure {...defaultProps} {...props} />)
         return queries
     }
@@ -72,15 +73,15 @@ describe('Figure', () => {
             ['s', '200px'],
             ['m', '350px'],
             ['ml', '500px'],
-        ])('size="%s" applies max-width %s', (size, expectedMaxWidth) => {
-            setup({ size: size as any })
+        ] as const)('size="%s" applies max-width %s', (size, expectedMaxWidth) => {
+            setup({ size })
             const image = screen.getByAltText('alt')
             expect(image).toHaveStyle(`max-width: ${expectedMaxWidth}`)
             cleanup()
         })
 
         it('size="l" applies no max-width', () => {
-            setup({ size: 'l' as any })
+            setup({ size: 'l' })
             const image = screen.getByAltText('alt')
             expect(image.style.maxWidth).toBeFalsy()
         })

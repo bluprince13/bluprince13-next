@@ -1,31 +1,30 @@
 // https://code.visualstudio.com/docs/languages/jsconfig
 {
   "compilerOptions": {
-    "baseUrl": ".",
     "paths": {
       "@App/*": [
-        "src/app/*"
+        "./src/app/*"
       ],
       "@Public/*": [
-        "public/*"
+        "./public/*"
       ],
       "@Components/*": [
-        "src/components/*"
+        "./src/components/*"
       ],
       "@Modules/*": [
-        "src/modules/*"
+        "./src/modules/*"
       ],
       "@Styles/*": [
-        "src/styles/*"
+        "./src/styles/*"
       ],
       "@Content/*": [
-        "src/content/*"
+        "./src/content/*"
       ],
       "@Apps/*": [
-        "src/apps/*"
+        "./src/apps/*"
       ]
     },
-    "target": "es5",
+    "target": "ES2022",
     "lib": [
       "dom",
       "dom.iterable",
@@ -48,7 +47,8 @@
         "name": "next"
       }
     ],
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "types": ["node", "mdx"]
   },
   //Add any build/compiled folders here to stop vscode searching those
   "exclude": [
@@ -61,6 +61,7 @@
     "**/*.ts",
     "**/*.tsx",
     "**/*.js",
+    "**/*.jsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts"
   ]

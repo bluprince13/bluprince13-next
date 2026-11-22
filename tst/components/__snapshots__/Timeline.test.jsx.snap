@@ -6,7 +6,7 @@ exports[`Timeline > renders as a left alignged Timeline on mobile 1`] = `
     class="MuiTimeline-root MuiTimeline-positionRight css-i6popu-MuiTimeline-root"
   >
     <li
-      class="MuiTimelineItem-root MuiTimelineItem-positionRight css-16ulaim-MuiTimelineItem-root"
+      class="MuiTimelineItem-root MuiTimelineItem-positionRight css-1oagrt3-MuiTimelineItem-root"
     >
       <div
         class="MuiTypography-root MuiTypography-body2 MuiTypography-alignRight MuiTimelineOppositeContent-root MuiTimelineOppositeContent-positionRight css-o9uan8-MuiTypography-root-MuiTimelineOppositeContent-root"
@@ -54,7 +54,7 @@ exports[`Timeline > renders as a left alignged Timeline on mobile 1`] = `
       </div>
     </li>
     <li
-      class="MuiTimelineItem-root MuiTimelineItem-positionRight css-16ulaim-MuiTimelineItem-root"
+      class="MuiTimelineItem-root MuiTimelineItem-positionRight css-1oagrt3-MuiTimelineItem-root"
     >
       <div
         class="MuiTypography-root MuiTypography-body2 MuiTypography-alignRight MuiTimelineOppositeContent-root MuiTimelineOppositeContent-positionRight css-o9uan8-MuiTypography-root-MuiTimelineOppositeContent-root"
@@ -107,7 +107,7 @@ exports[`Timeline > renders as an alternating Timeline 1`] = `
     class="MuiTimeline-root MuiTimeline-positionAlternate css-i6popu-MuiTimeline-root"
   >
     <li
-      class="MuiTimelineItem-root MuiTimelineItem-positionAlternate css-1fhasit-MuiTimelineItem-root"
+      class="MuiTimelineItem-root MuiTimelineItem-positionAlternate css-6ys5bv-MuiTimelineItem-root"
     >
       <div
         class="MuiTypography-root MuiTypography-body2 MuiTypography-alignRight MuiTimelineOppositeContent-root MuiTimelineOppositeContent-positionAlternate css-o9uan8-MuiTypography-root-MuiTimelineOppositeContent-root"
@@ -155,7 +155,7 @@ exports[`Timeline > renders as an alternating Timeline 1`] = `
       </div>
     </li>
     <li
-      class="MuiTimelineItem-root MuiTimelineItem-positionAlternate css-1fhasit-MuiTimelineItem-root"
+      class="MuiTimelineItem-root MuiTimelineItem-positionAlternate css-6ys5bv-MuiTimelineItem-root"
     >
       <div
         class="MuiTypography-root MuiTypography-body2 MuiTypography-alignRight MuiTimelineOppositeContent-root MuiTimelineOppositeContent-positionAlternate css-o9uan8-MuiTypography-root-MuiTimelineOppositeContent-root"
