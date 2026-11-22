@@ -9,8 +9,10 @@ import PostCard, { type PostCardProps } from '@Components/PostCard'
 import BlogSortMenu from '@Components/BlogSortMenu'
 import { parseSort, sortPosts, type Sort } from '@Modules/blogSort'
 import { buildBlogUrl } from '@Modules/blogUrl'
+import { resolveViews, useLiveViews } from '@Components/blog/useLiveViews'
 
 export type BlogIndexPost = PostCardProps & {
+    viewCount: number
     dateISO?: string
 }
 
@@ -23,10 +25,11 @@ export default function BlogIndex({ posts }: Props) {
     const searchParams = useSearchParams()
     const activeTags = searchParams.getAll('tag')
     const sort = parseSort(searchParams.get('sort'), searchParams.get('dir'))
+    const live = useLiveViews()
 
-    const filteredPosts = activeTags.length
-        ? posts.filter(p => activeTags.every(t => p.categories.includes(t)))
-        : posts
+    const filteredPosts = (
+        activeTags.length ? posts.filter(p => activeTags.every(t => p.categories.includes(t))) : posts
+    ).map(post => ({ ...post, viewCount: resolveViews(live, post.slug, post.viewCount) ?? post.viewCount }))
     const visiblePosts = sortPosts(filteredPosts, sort)
 
     return (
@@ -74,7 +77,11 @@ export default function BlogIndex({ posts }: Props) {
                             exit={{ opacity: 0, scale: 0.97 }}
                             transition={{ duration: 0.2 }}
                         >
-                            <PostCard {...post} priority={index === 0} />
+                            <PostCard
+                                {...post}
+                                viewCount={live.status === 'loading' ? null : post.viewCount}
+                                priority={index === 0}
+                            />
                         </motion.div>
                     ))}
                 </AnimatePresence>

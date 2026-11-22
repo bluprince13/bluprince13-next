@@ -10,7 +10,6 @@ import { mdxComponents } from '@Modules/mdxComponents'
 import { buildBlogUrl } from '@Modules/blogUrl'
 import Title from '@Components/Title'
 import Breadcrumbs from '@Components/blog/Breadcrumbs'
-import format from 'comma-number'
 import { MyComments, MyCommentCount } from '@Components/Comments'
 import Subscribe from '@Components/Subscribe'
 import ShareBar from '@Components/ShareBar'
@@ -19,6 +18,7 @@ import TableOfContents from '@Components/blog/TableOfContents'
 import ReadProgress from '@Components/blog/metrics/ReadProgress'
 import { COMMENTS_ID, POST_CONTENT_ID } from '@Modules/postAnchors'
 import { getLifetimeViews } from '@Modules/views'
+import PostViewCount from '@Components/blog/PostViewCount'
 
 export const revalidate = 3600
 
@@ -67,7 +67,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
                 <Box sx={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', flexWrap: 'wrap', gap: 1 }}>
                     <Box>
                         <div>{data.dateFormatted}</div>
-                        <div>{format(views[data.slug] ?? 0)} views</div>
+                        <PostViewCount slug={data.slug} fallbackViews={views[data.slug] ?? 0} />
                         <MyCommentCount id={data.slug} />
                     </Box>
                     <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 0.5 }}>

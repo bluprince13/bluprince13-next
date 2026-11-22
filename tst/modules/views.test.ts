@@ -11,7 +11,13 @@ describe('getLifetimeViews', () => {
     it('counts Umami views only from the cutover', async () => {
         getPageviewsByPath.mockResolvedValue({})
         await getLifetimeViews()
-        expect(getPageviewsByPath).toHaveBeenCalledWith(Date.parse('2026-11-21T12:00:00.000Z'))
+        expect(getPageviewsByPath).toHaveBeenCalledWith(Date.parse('2026-11-21T12:00:00.000Z'), { live: false })
+    })
+
+    it('passes the live option through', async () => {
+        getPageviewsByPath.mockResolvedValue({})
+        await getLifetimeViews({ live: true })
+        expect(getPageviewsByPath).toHaveBeenCalledWith(Date.parse('2026-11-21T12:00:00.000Z'), { live: true })
     })
 
     it('adds blog post pageviews to the baseline, folding trailing-slash paths together', async () => {

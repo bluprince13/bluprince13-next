@@ -1,7 +1,8 @@
 import { fireEvent, render, screen, within } from '@testing-library/react'
 import BlogIndex from '@Components/BlogIndex'
 
-const { mockPush, mockGetAll, mockGet } = vi.hoisted(() => ({
+const { mockPush, mockGetAll, mockGet, mockUseLiveViews } = vi.hoisted(() => ({
+    mockUseLiveViews: vi.fn(),
     mockPush: vi.fn(),
     mockGetAll: vi.fn().mockReturnValue([]),
     mockGet: vi.fn().mockReturnValue(null),
@@ -13,7 +14,14 @@ vi.mock('next/navigation', () => ({
 }))
 
 vi.mock('@Components/PostCard', () => ({
-    default: ({ title }: { title: string }) => <div>{title}</div>,
+    default: ({ title, viewCount }: { title: string; viewCount: number | null }) => (
+        <div data-views={viewCount ?? 'loading'}>{title}</div>
+    ),
+}))
+
+vi.mock('@Components/blog/useLiveViews', async importOriginal => ({
+    ...(await importOriginal<object>()),
+    useLiveViews: mockUseLiveViews,
 }))
 
 const posts = [
@@ -78,6 +86,26 @@ describe('BlogIndex', () => {
         mockGetAll.mockReturnValue([])
         mockGet.mockReset()
         mockGet.mockReturnValue(null)
+        mockUseLiveViews.mockReturnValue({ status: 'loading' })
+    })
+
+    it('shows view counts as loading until the live counts arrive', () => {
+        render(<BlogIndex posts={posts} />)
+        expect(screen.getByText('Post A')).toHaveAttribute('data-views', 'loading')
+    })
+
+    it('shows live view counts and sorts by them', () => {
+        mockUseLiveViews.mockReturnValue({ status: 'ready', views: { 'post-a': 30, 'post-b': 45, 'post-c': 20 } })
+        mockSortParams('views')
+        render(<BlogIndex posts={posts} />)
+        expect(screen.getByText('Post B')).toHaveAttribute('data-views', '45')
+        expect(renderedTitles()).toEqual(['Post B', 'Post A', 'Post C'])
+    })
+
+    it('falls back to cached view counts when the live counts fail', () => {
+        mockUseLiveViews.mockReturnValue({ status: 'failed' })
+        render(<BlogIndex posts={posts} />)
+        expect(screen.getByText('Post B')).toHaveAttribute('data-views', '10')
     })
 
     it('shows total article count with no active tags', () => {

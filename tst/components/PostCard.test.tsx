@@ -94,6 +94,12 @@ describe('PostCard', () => {
         expect(screen.getByText('1 comment')).toBeInTheDocument()
     })
 
+    it('shows a loading placeholder while the view count is null', () => {
+        const { container } = render(<PostCard {...defaultProps} viewCount={null} />)
+        expect(container.querySelector('[aria-busy="true"]')).toBeTruthy()
+        expect(screen.queryByText(/1,234/)).toBeNull()
+    })
+
     it('clicking a tag chip keeps the active sort', () => {
         mockGet.mockImplementation(key =>
             key === 'sort' ? 'comments' : key === 'dir' ? 'asc' : null
